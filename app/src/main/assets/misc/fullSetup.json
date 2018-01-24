@@ -1,0 +1,4868 @@
+{
+  "vector":[
+    1,2,3,4,5
+  ],
+  "map": {
+    "cf921250-e146-4f44-be4d-12b44155dadd":["e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd","e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd"],
+    "e527dc68-e31d-11e7-80c1-9a214cf093ae":["e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd","e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd"]
+  },
+  "contacts":[
+    {
+      "id": "hotline",
+      "arName": "الخط الساخن",
+      "enName": "Hotlines"
+    },
+    {
+      "id": "web",
+      "arName": "الموقع الإلكتروني",
+      "enName": "Web Site"
+    }
+  ],
+  "offers":[
+    {
+      "id": "cf921250-e146-4f44-be4d-12b44155dadd",
+      "entityId":"cf921250-e146-4f44-be4d-12b44155dadd",
+      "arName":"",
+      "enName":"",
+      "startDate":"2017-12-16",
+      "endDate":"2017-12-31"
+    },
+    {
+      "id": "cf921250-e146-4f44-be4d-12b44155dadd",
+      "entityId":"cf921250-e146-4f44-be4d-12b44155dadd",
+      "arName":"",
+      "enName":"",
+      "startDate":"2017-12-16",
+      "endDate":"2017-12-31"
+    }
+  ],
+  "communications":[
+    {
+      "id":"hotline",
+      "enName":"Hotline",
+      "arName":"الخط الساخن"
+    },
+    {
+      "id":"web",
+      "enName":"Web",
+      "arName":"الانترنت"
+    }
+  ],
+  "categories":[
+    {
+      "id":"market",
+      "enName":"Markets",
+      "arName":"الأسواق",
+      "searchText":"سوق"
+    },
+    {
+      "id":"pharmacy",
+      "enName":"Pharmacies",
+      "arName":"الصيدليات",
+      "searchText":"صيدلية pharmacy"
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "72ea565d-8873-4c1a-83b0-a5ed52d7a0c0",
+      "enName": "7 every week (Newspaper)",
+      "arName": "جريدة 7 كل اسبوع",
+      "hotline": "19716"
+    },
+    {
+      "id": "f5b9fe13-e15f-438e-80b1-ebffd98fda37",
+      "enName": "Aal Shaker Group Real Estate Investment",
+      "arName": "مجموعة شركات آل شاكر للاستثمارالعقاري",
+      "hotline": "16674"
+    },
+    {
+      "id": "fe2d0c16-7c14-4f6a-a5e6-270c7d30b6a5",
+      "enName": "Abaza Auto Trade",
+      "arName": "اباظة اوتو تريد",
+      "hotline": "16876"
+    },
+    {
+      "id": "5d7c7cc6-dc59-4a13-a874-273a6af57551",
+      "enName": "ABB Electronics",
+      "arName": "اي بي بي الكترونيات",
+      "hotline": "19290"
+    },
+    {
+      "id": "d943a594-8821-43dc-ac76-607b87800c90",
+      "enName": "Abdel Rahim Koueider",
+      "arName": "عبد الرحيم قويدر للحلويات",
+      "hotline": "19270"
+    },
+    {
+      "id": "da1a79ec-23cd-462f-98d2-4b876286e56a",
+      "enName": "Abdo Kofta ",
+      "arName": "مطعم عبده كفته",
+      "hotline": "19169"
+    },
+    {
+      "id": "8fd884d8-1ae6-4400-a4f0-254978deba1a",
+      "enName": "Abou Khaled Pharmacy",
+      "arName": "صيدلية ابو خالد",
+      "hotline": "19655"
+    },
+    {
+      "id": "0eab089e-ccff-437c-a075-d305db48d300",
+      "enName": "Abou Shakra",
+      "arName": "ابو شقرة",
+      "hotline": "19090"
+    },
+    {
+      "id": "91b4d52e-593d-47bc-8260-a797a952d10d",
+      "enName": "Abou Youssef Architectural & Contracting",
+      "arName": "ابو يوسف للهندسة المعمارية والمقاولات ",
+      "hotline": "19707"
+    },
+    {
+      "id": "2b204a32-b48c-494a-8c2c-9e2d24d78fae",
+      "enName": "Abou Ghaly Automotive",
+      "arName": "ابو غالي اوتوموتيف",
+      "hotline": "16523"
+    },
+    {
+      "id": "71f7e72e-fbca-4179-b6b7-5b998177bb40",
+      "enName": "Abou Ghaly Motors",
+      "arName": "ابو غالي موتورز",
+      "hotline": "19570"
+    },
+    {
+      "id": "ed470a91-5cd6-41e5-98e2-768aa5d344d8",
+      "enName": "Aboul Fotouh Automotives",
+      "arName": "ابو الفتوح للسيارات",
+      "hotline": "19227"
+    },
+    {
+      "id": "dbef82b1-2067-46e1-8d24-00d245efa364",
+      "enName": "Access Internet Services",
+      "arName": "اكسيس انترنت سيرفيس",
+      "hotline": "19522"
+    },
+    {
+      "id": "601bbd01-6cd5-4d8a-b303-5eb6de0641c9",
+      "enName": "Accor Hotels",
+      "arName": "فنادق اكور",
+      "hotline": "19922"
+    },
+    {
+      "id": "3502aad1-70ed-4c85-80c2-00ba5b35ce60",
+      "enName": "Administrative Control Authority (ACA)",
+      "arName": "هيئة الرقابة الادارية (ايه سى ايه)",
+      "hotline": "16100"
+    },
+    {
+      "id": "d20ceadd-0cfe-4479-9f3a-cbedb6f94fa8",
+      "enName": "Adult Education Authority",
+      "arName": "الهيئة العامة لتعليم الكبار",
+      "hotline": "19556"
+    },
+    {
+      "id": "87ee3832-9c2c-4613-9b2d-89c121473e8c",
+      "enName": "Aerosport Club",
+      "arName": "نادى ايروسبورت",
+      "hotline": "16318"
+    },
+    {
+      "id": "bbc8ae61-4a5c-4dd9-a441-1899c292b77f",
+      "enName": "Ahli United Bank AUB",
+      "arName": "البنك الاهلي المتحد",
+      "hotline": "19072"
+    },
+    {
+      "id": "62dea780-2b79-4f69-b16f-c47b63326838",
+      "enName": "Ahmed Aly Pharmacies",
+      "arName": "صيدلية احمد علي",
+      "hotline": "19196"
+    },
+    {
+      "id": "efec0d87-f4ec-4651-940e-771d61085958",
+      "enName": "Ahram Canadian University",
+      "arName": "جامعة الاهرام الكندية",
+      "hotline": "19228"
+    },
+    {
+      "id": "53023be6-e3ea-4c9b-aa0d-09b2459f994c",
+      "enName": "AIC for Tourism and Hotels Management (Resta)",
+      "arName": "العربية الدولية للسياحة وادارة الفنادق (ريستا)",
+      "hotline": "19125"
+    },
+    {
+      "id": "3ef016b4-c019-4209-9b78-0c6ff1a21711",
+      "enName": "Ain Shams University Specialized Hospital",
+      "arName": "مستشفي جامعة عين شمس التخصصي",
+      "hotline": "16096"
+    },
+    {
+      "id": "a354871e-88a9-40b9-b3bd-847bc7ccf1de",
+      "enName": "Air Conditions High Technology ",
+      "arName": "اجهزة تكييف هاى تكنولوجى",
+      "hotline": "19940"
+    },
+    {
+      "id": "176947f4-8cdb-4c1a-a457-d068faa41691",
+      "enName": "Air Cool",
+      "arName": "اير كوول للتكيفات",
+      "hotline": "19030"
+    },
+    {
+      "id": "3fdb1fab-cab2-4714-9dfc-b0594e38420e",
+      "enName": "Akher Saa",
+      "arName": "مطعم أخر ساعة",
+      "hotline": "19550"
+    },
+    {
+      "id": "63684d5a-5ed9-43c6-ac22-ef55987aca06",
+      "enName": "Al Abdel Latif El Tarshouby Pharmacies",
+      "arName": "صيدليات آل عبد اللطيف الطرشوبي",
+      "hotline": "19121"
+    },
+    {
+      "id": "05209f4c-3f80-4d3d-b8d6-7418c5e45298",
+      "enName": "Al Ahly Real Estate Development",
+      "arName": "الاهلي للتنمية العقارية",
+      "hotline": "16033"
+    },
+    {
+      "id": "8ff53038-bced-4066-bac8-8933e74b11bf",
+      "enName": "Al Ahram Security Locksmiths",
+      "arName": "كوالين الاهرام لنظم الامان",
+      "hotline": "16614"
+    },
+    {
+      "id": "8c99af8f-efcf-4753-9262-84a331502844",
+      "enName": "AL Alfey Pharmacy",
+      "arName": "صيدلية الالفي",
+      "hotline": "16706"
+    },
+    {
+      "id": "1240de39-642c-4621-b622-75c487200d01",
+      "enName": "Al Andalosia Real Estate",
+      "arName": "الاندلسية للاستثمار العقاري",
+      "hotline": "16881"
+    },
+    {
+      "id": "571723ec-81c1-4e22-8dd3-000b820d9584",
+      "enName": "AL Ansary Pharmacy",
+      "arName": "صيدلية الانصاري",
+      "hotline": "19046"
+    },
+    {
+      "id": "7f78ca66-a67f-473b-be66-7c009bc68a0e",
+      "enName": "AL Arabia Aviation",
+      "arName": "العربية للطيران",
+      "hotline": "16278"
+    },
+    {
+      "id": "2aaca72b-09df-4cec-a5d5-01baeff7104b",
+      "enName": "Al Baraka Bank Of Egypt",
+      "arName": "بنك البركة مصر ",
+      "hotline": "19373"
+    },
+    {
+      "id": "53f8aae9-764c-4c52-9dbe-2b1e0d3b272c",
+      "enName": "Al Borg Laboratory",
+      "arName": "معمل البرج",
+      "hotline": "19911"
+    },
+    {
+      "id": "5ae43144-7413-467e-ac02-ae0b5b53ba5e",
+      "enName": "Al Demerdash Pharmacy",
+      "arName": "صيدلية الدمرداش",
+      "hotline": "19391"
+    },
+    {
+      "id": "264fbfd0-cfaa-4f59-ba85-d73ed66bbdd9",
+      "enName": "Al Dorrah Heart Care Hospital",
+      "arName": "مستشفي الدرة لعلاجات القلب والاوعية الدموية",
+      "hotline": "16711"
+    },
+    {
+      "id": "d12cc728-b343-4aa4-8709-4eb47be743bc",
+      "enName": "Al Ezz Steel Rebars",
+      "arName": "العز لصناعة حديد التسليح",
+      "hotline": "16188"
+    },
+    {
+      "id": "6b3914d4-c1ac-4e9b-bb4d-2ba923874a31",
+      "enName": "Al Fouad Pharmacy",
+      "arName": "صيدلية الفؤاد",
+      "hotline": "19705"
+    },
+    {
+      "id": "0f113413-8b94-435a-b224-8ec32b319016",
+      "enName": "AL Fursan Real Estate",
+      "arName": "الفرسان للتنمية العقارية والتسويق العقاري",
+      "hotline": "19262"
+    },
+    {
+      "id": "aa7809d1-83e0-416c-90fd-14a5a8705c5c",
+      "enName": "AL Halawani Real Estate",
+      "arName": "الحلواني للاستثمار العقاري",
+      "hotline": "19047"
+    },
+    {
+      "id": "18316a78-2153-451a-9555-8cc67bdc3f0a",
+      "enName": "Al Mansour Automotive (Chevrolet - Opel)",
+      "arName": "المنصور للسيارات (شيفرولية - اوبل)",
+      "hotline": "16424"
+    },
+    {
+      "id": "a1f81d1f-3bec-425f-8fe3-5a80705d1820",
+      "enName": "Al Masaa Hotel",
+      "arName": "فندق الماسة",
+      "hotline": "19720"
+    },
+    {
+      "id": "48290b28-a22d-432d-ba06-737a866e4c70",
+      "enName": "Al Masreya For Cars",
+      "arName": "المصرية للسيارات",
+      "hotline": "19095"
+    },
+    {
+      "id": "36bc9629-2a77-47f6-a3c5-7ec4319ce263",
+      "enName": "Al Mokhtabar Moamena Kamel Laboratories",
+      "arName": "معامل المختبر مؤمنة كامل",
+      "hotline": "19014"
+    },
+    {
+      "id": "08cadba3-34f1-4d4b-a9ba-156a0edc8f33",
+      "enName": "AL Nada",
+      "arName": "الشركة العالمية لتصنيع وتعبئة المياه الطبيعية مياه الندي",
+      "hotline": "19079"
+    },
+    {
+      "id": "8927c33e-54ea-48fa-a7dc-2df9ea392667",
+      "enName": "Al Nadi Pharmacy ",
+      "arName": "صيدلية النادي",
+      "hotline": "16196"
+    },
+    {
+      "id": "267b60d4-1e74-440d-b8b4-7a5e99082378",
+      "enName": "Al Orouba Securities",
+      "arName": "العروبة للسمسرة وتداول الاوراق المالية",
+      "hotline": "16050"
+    },
+    {
+      "id": "e5bafd98-421c-4a32-9758-061c61dae475",
+      "enName": "Al Plage Real Estate",
+      "arName": "البلاج للتنمية العقارية",
+      "hotline": "19167"
+    },
+    {
+      "id": "fa6950a3-d07e-4922-ae3c-c2173b373aa5",
+      "enName": "AL Rowad (Mitsubishi)",
+      "arName": "الرواد توكيل ميتسوبيشي",
+      "hotline": "19407"
+    },
+    {
+      "id": "c9ff99cc-2410-462d-9a43-91b1a6e3759b",
+      "enName": "AL Rowad For Wholesale Markets (Abu Zekri)",
+      "arName": "شركة الرواد لأسواق الجملة (ابو ذكري)",
+      "hotline": "16066"
+    },
+    {
+      "id": "637afc5c-76a5-493f-adbb-a26928be6cc2",
+      "enName": "Al Safey Automotive",
+      "arName": "الصافي اوتوموتيف",
+      "hotline": "16775"
+    },
+    {
+      "id": "70f55520-5660-4247-8951-ae69c3bbd6ef",
+      "enName": "AL Safwa Hospital",
+      "arName": "مستشفي الصفوة ",
+      "hotline": "16361"
+    },
+    {
+      "id": "60d5130a-232e-46ca-8f59-3cb0be8341d3",
+      "enName": "Al Salam International Hospital",
+      "arName": "مستشفي السلام الدولي",
+      "hotline": "19885"
+    },
+    {
+      "id": "d0f65796-69eb-41a1-8197-2f5102a73faa",
+      "enName": "Al Salma Poultry & Slaughter Machines",
+      "arName": "السلمي للمجازر والدواجن الالية",
+      "hotline": "19317"
+    },
+    {
+      "id": "29aa99c5-0e07-450d-8edb-d0969dd796e5",
+      "enName": "AL Serafy Pharmacies",
+      "arName": "صيدليات الصيرفي",
+      "hotline": "19878"
+    },
+    {
+      "id": "06cf5a60-1fd5-4239-a613-37284997faec",
+      "enName": "Al Shorouk Brokerage Co. (SHB)",
+      "arName": "الشروق للوساطة في الاوراق المالية",
+      "hotline": "19640"
+    },
+    {
+      "id": "d5d91d59-df34-4855-8e65-6db214aad6c0",
+      "enName": "Al Tazaj",
+      "arName": "الطازج",
+      "hotline": "19018"
+    },
+    {
+      "id": "efb2db63-d043-485c-9cf2-92ccf61e5932",
+      "enName": "Al Watany Bank Of Egypt (AWB)",
+      "arName": "البنك الوطني المصري",
+      "hotline": "19336"
+    },
+    {
+      "id": "bad0ef5b-6a75-4431-ae55-1704d9cf53b8",
+      "enName": "Al Watnia For Projects Management",
+      "arName": "الوطنية لادارة المشروعات",
+      "hotline": "19925"
+    },
+    {
+      "id": "001cd774-bff2-421e-b772-1db6e2bdb647",
+      "enName": "Alain Le Notre",
+      "arName": "الان لو نتر",
+      "hotline": "19133"
+    },
+    {
+      "id": "0dd064fa-db07-420d-879d-9aff43adf9be",
+      "enName": "Alaska ",
+      "arName": "الاسكا",
+      "hotline": "19599"
+    },
+    {
+      "id": "f19e287f-896f-4b34-a7a3-7c0f6412986b",
+      "enName": "Alex Bank",
+      "arName": "بنك الاسكندرية",
+      "hotline": "19003"
+    },
+    {
+      "id": "0fde6b51-f2d4-4933-8e8b-a76857ef949d",
+      "enName": "Alex Bank",
+      "arName": "بنك الاسكندرية",
+      "hotline": "19033"
+    },
+    {
+      "id": "3cdf3b71-e925-4c0b-ad4d-2cf37c38a15c",
+      "enName": "Alex Build Real Estate",
+      "arName": "الاسكندرية للعقارات",
+      "hotline": "19108"
+    },
+    {
+      "id": "10ddbdd5-fa9f-4924-81eb-1ec25a1e9514",
+      "enName": "Alex West Project (Baronz Kort)",
+      "arName": "مشروع اليكس ويست التابع لشركة بارونز كورت",
+      "hotline": "19710"
+    },
+    {
+      "id": "38416933-65c7-4780-a238-c984d855ed9c",
+      "enName": "Alexandria Eye Center (AEC)",
+      "arName": "مركز عيون الاسكندرية",
+      "hotline": "19477"
+    },
+    {
+      "id": "4094a118-7548-4fe8-863b-0d46e14397a3",
+      "enName": "Alfa Lab Egypt",
+      "arName": "معامل الفا مصر",
+      "hotline": "16191"
+    },
+    {
+      "id": "3dde3454-2d1f-4f0d-b401-d9b3d0e486b3",
+      "enName": "Alfa Pipe",
+      "arName": "الشركة المصرية لصناعة المواسير ( الفا بايب)",
+      "hotline": "19952"
+    },
+    {
+      "id": "da1ee697-70f0-4ee5-89ca-b0576ffd4ace",
+      "enName": "Alfa Scan Radiation Center",
+      "arName": "مركز الفا سكان للاشعة",
+      "hotline": "16171"
+    },
+    {
+      "id": "2cfa0be7-c8a7-452d-9962-d821e72684ac",
+      "enName": "Ali & Ali Pharmacies",
+      "arName": "صيدليات علي وعلي",
+      "hotline": "19905"
+    },
+    {
+      "id": "93500a8b-f2d9-41c8-ae24-c0e2952851de",
+      "enName": "Ali Aziz Pharmacy",
+      "arName": "صيدلية علي عزيز",
+      "hotline": "19828"
+    },
+    {
+      "id": "534d3f3c-1d42-4413-bcd5-5861be1dd05f",
+      "enName": "Alico Metlife Insurance",
+      "arName": "اليكو للتأمين",
+      "hotline": "19097"
+    },
+    {
+      "id": "c3fcdc71-f539-46e9-97f9-7b0342166c6a",
+      "enName": "Ali's Image Pharmacies",
+      "arName": "صيدليات على ايمدج",
+      "hotline": "19770"
+    },
+    {
+      "id": "50e189c5-8429-4918-a26a-7a325e649584",
+      "enName": "Alkan Telecom",
+      "arName": "الكان للاتصالات",
+      "hotline": "19081"
+    },
+    {
+      "id": "809a26b1-e497-492c-bb14-13303c31371e",
+      "enName": "All In One Home & Office Furniture",
+      "arName": "اول ان وان للاثاث المنزلى والمكتبى",
+      "hotline": "19755"
+    },
+    {
+      "id": "819dd878-3512-4656-8854-17f032a47d7a",
+      "enName": "Allianz Insurance",
+      "arName": "اليانز للتأمين",
+      "hotline": "19909"
+    },
+    {
+      "id": "6b74806b-bf35-420d-90a2-4ac062bf33bc",
+      "enName": "Allied Doctors Medical System Administrators",
+      "arName": "الاطباء المتضامنون لادارة النظم الطبية",
+      "hotline": "19010"
+    },
+    {
+      "id": "c4306bd3-903d-4afe-b1a8-c88f63e0b580",
+      "enName": "Althawra Pharmacy",
+      "arName": "صيدلية التورة",
+      "hotline": "19937"
+    },
+    {
+      "id": "bc3ada90-13a5-4e1f-97f3-a3e5b09fa867",
+      "enName": "Ambulance",
+      "arName": "الاسعاف",
+      "hotline": "123"
+    },
+    {
+      "id": "8c9b6601-a083-49c8-a13f-3326bd35f5ba",
+      "enName": "Amer Group for Tourism Resorts",
+      "arName": "عامر جروب للمنتجعات السياحية",
+      "hotline": "19106"
+    },
+    {
+      "id": "74e94770-bd4a-45b7-a551-8b479a4dae06",
+      "enName": "Amer Group for Tourism Resorts",
+      "arName": "عامر جروب للمنتجعات السياحية",
+      "hotline": "19156"
+    },
+    {
+      "id": "6f542d56-cb2f-4325-97f5-17741f61828e",
+      "enName": "Amer Pharmacy",
+      "arName": "صيدليات عامر",
+      "hotline": "19913"
+    },
+    {
+      "id": "e8c673ac-20d1-4892-9c9a-526bb06458ba",
+      "enName": "American For The Maintenance Of Home Appliances",
+      "arName": "الامريكية لصيانة الاجهزة المنزلية",
+      "hotline": "16001"
+    },
+    {
+      "id": "c866daf7-0c34-49c5-b721-2134076eed0b",
+      "enName": "American Furniture",
+      "arName": "اميريكان فيرنيتشر",
+      "hotline": "19997"
+    },
+    {
+      "id": "4ac72782-9de4-43aa-ab02-38e0d5aa1369",
+      "enName": "American Middle East (Amideast)",
+      "arName": "الهيئة الامريكية للخدمات التدريبية والتعليمية (اميديست)",
+      "hotline": "19263"
+    },
+    {
+      "id": "d892668b-7b99-4ad8-94c3-46aa6a39ad68",
+      "enName": "American University In Cairo (AUC)",
+      "arName": "الجامعة الامريكية بالقاهرة",
+      "hotline": "16723"
+    },
+    {
+      "id": "89949767-8eb6-454f-80bb-1f1d80feedb9",
+      "enName": "American University In Cairo (AUC)",
+      "arName": "الجامعة الامريكية بالقاهرة",
+      "hotline": "19282"
+    },
+    {
+      "id": "cce57c7f-f1dc-4140-a53d-3e48c5921c20",
+      "enName": "Amlak Real Estate Development and Investment",
+      "arName": "املاك للتنمية والاستثمار العقاري",
+      "hotline": "16071"
+    },
+    {
+      "id": "b2f01ae0-bd82-40e9-9385-c62ef4711857",
+      "enName": "Amlak Real Estate For Construction & Building",
+      "arName": "املاك العقارية للتشييد والبناء",
+      "hotline": "19153"
+    },
+    {
+      "id": "5576a270-7b75-48d6-b7ae-e589a7896d4f",
+      "enName": "Aptec Egypt",
+      "arName": "ابتيك مصر",
+      "hotline": "16716"
+    },
+    {
+      "id": "913dad29-6ac4-4a36-b757-d657616fbe05",
+      "enName": "Aqarat Misr",
+      "arName": "عقارات مصر",
+      "hotline": "16126"
+    },
+    {
+      "id": "ff67e3be-a992-41a8-9928-7fa1bba24f1a",
+      "enName": "Arab Academy For Science, Technology & Maritime Transport ",
+      "arName": "الاكاديمية العربية للعلوم والتكنولوجيا والنقل البحرى",
+      "hotline": "19838"
+    },
+    {
+      "id": "6c722ad5-17f6-4255-9b14-f28bb1de9e86",
+      "enName": "Arab Bank",
+      "arName": "البنك العربي",
+      "hotline": "19100"
+    },
+    {
+      "id": "45321593-06f4-400d-8c65-9375091627fb",
+      "enName": "Arab Banking Corporation (ABC)",
+      "arName": "بنك المؤسسة العربية المصرفية",
+      "hotline": "19123"
+    },
+    {
+      "id": "4eb4586b-4b63-415f-823e-0c6a0a6dca2c",
+      "enName": "Arab Co. For Computer Manufacturing",
+      "arName": "الشركة العربية لتصنيع الحاسبات",
+      "hotline": "19333"
+    },
+    {
+      "id": "553bddc6-a0b6-4d00-8f99-9042157a1e90",
+      "enName": "Arab Co. For Food Industries (Teama)",
+      "arName": "الشركة العربية للصناعات الغذائية (طعمة)",
+      "hotline": "19377"
+    },
+    {
+      "id": "70e488c8-b260-4f36-ad1c-9ef6d660c5a2",
+      "enName": "Arab Contractors",
+      "arName": "المقاولون العرب عثمان احمد عثمان",
+      "hotline": "19142"
+    },
+    {
+      "id": "4870fa83-b4db-43db-b44f-68134c91c681",
+      "enName": "Arab Contractors Hospital",
+      "arName": "مستشفى المقاولون العرب",
+      "hotline": "19660"
+    },
+    {
+      "id": "8a395106-07b3-4605-8f11-6659751acb57",
+      "enName": "Arab Finance",
+      "arName": "التمويل العربي (اراب فينانس)",
+      "hotline": "19717"
+    },
+    {
+      "id": "61e3552e-f863-4a19-ae81-3f6e78f58918",
+      "enName": "Arab Misr Insurance Group (Amig)",
+      "arName": "المجموعة العربية المصرية للتأمين ",
+      "hotline": "19901"
+    },
+    {
+      "id": "067de8c3-cd73-4720-a977-9b32d440b210",
+      "enName": "Arab Motors Trading Co. (Chana)",
+      "arName": "الشركة العربية لتجارة السيارات (شانا)",
+      "hotline": "19224"
+    },
+    {
+      "id": "2d4eb752-5ffa-414a-b07b-b438d92ef5d2",
+      "enName": "Arab Organization for Industrialization",
+      "arName": "الهيئة العربية للتصنيع",
+      "hotline": "19201"
+    },
+    {
+      "id": "b254e28a-66bf-49d9-8336-31c95f1d08c9",
+      "enName": "Arab Organization for Industrialization",
+      "arName": "الهيئة العربية للتصنيع",
+      "hotline": "19334"
+    },
+    {
+      "id": "b11e1266-fbf9-4140-a65f-af03669efe35",
+      "enName": "Arabeya Online",
+      "arName": "عربية اونلاين",
+      "hotline": "16225"
+    },
+    {
+      "id": "f011a0c0-7eec-4368-b90c-2c4d157b7e60",
+      "enName": "Arabian Group For Trading & Distribution ",
+      "arName": "المجموعة العربية للتجارة والتوزيع",
+      "hotline": "19292"
+    },
+    {
+      "id": "d652dc0f-3b5b-487c-906d-2abc4f138f35",
+      "enName": "Arabian Office Equipment",
+      "arName": "العربية لمهمات المكاتب",
+      "hotline": "19664"
+    },
+    {
+      "id": "22ca9f5f-e405-4d6e-a51d-3a6ab407889a",
+      "enName": "Arabiat For Trade & Distribution",
+      "arName": "عربيات للتجارة والتوزيع",
+      "hotline": "16106"
+    },
+    {
+      "id": "c5b826c7-d2e0-4f5b-8a0e-3b44c3257000",
+      "enName": "Aramex",
+      "arName": "اراميكس",
+      "hotline": "16996"
+    },
+    {
+      "id": "f2e47ab0-e3ca-4426-98a4-30ad3c9bc3a0",
+      "enName": "Archi Touch Furniture",
+      "arName": "ارك تاتش للاثاث",
+      "hotline": "16020"
+    },
+    {
+      "id": "2e3a7f4a-bcc6-479c-879c-6b2930687bc3",
+      "enName": "Arope Insurance",
+      "arName": "اروب للتامين",
+      "hotline": "19243"
+    },
+    {
+      "id": "3c4205b2-08ba-4807-97c6-d7cb50abf887",
+      "enName": "Artoc Auto (Skoda)",
+      "arName": "ارتوك اوتو (اسكودا)",
+      "hotline": "16616"
+    },
+    {
+      "id": "b5df3087-4c45-4318-8fff-121562be10b6",
+      "enName": "Arzak Al Kawther",
+      "arName": "ارزاق الكوثر ",
+      "hotline": "16107"
+    },
+    {
+      "id": "647b135b-d7fd-495d-8735-464f298f52b3",
+      "enName": "Asma Egypt For Commercial Agencies",
+      "arName": "اسما ايجيبت للتوكيلات التجارية ",
+      "hotline": "19107"
+    },
+    {
+      "id": "81e3c59c-0684-4b97-8b41-e5645916d5e4",
+      "enName": "Astandra Industrial Nova",
+      "arName": "استاندرا الصناعية نوفا",
+      "hotline": "19629"
+    },
+    {
+      "id": "3242c6d8-314c-4b69-97af-8c2c34c604f7",
+      "enName": "Austrian Airlines",
+      "arName": "النمساوية للطيران",
+      "hotline": "19404"
+    },
+    {
+      "id": "f5464aea-0f68-437b-a619-af7bc36b2323",
+      "enName": "Auto Egypt For Trading S.A.E",
+      "arName": "اوتو ايجبت للتجارة",
+      "hotline": "16666"
+    },
+    {
+      "id": "5ec90e79-c4a4-44ca-b323-3cb8b90018c4",
+      "enName": "Axon",
+      "arName": "اكسون لتعليم اللغات",
+      "hotline": "19295"
+    },
+    {
+      "id": "46bec8ad-6d53-4c65-9f0e-1a4b5ea4eabe",
+      "enName": "B.Tech ",
+      "arName": "بي تيك",
+      "hotline": "19966"
+    },
+    {
+      "id": "b4da882e-c194-431e-915d-e9c6f202cb89",
+      "enName": "Ba-By Restaurant",
+      "arName": "مطاعم باباي",
+      "hotline": "16091"
+    },
+    {
+      "id": "ddf41ea0-9e53-483a-b3d4-76d1100ca25f",
+      "enName": "Bahgat Group",
+      "arName": "مجموعة شركات بهجت",
+      "hotline": "19819"
+    },
+    {
+      "id": "6a710fb5-02d8-42af-9d4d-1a088aa27ecc",
+      "enName": "Bank Audi",
+      "arName": "بنك عودة",
+      "hotline": "16555"
+    },
+    {
+      "id": "053d3900-4039-4f06-aa03-f8cf0fb8e734",
+      "enName": "Banque Du Caire",
+      "arName": "بنك القاهرة",
+      "hotline": "16990"
+    },
+    {
+      "id": "b53bda97-1a04-4ec8-aec0-716718b45a9f",
+      "enName": "Banque Misr",
+      "arName": "بنك مصر",
+      "hotline": "19888"
+    },
+    {
+      "id": "672cf8e7-6233-477d-9b9b-b63641aa34ca",
+      "enName": "Barclays Bank Egypt ",
+      "arName": "بنك باركليز مصر",
+      "hotline": "16222"
+    },
+    {
+      "id": "01e26a32-f95f-406b-a807-e39a1c6c866d",
+      "enName": "Basmatio Restaurant",
+      "arName": "مطعم بسماتيو",
+      "hotline": "16400"
+    },
+    {
+      "id": "9faebede-5c80-49e8-bab6-5200702eff90",
+      "enName": "Bavaria Fire Protection Systems",
+      "arName": "شركة بافاريا لمكافحة الحريق",
+      "hotline": "19944"
+    },
+    {
+      "id": "df0daa28-cdc5-4520-a647-0e2ce8bbf441",
+      "enName": "Bavarian Auto Group ",
+      "arName": "المجموعة البافرية للسيارات",
+      "hotline": "16626"
+    },
+    {
+      "id": "0fcdca37-cd68-426d-bd4c-cbae2f879178",
+      "enName": "Bavarian Auto Group ",
+      "arName": "المجموعة البافرية للسيارات",
+      "hotline": "19269"
+    },
+    {
+      "id": "8c5ecabd-3617-48f5-b4db-7325662886f9",
+      "enName": "Baz Real Estate Modern Systems",
+      "arName": "باز للنظم العقارية الحديثة",
+      "hotline": "19516"
+    },
+    {
+      "id": "5288f4ee-57f8-4988-9d79-2b7b4429a9c3",
+      "enName": "Beano's Café",
+      "arName": "بينوس كافيه",
+      "hotline": "19414"
+    },
+    {
+      "id": "fd6e134b-cd71-495f-beb0-f72e70f21bc2",
+      "enName": "Bella Donna",
+      "arName": "بيلا دونا (ملابس وازياء)",
+      "hotline": "19979"
+    },
+    {
+      "id": "9fde80f7-6b85-4fb2-ab8a-2f11f2aeb678",
+      "enName": "Beta Egypt Urban Development",
+      "arName": "بيتا ايجيبت للتنمية العمرانية",
+      "hotline": "19231"
+    },
+    {
+      "id": "99530dbb-d41f-4f97-b7a9-36867512588d",
+      "enName": "Better Business",
+      "arName": "بتر بيزنيس",
+      "hotline": "19424"
+    },
+    {
+      "id": "658861c1-e0a5-4ea4-b1b8-94624d528c39",
+      "enName": "Beverly Hills",
+      "arName": "بيفيرلي هيلز",
+      "hotline": "19986"
+    },
+    {
+      "id": "8726e8e5-5b93-4993-9a29-35674eb52949",
+      "enName": "Bird and Swine Influenza Inquiries",
+      "arName": "استفسارات انفلونزا الطيور والخنازير",
+      "hotline": "105"
+    },
+    {
+      "id": "3280d227-168b-4b96-9811-b73793d8dccc",
+      "enName": "Bisco Misr Customer Services",
+      "arName": "خدمة عملاء بسكو مصر",
+      "hotline": "16944"
+    },
+    {
+      "id": "8198e6cf-cbd2-4b7c-9dfb-d37f2ba4d908",
+      "enName": "Blom Bank Egypt",
+      "arName": " بنك بلوم مصر",
+      "hotline": "19233"
+    },
+    {
+      "id": "f69a70b5-0e34-43bd-8496-6a9881243ba4",
+      "enName": "Blue Sky Travel",
+      "arName": "بلو سكاي للسياحة",
+      "hotline": "19278"
+    },
+    {
+      "id": "baea084a-a0f0-44fe-9d16-9a0a410e0c10",
+      "enName": "BM Egypt Medical Equipments",
+      "arName": "بي ام ايجيبت للتجهيزات الطبية",
+      "hotline": "19112"
+    },
+    {
+      "id": "3ce4cb37-4acc-46dc-b916-3959b2e66138",
+      "enName": "BNP Paribas Bank",
+      "arName": "بنك بي ان بي باريبا",
+      "hotline": "16664"
+    },
+    {
+      "id": "db259f9f-6f86-4ca2-ad9d-f1eeb1244834",
+      "enName": "Borak Al Gazera",
+      "arName": "براق الجزيرة",
+      "hotline": "19704"
+    },
+    {
+      "id": "590bcb7d-d124-47ee-956c-8d50f6362b90",
+      "enName": "Bridge Real Estate Development",
+      "arName": "بريدج للتنمية العقارية",
+      "hotline": "16410"
+    },
+    {
+      "id": "c6c88a51-3265-4694-a430-ca0717a27e79",
+      "enName": "British American Tobaco",
+      "arName": "البريطانية الامريكية للتبغ",
+      "hotline": "19580"
+    },
+    {
+      "id": "312cd132-f817-4ae1-8d70-69e3aa23bc2d",
+      "enName": "British Council",
+      "arName": "المركز الثقافي البريطاني",
+      "hotline": "19789"
+    },
+    {
+      "id": "c9eac2a8-8e8e-41a9-a411-6219f7223df5",
+      "enName": "Brouj Property Management",
+      "arName": "بروج لادارة العقارات",
+      "hotline": "19603"
+    },
+    {
+      "id": "e4a21437-01ec-4b7a-8fc4-ba0b3f207eff",
+      "enName": "Café Break",
+      "arName": "كافيه بريك",
+      "hotline": "19050"
+    },
+    {
+      "id": "bdf1e243-a660-4167-9745-29a8a2ba5f1f",
+      "enName": "Cairo Airport Shuttle Bus",
+      "arName": "مطار القاهرة للنقل السياحى",
+      "hotline": "19970"
+    },
+    {
+      "id": "d0229c93-85b8-4ffa-8155-b8d3ebab444e",
+      "enName": "Cairo International Airport",
+      "arName": "مطار القاهرة الدولي",
+      "hotline": "16707"
+    },
+    {
+      "id": "adb17cca-18a8-4827-a413-686caeeff7a5",
+      "enName": "Cairo International Airport",
+      "arName": "مطار القاهرة الدولي",
+      "hotline": "27777"
+    },
+    {
+      "id": "6700ba21-6bab-4164-b49d-f679f9461b8d",
+      "enName": "Cairo Lab",
+      "arName": "كايرو لاب للتحاليل الطبية",
+      "hotline": "19962"
+    },
+    {
+      "id": "f4526286-2a79-4316-986d-85a5e3c01fd7",
+      "enName": "Cairo Poultry Processing Co. (Kooki)",
+      "arName": "القاهرة لمجازرالدواجن ( كوكى)",
+      "hotline": "19585"
+    },
+    {
+      "id": "9a6c2ead-7540-462c-bb59-76abf59ba990",
+      "enName": "Cairo Radiology Center (Cairo Scan)",
+      "arName": "مركز القاهرة للاشعة (كايرو سكان)",
+      "hotline": "19144"
+    },
+    {
+      "id": "809babdb-10ac-41f1-a19f-abd84321dad0",
+      "enName": "Cairo Taxi",
+      "arName": "تاكسي العاصمة",
+      "hotline": "19155"
+    },
+    {
+      "id": "6df2c54a-8e74-4b3b-99e7-cc93c6749bb5",
+      "enName": "Cairo Trading (Casio)",
+      "arName": "كايرو تريدينج (كاسيو)",
+      "hotline": "19616"
+    },
+    {
+      "id": "645fd3fe-4deb-457d-8944-f6bd2e9b91b6",
+      "enName": "Canadian International Collage (CIC)",
+      "arName": "الجامعة الكندية الدولية (سي اي سي)",
+      "hotline": "16242"
+    },
+    {
+      "id": "b657449c-cb4a-4813-9d49-0cdc40710b7c",
+      "enName": "Car Gas",
+      "arName": "شركة الغاز الطبيعي للسيارات (كار جاز)",
+      "hotline": "19544"
+    },
+    {
+      "id": "2291c580-81b7-43fa-84cd-e42a2cbc8673",
+      "enName": "Car Towing Center",
+      "arName": "مركز انقاذ السيارات",
+      "hotline": "19767"
+    },
+    {
+      "id": "8c087063-903f-4db2-9752-887f8f98b377",
+      "enName": "Care Pharmacies",
+      "arName": "صيدليات كير",
+      "hotline": "19757"
+    },
+    {
+      "id": "a0ac1e13-3b0f-451e-941d-b18337802868",
+      "enName": "Carina Trading",
+      "arName": "كارينا",
+      "hotline": "16678"
+    },
+    {
+      "id": "76b98bb2-dc65-417b-928a-94d0c68612e6",
+      "enName": "Carino's Italian",
+      "arName": "مطاعم كارينوس",
+      "hotline": "19149"
+    },
+    {
+      "id": "f82dd05b-84db-411c-8413-0b7482df6b23",
+      "enName": "Carrefour",
+      "arName": "كارفور",
+      "hotline": "16061"
+    },
+    {
+      "id": "e8d20822-8fa4-4486-9245-cefd8f1f328f",
+      "enName": "Casa (Palm Hills)",
+      "arName": "كازا (بالم هيلز)",
+      "hotline": "19305"
+    },
+    {
+      "id": "665b9569-4a2b-4f74-91fa-f74a0c855821",
+      "enName": "Cascada Real Estate",
+      "arName": "كاسكادا للاستثمار العقاري",
+      "hotline": "19718"
+    },
+    {
+      "id": "b0cf7d3d-1a35-4e1b-9c94-42dc7f7a3fcb",
+      "enName": "Casino Italian Food Restarunt",
+      "arName": "كازينو الماكولات الايطالية",
+      "hotline": "19533"
+    },
+    {
+      "id": "9ec46a88-ea06-4cbd-b8df-8540ad06c1f4",
+      "enName": "CDC Wagih Abaza (Peugot)",
+      "arName": "مركز التنمية والتجارة - وجيه اباظه (بيجو)",
+      "hotline": "19207"
+    },
+    {
+      "id": "424cd289-8637-4f50-a149-4e3cf8ee6ddb",
+      "enName": "Centra Technologies",
+      "arName": "سينترا للتكنولوجيا",
+      "hotline": "19610"
+    },
+    {
+      "id": "d2f36571-9740-4720-9bc0-7d9f9e0bc2ca",
+      "enName": "Central Bank of Egypt (CBE)",
+      "arName": "البنك المركزي المصري",
+      "hotline": "16777"
+    },
+    {
+      "id": "4dd53403-b5d7-4d24-b569-a97221ff4d9e",
+      "enName": "Century 21 Teba Realty",
+      "arName": "سنشرى 21 طيبة العقارية",
+      "hotline": "19021"
+    },
+    {
+      "id": "5f4cd674-53f1-479f-96d7-9ce151d8958d",
+      "enName": "Ceramica Cleopatra Group",
+      "arName": "سيراميكا كليوباترا جروب ",
+      "hotline": "19119"
+    },
+    {
+      "id": "b15a847d-1b21-495a-981e-38b513978f95",
+      "enName": "Ceramica Royal ",
+      "arName": "سيراميكا رويال",
+      "hotline": "19968"
+    },
+    {
+      "id": "8fd02ee2-d089-4505-9b10-b47ffc44c478",
+      "enName": "Cestel (Motorola)",
+      "arName": "سيستل للتجارة والتسويق (موتورولا)",
+      "hotline": "19711"
+    },
+    {
+      "id": "8fb96e86-be1e-400c-a9f3-d691a9ff152a",
+      "enName": "Chemipharm  Pharmaceuticals",
+      "arName": "شركة كيمي فارم للادوية",
+      "hotline": "19321"
+    },
+    {
+      "id": "90c0c9fa-8347-48f1-a50f-af4e69aa2407",
+      "enName": "Chepsy",
+      "arName": "شيبسي للصناعات الغذائية",
+      "hotline": "19063"
+    },
+    {
+      "id": "3c45c574-e69a-4170-b9f4-f36505ab7e03",
+      "enName": "Chicken Tikka",
+      "arName": "دجاج تكا",
+      "hotline": "19099"
+    },
+    {
+      "id": "c9f48c45-f585-4b27-9af5-ccbe8a4a22fe",
+      "enName": "Children's Cancer Hospital Foundation (57357)",
+      "arName": "مستشفي سرطان الاطفال (57357)",
+      "hotline": "19057"
+    },
+    {
+      "id": "d87399e5-92f6-4b32-8e28-38e074c1a289",
+      "enName": "Chili's",
+      "arName": "تشيليز",
+      "hotline": "19002"
+    },
+    {
+      "id": "9cb1aff0-8b92-48df-8019-3eec9bad1c5b",
+      "enName": "City Cab",
+      "arName": "سيتي كاب",
+      "hotline": "16516"
+    },
+    {
+      "id": "be9e6c38-3ec8-489e-ad7d-24c6f70bd440",
+      "enName": "City Trade",
+      "arName": "سيتي تريد للاوراق المالية",
+      "hotline": "19171"
+    },
+    {
+      "id": "0b0de8ca-92c6-4cfd-9024-2c0c672e6de2",
+      "enName": "Cityscape Mall",
+      "arName": "مول سيتي سكيب",
+      "hotline": "19636"
+    },
+    {
+      "id": "ba7113fc-b501-4812-bca9-39889a5aca18",
+      "enName": "Coca Cola",
+      "arName": "كوكاكولا",
+      "hotline": "19494"
+    },
+    {
+      "id": "470c1783-a4f3-4c01-80d4-99bd7fda258a",
+      "enName": "Coca Cola (Information System Lab)",
+      "arName": "المعمل الفني لنظم معلومات كوكاكولا الفني",
+      "hotline": "19393"
+    },
+    {
+      "id": "b6234d5d-2ec5-496e-9fa4-f70eaa131217",
+      "enName": "Coldwell Banker (New Homes)",
+      "arName": "كولدويل بانكر مصر (نيو هومز) ",
+      "hotline": "19958"
+    },
+    {
+      "id": "ccea032b-81dc-4aab-b52e-b30e177082c8",
+      "enName": "Comex Home Appliances",
+      "arName": "كوميكس للأدوات المنزلية",
+      "hotline": "19157"
+    },
+    {
+      "id": "126db841-c6cb-4f38-9459-d59c666a8e40",
+      "enName": "Commercial International Bank (CIB)",
+      "arName": "البنك التجاري الدولي (سي اي بي)",
+      "hotline": "19666"
+    },
+    {
+      "id": "3f263163-32c4-4de0-8786-891057911dcc",
+      "enName": "Commercial International Life Insurance (CIL)",
+      "arName": "التأمين الدولي للتامين علي الحياة (سي اي ال)",
+      "hotline": "16245"
+    },
+    {
+      "id": "63305b8f-dfe3-45ea-8985-ce39707534aa",
+      "enName": "Complaints Of Water, Sanitary Drainage And E Electricity Services Giza",
+      "arName": " شكاوى خدمات مياه الشرب والصرف الصحى والكهرباء بمحافظة الجيزة",
+      "hotline": "154"
+    },
+    {
+      "id": "49ecc43c-a3c0-49fe-a5e2-fda5bbee45c2",
+      "enName": "CompuMe",
+      "arName": "كمبيومي",
+      "hotline": "19127"
+    },
+    {
+      "id": "11af50d3-1977-4fff-83e7-d89c9f2c35f0",
+      "enName": "Concord Travel Agents",
+      "arName": "كونكورد لخدمات السفر",
+      "hotline": "19165"
+    },
+    {
+      "id": "9e13d65f-531f-44b2-8b35-fedb0288ed6b",
+      "enName": "Connect Co. (Samsung)",
+      "arName": "كونيكت (سامسونج)",
+      "hotline": "16280"
+    },
+    {
+      "id": "b3861dd3-ff2c-4f12-80c0-25ebd7a1bfeb",
+      "enName": "Consumer Protection Agency",
+      "arName": "جهاز حماية المستهلك لتلقي الشكاوي",
+      "hotline": "19588"
+    },
+    {
+      "id": "c7ae1be1-9103-4e01-af14-ecf9dab113dc",
+      "enName": "Contact Car",
+      "arName": "كونتكت لتجارة السيارات",
+      "hotline": "16177"
+    },
+    {
+      "id": "4ad986d0-f6bc-4916-89b3-9a7c6aab2fd8",
+      "enName": "Contact Group Water & Fire Proofing",
+      "arName": "كونتكت جروب لمكافحة الحريق وتسرب المياه",
+      "hotline": "16765"
+    },
+    {
+      "id": "c736855f-07b9-43c6-b356-25ec44c0c792",
+      "enName": "Cook Door",
+      "arName": "كوك دور",
+      "hotline": "16999"
+    },
+    {
+      "id": "698ce229-e827-489e-b4a1-5e4d33001b72",
+      "enName": "Cooker Cylinders Complaints",
+      "arName": "شكاوى اسطوانات البوتاجاز",
+      "hotline": "19096"
+    },
+    {
+      "id": "f42f5d86-d686-42b0-83b0-415f65d75f40",
+      "enName": "Corner Grill Maadi",
+      "arName": "كورنر جريل المعادي",
+      "hotline": "19442"
+    },
+    {
+      "id": "8594a8bb-29a3-4512-9c00-39a3b554ac4b",
+      "enName": "CorpLease",
+      "arName": "شركة كوربليس للتأجير التمويلي",
+      "hotline": "19490"
+    },
+    {
+      "id": "e9a910ff-b137-47d9-a7c7-6e66abf2356d",
+      "enName": "Cottonil Vega",
+      "arName": "قوطونيل فيجا",
+      "hotline": "16199"
+    },
+    {
+      "id": "df3bbaa6-af60-4f0c-9775-bbeb5f510f97",
+      "enName": "Credit Agricole Egypt",
+      "arName": " كريدي اجريكول مصر",
+      "hotline": "19191"
+    },
+    {
+      "id": "b2578d2e-8161-4b46-b117-570d41951efa",
+      "enName": "Credit Agricole Egypt",
+      "arName": "بنك كريدى اجريكول مصر",
+      "hotline": "19077"
+    },
+    {
+      "id": "191fc8b1-5971-4124-8c4a-322b7831b238",
+      "enName": "Crisis Management Department (Ministry of Education)",
+      "arName": "ادارة الازمات والكوارث بالادارة التعليمية (وزارة التربية والتعليم)",
+      "hotline": "19151"
+    },
+    {
+      "id": "6d63b386-5865-4758-8587-6c73a2d648ab",
+      "enName": "Daihatsu Misr",
+      "arName": "دايهاتسو مصر",
+      "hotline": "16168"
+    },
+    {
+      "id": "59833a49-5a3f-4187-bba3-0cfdceca8c27",
+      "enName": "Dar Al Orman Association",
+      "arName": "جمعية دار الاورمان",
+      "hotline": "19455"
+    },
+    {
+      "id": "bad4b5fb-b356-4e34-83c2-e53d8c50f235",
+      "enName": "Dar El Omran Development & Project Management",
+      "arName": "دار العمران للتنمية وادارة المشروعات",
+      "hotline": "16051"
+    },
+    {
+      "id": "9928a577-cb92-4491-b9a0-ef1d2fc68a96",
+      "enName": "Data Center Network Governorate of Cairo",
+      "arName": "مركز معلومات الشبكات لمحافظة القاهرة",
+      "hotline": "19895"
+    },
+    {
+      "id": "9581f330-0b0a-4cdb-ba33-2c3af13d8346",
+      "enName": "Dawaa Pharmacy",
+      "arName": "صيدلية دواء",
+      "hotline": "19870"
+    },
+    {
+      "id": "fb714519-9a41-4055-bf19-53ba2edfacd2",
+      "enName": "Degla Group Memaar Al Morshedy ",
+      "arName": "دجلا للاستثمار معمار المرشدي",
+      "hotline": "19086"
+    },
+    {
+      "id": "14e269a8-f8d0-4666-bc59-f9f24a986ba9",
+      "enName": "Delmar & Attallah Pharmacies",
+      "arName": "صيدليات دلمار وعطا الله",
+      "hotline": "19955"
+    },
+    {
+      "id": "91eba911-d2f5-4afb-974b-d4098dfe5f82",
+      "enName": "Delta Construction & Rebuilding",
+      "arName": "دلتا للانشاء والتعمير",
+      "hotline": "19331"
+    },
+    {
+      "id": "3608f7ed-b04d-4756-8bd8-54014055e3b1",
+      "enName": "Delta Insurance",
+      "arName": "الدلتا للتأمين",
+      "hotline": "16154"
+    },
+    {
+      "id": "e9ff97f1-8832-4a47-8268-df27b1e75c8b",
+      "enName": "Deraya Co. Sales Outsourcing",
+      "arName": "شركة دراية للمبيعات بمصادر خارجية",
+      "hotline": "16401"
+    },
+    {
+      "id": "7c373c86-fd38-43f9-b00e-233b86df0c93",
+      "enName": "Deraya Marketing Consultants",
+      "arName": "ديراية استشاريون تسويق ",
+      "hotline": "16301"
+    },
+    {
+      "id": "72e7cc1f-b101-4024-a3e9-633e254dc149",
+      "enName": "Development & Engineering Consultants",
+      "arName": "التعمير والاستشارات الهندسية",
+      "hotline": "19908"
+    },
+    {
+      "id": "91d45b7d-d047-4455-a2c1-3641cc2faf11",
+      "enName": "DHL",
+      "arName": "دي اتش ال",
+      "hotline": "16345"
+    },
+    {
+      "id": "55a04e52-2f0b-4860-9501-71110512c925",
+      "enName": "DHL",
+      "arName": "دي اتش ال",
+      "hotline": "19633"
+    },
+    {
+      "id": "fcd26432-d4e5-4718-afd2-5d10a3d6a6d6",
+      "enName": "Didos Al Dente",
+      "arName": "ديدوز ال دينتى ",
+      "hotline": "16414"
+    },
+    {
+      "id": "aa1a62d7-a5ac-47ed-9f24-0747da6366a2",
+      "enName": "Direct Broker For Securities (AL Wasset Almobasher)",
+      "arName": "الوسيط المباشر لتداول الاوراق المالية",
+      "hotline": "16699"
+    },
+    {
+      "id": "cbdb9f3b-04e2-4ca0-b75f-840cfa059ca3",
+      "enName": "Directory Assistance – International",
+      "arName": "خدمة دليل التليفون - دولي",
+      "hotline": "144"
+    },
+    {
+      "id": "358ea722-2e23-4fdf-ba19-44cfce8a5266",
+      "enName": "Domino's Pizza",
+      "arName": "بيتزا دومينوز",
+      "hotline": "19223"
+    },
+    {
+      "id": "7ef08d75-6434-404e-ba1d-7e3592f9de63",
+      "enName": "Dorra Real Estate",
+      "arName": "درة للاستثمار العقاري",
+      "hotline": "16077"
+    },
+    {
+      "id": "66493875-2f90-481d-b723-083f8fbeda9e",
+      "enName": "Dr. Mariam Pharmacy",
+      "arName": "صيدلية دكتورة مريم",
+      "hotline": "16321"
+    },
+    {
+      "id": "e09ca945-df06-40de-9811-ae039aa6d599",
+      "enName": "Dr. Marwa Hosny Pharmacy",
+      "arName": "صيدلية دكتورة مروة حسني",
+      "hotline": "19252"
+    },
+    {
+      "id": "473c554f-5e77-45a4-8990-9365ea8efff7",
+      "enName": "Dr. Rania Pharmacy",
+      "arName": "صيدلية الدكتورة رانيا",
+      "hotline": "19161"
+    },
+    {
+      "id": "f5907881-b1e2-48dd-aa77-79b4895f0c39",
+      "enName": "Dream Land",
+      "arName": "دريم لاند",
+      "hotline": "19355"
+    },
+    {
+      "id": "0a9a97b7-0141-4ac4-87ad-542d53340195",
+      "enName": "Drinkie's",
+      "arName": "درنكيز",
+      "hotline": "19330"
+    },
+    {
+      "id": "87164c34-d237-415e-9d72-da417554b938",
+      "enName": "Duravit",
+      "arName": "ديورفيت",
+      "hotline": "19219"
+    },
+    {
+      "id": "c01d9ec7-ac5a-41ae-b63c-c91628c6a881",
+      "enName": "Easy Care Beauty",
+      "arName": "ايزي كير بيوتي",
+      "hotline": "19340"
+    },
+    {
+      "id": "5aa59f42-65fe-4851-81c5-0821ac01e985",
+      "enName": "Edrak Homes",
+      "arName": "ادراك هومز",
+      "hotline": "16501"
+    },
+    {
+      "id": "10e18c9a-83f2-4e56-969a-1d55f496ed32",
+      "enName": "EFG Hermes Holding",
+      "arName": "المجموعة المالية هيرمس القابضة",
+      "hotline": "16900"
+    },
+    {
+      "id": "4f5f2c68-a5fb-4103-839a-7950c8f1329d",
+      "enName": "E-Finance Payment & Collection Center Ministry of Finance",
+      "arName": "اي فاينينس مركز الدفع والتحصيل لوزارة المالية",
+      "hotline": "19680"
+    },
+    {
+      "id": "3def5c2b-55d9-4cbc-a85d-a29422b496fb",
+      "enName": "Egypt Co. for Data Transmission (TEData)",
+      "arName": "تى اى داتا - الشركة المصرية لنقل البيانات",
+      "hotline": "19777"
+    },
+    {
+      "id": "65a4429b-2953-4ac1-b840-58277b2d74e4",
+      "enName": "Egypt Electronics (White Whale)",
+      "arName": "مصر للالكترونيات (وايت ويل)",
+      "hotline": "19118"
+    },
+    {
+      "id": "a073475e-44db-4fa5-ab6f-bd446eedc35d",
+      "enName": "Egypt For Trading & Engineering (ETE)",
+      "arName": "مصر للتجارة والهندسة",
+      "hotline": "19383"
+    },
+    {
+      "id": "d8287783-b647-47d5-8798-bb00b0d136f8",
+      "enName": "Egypt Network",
+      "arName": "الشبكة المصرية للانترنت",
+      "hotline": "19350"
+    },
+    {
+      "id": "a867202d-0628-41cc-b01b-fee0d66ab49d",
+      "enName": "Egypt Post",
+      "arName": "البريد المصري ",
+      "hotline": "16789"
+    },
+    {
+      "id": "113564f2-1c0e-40ba-a553-557333b4ac9e",
+      "enName": "Egypt Real Estate Marketing & Projects Management (ERA)",
+      "arName": "عقار مصر للتسويق العقارى وادارة المشروعات",
+      "hotline": "16372"
+    },
+    {
+      "id": "7141b113-1294-439b-8d50-7d579b8981fc",
+      "enName": "Egyptian American Automotive (Ford, Lincoln)",
+      "arName": "المصري الامريكي للسيارات (فورد، لينكولن)",
+      "hotline": "19590"
+    },
+    {
+      "id": "737335b0-2fc3-4e18-83f5-e54d268ee20a",
+      "enName": "Egyptian Arab Company For Modern Building and Construction",
+      "arName": "المصرية العربية للمباني الحديثة والتعمير",
+      "hotline": "19513"
+    },
+    {
+      "id": "414e1d77-e880-44ea-a00c-6aa0abaa314a",
+      "enName": "Egyptian Arab Land bank",
+      "arName": "البنك العقاري المصري العربي",
+      "hotline": "19939"
+    },
+    {
+      "id": "c0f986de-2a1b-4d94-bc53-8c7b8bcf2c32",
+      "enName": "Egyptian Arabian Themar Securities Brokerage - EAC",
+      "arName": "المصرية العربية ثمار لتداول الاوراق المالية",
+      "hotline": "19535"
+    },
+    {
+      "id": "befc2a36-e88f-4ea2-82ee-bd6cb052e5cd",
+      "enName": "Egyptian Automotive & Trading Co. (EATC)",
+      "arName": "الشركة المصرية التجارية واوتوموتيف(اى ايه تى سى)",
+      "hotline": "19525"
+    },
+    {
+      "id": "2e805e69-1f99-4088-a6da-3503a159a82d",
+      "enName": "Egyptian Banks Co. For Technological Advancement (EBC)",
+      "arName": "شركة بنوك مصر للتقدم التكنولوجى - اى بى سى",
+      "hotline": "16263"
+    },
+    {
+      "id": "c1abc01b-69b7-45ed-92ac-fa5dbfd9ce62",
+      "enName": "Egyptian Co. For Appliances Maintenance (Sianco)",
+      "arName": "الشركة المصرية لصيانة الاجهزة (صيانكو)",
+      "hotline": "19994"
+    },
+    {
+      "id": "bbd7fa23-0fee-4e01-aa98-3e595c70853a",
+      "enName": "Egyptian Co. For Digital Services (ART)",
+      "arName": " الشركة المصرية للخدمات الرقمية (ايه ار تى)",
+      "hotline": "19300"
+    },
+    {
+      "id": "694776da-360a-4a45-b1a0-d184e3f10964",
+      "enName": "Egyptian Co. For Modern Restaurant Management",
+      "arName": "الشركة المصرية لادارة المطاعم الحديثة",
+      "hotline": "19303"
+    },
+    {
+      "id": "cf956a67-8ee8-469b-86dc-15d9882547c9",
+      "enName": "Egyptian Co. For Processing Meat (El Lehemy)",
+      "arName": "المصرية لتصنيع وتجهيز اللحوم (اللحيمي)",
+      "hotline": "16618"
+    },
+    {
+      "id": "a141b8a0-579e-45ca-add0-63f87dfc3b5a",
+      "enName": "Egyptian Company For Construction & Tourism Development",
+      "arName": "المصرية للانشاءات والتنمية السياحية",
+      "hotline": "16319"
+    },
+    {
+      "id": "5d2f2160-9ab9-4559-af57-4b543c7d8880",
+      "enName": "Egyptian Company for Foreign Trade",
+      "arName": "مصر للتجارة الخارجية",
+      "hotline": "19810"
+    },
+    {
+      "id": "b8d35745-de3c-449c-bcde-156ef65afb7a",
+      "enName": "Egyptian Engineering Real Estate Development and Investment",
+      "arName": "المصرية الهندسية للتنمية والاستثمار العقاري",
+      "hotline": "19474"
+    },
+    {
+      "id": "4708a377-2617-44c3-8a3c-688834a25b68",
+      "enName": "Egyptian Environmental Affairs Agency",
+      "arName": "جهاز شئون البيئة",
+      "hotline": "19808"
+    },
+    {
+      "id": "624af197-66ac-4d87-a03e-5fc077594f06",
+      "enName": "Egyptian Food Bank",
+      "arName": "بنك الطعام المصري",
+      "hotline": "16060"
+    },
+    {
+      "id": "05392b90-f19f-4d55-947d-5463f2bb6398",
+      "enName": "Egyptian Furniture Co. (In & Out)",
+      "arName": "الشركة المصرية للاثاث (ان اند اوت)",
+      "hotline": "16663"
+    },
+    {
+      "id": "2b4be4bd-acbf-4c37-951e-e762b27bdf80",
+      "enName": "Egyptian German Co. For Construction Industries ",
+      "arName": "المصرية الالمانية للصناعات الانشائية",
+      "hotline": "19678"
+    },
+    {
+      "id": "c121a5b4-aab0-45b5-8a35-857c79be32be",
+      "enName": "Egyptian German For Construction Industries ",
+      "arName": "المصرية الالمانية للصناعات الانشائية",
+      "hotline": "19578"
+    },
+    {
+      "id": "52594706-ecd0-4795-8183-04c6ecd1d60c",
+      "enName": "Egyptian Government Portal",
+      "arName": "بوابة الحكومة المصرية",
+      "hotline": "19468"
+    },
+    {
+      "id": "e9e16743-bd54-4ba8-b8fc-d59d05345d81",
+      "enName": "Egyptian Gulf Bank",
+      "arName": "البنك المصري الخليجي",
+      "hotline": "19342"
+    },
+    {
+      "id": "15c3a233-ad90-4015-a5e3-269cd6d442a0",
+      "enName": "Egyptian Health Line",
+      "arName": "خط صحة المصرين",
+      "hotline": "19790"
+    },
+    {
+      "id": "ce1022db-9226-47b6-b3d9-5374e0be876c",
+      "enName": "Egyptian Housing Finance Co.",
+      "arName": "الشركة المصرية للتمويل العقاري",
+      "hotline": "19432"
+    },
+    {
+      "id": "ca998362-644b-4353-ac5d-cf4acd1e3b70",
+      "enName": "Egyptian International Beverage Co. (Cheers)",
+      "arName": "الشركة المصرية الدولية للمشروبات (تشيرز)",
+      "hotline": "19131"
+    },
+    {
+      "id": "2a6818a3-f3c6-407d-aacc-263e2c04d2b0",
+      "enName": "Egyptian International Motors (Renault)",
+      "arName": "الشركة المصرية العالمية للسيارات (رينو)",
+      "hotline": "16202"
+    },
+    {
+      "id": "19f422da-7b7f-4ba5-a17d-2e55eefdac92",
+      "enName": "Egyptian International Trading & Agencies - EIT (Kia)",
+      "arName": "الشركة المصرية العالمية للتجارة والتوكيلات - اى اى تى (كيا)",
+      "hotline": "19542"
+    },
+    {
+      "id": "84dd724d-d75a-40a5-81e4-5aca3d3765a1",
+      "enName": "Egyptian Media Production City (EMPC)",
+      "arName": "مدينة الانتاج الاعلامي",
+      "hotline": "16680"
+    },
+    {
+      "id": "b59a5513-f09f-40ea-af57-b54847e29f59",
+      "enName": "Egyptian National Insurance",
+      "arName": "التأمين الاهلية المصرية",
+      "hotline": "19446"
+    },
+    {
+      "id": "8fe097af-c7b1-410f-8821-bc53eb1f096e",
+      "enName": "Egyptian Nile For Tourism",
+      "arName": "النيل المصرية للسياحة",
+      "hotline": "19740"
+    },
+    {
+      "id": "c71c9b4b-e0ed-46f9-ad25-34e0ed8d1b15",
+      "enName": "Egyptian Promoters Center For Pharmaceuticals",
+      "arName": "مركز التنشيط المصري للأدوية",
+      "hotline": "16311"
+    },
+    {
+      "id": "46ed9caa-f966-498d-839b-f205926ca1cd",
+      "enName": "Egyptian Resorts Company",
+      "arName": "المصرية للمنتجعات السياحية",
+      "hotline": "19372"
+    },
+    {
+      "id": "12b052fb-96d9-4509-b5ba-4a8f72d63e2d",
+      "enName": "Egypt's Daughter Association",
+      "arName": "جمعية بنت مصر الخيرية",
+      "hotline": "19405"
+    },
+    {
+      "id": "852198d1-43d5-46ae-bc71-4e5286520088",
+      "enName": "Eid Labeb Group",
+      "arName": "مجموعة شركات عيد لبيب",
+      "hotline": "19064"
+    },
+    {
+      "id": "6fe67895-b65e-404e-8d1e-b2919cf0432e",
+      "enName": "Eimc Pharmaceuticals",
+      "arName": "ايمك للادوية",
+      "hotline": "19956"
+    },
+    {
+      "id": "b23988ea-d7f1-42cc-a7fb-45fc568fedc9",
+      "enName": "El Abd Group ",
+      "arName": "العبد جروب",
+      "hotline": "19595"
+    },
+    {
+      "id": "fca7bc80-9c32-4664-b18d-5a3d451cae2c",
+      "enName": "El Ahram For Aluminum Industry",
+      "arName": "الاهرام لصناعة الالومنيوم",
+      "hotline": "19631"
+    },
+    {
+      "id": "5ad6a51f-79cc-40b2-b65f-edce27ad62eb",
+      "enName": "El Araby Group For Trade and Industry",
+      "arName": "مجموعة العربي",
+      "hotline": "16525"
+    },
+    {
+      "id": "c85404ec-67ff-443c-a4b3-284da2690218",
+      "enName": "El Awael IT House",
+      "arName": "الاوائل للبرمجيات ",
+      "hotline": "19001"
+    },
+    {
+      "id": "e9745951-1715-4b5e-912f-0150f6c660a8",
+      "enName": "El Dawar",
+      "arName": "مطاعم الدوار",
+      "hotline": "16603"
+    },
+    {
+      "id": "fc417432-0ad9-4fef-8195-ed76ba060ff4",
+      "enName": "El Domiaty Patisserie",
+      "arName": "حلويات الدمياطى",
+      "hotline": "19366"
+    },
+    {
+      "id": "16d6a9f0-1b2f-4d1f-8de1-4a2264b44021",
+      "enName": "El Eshara House",
+      "arName": "دار الاشارة",
+      "hotline": "19136"
+    },
+    {
+      "id": "2fec4eec-16b2-48c3-a3b5-34c863f7fcfb",
+      "enName": "El Ezaby Pharmacies",
+      "arName": "صيدليات العزبي",
+      "hotline": "19600"
+    },
+    {
+      "id": "085663cd-abb2-49e1-b80c-16c3419661bd",
+      "enName": "El Fath Co. For Food Stuff - Al Arosa Tea",
+      "arName": "الفتح للصناعات الغذائية (شاي العروسة)",
+      "hotline": "19504"
+    },
+    {
+      "id": "5e008fff-d272-4d0a-b881-309619ce1a53",
+      "enName": "El Fouad El Alameya For Air Condition & Trade",
+      "arName": "الفؤاد العالمية لاعمال للتكييف والتجارة",
+      "hotline": "19128"
+    },
+    {
+      "id": "aad959a0-40d1-44fb-89f7-ee240152decc",
+      "enName": "El Futtaim Group For Real Estate",
+      "arName": "مجموعة الفطيم العقارية",
+      "hotline": "16761"
+    },
+    {
+      "id": "eb1b75e7-ebdd-4277-aa5e-3b7554c469dc",
+      "enName": "El Futtaim Misr For Development, Real Estate & Touristic Investment",
+      "arName": "الفطيم مصر للتنمية والاستثمار العقاري والسياحي",
+      "hotline": "16719"
+    },
+    {
+      "id": "36412e9a-7d7d-4ec6-b742-5f170fe29ba1",
+      "enName": "El Gazeera Academy",
+      "arName": "اكاديمية الجزيرة",
+      "hotline": "19804"
+    },
+    {
+      "id": "f958e5dc-1b79-4e7f-b7e4-a4481a0802e7",
+      "enName": "EL Gezera Club 6th Of October",
+      "arName": "نادي الجزيرة 6 اكتوبر",
+      "hotline": "16073"
+    },
+    {
+      "id": "d8260a73-20ff-4cc5-af9c-3a730276d086",
+      "enName": "EL Ghaba Sport Club",
+      "arName": "نادى الغابة",
+      "hotline": "19234"
+    },
+    {
+      "id": "ed13395d-aec4-4036-a826-f14e52f4f962",
+      "enName": "El Gouna &Taba Heights (Reservation)",
+      "arName": "منتجع الجونة ومرتفعات طابا (حجوزات)",
+      "hotline": "16444"
+    },
+    {
+      "id": "ebf126ce-3953-4669-8783-8d2a196ea400",
+      "enName": "El Hegaz Misr For Real Estate",
+      "arName": "الحجاز مصر  للعقارات",
+      "hotline": "16056"
+    },
+    {
+      "id": "7c0b98c7-213d-4369-84c0-6378baa229d7",
+      "enName": "El Helal & Golden Star For House Holds",
+      "arName": "مجموعة شركات الهلال والنجمة الذهبية",
+      "hotline": "19205"
+    },
+    {
+      "id": "74fc3dee-9d29-446d-bc99-2099417aa7f7",
+      "enName": "El Kamouny For Agriculture Machines & Cars",
+      "arName": "الكموني للسيارات و الالات الزراعية",
+      "hotline": "16227"
+    },
+    {
+      "id": "a290ae0a-df64-419b-a35b-80e2de21dbd5",
+      "enName": "El Khalig El Nasery Sanitaryware",
+      "arName": "الخليج الناصرللىسباكة والادوات الصحية",
+      "hotline": "16575"
+    },
+    {
+      "id": "7dac018c-c830-4908-97e5-f26324c1d7c9",
+      "enName": "El Leithy Pharmacies",
+      "arName": "صيدليات الليثي",
+      "hotline": "19008"
+    },
+    {
+      "id": "839830fd-1a18-48fd-a724-41397be5a279",
+      "enName": "El Madain Real Estate",
+      "arName": "المدائن العقارية",
+      "hotline": "19166"
+    },
+    {
+      "id": "d07d8ee3-1882-43a7-bb69-2ad60b6feaa7",
+      "enName": "El Malky",
+      "arName": "المالكي",
+      "hotline": "19017"
+    },
+    {
+      "id": "f8ce733e-78d5-4ab4-8c60-14f232d95ee3",
+      "enName": "El Maseya For Rebars Trading ",
+      "arName": "الماسية لتجارة الحديد والتسليح",
+      "hotline": "16150"
+    },
+    {
+      "id": "8a75216b-e291-41b7-ac37-97cfbebb9b61",
+      "enName": "El Masria For Information Technology Services (VAS)",
+      "arName": "المصرية لخدمات تكنولوجيا المعلومات ذات القيمة المضافة (فاس)",
+      "hotline": "19827"
+    },
+    {
+      "id": "050a59ca-4800-4e90-80a9-b78cd1577165",
+      "enName": "El Mohandess Automotive (Kia & Renault)",
+      "arName": "شركة المهندس للسيارات لتوزيع كيا ورينو",
+      "hotline": "19198"
+    },
+    {
+      "id": "6821dbc3-6c6a-42ce-a1e2-14f98efa0421",
+      "enName": "El Mondo Restaurant & Sky Lounge",
+      "arName": "مطعم الموندو وسكاى لونج",
+      "hotline": "19412"
+    },
+    {
+      "id": "5199e67b-7425-4f2b-9d9a-3446f1b0d93e",
+      "enName": "El Omran for Construction and Building",
+      "arName": "العمران للبناء والتشييد",
+      "hotline": "19062"
+    },
+    {
+      "id": "c536dd82-fad3-4ed9-a72a-95bb40cc3b0b",
+      "enName": "El Rowad Real Estate",
+      "arName": "الرواد للانشاء والتعمير",
+      "hotline": "19211"
+    },
+    {
+      "id": "9cd24a9b-4a38-426a-8fd4-42f18611574f",
+      "enName": "El Sallab",
+      "arName": "السلاب",
+      "hotline": "19075"
+    },
+    {
+      "id": "5d9766c7-2b1c-4a9a-83ac-7fbe4aa1d6ee",
+      "enName": "El Sallab",
+      "arName": "السلاب",
+      "hotline": "19904"
+    },
+    {
+      "id": "639a7b06-60fd-462c-9697-f93b81315c6c",
+      "enName": "El Sedawy Pharmacies",
+      "arName": "صيدلية السداوي",
+      "hotline": "19930"
+    },
+    {
+      "id": "c547ff85-6746-47d6-ab4f-4622dab310dc",
+      "enName": "El Sewedy Electric",
+      "arName": "السويدي اليكتريك",
+      "hotline": "19159"
+    },
+    {
+      "id": "fb632ded-7654-4df9-9112-d33a91737a28",
+      "enName": "El Shabrawy",
+      "arName": "الشبراوي",
+      "hotline": "16919"
+    },
+    {
+      "id": "baa83a96-130e-4b80-8976-b68ff18b4353",
+      "enName": "EL Shams Real Estate",
+      "arName": "الشمس للتسويق العقاري",
+      "hotline": "16993"
+    },
+    {
+      "id": "cf710fd6-daee-4a95-8919-4873765e4cfa",
+      "enName": "El Sherouk Academy",
+      "arName": "اكاديمية الشروق",
+      "hotline": "19644"
+    },
+    {
+      "id": "4af1a6d9-128a-4c7b-937d-8181f11e23b5",
+      "enName": "El Sherouk City Authority ",
+      "arName": "جهاز مدينة الشروق",
+      "hotline": "19369"
+    },
+    {
+      "id": "e3ad0e22-2a2b-45de-9cdf-34b3c104a560",
+      "enName": "El Tabie El Domyati ",
+      "arName": "التابعى الدمياطى",
+      "hotline": "19122"
+    },
+    {
+      "id": "362a5557-6af9-461e-bf48-47024851e269",
+      "enName": "El Tabie El Domyati",
+      "arName": "التابعي الدمياطي",
+      "hotline": "16015"
+    },
+    {
+      "id": "66829754-d22e-4c7c-a1a6-f990d35723ff",
+      "enName": "El Tarek For Trade",
+      "arName": "الطارق للتجارة",
+      "hotline": "19850"
+    },
+    {
+      "id": "b59abae1-39f0-419b-8daf-a5d9209819b1",
+      "enName": "El Tawfikia Real Estate",
+      "arName": "التوفيقية للانشاء والتعمير",
+      "hotline": "16109"
+    },
+    {
+      "id": "63ba65e3-f3d7-45e0-938e-e5dfb475c4b2",
+      "enName": "El Wafd Newspaper",
+      "arName": "جريدة الوفد ",
+      "hotline": "19614"
+    },
+    {
+      "id": "1f543de5-e243-49f6-a5ab-da4648b76c24",
+      "enName": "El Waseet Newspaper",
+      "arName": "جريدة الوسيط",
+      "hotline": "19919"
+    },
+    {
+      "id": "dac46bc4-25a6-455a-a594-d0ff8f7aa33a",
+      "enName": "Electricity Complaints",
+      "arName": "شكاوي الكهرباء",
+      "hotline": "121"
+    },
+    {
+      "id": "31fad517-22d7-4814-8088-4d6156267353",
+      "enName": "Electrostar For Engineering Industries ",
+      "arName": "الكتروستار للصناعات الهندسية",
+      "hotline": "16505"
+    },
+    {
+      "id": "0dd9b4ef-a879-411c-8b84-f5409dabf410",
+      "enName": "Emaar Misr For Development",
+      "arName": "اعمار مصر للتنمية",
+      "hotline": "16116"
+    },
+    {
+      "id": "7bc447ae-35f2-4336-b2de-62f7b000bdfc",
+      "enName": "Emirate Airlines",
+      "arName": "طيران الامارات",
+      "hotline": "19899"
+    },
+    {
+      "id": "61c80b24-f0ea-47ca-850f-1b6b4abc0b81",
+      "enName": "Enayah Pharmacy",
+      "arName": "صيدلية عناية",
+      "hotline": "19612"
+    },
+    {
+      "id": "55f5c38f-5fa3-49f3-9ab7-8d938db2ffca",
+      "enName": "Engineering Company for Electrical Heaters",
+      "arName": "الشركة الهندسية للسخانات الكهربائية",
+      "hotline": "19596"
+    },
+    {
+      "id": "df29c8d2-8019-4d57-95bb-2ea666dac068",
+      "enName": "Era Urban Development",
+      "arName": "شركة ايرا للتنميه العمرانية",
+      "hotline": "19503"
+    },
+    {
+      "id": "66a3190a-989b-44b3-abec-6c00c2535a6a",
+      "enName": "Eskimo Air Condition",
+      "arName": "اسكيمو للتكيف والتبريد",
+      "hotline": "19512"
+    },
+    {
+      "id": "fd187a8c-881c-4b1b-9316-b164fe94835a",
+      "enName": "Esta House Industries Co.",
+      "arName": "ايستهاوس للصناعات",
+      "hotline": "16141"
+    },
+    {
+      "id": "2312dc7f-1ff7-4db4-bed1-46414eb5b6f0",
+      "enName": "Etisalat Data   ",
+      "arName": "اتصالات - داتا",
+      "hotline": "16337"
+    },
+    {
+      "id": "da0beda4-1923-479b-8230-2bde58f18603",
+      "enName": "Etisalat ISP",
+      "arName": "اتصالات - انترنت ",
+      "hotline": "19150"
+    },
+    {
+      "id": "0fa81d25-1770-4f85-8553-c0661e367283",
+      "enName": "Evergreen Compound",
+      "arName": "مجمع ايفر جرين",
+      "hotline": "16998"
+    },
+    {
+      "id": "2a2b410e-f453-4a0e-a4b3-c58b56ef4b4c",
+      "enName": "Eye Specialty Center (ESC)",
+      "arName": "المركز التخصصى للعيون (اى اس سى)",
+      "hotline": "19980"
+    },
+    {
+      "id": "0c6f4404-f0e1-4f9b-99d9-9b020bf8ffee",
+      "enName": "Fantazia",
+      "arName": "قرية فانتزيا",
+      "hotline": "19981"
+    },
+    {
+      "id": "a81107eb-2611-45a2-b4f3-0cd560d86a45",
+      "enName": "Fast Call (Taxi Service)",
+      "arName": "فاست كوول (تاكسي)",
+      "hotline": "19559"
+    },
+    {
+      "id": "bec66d30-962b-4f4d-b3b7-65a09053b1b8",
+      "enName": "Fawzy AL Banan",
+      "arName": "فوزي البنان لتجارة البن",
+      "hotline": "19005"
+    },
+    {
+      "id": "c6cdfdc5-efaf-4d9e-b8a6-31164b120170",
+      "enName": "Fedex Shipping",
+      "arName": "فيديكس",
+      "hotline": "19985"
+    },
+    {
+      "id": "fd5a2dd5-62a4-405a-ba8c-c4d099148002",
+      "enName": "Fire Department",
+      "arName": "المطافي",
+      "hotline": "180"
+    },
+    {
+      "id": "67bf5b7d-ae79-4e27-aa5e-38643f2db4e3",
+      "enName": "Fire Department (Armed Forces)",
+      "arName": "ادارة الاطفاء (القوات المسلحة)",
+      "hotline": "16588"
+    },
+    {
+      "id": "edb3837b-f74f-47fa-9a4f-f85d8bb1a0c3",
+      "enName": "Fitness & Dance Academy (FDA)",
+      "arName": "اكاديمية الرياضة والرقص (اف دي ايه)",
+      "hotline": "19554"
+    },
+    {
+      "id": "5858a327-a3a6-43dc-9097-4aa394a6b44a",
+      "enName": "Fresh Electric",
+      "arName": "فريش للاجهزة المنزلية",
+      "hotline": "19059"
+    },
+    {
+      "id": "6d84a2d0-ea02-4851-8ab8-1a078bff7f61",
+      "enName": "Fresh Electric",
+      "arName": "فريش للاجهزة المنزلية",
+      "hotline": "19880"
+    },
+    {
+      "id": "e11ff506-a206-4044-9efe-d92ae198caec",
+      "enName": "Future University",
+      "arName": "جامعة المستقبل",
+      "hotline": "16383"
+    },
+    {
+      "id": "f868ba53-c8d4-413d-a8c4-8802c8cadebd",
+      "enName": "Future University Dental Hospital",
+      "arName": "مستشفي جامعة المستقبل لطب الفم والاسنان",
+      "hotline": "16384"
+    },
+    {
+      "id": "c3b22136-4dab-4f96-a791-de0c36a5713d",
+      "enName": "Gado Soft Software",
+      "arName": "جادو سوفت سوفتوير",
+      "hotline": "19868"
+    },
+    {
+      "id": "c74cb09e-f863-4ad3-8412-dc95474ac838",
+      "enName": "Gemma Ceramic & Porcelain (Gawhara)",
+      "arName": "الجوهرة للسيراميك والبورسلين",
+      "hotline": "16757"
+    },
+    {
+      "id": "29760f06-fc18-4d8f-9a4b-cdb80f8b3cb4",
+      "enName": "General Authority for Financial Control",
+      "arName": "الهيئة العامة للرقابة المالية",
+      "hotline": "16916"
+    },
+    {
+      "id": "e429b9c4-6d2d-444f-a370-b75299ce62f9",
+      "enName": "General Authority For Health Insurance (Reservation)",
+      "arName": "الهيئة العامة للتأمين الصحي (خدمة حجز دخول الخدمة)",
+      "hotline": "19806"
+    },
+    {
+      "id": "b7471d56-e5c8-4e33-b4cd-c4ec8f07df83",
+      "enName": "General Authority for Investment and Free Zones (GAFI)",
+      "arName": "الهيئة العامة للاستثمار والمناطق الحرة (جافى)",
+      "hotline": "16035"
+    },
+    {
+      "id": "dc0af47d-35bc-41e9-9a08-501d7f3cb41a",
+      "enName": "General Division For Computers & Software (Haseb Le Kol Beit)",
+      "arName": " الشعبة العامة للحاسبات الالية والبرمجيات (حاسب لكل بيت)",
+      "hotline": "19246"
+    },
+    {
+      "id": "31612664-7154-400b-a80e-38af5267b758",
+      "enName": "General Electric For Medical Equipment",
+      "arName": "جنرال اليكتريك للاجهزة الطبية",
+      "hotline": "19434"
+    },
+    {
+      "id": "4039480d-e0d8-4bc5-b747-a8d3922424b0",
+      "enName": "Germo Travel",
+      "arName": "جيرمو للسياحة",
+      "hotline": "19209"
+    },
+    {
+      "id": "948c622a-73ac-406a-8d70-3847fd021b23",
+      "enName": "Gessraha Pharmacy",
+      "arName": "صيدلية جسرها",
+      "hotline": "19403"
+    },
+    {
+      "id": "0d8ac901-7b67-4691-b8a9-663a39535fcb",
+      "enName": "Geyushi Motors",
+      "arName": "جيوشي موتورز",
+      "hotline": "19927"
+    },
+    {
+      "id": "081e888c-c4d8-4b12-81b5-dc6192a98147",
+      "enName": "Ghabbour Auto (GB)",
+      "arName": "غبور اوتو",
+      "hotline": "16101"
+    },
+    {
+      "id": "591bea94-deed-4c2e-81c8-a917b545736b",
+      "enName": "Ghabbour Auto (GB)",
+      "arName": "غبور اوتو",
+      "hotline": "16216"
+    },
+    {
+      "id": "857f87d1-53c1-43ce-bcf2-af5120bbe90d",
+      "enName": "Ghabbour Auto (GB)",
+      "arName": "غبور اوتو",
+      "hotline": "16661"
+    },
+    {
+      "id": "4ad39381-9548-42de-b931-914591bfd12d",
+      "enName": "Ghabbour Auto (GB)",
+      "arName": "غبور اوتو",
+      "hotline": "16670"
+    },
+    {
+      "id": "da007b0b-d148-4ed6-bc96-2d3258210ea5",
+      "enName": "Giza Systems",
+      "arName": "الجيزة للانظمة",
+      "hotline": "16492"
+    },
+    {
+      "id": "a17be866-f973-4b49-95b1-ae37bc9e50b6",
+      "enName": "Global Brands",
+      "arName": "جلوبال براندز",
+      "hotline": "19959"
+    },
+    {
+      "id": "948d3afa-ba86-4ddf-a3ca-eec8b64f2f9e",
+      "enName": "GMC ",
+      "arName": "جى ام سى",
+      "hotline": "19229"
+    },
+    {
+      "id": "42596ca6-2ea2-4a47-b52b-766b0e5da873",
+      "enName": "Go Bus Transport",
+      "arName": "جو باص للنقل البرى",
+      "hotline": "19567"
+    },
+    {
+      "id": "a3ebaa12-b1f8-441c-a890-6a1c90666447",
+      "enName": "Golden For Tourist Villages",
+      "arName": "الذهبية للقري السياحية",
+      "hotline": "19146"
+    },
+    {
+      "id": "2f7e91d1-f510-4b5a-b134-f9cb1e2d7be9",
+      "enName": "Goldi Electronics",
+      "arName": "جولدي للألكترونيات",
+      "hotline": "19877"
+    },
+    {
+      "id": "6e06b100-96be-4ddf-afb8-1aacae944499",
+      "enName": "Green Towers Real Estate Investment",
+      "arName": "جرين تاورز للاستثمار العقاري والسياحي",
+      "hotline": "16178"
+    },
+    {
+      "id": "df01eec1-04ce-42cc-bd7e-b71f4e01fe18",
+      "enName": "Habiba Real Estate",
+      "arName": "حبيبة للعقارات",
+      "hotline": "19887"
+    },
+    {
+      "id": "65d4a76a-f3f9-4dbd-a003-517e53e2b49c",
+      "enName": "Hadramoot",
+      "arName": "مطعم حضرموت",
+      "hotline": "19067"
+    },
+    {
+      "id": "00efbbae-77b5-4990-b417-4e2c79cd3995",
+      "enName": "Halwani Bros",
+      "arName": "حلواني اخوان مصر",
+      "hotline": "19882"
+    },
+    {
+      "id": "6d191d1e-8de5-48d2-8a2a-0d6824a68e57",
+      "enName": "Hardee's",
+      "arName": "هارديز",
+      "hotline": "19066"
+    },
+    {
+      "id": "8f2b14aa-b98e-49f9-852a-52775eb0f37c",
+      "enName": "Hayat For Manufacturing & Development",
+      "arName": "حياة للتصنيع والتنمية",
+      "hotline": "16030"
+    },
+    {
+      "id": "521af0de-1d3e-4b0f-8d0c-c03979863d0d",
+      "enName": "Helwan Brokerage",
+      "arName": "حلوان للسمسرة",
+      "hotline": "19708"
+    },
+    {
+      "id": "3cffb414-84ec-4e6b-8daf-5c1e362857c9",
+      "enName": "Hero Fresh",
+      "arName": "هيرو فريش",
+      "hotline": "19993"
+    },
+    {
+      "id": "4705962e-83ff-40b1-8165-b084f846e6f8",
+      "enName": "Hewedy Motors",
+      "arName": "هويدى موتورز ",
+      "hotline": "19822"
+    },
+    {
+      "id": "5c4e9ebd-151f-4562-8778-cb607577b16a",
+      "enName": "High Technology Systems (Hiteknofal)",
+      "arName": "الانظمة التكنولوجية المتخصصة (هايتكنوفل)",
+      "hotline": "19906"
+    },
+    {
+      "id": "3f70be07-8426-4e89-896f-4c17212dc1a3",
+      "enName": "High Travel Service & High Travel For Mass Transit",
+      "arName": "هاي ترافيل سيرفيس وهاي ترافيل للنقل الجماعي",
+      "hotline": "16108"
+    },
+    {
+      "id": "cb6da95b-8ea4-42a8-9a7c-67d166f0d5b2",
+      "enName": "Higher Technological Institute 10th Of Ramadan City",
+      "arName": "المعهد التكنولوجي العالي بمدينة العاشر من رمضان",
+      "hotline": "19288"
+    },
+    {
+      "id": "9c1d6968-f9b5-40e1-a56d-8d6c22e308da",
+      "enName": "Highway Emergency Service",
+      "arName": "طوارئ الطريق السريع ",
+      "hotline": "136"
+    },
+    {
+      "id": "9f186147-e53c-48d8-95af-2b8908324d3c",
+      "enName": "Hilton Hotel",
+      "arName": "فنادق هيلتون",
+      "hotline": "19009"
+    },
+    {
+      "id": "bd5fd75e-2a5d-42f6-a2ae-b082ea1f7c4b",
+      "enName": "Honda Egypt (Futaimisr)",
+      "arName": "هوندا مصر (الفطيم مصر)",
+      "hotline": "19811"
+    },
+    {
+      "id": "1062277a-2297-4575-9c4b-8e5d543bf00c",
+      "enName": "Horse",
+      "arName": "مجموعة شركات هورس",
+      "hotline": "19025"
+    },
+    {
+      "id": "9e0168a9-80fb-424d-8b13-f7c66c726c20",
+      "enName": "Horse Motors",
+      "arName": "هورس موتورز",
+      "hotline": "19042"
+    },
+    {
+      "id": "0ca9c71f-21a6-4b1b-8602-aa410d850cd6",
+      "enName": "Hotels & Resorts Control Unit Ministry of Tourism",
+      "arName": "قطاع الرقابة علي الفنادق والقري السياحية بوزارة السياحة",
+      "hotline": "19654"
+    },
+    {
+      "id": "728894e9-f6a9-4fa5-8436-0eb5ae11a00e",
+      "enName": "House Pointer",
+      "arName": "هاوس بوينتر",
+      "hotline": "19179"
+    },
+    {
+      "id": "dd01d332-2972-4262-beea-a682aa172246",
+      "enName": "Housing & Development Bank (HDB)",
+      "arName": "بنك التعمير والاسكان",
+      "hotline": "19995"
+    },
+    {
+      "id": "6ff5865b-1e3e-4011-a66a-6f291b7a4879",
+      "enName": "HSBC Bank Egypt",
+      "arName": "بنك اتش.اس.بى.سى مصر",
+      "hotline": "16088"
+    },
+    {
+      "id": "708d7814-d398-4a29-b4e5-683cfd52d094",
+      "enName": "HSBC Bank Egypt",
+      "arName": "بنك اتش.اس.بى.سى مصر",
+      "hotline": "19007"
+    },
+    {
+      "id": "b8c4deac-0a6f-4930-b5c4-933d6dad1303",
+      "enName": "Hyper One",
+      "arName": "هايبر وان",
+      "hotline": "16404"
+    },
+    {
+      "id": "25a09675-46e7-4a26-8321-78787bbfb739",
+      "enName": "I.C. Group - International Center Group",
+      "arName": "اى سى جروب مجموعة المركز العالمى",
+      "hotline": "19551"
+    },
+    {
+      "id": "10a6e394-060a-4d46-a950-5697e9dec538",
+      "enName": "I2 Itsalat International Egypt ",
+      "arName": "اى تو الاتصالات الدولية مصر",
+      "hotline": "19606"
+    },
+    {
+      "id": "f29dd958-92d0-427b-8d33-80c0f3522193",
+      "enName": "Ibn Sina Pharma",
+      "arName": "ابن سينا للادوية",
+      "hotline": "16017"
+    },
+    {
+      "id": "aa5c7a52-3647-4fc3-99c1-f165ad049466",
+      "enName": "Ideal Standard",
+      "arName": "ايديال استاندر",
+      "hotline": "19696"
+    },
+    {
+      "id": "b679d6fe-3e0c-4262-82f0-e66e919c8e62",
+      "enName": "Iemco Group",
+      "arName": "ايمكو جروب",
+      "hotline": "16087"
+    },
+    {
+      "id": "b03c6641-e2ad-4d27-a94c-ee9f292644dd",
+      "enName": "IGI Real Estate",
+      "arName": "اي جي اي العقارية",
+      "hotline": "16120"
+    },
+    {
+      "id": "f71b229f-b9e9-4a2f-b6f6-db24db383d55",
+      "enName": "Imtenan Health Shop",
+      "arName": "امتنان بيت الصحة",
+      "hotline": "16246"
+    },
+    {
+      "id": "4d7f0ae6-74a4-4ae7-a385-8cab28895074",
+      "enName": "Industrial Development & Workers Bank of Egypt",
+      "arName": "بنك التنمية الصناعية والعمال المصري",
+      "hotline": "19320"
+    },
+    {
+      "id": "492d69cd-fcfd-4a6c-9874-7ecf92c9c6f2",
+      "enName": "Info Tech For Information Technology",
+      "arName": "انفوتك لتكنولوجيا المعلومات",
+      "hotline": "16118"
+    },
+    {
+      "id": "82f402fb-463c-46d2-9a14-3e4c4497b067",
+      "enName": "Inshape Clinic",
+      "arName": "المركز المصرى لطب وجراحات التجميل",
+      "hotline": "16322"
+    },
+    {
+      "id": "3ea7b9a4-591e-430f-a7b0-ebe5c7f3037f",
+      "enName": "International Business Systems (IBS)",
+      "arName": "الدولية لانظمة الاعمال (اى بى اس)",
+      "hotline": "19427"
+    },
+    {
+      "id": "7cf97ebf-ee4b-4bd8-9595-ac8857f9e637",
+      "enName": "International Co. For Maintenance & Commercial Agencies",
+      "arName": "الشركة الدولية للصيانة والتوكيلات التجارية",
+      "hotline": "19058"
+    },
+    {
+      "id": "f96975a5-1288-4df7-83d9-cb50db474523",
+      "enName": "International Co. For Maintenance & Commercial Agencies",
+      "arName": "الشركة الدولية للصيانة والتوكيلات التجارية",
+      "hotline": "19089"
+    },
+    {
+      "id": "2c42c5ca-c0f1-40b2-9f14-b9829a2c5086",
+      "enName": "International Co. For Maintenance & Commercial Agencies",
+      "arName": "الشركة الدولية للصيانة والتوكيلات التجارية",
+      "hotline": "19967"
+    },
+    {
+      "id": "2b306814-3bc4-4f61-b9ca-9a5ef1f15b1e",
+      "enName": "International Company For Urban Planning Gabco",
+      "arName": "الشركة العالمية للتخطيط العمراني جابكو",
+      "hotline": "16617"
+    },
+    {
+      "id": "090e889d-03e5-48bd-b112-db22261cb2a8",
+      "enName": "International Electronics (Goldi)",
+      "arName": "العالمية للالكترونيات (جولدى)",
+      "hotline": "19699"
+    },
+    {
+      "id": "84e0785f-a25a-41b8-9a56-0cfef876ab8e",
+      "enName": "International Eye Hospital ",
+      "arName": "مستشفي العيون الدولي",
+      "hotline": "19650"
+    },
+    {
+      "id": "eef068bc-a18d-4960-ab77-24112e4ffbb2",
+      "enName": "International Group for Furniture (At Home)",
+      "arName": "المجموعة العالمية للاثاث (ات هوم)",
+      "hotline": "16848"
+    },
+    {
+      "id": "44f17f87-971a-4ec6-afe1-85d6d86f4f70",
+      "enName": "International Medical Center (IMC)",
+      "arName": "المركز الطبي العالمي",
+      "hotline": "16221"
+    },
+    {
+      "id": "9fd01e24-fa83-4635-acae-840864d3e434",
+      "enName": "International Operator",
+      "arName": "خدمة الهاتف الدولي",
+      "hotline": "120"
+    },
+    {
+      "id": "bfccdcfb-dc66-4da3-981d-e521448c5e7e",
+      "enName": "International Trading Center (ITC)",
+      "arName": "مركز التجارة الدولى (اى تى سى)",
+      "hotline": "19400"
+    },
+    {
+      "id": "78a3e0af-45f7-496c-980c-38b59c443433",
+      "enName": "Internet Misr",
+      "arName": "انترنت مصر",
+      "hotline": "19910"
+    },
+    {
+      "id": "557a6ed5-cb9c-49c9-9f6c-07fbc6c57ee5",
+      "enName": "Iram Jewelry",
+      "arName": "ارم للمجوهرات",
+      "hotline": "19214"
+    },
+    {
+      "id": "37c88502-1455-4096-9f6a-42c6a6afbb65",
+      "enName": "Ismailia Food Industry Company",
+      "arName": "الاسماعلية للصناعات الغذائية",
+      "hotline": "19104"
+    },
+    {
+      "id": "d8b72768-350a-4a21-b7fd-1adde326060c",
+      "enName": "IT Data",
+      "arName": "شركة اي تي داتا",
+      "hotline": "16026"
+    },
+    {
+      "id": "7fc2ed14-7c47-4d90-b2d5-d99df657818c",
+      "enName": "ITS (International Turnkey Systems)",
+      "arName": "شركة اي تي اس للشبكات والكمبيوتر",
+      "hotline": "16389"
+    },
+    {
+      "id": "938d3057-f5c4-42f1-8bd9-7db9da491305",
+      "enName": "Iwan for Investment and Development",
+      "arName": "ايوان للاستثمار والتنمية",
+      "hotline": "19338"
+    },
+    {
+      "id": "7b874770-0138-4f12-b55a-7c05bd5a89c3",
+      "enName": "Jotun",
+      "arName": "دهانات يوتن",
+      "hotline": "19105"
+    },
+    {
+      "id": "05cdbbfa-4527-4a46-bf18-8bf2800ce083",
+      "enName": "Juhayna Food Industries",
+      "arName": "جهينة للصناعات الغذائية",
+      "hotline": "16620"
+    },
+    {
+      "id": "0fed96d2-412c-48db-acef-cbce4cefdf95",
+      "enName": "Kabnoury",
+      "arName": "قبنوري",
+      "hotline": "19088"
+    },
+    {
+      "id": "56232ba0-589f-40c7-be91-ed42555ddc8a",
+      "enName": "Kamena Cosmetics ",
+      "arName": "كامينا لمستحضرات التجميل ",
+      "hotline": "16123"
+    },
+    {
+      "id": "01e7d0c0-2ca9-4442-b750-79299c352a5f",
+      "enName": "Kandil Glass & Steel",
+      "arName": "قنديل للزجاج والصلب",
+      "hotline": "16010"
+    },
+    {
+      "id": "4c2ba14c-a546-4223-a1e6-b1c4ead54532",
+      "enName": "Kandil Najaf Egypt",
+      "arName": "قنديل للنجف",
+      "hotline": "16608"
+    },
+    {
+      "id": "fbf1447f-679f-4613-b9d4-947e72cc7c3b",
+      "enName": "Katameya Sporting Club",
+      "arName": "نادي القطامية الرياضي",
+      "hotline": "19714"
+    },
+    {
+      "id": "0afb08d6-fdb2-4237-b723-22534705906e",
+      "enName": "Kenanah Compund",
+      "arName": "مدينة كنانة",
+      "hotline": "16124"
+    },
+    {
+      "id": "a641c47c-3168-43a1-babf-52237de35dc0",
+      "enName": "Kentucky Fried Chicken (KFC)",
+      "arName": "كنتاكي ",
+      "hotline": "19019"
+    },
+    {
+      "id": "fa1c8fe3-0370-4095-a77a-b79cfefbd9bb",
+      "enName": "Khadamaty",
+      "arName": "الشركة المصرية للخدمات المجتمعية (خدماتى)",
+      "hotline": "19213"
+    },
+    {
+      "id": "4ccb0980-c9b8-4b44-a1da-dd9ff94a96fe",
+      "enName": "Khalil Pharmacy",
+      "arName": "صيدلية خليل",
+      "hotline": "19040"
+    },
+    {
+      "id": "e7704536-4ea0-40e2-bdca-69dcce12cb05",
+      "enName": "Khobaraa Real Estate",
+      "arName": "خبراء العقارية",
+      "hotline": "16543"
+    },
+    {
+      "id": "d3af826c-a4a9-482c-ac79-f07fe79c5bb2",
+      "enName": "Kiriazy",
+      "arName": "كريازي",
+      "hotline": "19091"
+    },
+    {
+      "id": "bdc7d5a6-8529-4efd-87d9-c908dc43a06b",
+      "enName": "Kuwadico Real Estate ",
+      "arName": "كواديكو العقارية",
+      "hotline": "19814"
+    },
+    {
+      "id": "7cb7dc78-bb8f-4d0d-ac43-ef1f5f1592e5",
+      "enName": "La Fromagerie",
+      "arName": "لا فروماجرى",
+      "hotline": "19796"
+    },
+    {
+      "id": "cebec360-eec4-45a1-80b1-3aec5a734d4a",
+      "enName": "La Hacienda Real Estate",
+      "arName": "لاسياندا للاستثمار العقاري",
+      "hotline": "16334"
+    },
+    {
+      "id": "272b50af-e797-4c9d-bca5-60c94e74291f",
+      "enName": "La Poire",
+      "arName": "لابوار",
+      "hotline": "19515"
+    },
+    {
+      "id": "a9faa4eb-598f-4221-ae3e-abff42bfe2ca",
+      "enName": "Lafarge Cement Misr",
+      "arName": "لافارج لاسمنت مصر",
+      "hotline": "16636"
+    },
+    {
+      "id": "6c88ab56-9e2b-466c-9478-81b1bef9a652",
+      "enName": "Lagoon Alex Resort & Spa",
+      "arName": "منتجع وسبا لاجون",
+      "hotline": "19154"
+    },
+    {
+      "id": "df5d2364-e64f-477d-b57c-30aa3cb8fda7",
+      "enName": "Landscape Real Estate",
+      "arName": "لاندسكيب للاستثمار العقاري",
+      "hotline": "16105"
+    },
+    {
+      "id": "d3eda741-c1c7-48c8-911e-6eeec05a36a5",
+      "enName": "Leaders Securities",
+      "arName": "ليدرز للسمسرة في الاوراق المالية",
+      "hotline": "16662"
+    },
+    {
+      "id": "9a05c03c-4fea-4fd2-96da-f75b7ec8c30b",
+      "enName": "Lebanese Roastery ",
+      "arName": "المحمصة اللبنانية",
+      "hotline": "19920"
+    },
+    {
+      "id": "c4f476c4-fda5-41d9-a89d-7d02726fbe53",
+      "enName": "Lecico Egypt",
+      "arName": "ليسيكو مصر",
+      "hotline": "16338"
+    },
+    {
+      "id": "6f4aa2ee-cf74-42c8-933e-345a2156cf32",
+      "enName": "Leila Pharmacy",
+      "arName": "صيدلية ليلة",
+      "hotline": "19730"
+    },
+    {
+      "id": "3c6b5aa3-3628-4960-a420-203e2bae8c19",
+      "enName": "LG Electronics",
+      "arName": "ال جي للالكترونيات",
+      "hotline": "19960"
+    },
+    {
+      "id": "9983273b-6ac2-4906-816f-3c37d8aef7e5",
+      "enName": "Link Dot Net",
+      "arName": "لينك دوت نت",
+      "hotline": "16333"
+    },
+    {
+      "id": "0bfad813-5377-441c-a5d1-099892a34419",
+      "enName": "Little Caesars Pizza",
+      "arName": "ليتل سيزرز بيتزا",
+      "hotline": "19202"
+    },
+    {
+      "id": "8e2e46b9-8473-42ad-a5d1-34836c9d20f5",
+      "enName": "Local Directory",
+      "arName": "خدمة دليل الهاتف محلي",
+      "hotline": "141"
+    },
+    {
+      "id": "ea7f5aae-1f50-448c-a459-17f0e36a8653",
+      "enName": "Local Directory",
+      "arName": "خدمة دليل الهاتف محلي",
+      "hotline": "142"
+    },
+    {
+      "id": "4f273733-8a4b-4e31-aa01-0c190a6610a3",
+      "enName": "Local Directory",
+      "arName": "خدمة دليل الهاتف محلي",
+      "hotline": "2140"
+    },
+    {
+      "id": "dfa20ccf-d772-4c4c-b7ab-275753571998",
+      "enName": "Local Operator",
+      "arName": "خدمة ترنك المحافظات",
+      "hotline": "10"
+    },
+    {
+      "id": "4c902201-5316-4076-be1c-c769150823a3",
+      "enName": "Louran Hospital",
+      "arName": "مستشفي لوران",
+      "hotline": "19152"
+    },
+    {
+      "id": "b12ccb96-dcd5-493c-96ae-756c02e846ae",
+      "enName": "Lufthansa German Airlines",
+      "arName": "الخطوط الجوية الالمانية لوفتهانزا ",
+      "hotline": "19380"
+    },
+    {
+      "id": "53fa27dd-7041-4dba-a4b2-bd874f1fba6f",
+      "enName": "Macro Egypt",
+      "arName": "ماكرو مصر",
+      "hotline": "16407"
+    },
+    {
+      "id": "b136322c-4fae-4bec-a681-eedfdeeea0c7",
+      "enName": "Magrabi Eye Hospitals & Centers",
+      "arName": "مستشفيات مغربى للعيون",
+      "hotline": "19505"
+    },
+    {
+      "id": "db16a707-9fce-4990-a159-6872851aa1eb",
+      "enName": "Mahgoub For Trade & Import (Ceramics)",
+      "arName": "محجوب للتجارة والاستيراد (سيراميك)",
+      "hotline": "19948"
+    },
+    {
+      "id": "00f4498d-900a-479d-949a-0d7afcea68e5",
+      "enName": "Makani, Burger Joint, El Set Hosneya",
+      "arName": "مكاني و برجر جويند والست حسنية",
+      "hotline": "16669"
+    },
+    {
+      "id": "1ceef648-0f16-4fec-a3ff-099f34782cf8",
+      "enName": "Mantrac Forklifts & Cranes",
+      "arName": "مانتراك اوناش ورافعات",
+      "hotline": "19266"
+    },
+    {
+      "id": "e3b7a98a-9a69-4807-b01f-71c416993d55",
+      "enName": "Marina Valley",
+      "arName": "مارينا فالي",
+      "hotline": "19023"
+    },
+    {
+      "id": "8285378f-e2a3-4110-8122-948a5cb366d8",
+      "enName": "Marriott Bakery ",
+      "arName": "ماريوت بكري",
+      "hotline": "19011"
+    },
+    {
+      "id": "079177d6-93a0-4c78-8ee5-fa6142e0f121",
+      "enName": "Marseilia Real Estate",
+      "arName": "مارسيليا المصرية للاستثمار العقاري",
+      "hotline": "19071"
+    },
+    {
+      "id": "74db8829-1a6f-4d39-a891-4fb305c17b3b",
+      "enName": "Marzouk Pharmacies",
+      "arName": "صيدليات مرزوق",
+      "hotline": "19916"
+    },
+    {
+      "id": "033760cc-7fd0-4509-98dc-d693d819fdff",
+      "enName": "Mashreq Bank",
+      "arName": "بنك المشرق",
+      "hotline": "19677"
+    },
+    {
+      "id": "886bbb32-c439-4480-9655-9ac448b8f196",
+      "enName": "Masreya Group",
+      "arName": "مصرية جروب",
+      "hotline": "19470"
+    },
+    {
+      "id": "12fa7029-04ac-4a78-988b-22cac767627d",
+      "enName": "Masria (Mitsubishi)",
+      "arName": "شركة مصرية (متسوبيشى)",
+      "hotline": "19830"
+    },
+    {
+      "id": "0ea41688-ad67-41a4-8be4-a1c413857fc5",
+      "enName": "Masria (Mitsubishi)",
+      "arName": "شركة مصرية (متسوبيشى)",
+      "hotline": "19831"
+    },
+    {
+      "id": "59caf49c-612f-48fc-aa67-86d11d70fe75",
+      "enName": "Massa, Ebco and Aqua Delta For Mineral Water",
+      "arName": "شركة ماسة وابكو واكوا دلتا للمياه المعدنيه",
+      "hotline": "16151"
+    },
+    {
+      "id": "7007465d-10a6-4afb-b1bd-b99bebf48c00",
+      "enName": "Mazaya Real Estate Holding",
+      "arName": "مزايا العقارية القابضة",
+      "hotline": "19036"
+    },
+    {
+      "id": "fa7a1803-a066-405f-9425-cdd2f09e9188",
+      "enName": "McDonald's",
+      "arName": "ماكدونالدز",
+      "hotline": "19991"
+    },
+    {
+      "id": "357b08ed-b07d-4cc8-94c9-ec2ca1b48c32",
+      "enName": "Meamar Group Real Estate & Project Management",
+      "arName": "معمار للتسويق العقاري وادارة المشروعات",
+      "hotline": "19530"
+    },
+    {
+      "id": "1bafdc33-d344-4c90-8ad8-7c8bd54552bb",
+      "enName": "Medmark Health & Life",
+      "arName": "ميدمارك",
+      "hotline": "19247"
+    },
+    {
+      "id": "d4de29ed-d364-4e31-a7c4-842c6334094d",
+      "enName": "Mena Net for Telecommunication (Menatel)",
+      "arName": "ميناتيل",
+      "hotline": "19004"
+    },
+    {
+      "id": "a5778b2e-899d-4041-b96a-8a1b4290257f",
+      "enName": "Mena Real Estate",
+      "arName": "مينا للاستثمار السياحي والعقاري",
+      "hotline": "16144"
+    },
+    {
+      "id": "0c507cae-df57-42e7-b054-cf59e2ee1cf2",
+      "enName": "Mental For Real Estate",
+      "arName": "مينتال للاستثمار العقاري",
+      "hotline": "16146"
+    },
+    {
+      "id": "db77b644-5ff1-4f47-979f-b0c235f0bf0f",
+      "enName": "Metro Market",
+      "arName": "مترو ماركت",
+      "hotline": "19619"
+    },
+    {
+      "id": "85d42ca7-bd7c-40b4-9a15-619380d1f4e0",
+      "enName": "Mffco Helwan For Furniture",
+      "arName": "مفكو حلوان للاثاث والديكور",
+      "hotline": "19440"
+    },
+    {
+      "id": "bd1b2060-377b-4cec-b1a2-6b417376e232",
+      "enName": "Microsoft Egypt ",
+      "arName": "مايكروسوفت ايجيبت",
+      "hotline": "16880"
+    },
+    {
+      "id": "91e59d3e-d319-431e-ac46-e6c034fb1dca",
+      "enName": "Mina Egypt For Conditioning",
+      "arName": "مينا ايجيبت للتكييف",
+      "hotline": "19313"
+    },
+    {
+      "id": "e0c8acce-ffc3-403f-944d-e260f51d6a6c",
+      "enName": "Ministry Of Agriculture In Cooperation With Ministry Of Finance",
+      "arName": "وزارة الزراعة بالتعاون مع وزارة المالية",
+      "hotline": "16809"
+    },
+    {
+      "id": "1694467a-466b-4f17-8348-e4df6d5cc79d",
+      "enName": "Ministry of Education",
+      "arName": "وزارة التربية والتعليم",
+      "hotline": "19126"
+    },
+    {
+      "id": "b2789f95-d72f-4d8d-a2be-544cc63a036f",
+      "enName": "Ministry of Housing, Utilities & Urban Development",
+      "arName": "وزارة الاسكان والمرافق والتنمية العمرانية",
+      "hotline": "19388"
+    },
+    {
+      "id": "7ff8656f-092a-478d-b1ef-2cc097c95b9f",
+      "enName": "Ministry Of Interior Affairs Inquiry",
+      "arName": " استعلامات وزارة الدخلية",
+      "hotline": "128"
+    },
+    {
+      "id": "31e25093-fcb9-422c-adef-9313972b76bb",
+      "enName": "Ministry of State For Family & Population (Child Helpline)",
+      "arName": "وزارة الدولة للاسرة والسكان (خط نجدة الطفل)",
+      "hotline": "16000"
+    },
+    {
+      "id": "9e7dead8-3c9d-442c-bda8-b42ea7a15aad",
+      "enName": "Ministry of State For Family & Population (Family Counseling)",
+      "arName": "وزارة الدولة للاسرة والسكان (خط المشورة الاسرية)",
+      "hotline": "16021"
+    },
+    {
+      "id": "176fcbf2-5bda-4c1b-b843-f00538e01121",
+      "enName": "Miraco Carrier",
+      "arName": "ميراكو كارير",
+      "hotline": "19111"
+    },
+    {
+      "id": "6eb2d2cf-6aaa-4d68-8450-1b758f9b144d",
+      "enName": "Misr Gas",
+      "arName": "غاز مصر",
+      "hotline": "19220"
+    },
+    {
+      "id": "80df3b29-b13b-47e6-bf33-0ba34af35d47",
+      "enName": "Misr Italia Group Tourism Development",
+      "arName": "مصر ايطاليا للتنمية السياحية ",
+      "hotline": "16619"
+    },
+    {
+      "id": "562ec742-4015-4ad4-858e-0045048395a9",
+      "enName": "Misr Pharmacies",
+      "arName": "صيدليات مصر",
+      "hotline": "19110"
+    },
+    {
+      "id": "9621e81c-371b-48ec-b6b0-7fc2540f2bb3",
+      "enName": "Misr University for Science and Technology",
+      "arName": "جامعة مصر للعلوم والتكنولوجيا",
+      "hotline": "16111"
+    },
+    {
+      "id": "154d4cce-ff3b-4075-a835-819a897b793a",
+      "enName": "Mix Trade",
+      "arName": "ميكس تريد",
+      "hotline": "19912"
+    },
+    {
+      "id": "ed1fb3c9-fb3f-457f-a316-7f95736822cd",
+      "enName": "Mobica Furniture",
+      "arName": "موبيكا للاثاث",
+      "hotline": "16992"
+    },
+    {
+      "id": "6539db12-3cb3-4404-96f4-7b98854fad1f",
+      "enName": "Mobile Shop",
+      "arName": "موبايل شوب",
+      "hotline": "19410"
+    },
+    {
+      "id": "222b931c-f971-4501-8fab-4bb9a6cf42bd",
+      "enName": "Modern Academy in Maadi",
+      "arName": "الاكاديمية الحديثة بالمعادي",
+      "hotline": "19049"
+    },
+    {
+      "id": "73488760-cfa1-47d2-a4f3-fccf4f28bd4f",
+      "enName": "Modern Company",
+      "arName": "الشركة العصرية",
+      "hotline": "19817"
+    },
+    {
+      "id": "7600e113-f6c0-48b4-9295-d6a4269e157f",
+      "enName": "Modern Company Real Estate",
+      "arName": "الشركة الحديثة للاستثمارات العقارية",
+      "hotline": "16024"
+    },
+    {
+      "id": "ce5eeb82-5ae7-4bc3-86b0-660a91e2a443",
+      "enName": "Modern Development For Real Estate - Dubai Islamic Bank",
+      "arName": "التنمية الحديثة  للاستثمار العقاري احدي شركات بنك دبي الاسلامي",
+      "hotline": "19543"
+    },
+    {
+      "id": "654afb01-64dd-47df-a6aa-7766d7c9b0ed",
+      "enName": "Modern Methods Company",
+      "arName": "الاساليب الحديثة",
+      "hotline": "19401"
+    },
+    {
+      "id": "b1863857-4368-481e-9704-5257509c0985",
+      "enName": "Mogo Restaurant",
+      "arName": "مطعم موجو",
+      "hotline": "19511"
+    },
+    {
+      "id": "67c6f943-ded9-451d-8ea5-f73261b406a2",
+      "enName": "Mohamed Zaky Automotive",
+      "arName": "سيارات محمد ذكي",
+      "hotline": "19420"
+    },
+    {
+      "id": "0c7a5eec-9d37-4cc0-a1e3-b4dfaa5ac6d8",
+      "enName": "Mohandes Insurance",
+      "arName": "المهندس للتأمين",
+      "hotline": "19318"
+    },
+    {
+      "id": "5e5957fe-3923-4d13-b230-e52422dd581c",
+      "enName": "Mo'men",
+      "arName": "مؤمن",
+      "hotline": "16600"
+    },
+    {
+      "id": "3a18f3d5-523a-4c5d-8454-84fb82f96e27",
+      "enName": "Moonstone Home Appliances",
+      "arName": "مون ستون  للأدوات المنزلية",
+      "hotline": "16011"
+    },
+    {
+      "id": "d226c8d9-1faf-4cdf-b1dc-f325d07ea87b",
+      "enName": "Mountain View",
+      "arName": "ماونتين فيو",
+      "hotline": "16201"
+    },
+    {
+      "id": "392e5ae3-202d-4388-9734-ebc5659e6855",
+      "enName": "MTI University",
+      "arName": "الجامعة الحديثة للتكنولوجيا والمعلومات",
+      "hotline": "19041"
+    },
+    {
+      "id": "311144cc-11ef-4de1-8e79-d646c0705e9d",
+      "enName": "Naeem Brokerage",
+      "arName": "نعيم للوساطة فى الاوراق المالية",
+      "hotline": "16012"
+    },
+    {
+      "id": "02875534-fbea-4058-b4a8-bd07e0cd51ee",
+      "enName": "Nahda University (NUB)",
+      "arName": "جامعة النهضة",
+      "hotline": "19206"
+    },
+    {
+      "id": "4dde6f8c-7a8b-41a2-a9c9-1035102be76e",
+      "enName": "Nasr City Co. For Housing and Construction ",
+      "arName": "مدينة نصر للاسكان والتعمير",
+      "hotline": "16750"
+    },
+    {
+      "id": "598faf4a-d995-4f20-af59-dc65884e76de",
+      "enName": "National Authority For Social Insurance",
+      "arName": "الهيئة القومية للتأمين الاجتماعي",
+      "hotline": "16217"
+    },
+    {
+      "id": "3e983d35-98f4-4b1d-ae96-0a06f1c42477",
+      "enName": "National Bank For Development - NBD",
+      "arName": "البنك الوطنى للتنمية",
+      "hotline": "19951"
+    },
+    {
+      "id": "e841fd63-d1b2-41d7-aa1a-27eb3a869db7",
+      "enName": "National Bank of Abu Dhabi",
+      "arName": "بنك ابو ظبى الوطنى",
+      "hotline": "19977"
+    },
+    {
+      "id": "9a092154-2cfa-40a3-a145-0428574b8c85",
+      "enName": "National Bank of Egypt",
+      "arName": "البنك الاهلي المصري",
+      "hotline": "19623"
+    },
+    {
+      "id": "fcb9e8cb-8a02-4e79-80d8-f3cea674c25c",
+      "enName": "National Bank Of Greece - NBG",
+      "arName": "البنك الاهلى اليونانى ان بى جى ",
+      "hotline": "16272"
+    },
+    {
+      "id": "8b42a120-0b85-42a7-843d-868ce86cfc08",
+      "enName": "National Center For Blood Transfusion Services",
+      "arName": "المركز القومي لخدمات نقل الدم",
+      "hotline": "19447"
+    },
+    {
+      "id": "4562af11-874e-4a37-a1eb-1446fe059bb0",
+      "enName": "National Company for Industry and Commerce Jrasena",
+      "arName": "الشركة الوطنية للصناعة والتجارة جرازينا",
+      "hotline": "16635"
+    },
+    {
+      "id": "4e586663-24dc-41ca-a116-3964a414873e",
+      "enName": "National Gas Co. (NATGAS)",
+      "arName": "الشركة الوطنية للغاز الطبيعي (ناتجاز)",
+      "hotline": "19390"
+    },
+    {
+      "id": "342ad936-54ed-4284-bbbb-b5e387685fec",
+      "enName": "National Gas Co. (NATGAS)",
+      "arName": "الشركة الوطنية للغاز الطبيعي (ناتجاز)",
+      "hotline": "19990"
+    },
+    {
+      "id": "2dbbf2ea-2daf-4329-9290-4ffb74050fc6",
+      "enName": "National Heart Institute",
+      "arName": "معهد القلب القومي",
+      "hotline": "16624"
+    },
+    {
+      "id": "cb633440-8e85-47bc-a61d-02e6edfd47f2",
+      "enName": "National Program For Breast Tumors Early Detection",
+      "arName": "البرنامج القومي لصحة المرأة  للكشف المبكر عن اورام الثدي",
+      "hotline": "16646"
+    },
+    {
+      "id": "f80c4f9e-e4be-4184-b693-a5859faadcff",
+      "enName": "National Program For Breast Tumors Early Detection",
+      "arName": "البرنامج القومي لصحة المرأة  للكشف المبكر عن اورام الثدي",
+      "hotline": "19507"
+    },
+    {
+      "id": "261e16f1-dc4e-4ee9-ba74-6d603ac49416",
+      "enName": "National Scociete Generale Bank (NSGB Cars Loans)",
+      "arName": "البنك الاهلي سيسوتيه جنرال (ان.اس.جى.بى لقروض السيارات)",
+      "hotline": "19084"
+    },
+    {
+      "id": "50257cd0-bad3-46d0-90c2-9ef9be4b112c",
+      "enName": "National Scociete Generale Bank NSGB",
+      "arName": "البنك الاهلي سيسوتيه جنرال ان.اس.جى.بى",
+      "hotline": "19015"
+    },
+    {
+      "id": "bef3248e-9e77-4acd-9457-15f72cbdf37f",
+      "enName": "National Scociete Generale Bank NSGB",
+      "arName": "البنك الاهلي سيسوتيه جنرال ان.اس.جى.بى",
+      "hotline": "19700"
+    },
+    {
+      "id": "ba841e1d-6409-45a5-90b0-70f3c02d4a82",
+      "enName": "National Scociete Generale Bank NSGB",
+      "arName": "البنك الاهلي سيسوتيه جنرال ان.اس.جى.بى",
+      "hotline": "19703"
+    },
+    {
+      "id": "a6b01833-6d22-4648-9d05-ebc4336446a3",
+      "enName": "National Telecom Cards Co. NTCC",
+      "arName": "شركة الاهلى لكروت الاتصالات ",
+      "hotline": "19988"
+    },
+    {
+      "id": "6c1bbaac-f448-4fb1-bd6a-92337598b5df",
+      "enName": "National Telecom Cards Company (Zero Key)",
+      "arName": "مفتاح الزيرو",
+      "hotline": "19936"
+    },
+    {
+      "id": "7b62359a-a9f9-45c3-8af9-ebfee78cc3a0",
+      "enName": "Natural Gas Emergency",
+      "arName": " طوارئ الغاز الطبيعي",
+      "hotline": "129"
+    },
+    {
+      "id": "5616d2c7-d508-4679-a883-fa4f24cf380a",
+      "enName": "Nestle",
+      "arName": "نستلة مصر",
+      "hotline": "19800"
+    },
+    {
+      "id": "e253f6a8-6307-4c81-9389-cce1d8f51e6f",
+      "enName": "Nestle Egypt Customer Services Center",
+      "arName": "مركز خدمة عملاء نستله مصر",
+      "hotline": "16180"
+    },
+    {
+      "id": "bc96e9bb-2395-4191-bf59-4cbad8614dec",
+      "enName": "Net Media For Internet & Advertising",
+      "arName": "نت ميديا لخدمات الانترنت والدعاية والاعلان",
+      "hotline": "19774"
+    },
+    {
+      "id": "6903eb46-6978-48d4-b6a8-b5fa625440bf",
+      "enName": "Network Processing Company (NPC) ",
+      "arName": "ان بى سى للشبكات",
+      "hotline": "19672"
+    },
+    {
+      "id": "02c4e722-93f1-415b-a05b-e73cc9d71cda",
+      "enName": "New Giza",
+      "arName": "الجيزة الجديدة (نيو جيزة)",
+      "hotline": "16656"
+    },
+    {
+      "id": "55b7e615-0c86-44d7-878d-846c6ce9a945",
+      "enName": "Nile Company For Consumer Products",
+      "arName": "النيل للمنتجات الاستهلاكية",
+      "hotline": "19315"
+    },
+    {
+      "id": "dbb56e75-3128-4797-880e-8a74858176ed",
+      "enName": "Nile Dolphin",
+      "arName": "نايل دولفين",
+      "hotline": "19520"
+    },
+    {
+      "id": "479bd0d7-ddc0-44ba-a482-e07fbdc45c52",
+      "enName": "Nile Egyptian Schools",
+      "arName": "مدارس النيل المصرية",
+      "hotline": "16637"
+    },
+    {
+      "id": "05cfc246-c2d7-4bfe-b905-97769e3ff175",
+      "enName": "Nile Engineering ",
+      "arName": "النيل الهندسية ",
+      "hotline": "19984"
+    },
+    {
+      "id": "4febc2d7-3db4-4acf-aa43-d8d0a9865346",
+      "enName": "Nile Project and Trading Company",
+      "arName": "شركة النيل للمشروعات والتجارة",
+      "hotline": "19187"
+    },
+    {
+      "id": "38c9bcfe-8f08-4926-adc7-c7bbaf8f52e4",
+      "enName": "Nile University",
+      "arName": "جامعة النيل",
+      "hotline": "16453"
+    },
+    {
+      "id": "546edd11-e684-4d40-bb2c-a6b6a07b3ab8",
+      "enName": "Nile X-Ray Center",
+      "arName": "مركز النيل للاشعة",
+      "hotline": "19656"
+    },
+    {
+      "id": "156a3abd-cda8-411a-ae6d-0b4ae4503972",
+      "enName": "Nissan Modern Motors",
+      "arName": "نيسان مودرن موتورز",
+      "hotline": "19055"
+    },
+    {
+      "id": "0cb02c41-f190-47ec-9499-79305df53c78",
+      "enName": "Nissan Motor Egypt ",
+      "arName": " نيسان موتورز",
+      "hotline": "16244"
+    },
+    {
+      "id": "7b6efdf5-2ad0-48e5-96bc-42a4397b0fdf",
+      "enName": "Nokia Egypt ",
+      "arName": "نوكيا مصر",
+      "hotline": "19876"
+    },
+    {
+      "id": "a9586352-0d87-4010-8ce0-d5a36d36adc4",
+      "enName": "Noor Advanced Technologies",
+      "arName": "نور للتكنولوجيا المتطورة ",
+      "hotline": "16700"
+    },
+    {
+      "id": "da91466b-bc85-47fc-a7bf-c46e3d963509",
+      "enName": "Normandy Pharmacies",
+      "arName": "صيدليات نورماندي",
+      "hotline": "19669"
+    },
+    {
+      "id": "cb0af9f8-c2af-4ee8-aeec-f30b82a91862",
+      "enName": "Novonordisk Pharmaceutical",
+      "arName": "نوفونورديسك للأدوية",
+      "hotline": "19456"
+    },
+    {
+      "id": "9c602292-a30e-4107-afcd-43908c9e9801",
+      "enName": "Obour City Council",
+      "arName": "هيئة المجتمعات العمرانية الجديدة جهاز مدينة العبور",
+      "hotline": "19034"
+    },
+    {
+      "id": "a316bd47-e108-4cf3-8180-6ccb812a06f8",
+      "enName": "Ocean Blue Heliopolis Real Estate",
+      "arName": "اوشن بلو هليوبلس  للاستثمار العقاري",
+      "hotline": "16042"
+    },
+    {
+      "id": "a31b19ed-c608-48a7-ad90-4c795119d90d",
+      "enName": "Ocean Blue Marina",
+      "arName": "اوشن بلو مارينا ",
+      "hotline": "16044"
+    },
+    {
+      "id": "f94210fe-a71a-4406-bb0d-2d84798490e9",
+      "enName": "Ocean Blue Soukhna Real Estate",
+      "arName": "اوشن بلو سخنة  للاستثمار السياحي والعقاري",
+      "hotline": "16040"
+    },
+    {
+      "id": "f56ec081-8b76-4782-9c00-0eafaccbcf33",
+      "enName": "Ofok Properties ",
+      "arName": "افق",
+      "hotline": "16365"
+    },
+    {
+      "id": "4b9d16d2-4de3-42fb-836b-bb2ee167b6a2",
+      "enName": "Olympic Group",
+      "arName": "اوليمبيك جروب",
+      "hotline": "19999"
+    },
+    {
+      "id": "a166bcc4-3ee0-42a9-b5c8-43d2c7d059d2",
+      "enName": "Omran Egypt Real Estate Development",
+      "arName": "عمران مصر للتنمية العقارية",
+      "hotline": "19935"
+    },
+    {
+      "id": "0ace605f-f069-4d85-8a63-3dba5c36da72",
+      "enName": "Omran Telecom",
+      "arName": "عمران تيليكوم",
+      "hotline": "19306"
+    },
+    {
+      "id": "bde68efa-9f42-4b3d-8564-5d8242c32dfa",
+      "enName": "One Card Co.",
+      "arName": "شركة الكارت الشامل",
+      "hotline": "16211"
+    },
+    {
+      "id": "4a4da55a-6d16-477a-825a-af0722959987",
+      "enName": "Orascom Development \"Construction\"",
+      "arName": "اوراسكوم للتنمية",
+      "hotline": "16595"
+    },
+    {
+      "id": "237682ce-120b-4d2c-be95-6acdd5f46ff5",
+      "enName": "Orascom Development & Management",
+      "arName": "شركة اوراسكوم للتنمية والادارة",
+      "hotline": "19120"
+    },
+    {
+      "id": "d1b4a82a-4188-40fd-b0a4-5b93b2be3206",
+      "enName": "Orascom Housing Communities",
+      "arName": "اوراسكوم للاسكان التعاوني",
+      "hotline": "19370"
+    },
+    {
+      "id": "a5300841-c052-4277-91a6-2cadf67ee270",
+      "enName": "Orascom Telecom",
+      "arName": "اوراسكوم تيليكوم",
+      "hotline": "19687"
+    },
+    {
+      "id": "d81719e2-1c8e-4e32-9e60-2efa18654480",
+      "enName": "Oriental Restaurant",
+      "arName": "مطعم اورينتال",
+      "hotline": "16069"
+    },
+    {
+      "id": "da6b4627-5dd5-49b6-8226-ac1bf9588d3f",
+      "enName": "Oriflame Egypt",
+      "arName": "اوريفلام ايجيبت",
+      "hotline": "19662"
+    },
+    {
+      "id": "34545de2-5a71-4a20-8001-2ea7035c80d9",
+      "enName": "Orman Hoteling & Computer Secondary School ",
+      "arName": "مدارس الاورمان الثانوية الفندقية والكمبيوتر ",
+      "hotline": "19344"
+    },
+    {
+      "id": "536d25d1-bf84-456f-a4a2-450288538817",
+      "enName": "Orman Hoteling & Computer Secondary School ",
+      "arName": "مدارس الاورمان الثانوية الفندقية والكمبيوتر ",
+      "hotline": "19399"
+    },
+    {
+      "id": "6fd442ea-ea8b-4ff3-b084-e527f202c02d",
+      "enName": "Orman Hoteling & Computer Secondary School ",
+      "arName": "مدارس الاورمان الثانوية الفندقية والكمبيوتر ",
+      "hotline": "19907"
+    },
+    {
+      "id": "49bf9de9-d2d1-4870-9cd5-ebda66ecd377",
+      "enName": "Orthomedics Artificial Limbs",
+      "arName": "اورثو ميديكس للاجهزة التعويضية والاطراف الصناعية",
+      "hotline": "19617"
+    },
+    {
+      "id": "25a0816e-ac59-4662-87f9-c231411a8e31",
+      "enName": "Osool E.S.B  for Brokerage Securities",
+      "arName": "اصول اى اس بى",
+      "hotline": "16090"
+    },
+    {
+      "id": "afbb4ff0-c90a-4b10-8a39-968cdf7986c9",
+      "enName": "Ostaz Online",
+      "arName": "استاذ اون لاين",
+      "hotline": "19719"
+    },
+    {
+      "id": "a82dc253-44ac-4964-a59d-84c74dabcca7",
+      "enName": "Otlob Lenses",
+      "arName": "اطلب لينسيس (عدسات لاصقة)",
+      "hotline": "19609"
+    },
+    {
+      "id": "451490f6-c127-41ec-8ac0-c8392c0ab501",
+      "enName": "Palm Hills Developments",
+      "arName": "بالم هيلز للتعمير",
+      "hotline": "19743"
+    },
+    {
+      "id": "f7095779-4ee5-46e2-a79f-6ed5406e69fd",
+      "enName": "Panassonic Electronics",
+      "arName": "بناسونيك للصوتيات والمرئيات",
+      "hotline": "19363"
+    },
+    {
+      "id": "dc8ba32f-598b-4a86-84b1-1b30f7951954",
+      "enName": "Pepsi Cola Egypt",
+      "arName": "بيبسى كولا مصر",
+      "hotline": "16500"
+    },
+    {
+      "id": "49e0dcc7-f476-429d-a4eb-a49af8ee5dc5",
+      "enName": "Petroleum Gas Co. (Petrogas)",
+      "arName": "شركة الغازات البترولية (بتروجاز)",
+      "hotline": "19096"
+    },
+    {
+      "id": "63597cee-b1a0-4339-b77a-37e1b5681942",
+      "enName": "Petroleum Pipelines Co. PPC",
+      "arName": "انابيب البترول",
+      "hotline": "19314"
+    },
+    {
+      "id": "785755a8-ead7-435f-b7bc-1d0966f62acb",
+      "enName": "Pharaonic Marketing",
+      "arName": "الفرعونية للتسويق",
+      "hotline": "19902"
+    },
+    {
+      "id": "0501280f-f86b-46bb-bed8-dcc408656611",
+      "enName": "Pharos Securities",
+      "arName": "فاروس لتدوال الاوراق المالية",
+      "hotline": "16665"
+    },
+    {
+      "id": "ca419bfa-ff4e-4569-a21f-88ce969a479b",
+      "enName": "Pioneers Holding Co. securities ",
+      "arName": "بايونيرز القابضة لتداول الاوراق المالية",
+      "hotline": "19973"
+    },
+    {
+      "id": "57dae7b9-01d5-41d9-8b66-1a933a311a5a",
+      "enName": "Piraeus Bank Egypt",
+      "arName": "بنك بيريوس مصر",
+      "hotline": "19322"
+    },
+    {
+      "id": "99ded4cf-9f63-4ca4-96d1-4eaf0c154c93",
+      "enName": "Pizza Hut",
+      "arName": "بيتزا هت",
+      "hotline": "19000"
+    },
+    {
+      "id": "b84ec310-4465-47e5-ae03-48d885ae3559",
+      "enName": "Pizza King",
+      "arName": "بيتزا كينج",
+      "hotline": "19519"
+    },
+    {
+      "id": "368bc74e-8f6d-4159-aac0-03720f0a5aa3",
+      "enName": "Police",
+      "arName": "الشرطة",
+      "hotline": "122"
+    },
+    {
+      "id": "0fe1699e-d7b6-4e5b-b90c-dbe36ab4d868",
+      "enName": "Popeyes",
+      "arName": "مطعم بابايز",
+      "hotline": "19566"
+    },
+    {
+      "id": "a8ea1f73-242f-4880-87e5-d030d155d37c",
+      "enName": "Porto Marina Resort & Spa",
+      "arName": "منتجع بورتو مارينا ريزورت اند سبا ",
+      "hotline": "19115"
+    },
+    {
+      "id": "4b6e3049-a6cb-48bd-8969-02e084d87d48",
+      "enName": "Premium Card",
+      "arName": "برميم كارد ",
+      "hotline": "16818"
+    },
+    {
+      "id": "ba161c65-12a8-46ae-9879-143aa94a081e",
+      "enName": "Prevention & Treatment of Addiction & Abuse",
+      "arName": "صندوق مكافحة وعلاج الادمان والتعاطي (وزارة الدولة للاسرة والسكان)",
+      "hotline": "16023"
+    },
+    {
+      "id": "ebe70edc-5461-431b-86fb-b92ffd0745f3",
+      "enName": "Qatar Airways",
+      "arName": "الخطوط الجوية القطرية",
+      "hotline": "19950"
+    },
+    {
+      "id": "76182e6e-5d06-4ce1-ad33-786b861478c6",
+      "enName": "Quality Co. For Trading",
+      "arName": "شركة كواليتي للتجارة",
+      "hotline": "16535"
+    },
+    {
+      "id": "6ff5b60c-fe0e-466e-8fd1-a10333c08800",
+      "enName": "Quick Air Tours",
+      "arName": "كويك اير للسياحة",
+      "hotline": "19102"
+    },
+    {
+      "id": "3d434f16-29ce-45d7-a782-9aaf51c3feda",
+      "enName": "Quick Sandwich",
+      "arName": "كويك ساندوتش",
+      "hotline": "16013"
+    },
+    {
+      "id": "2e4e25ed-7c8b-433e-9435-e206af7beb47",
+      "enName": "Rabie Tours",
+      "arName": "الربيع للسياحة",
+      "hotline": "16612"
+    },
+    {
+      "id": "1059b74f-495e-4ca0-868b-98307e3f00b2",
+      "enName": "Radio Shack",
+      "arName": "راديو شاك",
+      "hotline": "19419"
+    },
+    {
+      "id": "f09b6875-6293-4bbb-8152-059a7bc2a1fd",
+      "enName": "Ragab Sons",
+      "arName": "اولاد رجب",
+      "hotline": "19225"
+    },
+    {
+      "id": "649c135c-fbf0-4cd7-b6e9-247758e4a036",
+      "enName": "Railway Police",
+      "arName": " شرطة السكة الحديد",
+      "hotline": "145"
+    },
+    {
+      "id": "82b5f2ba-a6c7-4417-844f-ef8f0b0b265e",
+      "enName": "Ramco Group Real Estate Construction",
+      "arName": "رامكو جروب للانشاءات العقارية",
+      "hotline": "16889"
+    },
+    {
+      "id": "247770fb-330e-4213-9b89-8b7e2763565a",
+      "enName": "Ramco Pharm",
+      "arName": "رامكو فارم",
+      "hotline": "19360"
+    },
+    {
+      "id": "4b94b3d1-979e-4f47-8ce7-9d0f4a06c197",
+      "enName": "Raya Shop",
+      "arName": "رايه شوب",
+      "hotline": "19900"
+    },
+    {
+      "id": "fd743b14-455e-4e58-a508-f9f2dc5829a7",
+      "enName": "Raya Systems",
+      "arName": "راية للنظم",
+      "hotline": "16260"
+    },
+    {
+      "id": "78009825-dbe1-46dc-8acf-4198a446d885",
+      "enName": "Real Estate Mortgage House",
+      "arName": "بيت التمويل العقاري",
+      "hotline": "16366"
+    },
+    {
+      "id": "b95219c7-5693-4b36-aca9-fc930fb00911",
+      "enName": "Real Estate Tax Authority",
+      "arName": "مصلحة الضرائب العقارية",
+      "hotline": "19117"
+    },
+    {
+      "id": "4b31a422-07c0-42f0-aa2c-8c2d756a3413",
+      "enName": "Red Sea Co. For Pipes Manufacturing & Supplies",
+      "arName": "البحر الاحمر لصناعة المواسير",
+      "hotline": "19886"
+    },
+    {
+      "id": "682b1af1-ba91-4332-9d45-a21783e59f06",
+      "enName": "Red Sea For Real Estate",
+      "arName": "البحر الاحمر للاستثمار السياحي",
+      "hotline": "19175"
+    },
+    {
+      "id": "5281d246-c4d6-401c-a8d7-b6beb2959adc",
+      "enName": "Rehab City Council",
+      "arName": "جهاز مدينة الرحاب",
+      "hotline": "16182"
+    },
+    {
+      "id": "9a1e1949-1570-4db4-9b81-462c50c1cf6a",
+      "enName": "Rehab City Council",
+      "arName": "جهاز مدينة الرحاب",
+      "hotline": "16183"
+    },
+    {
+      "id": "628fb421-77ee-4da5-baa3-4e28c9b7ad45",
+      "enName": "Rehab City Council",
+      "arName": "جهاز مدينة الرحاب",
+      "hotline": "16184"
+    },
+    {
+      "id": "f4b3ffb0-76c1-4485-99ed-f06bc75c7abc",
+      "enName": "Rehab City Council",
+      "arName": "جهاز مدينة الرحاب",
+      "hotline": "16185"
+    },
+    {
+      "id": "dc0fb8d5-2c89-44c0-b89d-e256f3c9bd67",
+      "enName": "Rehab City Council",
+      "arName": "جهاز مدينة الرحاب",
+      "hotline": "16186"
+    },
+    {
+      "id": "20e37479-18bb-45b0-82eb-e7104354d4fb",
+      "enName": "Rehab October Real Estate Investments",
+      "arName": "رحاب اكتوبر للاستثمار العقاري",
+      "hotline": "16551"
+    },
+    {
+      "id": "b1175ca0-15dc-49c2-ad07-967f9938cd7c",
+      "enName": "Remas Real Estate",
+      "arName": "ريماس العقارية",
+      "hotline": "16162"
+    },
+    {
+      "id": "6a5d81e6-0b65-4324-91fb-11e312dd996a",
+      "enName": "Resala Charity Association",
+      "arName": "جمعية رسالة للاعمال الخيرية",
+      "hotline": "19450"
+    },
+    {
+      "id": "3030047d-5397-4b64-84cf-15215e57bbdc",
+      "enName": "Ring Distribution",
+      "arName": "رينج للتوزيع",
+      "hotline": "19280"
+    },
+    {
+      "id": "40989087-a8d0-4360-bbe2-795ad2d8d23d",
+      "enName": "Riviera Co. For Shoes Materials Manufacturing",
+      "arName": "ريفيرا لصناعة لوازم الاحذية ",
+      "hotline": "19855"
+    },
+    {
+      "id": "57cfbd0f-e1f4-4ea6-98a3-b453ab0346b2",
+      "enName": "Roma Pizza & Buffalo Burger",
+      "arName": "روما بيتزا و بافلو برجر",
+      "hotline": "19914"
+    },
+    {
+      "id": "142856ec-16ee-4fc5-bc28-135eae54398f",
+      "enName": "Royal Care International",
+      "arName": "رويال كير انترناشيونال",
+      "hotline": "16975"
+    },
+    {
+      "id": "17ff1360-e74a-4087-aae7-a27683c41e4e",
+      "enName": "Royal City",
+      "arName": "رويال سيتي",
+      "hotline": "19177"
+    },
+    {
+      "id": "3887f0b5-3dc8-4ad6-92ea-3465e16b89d5",
+      "enName": "Sadco For Trade & Distribution",
+      "arName": "صادكو للتجارة والتوزيع",
+      "hotline": "19140"
+    },
+    {
+      "id": "a6754582-022b-48c2-b7e1-ec2f839dc5fc",
+      "enName": "Sahran Restaurants",
+      "arName": "مطاعم سهران",
+      "hotline": "19881"
+    },
+    {
+      "id": "f0a5eef1-2ab5-423c-ae08-9b7fc2b6e666",
+      "enName": "Sakr Factory For Advanced Industries",
+      "arName": "مصنع صقر للصناعات المتطورة",
+      "hotline": "19255"
+    },
+    {
+      "id": "48af580c-9423-4b40-8161-2d97fd3ee068",
+      "enName": "Salamat Card Customer Services Center",
+      "arName": " كارت سلامات مركز خدمة العملاء",
+      "hotline": "16125"
+    },
+    {
+      "id": "42d597ef-4d5b-4d39-8814-7eac07d5822b",
+      "enName": "Salem Pharmacy",
+      "arName": "صيدلية سالم",
+      "hotline": "19620"
+    },
+    {
+      "id": "d07af5a9-51d6-4efa-8df2-f532872a56d0",
+      "enName": "Sama & Brooj Co. Groups (Sama Al Kahera)",
+      "arName": "مجموعة شركات سما وبروج (سما القاهرة)",
+      "hotline": "19723"
+    },
+    {
+      "id": "4c7b6ed9-a956-479c-bc95-426d8db4d7d5",
+      "enName": "Sama (Sky Resort)",
+      "arName": "قرية سما (سكاي ريسورت)",
+      "hotline": "16759"
+    },
+    {
+      "id": "9f1c87c6-c73e-42dd-817e-178f38053575",
+      "enName": "Samir & Aly Stationery",
+      "arName": "مكتبات سمير وعلي",
+      "hotline": "19891"
+    },
+    {
+      "id": "1d7147e9-8573-463e-b928-51f0db00865b",
+      "enName": "Samsung - Mantronix",
+      "arName": "سامسونج - مانترونكس",
+      "hotline": "16690"
+    },
+    {
+      "id": "f40ea62a-cc09-4bfa-a4b4-11251031e418",
+      "enName": "Samsung For Housewares Products Maintenance",
+      "arName": "سامسونج لصيانة الاجهزة المنزلية",
+      "hotline": "19094"
+    },
+    {
+      "id": "82a0521b-e9a5-4dee-9d0a-cb5d79297214",
+      "enName": "Santa Claus Villages Resort",
+      "arName": "منتجعات سانتا كلوز",
+      "hotline": "16003"
+    },
+    {
+      "id": "8092b08e-97db-4da1-a8dc-62ed1e34f9de",
+      "enName": "Saridar Labs",
+      "arName": "معامل ساريدار الطبية",
+      "hotline": "19232"
+    },
+    {
+      "id": "1dbe5151-4f40-4bee-b0a0-8f2514e68d78",
+      "enName": "Saudi Arabian Airlines",
+      "arName": "الخطوط الجوية العربية السعودية",
+      "hotline": "19898"
+    },
+    {
+      "id": "95c97a88-a90c-4828-9409-bce661d7e196",
+      "enName": "Saudi Egyptian For Reconstruction",
+      "arName": "السعوديه المصرية للتعمير",
+      "hotline": "19352"
+    },
+    {
+      "id": "77f12b35-70e1-4177-9543-ee4d815740d8",
+      "enName": "Schindler Ltd.",
+      "arName": "شندلر ليمتد",
+      "hotline": "16808"
+    },
+    {
+      "id": "ea8291e3-c13b-4472-a6d9-92267ba4a365",
+      "enName": "Sedra Marketing & Projects Management ",
+      "arName": "سيدرا للتسويق وادارة المشروعات",
+      "hotline": "19312"
+    },
+    {
+      "id": "ae7caa39-355f-4a8c-bf21-3bd09eedf89e",
+      "enName": "Seif Pharmacies",
+      "arName": "صيدليات سيف",
+      "hotline": "19199"
+    },
+    {
+      "id": "fa588fd8-b57f-4cbf-9c6f-e0f72475f78a",
+      "enName": "Shaheen Coffee",
+      "arName": "بن شاهين",
+      "hotline": "19180"
+    },
+    {
+      "id": "3097ad41-9f44-4657-891e-ddc0eba01577",
+      "enName": "Shams - Nile Engineering & Trading ",
+      "arName": "شمس - النيل الهندسية والتجارية",
+      "hotline": "19070"
+    },
+    {
+      "id": "e55abba6-5e18-422e-84e8-5772c920f168",
+      "enName": "Shams - Nile Engineering & Trading ",
+      "arName": "شمس - النيل الهندسية والتجارية",
+      "hotline": "19080"
+    },
+    {
+      "id": "642d1538-b7ee-491e-a2d4-a070eea61cc3",
+      "enName": "Shawerma Al Reem",
+      "arName": "شاورما الريم",
+      "hotline": "16068"
+    },
+    {
+      "id": "ff4ecf2e-16cb-4f4f-b0c0-35f01eea275e",
+      "enName": "Shoura Technologies",
+      "arName": "شركة شوري",
+      "hotline": "16558"
+    },
+    {
+      "id": "2d5747aa-4322-439c-bef1-44ffb6834598",
+      "enName": "Siam Eye Center",
+      "arName": "مركز صيام للعيون",
+      "hotline": "19992"
+    },
+    {
+      "id": "ea410fa4-dbd4-4d7f-9017-985ddcef45a4",
+      "enName": "Sibic Integrated Building Industries",
+      "arName": "سيبيك لصناعات البناء المتكاملة",
+      "hotline": "16076"
+    },
+    {
+      "id": "a856d552-9f89-4034-a4f4-9b078ff25e89",
+      "enName": "Sico Electronics",
+      "arName": "سيكو للاليكترونيات",
+      "hotline": "19242"
+    },
+    {
+      "id": "7a350c7a-f354-4ea3-8065-0d745f16d34b",
+      "enName": "Sigma Pharmaceutical Industries",
+      "arName": "سيجما للصناعات الدوائية",
+      "hotline": "19964"
+    },
+    {
+      "id": "cbda498e-6044-4bf2-a3b7-a49fb8ebf480",
+      "enName": "Sigma Securities",
+      "arName": "سيجما لتداول الاوراق المالية",
+      "hotline": "16675"
+    },
+    {
+      "id": "f05f7c50-3ec3-4d3d-9b01-e5a69ea1cebd",
+      "enName": "Sinai Cement Company",
+      "arName": "شركة اسمنت سيناء",
+      "hotline": "19722"
+    },
+    {
+      "id": "0aa4e430-bb46-446b-8c16-a065e8aa285f",
+      "enName": "Sky Distribution",
+      "arName": "سكاى للتوزيع  ",
+      "hotline": "19759"
+    },
+    {
+      "id": "9088a9bc-4fd8-409d-8f37-7505a8b1993a",
+      "enName": "Sky Light & Golden Coast Tourism Investment",
+      "arName": "سكاي لايت وجولدن كوست السخنة للاستثمار السياحي",
+      "hotline": "19335"
+    },
+    {
+      "id": "757a9ab3-643f-46c9-b058-3c8f1ab9f06e",
+      "enName": "Smart group For Computer Services and Internet",
+      "arName": "سمارت جروب لخدمات الكمبيوتر والانترنت",
+      "hotline": "19889"
+    },
+    {
+      "id": "86ec35d9-4768-4d3b-9dbb-e032a86cc6ee",
+      "enName": "SMG - Engineering Automotive Co.",
+      "arName": "الشركة الهندسية للسيارات",
+      "hotline": "19860"
+    },
+    {
+      "id": "4ec01ca1-8b21-4c80-a1cf-a9cc1855a2a4",
+      "enName": "SMG - Engineering Automotive Co.",
+      "arName": "الشركة الهندسية للسيارات",
+      "hotline": "19862"
+    },
+    {
+      "id": "17ede531-f4a3-49d3-a9ab-0fe9241ddd6b",
+      "enName": "Smouha Academy For Mobile Maintenance Training",
+      "arName": "اكاديمية سموحة للتدريب على صيانة التليفون المحمول",
+      "hotline": "19540"
+    },
+    {
+      "id": "35d046d0-6e8c-4a1e-9c6b-17290ddbdf89",
+      "enName": "Societe National Industries Nutritive (Schweppes)",
+      "arName": "الشركة الوطنية للصناعات الغذائية (شويبس)",
+      "hotline": "19193"
+    },
+    {
+      "id": "bab53322-9866-4b82-8c4a-ec598fd57d2e",
+      "enName": "SODIC - 6 October Development & Investment",
+      "arName": "سوديك - السادس من اكتوبر للتنمية والاستثمار",
+      "hotline": "16220"
+    },
+    {
+      "id": "64283d0d-d17a-48a7-b38c-3164c9794dfa",
+      "enName": "Solaimaneyah Golf City",
+      "arName": "مدينة جولف السليمانية",
+      "hotline": "19998"
+    },
+    {
+      "id": "ab0719c2-4c84-4916-9f62-bf48bcabe2e0",
+      "enName": "Sono Cairo",
+      "arName": "صوت القاهرة للصوتيات والمرئيات",
+      "hotline": "19460"
+    },
+    {
+      "id": "70523155-813b-4372-b770-5f5e90187bc6",
+      "enName": "Sony Ericsson",
+      "arName": "سوني اريكسون",
+      "hotline": "16727"
+    },
+    {
+      "id": "9d187769-3684-43b2-8af5-5a0fddd64aa9",
+      "enName": "Speaking Clock",
+      "arName": "الساعة الناطقة",
+      "hotline": "150"
+    },
+    {
+      "id": "2ec99bfe-441c-42b7-b38d-8449aa65cd61",
+      "enName": "Speed Tech",
+      "arName": "سبيد تيك",
+      "hotline": "16113"
+    },
+    {
+      "id": "055b9107-b169-4cd3-afa6-aa813a0466f9",
+      "enName": "Spiroplastic Industrial ",
+      "arName": "سبيرو بلاستيك الصناعية",
+      "hotline": "19926"
+    },
+    {
+      "id": "8dc46690-081b-4593-b603-9bb1b25f5c01",
+      "enName": "Star Ware",
+      "arName": "ستار وير",
+      "hotline": "16343"
+    },
+    {
+      "id": "8fd0d544-5321-45d8-a13b-e6a8bf8d2e11",
+      "enName": "Steel & Cement Complaints (Ministry of Trade & Industry)",
+      "arName": "شكاوي حديد التسليح والاسمنت (وزارة التجارة والصناعة)",
+      "hotline": "19805"
+    },
+    {
+      "id": "df125eeb-b2a0-404c-8eef-cbaf076631e0",
+      "enName": "Studio Misr & Halaket Elsamak",
+      "arName": "مطاعم ستوديو مصر وحلقة السمك",
+      "hotline": "19139"
+    },
+    {
+      "id": "097c0dae-27a0-4d8c-b513-9586d4825156",
+      "enName": "Suez Canal Bank",
+      "arName": "بنك قناة السويس",
+      "hotline": "19093"
+    },
+    {
+      "id": "a69e81db-4256-4ba0-844a-ab10b6e8c346",
+      "enName": "Suez Cement",
+      "arName": "السويس للاسمنت",
+      "hotline": "16083"
+    },
+    {
+      "id": "4a17fc6e-596a-44fe-b79e-116e1472cbda",
+      "enName": "Suez Cement",
+      "arName": "السويس للاسمنت",
+      "hotline": "19083"
+    },
+    {
+      "id": "b9346f73-3730-447f-8b16-ecaac93f36ec",
+      "enName": "Sun Set Tourism",
+      "arName": "صن سيت للسياحة",
+      "hotline": "16164"
+    },
+    {
+      "id": "469aede0-55a0-4a95-b0db-d6bb8998db25",
+      "enName": "Swiza for Chocolates & Confectionery",
+      "arName": "سويزا للشيكولاتة والحلويات",
+      "hotline": "16622"
+    },
+    {
+      "id": "a71f5bcb-0776-4d5f-b93d-1ebaaaf49673",
+      "enName": "Taamir Mortgage",
+      "arName": "التعمير للتمويل العقاري",
+      "hotline": "19996"
+    },
+    {
+      "id": "5ecd1ede-0c69-443f-a486-ba33065c6efb",
+      "enName": "Tahra Scan",
+      "arName": "مركز الطاهرة للاشعة",
+      "hotline": "19173"
+    },
+    {
+      "id": "4aa4bde4-bb18-4cac-899e-ced5acc9398c",
+      "enName": "Taki Furniture",
+      "arName": "تاكي للاثاث",
+      "hotline": "19448"
+    },
+    {
+      "id": "b0b66967-f9b8-4cba-b94d-db1644e8e181",
+      "enName": "Taki Furniture",
+      "arName": "تاكي للاثاث",
+      "hotline": "19799"
+    },
+    {
+      "id": "c5036263-2c76-4fe5-aa96-c862cb9e4545",
+      "enName": "Talaat Mostafa Group",
+      "arName": "مجموعة طلعت مصطفي",
+      "hotline": "19221"
+    },
+    {
+      "id": "a0f8e633-9043-47ea-addf-5dca3d5c47fb",
+      "enName": "Talaat Mostafa Group",
+      "arName": "مجموعة طلعت مصطفي",
+      "hotline": "19691"
+    },
+    {
+      "id": "ddb28f82-a8cc-4f20-b97d-940f369e7229",
+      "enName": "Tanko Egypt For Tanks Manufacturing",
+      "arName": "تانكو ايجيبت لصناعة التنكات",
+      "hotline": "16557"
+    },
+    {
+      "id": "083458aa-9be3-4aae-9f30-1766217f6930",
+      "enName": "Tarek Labs",
+      "arName": "معامل الدكتور طارق علي حسن",
+      "hotline": "19056"
+    },
+    {
+      "id": "343290c6-5e13-4e84-9da2-0650e1224aa4",
+      "enName": "Techno Scan Osama Khalil Radiology Centers",
+      "arName": "تكنو سكان مراكز اسامة خليل للاشعة",
+      "hotline": "19989"
+    },
+    {
+      "id": "9996e9e7-8c7a-484d-a6a2-ef2854396bb2",
+      "enName": "Telecom Egypt",
+      "arName": "الشركة المصرية للاتصالات",
+      "hotline": "188"
+    },
+    {
+      "id": "194a3a91-41c8-4b2a-a19f-33dfaee1377a",
+      "enName": "Telecom Egypt",
+      "arName": "الشركة المصرية للاتصالات",
+      "hotline": "19222"
+    },
+    {
+      "id": "5e44e078-22cc-456f-932f-dbd4899815b2",
+      "enName": "Telecom Egypt",
+      "arName": "الشركة المصرية للاتصالات",
+      "hotline": ""
+    },
+    {
+      "id": "1230cf28-c90d-441c-ac19-22cb89f9de5f",
+      "enName": "Telegram & Telegraph",
+      "arName": "برقيات وتلغرافات",
+      "hotline": "124"
+    },
+    {
+      "id": "79bee7cd-626a-4b27-b3ea-048ad21c8c67",
+      "enName": "Telephone Bills",
+      "arName": " الاستعلام عن فاتورة التليفون",
+      "hotline": "177"
+    },
+    {
+      "id": "23e44e46-be10-4715-bd4c-9ed455bdd70e",
+      "enName": "Telephone Complaints",
+      "arName": "شكاوي التليفونات",
+      "hotline": "111"
+    },
+    {
+      "id": "642d189b-3b8d-4320-9181-314160b198d6",
+      "enName": "Teseppas",
+      "arName": "تسيباس",
+      "hotline": "19918"
+    },
+    {
+      "id": "cbbda78c-93a7-47d5-91c9-48e8309516f2",
+      "enName": "The Arab Co. For Transistor Radio & Electronic Appliances (Telemisr)",
+      "arName": "العربية للراديو الترانزستور والاجهزة الالكترونية (تليمصر)",
+      "hotline": "19006"
+    },
+    {
+      "id": "20453678-910f-4c48-9b94-8108b8e29ee9",
+      "enName": "The Bible Society of Egypt (Dar El Ketab El Mokadas)",
+      "arName": "دار الكتاب المقدس",
+      "hotline": "19250"
+    },
+    {
+      "id": "2ae05991-97d6-4a24-a891-036c4998037c",
+      "enName": "The British University In Egypt (BUE)",
+      "arName": "الجامعة البريطانية في مصر",
+      "hotline": "19283"
+    },
+    {
+      "id": "7b74ea1d-898b-4c0a-898b-a8d2614dd173",
+      "enName": "The Burger Kitchen",
+      "arName": "ذا برجر كيتشن",
+      "hotline": "16676"
+    },
+    {
+      "id": "598a857b-4379-4358-9c4a-6cab6b1c2efb",
+      "enName": "The Cabinet Social Fund For Development (SFD)",
+      "arName": "الصندوق الاجتماعي للتنمية",
+      "hotline": "16733"
+    },
+    {
+      "id": "293519f7-9912-4458-a9ab-a4508f1066e8",
+      "enName": "The Egyptian Company for Wholesale Trade",
+      "arName": "المصرية لتجارة الجملة",
+      "hotline": "16906"
+    },
+    {
+      "id": "0f19ea30-e56c-40f2-9712-cbc5ad2ad7ed",
+      "enName": "The Egyptian Saudi Co. For Medical Manufactring (Mascomid)",
+      "arName": "الشركة المصرية السعودية للصناعات الطبية (ماسكوميد)",
+      "hotline": "19138"
+    },
+    {
+      "id": "119254ed-d5c2-4db6-954a-2e9098daf179",
+      "enName": "The Egyptian Society for Integrated Development",
+      "arName": "الجمعية المصرية للتنمية المتكاملة",
+      "hotline": "19921"
+    },
+    {
+      "id": "cf2fdd16-6651-4a8c-a4ad-faf59705ae8b",
+      "enName": "The United Bank",
+      "arName": "المصرف المتحد",
+      "hotline": "19200"
+    },
+    {
+      "id": "f8dd541a-8684-4c07-977f-859e92622353",
+      "enName": "Tiba company for Trade and Distribution",
+      "arName": "شركة طيبة للتجارة والتوزيع",
+      "hotline": "16630"
+    },
+    {
+      "id": "f4f7d659-c99a-4565-bfb4-119c1efca4d7",
+      "enName": "TMA Engineering & Construction ",
+      "arName": "تي ام اي للهندسة والمقاولات",
+      "hotline": "19362"
+    },
+    {
+      "id": "b13e2b95-c8f7-45fc-b358-3d321481bf5a",
+      "enName": "Toshiba El Araby For Trade & Industry",
+      "arName": "توشيبا العربى للتجارة والصناعة ",
+      "hotline": "19319"
+    },
+    {
+      "id": "fd8707db-3cee-419b-aec3-40618b76064b",
+      "enName": "Toshiba El Araby For Trade & Industry",
+      "arName": "توشيبا العربى للتجارة والصناعة ",
+      "hotline": "19444"
+    },
+    {
+      "id": "eaef233a-891a-4e09-846a-4f557ca08f34",
+      "enName": "Tourist Police",
+      "arName": "شرطة السياحة",
+      "hotline": "126"
+    },
+    {
+      "id": "3342beb3-a7f1-442c-9591-99301c1c1fdb",
+      "enName": "Town Gas",
+      "arName": "تاون جاز",
+      "hotline": "19129"
+    },
+    {
+      "id": "edb5dd9e-7802-4533-8fd7-6549e4da6232",
+      "enName": "Toyota Egypt",
+      "arName": "تويوتا ايجيبت",
+      "hotline": "16550"
+    },
+    {
+      "id": "2fb4322f-1ea8-4c4e-afa1-21104671ea3b",
+      "enName": "Trade Line Stores",
+      "arName": "تريد لاين ستورز",
+      "hotline": "19857"
+    },
+    {
+      "id": "0a12cc14-4687-4187-97be-364898ed4243",
+      "enName": "Trane Air Conditioning",
+      "arName": "ترين لتكييف الهواء",
+      "hotline": "19212"
+    },
+    {
+      "id": "469ba276-eee2-4c80-a8b8-dcaaa8aa41ea",
+      "enName": "Travco International Group",
+      "arName": "مجموعة ترافكو العالمية",
+      "hotline": "16161"
+    },
+    {
+      "id": "05f7088b-4e40-47ac-80f5-f6d3ad0789de",
+      "enName": "Travco Properties",
+      "arName": "ترافكو للعقارات",
+      "hotline": "16160"
+    },
+    {
+      "id": "a3e1815e-c985-4ed6-8db2-a6bb5470f42f",
+      "enName": "Travelport",
+      "arName": "ترافلبورت",
+      "hotline": "16887"
+    },
+    {
+      "id": "cdfeae4a-3e5d-49b5-aa8d-f0dff8e7a46b",
+      "enName": "Trianon",
+      "arName": "تريانون",
+      "hotline": "19020"
+    },
+    {
+      "id": "38105026-f4fe-4935-8adc-3ea87d651c63",
+      "enName": "Truman Electronic",
+      "arName": "ترومان للالكترونيات",
+      "hotline": "19903"
+    },
+    {
+      "id": "751fd4db-1cdb-4114-9c4c-b3e285f6495e",
+      "enName": "Trust For Real Estate & Tourism Investment",
+      "arName": "تراست للاستثمارات العقارية والسياحية",
+      "hotline": "19192"
+    },
+    {
+      "id": "7e6c3587-5a84-4473-814c-43716e506d9b",
+      "enName": "UCMAS Egypt",
+      "arName": "يو سى ماس مصر ",
+      "hotline": "19188"
+    },
+    {
+      "id": "3085b0a8-4433-410a-90dc-6f59137d43ab",
+      "enName": "Union Group",
+      "arName": "يونيون جروب",
+      "hotline": "19406"
+    },
+    {
+      "id": "5c21584e-106f-4b6a-aa8e-71a1a75a1fb5",
+      "enName": "Union National Bank Egypt",
+      "arName": "بنك الاتحاد الوطنى - مصر ",
+      "hotline": "16862"
+    },
+    {
+      "id": "f7951c59-cae4-4bd2-ba76-1eaf3e5122f9",
+      "enName": "United Automotive Co. (El Kasrraway)",
+      "arName": "الشركة المتحدة لتجارة السيارات (القصراوى)",
+      "hotline": "19949"
+    },
+    {
+      "id": "c87fcca8-8f95-4c2e-ad20-3c2f38f2bb21",
+      "enName": "United Company For Tourism Industry",
+      "arName": "المتحدة للمنشئات السياحية",
+      "hotline": "19982"
+    },
+    {
+      "id": "a1a07ccd-8a74-4b68-9120-7f1eab5d6d91",
+      "enName": "United Development and Investment group (Tiba)",
+      "arName": "المجموعة المتحدة للتنمية والاستثمار (طيبة)",
+      "hotline": "16063"
+    },
+    {
+      "id": "c8aee856-4b07-4268-9579-4ef1ff30b7f3",
+      "enName": "United Engineerical Organization",
+      "arName": "المؤسسة الهندسية المتحدة",
+      "hotline": "19032"
+    },
+    {
+      "id": "05735415-6188-4bf2-935a-ae9db660fd7f",
+      "enName": "Universal Co. For Crystal & Chandeliers Trading (Crystal Asfour)",
+      "arName": "العالمية لتجارة النجف والكريستال (كريستال عصفور)",
+      "hotline": "16218"
+    },
+    {
+      "id": "2c9c95c8-93a8-4c37-bb8a-efa4e69f8fe5",
+      "enName": "Universal Group Co.",
+      "arName": "يونيفرسال جروب",
+      "hotline": "19797"
+    },
+    {
+      "id": "9260bc56-0a34-4e89-b4be-7b077e31b719",
+      "enName": "Universal Group Co.",
+      "arName": "يونيفرسال جروب",
+      "hotline": "19933"
+    },
+    {
+      "id": "aa58ebdd-03c6-4582-9a4c-3911fa80937b",
+      "enName": "UPS",
+      "arName": "يو بي اس",
+      "hotline": "16004"
+    },
+    {
+      "id": "0c0b1784-256d-4520-a820-86302e22749e",
+      "enName": "Verinno Furniture",
+      "arName": "فرينو للاثاث",
+      "hotline": "19113"
+    },
+    {
+      "id": "ed2600c0-395d-4f06-9a83-65e7a9888f26",
+      "enName": "Vision",
+      "arName": "رؤية",
+      "hotline": "16607"
+    },
+    {
+      "id": "a2e3e998-cf2c-4821-930b-d727d05dad88",
+      "enName": "Voila Luxury Foods",
+      "arName": "فولا للاغذية المستوردة",
+      "hotline": "19853"
+    },
+    {
+      "id": "f542af5c-4956-4e26-8cba-42d0e5928cee",
+      "enName": "Wadi Degla",
+      "arName": "نادي وادي دجلة",
+      "hotline": "19917"
+    },
+    {
+      "id": "97aa757a-2209-4eca-b83f-7e3cf45ab83e",
+      "enName": "Wadi El Nile Fish",
+      "arName": "مطاعم اسماك وادي النيل",
+      "hotline": "19974"
+    },
+    {
+      "id": "f30ee36d-a462-45a4-b092-3c6242e45240",
+      "enName": "Wady El Nile For Construction & Real Estate Investments",
+      "arName": "وادي النيل للمقاولات والاستثمارات العقارية",
+      "hotline": "16640"
+    },
+    {
+      "id": "0f6471d8-ada3-4e75-be5f-2d64da855789",
+      "enName": "Wael Pharmacy",
+      "arName": "صيدلية وائل",
+      "hotline": "19972"
+    },
+    {
+      "id": "f58aab70-2a52-4f79-b4b3-d6b81667133b",
+      "enName": "Wafaan Lemisr Association",
+      "arName": "جمعية وفاءا لمصر",
+      "hotline": "19575"
+    },
+    {
+      "id": "af07edd9-bcd8-42d4-8c61-eadef01504ba",
+      "enName": "Wamco Motors",
+      "arName": "وامكو موتورز",
+      "hotline": "19329"
+    },
+    {
+      "id": "44fee510-dfc9-4504-9da0-f8545f9a4cac",
+      "enName": "Waseet Phone Real estate",
+      "arName": "وسيط فون",
+      "hotline": "16075"
+    },
+    {
+      "id": "a8ac7272-3c2f-48d0-9ebb-4d0c4abea075",
+      "enName": "Wassaya & Sbarro",
+      "arName": "وصايا و سابارو",
+      "hotline": "16929"
+    },
+    {
+      "id": "ed806c57-832a-429f-a62f-3f76284664d9",
+      "enName": "Water Emergency",
+      "arName": "طوارئ المياه",
+      "hotline": "125"
+    },
+    {
+      "id": "08f060dc-7054-459a-b8f9-b92cbc3e50e1",
+      "enName": "Watheeqa Securities Brokerage",
+      "arName": "وثيقة لتداول الاوراق المالية",
+      "hotline": "19602"
+    },
+    {
+      "id": "aa3ec4b0-09a5-4661-8cf4-839e0f9b126b",
+      "enName": "We Love Life Without Virus C",
+      "arName": "مركز بنحب الحياة من غير فيروس سي",
+      "hotline": "19428"
+    },
+    {
+      "id": "82dec990-8809-49a7-ac88-6475c21d1b11",
+      "enName": "Western Union - IBA",
+      "arName": "ويسترن يونيون - اى بى ايه",
+      "hotline": "19190"
+    },
+    {
+      "id": "d739bcfe-2072-4356-a53a-0c9c3af5cea8",
+      "enName": "White House Furniture",
+      "arName": "وايت هاوس للاثاث",
+      "hotline": "16566"
+    },
+    {
+      "id": "e337610d-8e15-44b5-a4c6-cf4eda540924",
+      "enName": "Xerox",
+      "arName": "زيروكس",
+      "hotline": "19611"
+    },
+    {
+      "id": "4a260f0c-da2d-4e8e-b828-6da8ae260e0f",
+      "enName": "Yalla Misr",
+      "arName": "يلا مصر",
+      "hotline": "19210"
+    },
+    {
+      "id": "39f4ac66-2ad9-47cf-9985-d362b754f876",
+      "enName": "Yasser Nawara Pharmacy",
+      "arName": "صيدلية ياسر نوارة",
+      "hotline": "19194"
+    },
+    {
+      "id": "4b9598bc-f53b-49ff-9b19-e37fa0a83225",
+      "enName": "Yat Learning Solutions",
+      "arName": "مركز يات للتدريب",
+      "hotline": "19928"
+    },
+    {
+      "id": "38db5d7d-efa1-4e3e-a596-aa8b91fe2ef7",
+      "enName": "Yellow Pages Egypt",
+      "arName": "ايجيبت يلو بيجز",
+      "hotline": "19345"
+    },
+    {
+      "id": "628d0daa-e1ef-48a6-8db0-ebcd2ccedd2d",
+      "enName": "Yellow Screen TV",
+      "arName": "قناة فضائية يلو سكرين",
+      "hotline": "19237"
+    },
+    {
+      "id": "f5a5b21f-0267-42bb-b35d-4bed130fa3c9",
+      "enName": "Zaher Pharmacy",
+      "arName": "صيدلية زاهر",
+      "hotline": "19771"
+    },
+    {
+      "id": "5eff6365-4a59-4460-99ca-229b85c7ff16",
+      "enName": "Zaki Automotive Group",
+      "arName": "ذكي اوتوموتيف جروب",
+      "hotline": "19325"
+    },
+    {
+      "id": "b212e5f4-f514-4785-aeba-80dc049c1c86",
+      "enName": "Zanussi",
+      "arName": "زانوسي",
+      "hotline": "16002"
+    },
+    {
+      "id": "96cb839f-e4af-4e76-91a0-91b4ff08735e",
+      "enName": "Zanussi",
+      "arName": "زانوسي",
+      "hotline": "19160"
+    },
+    {
+      "id": "0516ecf1-bf56-4c65-9411-b08032f77c8c",
+      "enName": "Zenos Pharmacy",
+      "arName": "صيدلية زينوس",
+      "hotline": "16190"
+    },
+    {
+      "id": "6c6e7a8d-c750-4e1e-bb93-923edf976771",
+      "enName": "Zikry Pharmacies",
+      "arName": "صيدليات زكري",
+      "hotline": "19029"
+    },
+    {
+      "id": "f6bd1440-f2f6-428a-9b4b-c91e985616cc",
+      "enName": "Zorconiom Dental Studio",
+      "arName": "معمل اسنان زوركونيوم",
+      "hotline": "19068"
+    },
+    {
+      "id": "f4051f78-5ea2-40f1-b7a9-5825c393f0b8",
+      "enName": "Taxi London",
+      "arName": "تاكسي لندن",
+      "hotline": "19670"
+    },
+    {
+      "id": "e407650d-d5e2-4a74-b19c-dcd7e68d20a0",
+      "enName": "Military Command Center",
+      "arName": "المنطقة المركزية",
+      "hotline": "16037"
+    },
+    {
+      "id": "87dec22e-c507-498f-b017-d8053430f546",
+      "enName": "Military Police",
+      "arName": "الشرطة العسكرية",
+      "hotline": "16039"
+    },
+    {
+      "id": "5c253f9e-289a-4cb5-95a0-f5ecb8dbf31a",
+      "enName": "Military Destress",
+      "arName": "الأستغاثة",
+      "hotline": "16137"
+    },
+    {
+      "id": "33c11831-57f1-45a1-8ee8-936ef3d74511",
+      "enName": "Military Destress",
+      "arName": "الأستغاثة",
+      "hotline": "16138"
+    },
+    {
+      "id": "b7aac710-8592-4ed8-a917-119bcd8b8f60",
+      "enName": "International Co. For Engineering Industries (Union Air)",
+      "arName": "العالمية للصناعات الهندسية يونيون اير",
+      "hotline": "19012"
+    },
+    {
+      "id": "1f91b6ba-88c7-482f-8d67-48a6f3f1c4a2",
+      "enName": "International Co. For Engineering Industries (Union Air)",
+      "arName": "العالمية للصناعات الهندسية يونيون اير",
+      "hotline": "19422"
+    },
+    {
+      "id": "b21a76b5-c880-4110-aeae-13255a8d5692",
+      "enName": "Power Egypt Co.",
+      "arName": "الطاقة المصرية باور ايجيبت",
+      "hotline": "19840"
+    },
+    {
+      "id": "04c0cd36-c839-49ae-b9af-124289ce154f",
+      "enName": "Arab International Banking Corporation",
+      "arName": "بنك الشركة المصرفية العربية الدولية",
+      "hotline": "16668"
+    },
+    {
+      "id": "3b7aa0da-aa04-4818-8f37-a1a3e8b262aa",
+      "enName": "Citibank",
+      "arName": "سيتي بنك",
+      "hotline": "16644"
+    },
+    {
+      "id": "36d37821-27a2-4709-b935-2d5ae30e8015",
+      "enName": "HC Brokerage",
+      "arName": "اتش.سي. للأوراق المالية والإستثمار",
+      "hotline": "19942"
+    },
+    {
+      "id": "79f5dd37-0e7a-49a3-a886-1e98f043bd2d",
+      "enName": "Amadeus",
+      "arName": "أماديوس",
+      "hotline": "19772"
+    },
+    {
+      "id": "cac5cc97-7f22-4c11-9a45-cf48902f2b87",
+      "enName": "Against Corruption",
+      "arName": "ضد الفساد",
+      "hotline": "16117"
+    },
+    {
+      "id": "43f44312-a786-4118-b9b3-0e9a52cc096c",
+      "enName": "Arabiata",
+      "arName": "أرابياتا",
+      "hotline": "16919"
+    },
+    {
+      "id": "78ca2a88-ccab-48b0-bab8-78e622d8e94f",
+      "enName": "Bon Appetit",
+      "arName": "بون اپيتي",
+      "hotline": "19101"
+    },
+    {
+      "id": "8a57a8b8-db5f-4404-a239-0ac93e2ec8f1",
+      "enName": "Burger King",
+      "arName": "برجر كينج",
+      "hotline": "16977"
+    },
+    {
+      "id": "7c82decc-8716-4ca6-b501-16aa86164661",
+      "enName": "Cilantro",
+      "arName": "سيلانترو",
+      "hotline": "16313"
+    },
+    {
+      "id": "58fa789a-c08b-45ed-a5d9-eeee9263e735",
+      "enName": "Cortigiano",
+      "arName": "كورتجيانو",
+      "hotline": "19181"
+    },
+    {
+      "id": "eb252984-fc36-4fd6-bf2e-389b7bb320f5",
+      "enName": "Dar El Amar",
+      "arName": "دار القمر",
+      "hotline": "16166"
+    },
+    {
+      "id": "4c2aa11d-67ac-4ceb-989f-ab55f7617ffd",
+      "enName": "Farahat",
+      "arName": "فرحات",
+      "hotline": "16102"
+    },
+    {
+      "id": "d068c66b-66c2-4ff2-ada3-822cf159ba3a",
+      "enName": "Gad",
+      "arName": "جاد",
+      "hotline": "16098"
+    },
+    {
+      "id": "cee9f870-5b68-4b4f-baa6-1b7f1ef0bbd3",
+      "enName": "La Pomme",
+      "arName": "لا بوم",
+      "hotline": "16131"
+    },
+    {
+      "id": "1dfd2d09-55b7-4afa-b216-a8d5af8a1e32",
+      "enName": "Mori Sushi",
+      "arName": "موري سوشي",
+      "hotline": "16885"
+    },
+    {
+      "id": "9ca64deb-3b7f-4ba0-aef5-20ef87d5f3ae",
+      "enName": "Papa John?s Pizza",
+      "arName": "پاپا جونز پيتزا",
+      "hotline": "19277"
+    },
+    {
+      "id": "61c5a5ee-a021-4dd0-98e8-63d15ba9d1c4",
+      "enName": "Peking",
+      "arName": "بكين",
+      "hotline": "16078"
+    },
+    {
+      "id": "d42bd4d4-2cf6-4017-b848-8e8f1ec1dd03",
+      "enName": "Prego",
+      "arName": "پريجو",
+      "hotline": "16121"
+    },
+    {
+      "id": "b9ead502-ff4b-4ed0-a341-41ae2a313dd3",
+      "enName": "Smiley?s Grill",
+      "arName": "سمايلز جريل",
+      "hotline": "16070"
+    },
+    {
+      "id": "b97f32c0-d36c-4c6e-881c-2a136743d8fb",
+      "enName": "Spectra",
+      "arName": "سبيكترا",
+      "hotline": "19491"
+    },
+    {
+      "id": "ab226104-eb1d-4c71-8714-517e325fead0",
+      "enName": "TBS",
+      "arName": "تي.بي.اس",
+      "hotline": "16679"
+    },
+    {
+      "id": "c15b23fa-767d-43e4-8d0a-9bccec24ea41",
+      "enName": "Tebesty",
+      "arName": "تبيستي",
+      "hotline": "19915"
+    },
+    {
+      "id": "c267d47e-bbdd-4628-bcd0-d0fab8284fe2",
+      "enName": "Tom and Bassal",
+      "arName": "ثوم و بصل",
+      "hotline": "16405"
+    },
+    {
+      "id": "35cfe35c-31d6-4ac3-b9af-dd8895a51458",
+      "enName": "Tiba Lab",
+      "arName": "معمل طيبة",
+      "hotline": "19236"
+    },
+    {
+      "id": "c7545690-c89c-46b6-ada6-1a9ddf42d02d",
+      "enName": "Better Home",
+      "arName": "بيتر هوم",
+      "hotline": "19636"
+    },
+    {
+      "id": "59234706-dac3-45ea-a774-578790340a1b",
+      "enName": "Orix Leasing Egypt",
+      "arName": "أوريكس لإيجار المعدات",
+      "hotline": "16749"
+    },
+    {
+      "id": "12dd04ac-3dd0-4a16-b97e-5cb5f557397b",
+      "enName": "Philips Medical Equipments",
+      "arName": "فيليبس للمعدات الطبية",
+      "hotline": "19742"
+    },
+    {
+      "id": "b9995081-9ad5-4030-98c0-83ffd1cbbfd7",
+      "enName": "Premix Concrete",
+      "arName": "بريميكس كونكريت",
+      "hotline": "19464"
+    },
+    {
+      "id": "3fb752b6-7848-48c1-89d8-7cafab84022c",
+      "enName": "Schneider Electric Egypt",
+      "arName": "شنايدر الكتريك مصر",
+      "hotline": "19775"
+    },
+    {
+      "id": "9d830843-9558-4438-9196-98f45e740c5f",
+      "enName": "Bupa Medical Insurance",
+      "arName": "بوبا للتأمين",
+      "hotline": "16816"
+    },
+    {
+      "id": "e7ba8f5e-1237-4fef-9d16-aabfba89e113",
+      "enName": "Amaer Real Estate - Amaer Nasr City",
+      "arName": "عمائر العقارية - عمائر مدينة نصر",
+      "hotline": "16502"
+    },
+    {
+      "id": "f1c80b5b-bc8e-45f6-a783-b8c9c916c38d",
+      "enName": "Asset Egypt Development",
+      "arName": "اصول مصر للتعمير",
+      "hotline": "19394"
+    },
+    {
+      "id": "b861c904-4d6a-4e20-a5a1-a9a187972885",
+      "enName": "H.N.S. Group Real Estate Investment",
+      "arName": "اتش.ان.اس. جروب للاستثمار العقاري",
+      "hotline": "19467"
+    },
+    {
+      "id": "dc941e3c-e295-43b8-b9e4-31ddd7e5cb49",
+      "enName": "First Courier Services",
+      "arName": "فيريست كوريير",
+      "hotline": "16055"
+    },
+    {
+      "id": "450a1441-036a-4e9b-bffb-48ab5ce45bb7",
+      "enName": "TNT Express",
+      "arName": "تي ان تي  للشحن الدولي و المحلي",
+      "hotline": "16651"
+    },
+    {
+      "id": "7a78a785-0fd6-4ee8-ac36-46f25d0e0951",
+      "enName": "TNT Express",
+      "arName": "تي ان تي  للشحن الدولي و المحلي",
+      "hotline": "16667"
+    },
+    {
+      "id": "004beb76-d3b1-412f-8566-e81e1d9d3d50",
+      "enName": "Kheir Zaman Supermarket",
+      "arName": "خير زمان",
+      "hotline": "16007"
+    },
+    {
+      "id": "bd76704e-9fe8-42f7-8367-342165f382ad",
+      "enName": "Mashaweer",
+      "arName": "مشاوير",
+      "hotline": "16339"
+    },
+    {
+      "id": "990750ef-3aae-4ca7-b2e9-af83a41dfd63",
+      "enName": "Mashaweer",
+      "arName": "مشاوير",
+      "hotline": "19988"
+    },
+    {
+      "id": "dcbf949e-bc2e-4371-82d9-44cb4e93e20f",
+      "enName": "Pizza Masters",
+      "arName": "بيتزا ماستر",
+      "hotline": "19577"
+    },
+    {
+      "id": "f5878c45-77b6-4449-b61e-1dbc3dafdf15",
+      "enName": "Nespresso",
+      "arName": "نسبرسو",
+      "hotline": "19637"
+    },
+    {
+      "id": "24b90c0d-1f45-467e-a3be-d35c1aa51b7c",
+      "enName": "Pizza Conez",
+      "arName": "بيتزا كونز",
+      "hotline": "19934"
+    },
+    {
+      "id": "7647abbb-a867-4a28-86cb-6d2a7db02fd9",
+      "enName": "Subway",
+      "arName": "صب واي",
+      "hotline": "19894"
+    },
+    {
+      "id": "26ef64e0-891e-41af-9ccd-bfcaac400335",
+      "enName": "El Safa Hospital",
+      "arName": "مستشفي الصفا",
+      "hotline": "16181"
+    },
+    {
+      "id": "d244f660-c5c4-481e-8979-5c3bdd8b39ce",
+      "enName": "Hagar Pharmacies",
+      "arName": "صيدليات حجر",
+      "hotline": "19747"
+    },
+    {
+      "id": "4208d3f2-d2c3-4290-9c8c-4ca7fe25f123",
+      "enName": "Abou Seif Electronic Group - ARION",
+      "arName": "مجموعة ابو سيف للالكترونيات",
+      "hotline": "19727"
+    },
+    {
+      "id": "1b793b58-55da-454a-b0ae-5c93a5ebcec7",
+      "enName": "Braun",
+      "arName": "براون",
+      "hotline": "16016"
+    },
+    {
+      "id": "e34ccdfb-969b-430b-8909-7519e77c9c91",
+      "enName": "Grome - Grohe Middle East",
+      "arName": "جرومى - جروهى ميدل ايست",
+      "hotline": "19013"
+    },
+    {
+      "id": "4dadd65c-f9b8-4549-8950-0a466eba97bf",
+      "enName": "Hassan Allam Sons",
+      "arName": "ابناء حسن علام",
+      "hotline": "19172"
+    },
+    {
+      "id": "e75d5327-2a3b-46ae-92a2-fc49626860bd",
+      "enName": "International Group For Modern Coatings ? Mido",
+      "arName": "المجموعة الدولية للدهانات الحديثة - ميدو",
+      "hotline": "16844"
+    },
+    {
+      "id": "4d80ab9a-bd3d-479e-bdf1-efb85a275a68",
+      "enName": "Sipes Paints",
+      "arName": "سايبس للدهانات",
+      "hotline": "19852"
+    },
+    {
+      "id": "c481d102-3bcb-4c42-8c02-54e850da3381",
+      "enName": "Egypt Air",
+      "arName": "مصر للطيران",
+      "hotline": "1717"
+    },
+    {
+      "id": "dffd9d6e-065c-4a3a-a26a-f4cd696acc38",
+      "enName": "Arab African International Bank (AAIB)",
+      "arName": "البنك العربى الافريقى الدولى",
+      "hotline": "19555"
+    },
+    {
+      "id": "375678b3-73d3-4314-bed8-0cbd43e39ad0",
+      "enName": "Auntie Anne's",
+      "arName": "أنتي أنز",
+      "hotline": "16629"
+    },
+    {
+      "id": "f7eaccd4-6441-45e7-97af-880050f50e19",
+      "enName": "I-Score Egyptian Credit Bureau",
+      "arName": "أى سكور - الشركة المصرية للاستعلام الائتمانى",
+      "hotline": "16262"
+    },
+    {
+      "id": "6a922f42-050a-4d82-b2ce-41d3093c965c",
+      "enName": "Valuation Experts Union - El Habashi",
+      "arName": "اتحاد الخبراء المثمنين الحبشى",
+      "hotline": "16836"
+    },
+    {
+      "id": "3da3c74c-7e2a-4c7a-87d6-db368fe9502f",
+      "enName": "Olio",
+      "arName": "أوليو",
+      "hotline": "16905"
+    },
+    {
+      "id": "b3589cf4-d4f0-47b3-998e-555efcd9b7ef",
+      "enName": "Welatain",
+      "arName": "سلسلة مطاعم ولعتين",
+      "hotline": "16799"
+    },
+    {
+      "id": "a1dc9fd7-3c21-4be2-a3a0-31be3cd09e13",
+      "enName": "Wasel Advertising Weekly Free",
+      "arName": "جريدة واصل الإعلانية",
+      "hotline": "16350"
+    },
+    {
+      "id": "81be906c-091b-4807-975a-e98836ca2c94",
+      "enName": "Ahlan Service - Cairo International Airport",
+      "arName": "خدمة أهلًا - مطار القاهرة الدولى",
+      "hotline": "16708"
+    },
+    {
+      "id": "aae88c73-e68e-44fb-88b5-1d8069cdfebe",
+      "enName": "Dolostone",
+      "arName": "دولوستون",
+      "hotline": "19285"
+    },
+    {
+      "id": "2daacd0f-250e-4ebf-8fe5-1e3e6f9fdeb1",
+      "enName": "Cairo Poultry Processing Co. - Koki",
+      "arName": "شركة القاهرة لمجازر الدواجن - كوكى",
+      "hotline": "19585"
+    },
+    {
+      "id": "249cf26e-c628-4154-a41c-bc3daba4bf47",
+      "enName": "German University in Cairo (GUC)",
+      "arName": "(الجامعة الألمانية بالقاهرة (جي.يو.سي",
+      "hotline": "16482"
+    },
+    {
+      "id": "775770b4-2073-4042-8068-0d28d4b3d2c4",
+      "enName": "Dina Farms",
+      "arName": "مزارع دينا",
+      "hotline": "19642"
+    },
+    {
+      "id": "57bca992-c987-4ff9-8c68-70c164475e3d",
+      "enName": "Gourmet Egypt",
+      "arName": "جورميه ايجيبت",
+      "hotline": "19339"
+    },
+    {
+      "id": "cdffbda1-227f-4888-9db3-a45844c3fcd1",
+      "enName": "Costa Coffee",
+      "arName": "كوستا كوفى",
+      "hotline": "16460"
+    }
+  ]
+}

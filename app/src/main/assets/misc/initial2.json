@@ -1,0 +1,291 @@
+{
+  "vector":[
+    1,2,3,4,5
+  ],
+  "map": {
+    "cf921250-e146-4f44-be4d-12b44155dadd":["e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd","e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd"],
+    "e527dc68-e31d-11e7-80c1-9a214cf093ae":["e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd","e527dc68-e31d-11e7-80c1-9a214cf093ae","cf921250-e146-4f44-be4d-12b44155dadd"]
+  },
+  "itemsCategories":{
+    "d87399e5-92f6-4b32-8e28-38e074c1a289":["c2a20ac4-e36c-4aa3-bf1a-4fb48cba060c"],
+    "3c45c574-e69a-4170-b9f4-f36505ab7e03":["c2a20ac4-e36c-4aa3-bf1a-4fb48cba060c"],
+    "65d4a76a-f3f9-4dbd-a003-517e53e2b49c":["c2a20ac4-e36c-4aa3-bf1a-4fb48cba060c"],
+    "01e26a32-f95f-406b-a807-e39a1c6c866d":["c2a20ac4-e36c-4aa3-bf1a-4fb48cba060c"],
+    "8c9b6601-a083-49c8-a13f-3326bd35f5ba":["ea5b5b99-a4bd-41bb-af58-6ffae1a16719"],
+    "0dd9b4ef-a879-411c-8b84-f5409dabf410":["ea5b5b99-a4bd-41bb-af58-6ffae1a16719"]
+  },
+  "categories":[
+    {
+      "id":"892c9d6d-d01c-4edf-993a-4a376737f8a4",
+      "enName":"Chinese Food",
+      "arName":"الأكل الصيني",
+      "type":1,
+      "searchText":""
+    },
+    {
+      "id":"0b358176-0ce0-4ca6-b69f-c882bba07c13",
+      "enName":"Markets",
+      "arName":"الأسواق",
+      "type":0,
+      "searchText":"supermarket hypermarket سوق"
+    },
+    {
+      "id":"c1172682-41b2-450e-8e72-d6d6989b539f",
+      "enName":"Pharmacies",
+      "arName":"الصيدليات",
+      "type":0,
+      "searchText":"صيدلية pharmacy"
+    },
+    {
+      "id":"dea91e79-14f6-4589-afba-b630ee889ccd",
+      "enName":"Electronics",
+      "arName":"الإلكترونيات",
+      "type":0,
+      "searchText":"الالكترونيات الألكترونيات"
+    },
+    {
+      "id":"b855e971-498b-4fee-9b4e-99eef33470f2",
+      "enName":"Furniture",
+      "arName":"الأثاث",
+      "type":0,
+      "searchText":"الاثاث"
+    },
+    {
+      "id":"15b12e16-7c75-4480-9029-5ab5f63ef847",
+      "enName":"Telecom",
+      "arName":"الاتصالات",
+      "type":0,
+      "searchText":"الإتصالات Communications"
+    },
+    {
+      "id":"c2a20ac4-e36c-4aa3-bf1a-4fb48cba060c",
+      "enName":"Restaurants",
+      "arName":"المطاعم",
+      "type":0,
+      "searchText":"مطعم"
+    },
+    {
+      "id":"b0808eb5-6682-45fd-87b9-798ad8bf9755",
+      "enName":"Hospitals",
+      "arName":"مستشفيات",
+      "type":0,
+      "searchText":"مستشفى"
+    },
+    {
+      "id":"c6161237-999c-40f3-92f7-dca4c2f2aaf3",
+      "enName":"Banks",
+      "arName":"بنوك",
+      "type":0,
+      "searchText":"بنك مصرف"
+    },
+    {
+      "id":"693a4c43-d872-4acb-ae6d-334dbb873aab",
+      "enName":"Schools",
+      "arName":"مدارس",
+      "type":0,
+      "searchText":"مدرسة"
+    },
+    {
+      "id":"9ebea535-676b-45fd-8595-c10284037046",
+      "enName":"Universities",
+      "arName":"جامعات",
+      "type":0,
+      "searchText":"جامعة University"
+    },
+    {
+      "id":"76618829-7ab1-4544-93ec-931f0bd7736b",
+      "enName":"Hotels",
+      "arName":"فنادق",
+      "type":0,
+      "searchText":"فندق"
+    },
+    {
+      "id":"11c1a1af-8f5f-4372-92fc-aff7949ea341",
+      "enName":"Medical Care",
+      "arName":"رعاية صحية",
+      "type":0,
+      "searchText":"صحة"
+    },
+    {
+      "id":"e205e1f8-2c4b-44e6-844d-a88ef4a62ab7",
+      "enName":"Newspapers & Magazines",
+      "arName":"صحف و مجلات",
+      "type":0,
+      "searchText":"صحيفة جريدة جرائد مجلة"
+    },
+    {
+      "id":"ea5b5b99-a4bd-41bb-af58-6ffae1a16719",
+      "enName":"Real estate",
+      "arName":"عقارات ومقاولات",
+      "type":0,
+      "searchText":""
+    }
+  ],
+
+  "entities": [
+    {
+      "id": "4a260f0c-da2d-4e8e-b828-6da8ae260e0f",
+      "enName": "Yalla Misr",
+      "arName": "يلا مصر",
+      "hotline": "19210"
+    },
+    {
+      "id": "4d80ab9a-bd3d-479e-bdf1-efb85a275a68",
+      "enName": "Sipes Paints",
+      "arName": "سايبس للدهانات",
+      "hotline": "19852"
+    },
+    {
+      "id": "5d7c7cc6-dc59-4a13-a874-273a6af57551",
+      "enName": "ABB Electronics",
+      "arName": "اي بي بي الكترونيات",
+      "hotline": "19290"
+    },
+    {
+      "id": "6a5d81e6-0b65-4324-91fb-11e312dd996a",
+      "enName": "Resala Charity Association",
+      "arName": "جمعية رسالة للاعمال الخيرية",
+      "hotline": "19450"
+    },
+    {
+      "id": "8c9b6601-a083-49c8-a13f-3326bd35f5ba",
+      "enName": "Amer Group for Tourism Resorts",
+      "arName": "عامر جروب للمنتجعات السياحية",
+      "hotline": "19106"
+    },
+    {
+      "id": "12fa7029-04ac-4a78-988b-22cac767627d",
+      "enName": "Masria (Mitsubishi)",
+      "arName": "شركة مصرية (متسوبيشى)",
+      "hotline": "19830"
+    },
+    {
+      "id": "31fad517-22d7-4814-8088-4d6156267353",
+      "enName": "Electrostar For Engineering Industries ",
+      "arName": "الكتروستار للصناعات الهندسية",
+      "hotline": "16505"
+    },
+    {
+      "id": "36bc9629-2a77-47f6-a3c5-7ec4319ce263",
+      "enName": "Al Mokhtabar Moamena Kamel Laboratories",
+      "arName": "معامل المختبر مؤمنة كامل",
+      "hotline": "19014"
+    },
+    {
+      "id": "65d4a76a-f3f9-4dbd-a003-517e53e2b49c",
+      "enName": "Hadramoot",
+      "arName": "مطعم حضرموت",
+      "hotline": "19067"
+    },
+    {
+      "id": "71f7e72e-fbca-4179-b6b7-5b998177bb40",
+      "enName": "Abou Ghaly Motors",
+      "arName": "ابو غالي موتورز",
+      "hotline": "19570"
+    },
+    {
+      "id": "081e888c-c4d8-4b12-81b5-dc6192a98147",
+      "enName": "Ghabbour Auto (GB)",
+      "arName": "غبور اوتو",
+      "hotline": "16101"
+    },
+    {
+      "id": "553bddc6-a0b6-4d00-8f99-9042157a1e90",
+      "enName": "Arab Co. For Food Industries (Teama)",
+      "arName": "الشركة العربية للصناعات الغذائية (طعمة)",
+      "hotline": "19377"
+    },
+    {
+      "id": "1059b74f-495e-4ca0-868b-98307e3f00b2",
+      "enName": "Radio Shack",
+      "arName": "راديو شاك",
+      "hotline": "19419"
+    },
+    {
+      "id": "3280d227-168b-4b96-9811-b73793d8dccc",
+      "enName": "Bisco Misr Customer Services",
+      "arName": "خدمة عملاء بسكو مصر",
+      "hotline": "16944"
+    },
+    {
+      "id": "d87399e5-92f6-4b32-8e28-38e074c1a289",
+      "enName": "Chili's",
+      "arName": "تشيليز",
+      "hotline": "19002"
+    },
+    {
+      "id": "3c45c574-e69a-4170-b9f4-f36505ab7e03",
+      "enName": "Chicken Tikka",
+      "arName": "دجاج تكا",
+      "hotline": "19099"
+    },
+    {
+      "id": "1f91b6ba-88c7-482f-8d67-48a6f3f1c4a2",
+      "enName": "International Co. For Engineering Industries (Union Air)",
+      "arName": "العالمية للصناعات الهندسية يونيون اير",
+      "hotline": "19422"
+    },
+    {
+      "id": "01e26a32-f95f-406b-a807-e39a1c6c866d",
+      "enName": "Basmatio Restaurant",
+      "arName": "مطعم بسماتيو",
+      "hotline": "16400"
+    },
+    {
+      "id": "0dd9b4ef-a879-411c-8b84-f5409dabf410",
+      "enName": "Emaar Misr For Development",
+      "arName": "اعمار مصر للتنمية",
+      "hotline": "16116"
+    },
+    {
+      "id": "00efbbae-77b5-4990-b417-4e2c79cd3995",
+      "enName": "Halwani Bros",
+      "arName": "حلواني اخوان مصر",
+      "hotline": "19882"
+    }
+
+
+  ],
+  "contacts":[
+    {
+      "id": "hotline",
+      "arName": "الخط الساخن",
+      "enName": "Hotlines"
+    },
+    {
+      "id": "web",
+      "arName": "الموقع الإلكتروني",
+      "enName": "Web Site"
+    }
+  ],
+  "offers":[
+    {
+      "id": "cf921250-e146-4f44-be4d-12b44155dadd",
+      "entityId":"cf921250-e146-4f44-be4d-12b44155dadd",
+      "arName":"",
+      "enName":"",
+      "startDate":"2017-12-16",
+      "endDate":"2017-12-31"
+    },
+    {
+      "id": "cf921250-e146-4f44-be4d-12b44155dadd",
+      "entityId":"cf921250-e146-4f44-be4d-12b44155dadd",
+      "arName":"",
+      "enName":"",
+      "startDate":"2017-12-16",
+      "endDate":"2017-12-31"
+    }
+  ],
+  "communications":[
+    {
+      "id":"hotline",
+      "enName":"Hotline",
+      "arName":"الخط الساخن"
+    },
+    {
+      "id":"web",
+      "enName":"Web",
+      "arName":"الانترنت"
+    }
+  ]
+}
