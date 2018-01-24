@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help">مساعدة</string>
+    <string name="about">نبذة عن</string>
+    <string name="search">بحث</string>
+    <string name="msgExit">هل تريد الخروج من التطبيق؟</string>
+    <string name="ok">نعم</string>
+    <string name="cancel">لا</string>
+    <string name="app_name">تطبيق زبون</string>
+    <string name="context">لغة الجهاز</string>
+    <string name="favoriteTitle">المفضلة</string>
+    <string name="offersTitle">العروض</string>
+    <string name="hotlinesTitle">الأرقام</string>
+    <string name="menusTitle">القوائم</string>
+</resources>

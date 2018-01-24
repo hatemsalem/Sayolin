@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sql.findBusinessEntities">select b._id,b.id,b.hotline,b.arName name,b.enDesc desc,b.offers,b.favorite from businessentity b left join itemCategory ic on b.id=ic.itemid where (enName like ? OR arName like ? )  limit %1$s,%2$s</string>
+    <string name="sql.findFavoriteBusinessEntities">select b._id,b.id,b.hotline,b.arName name,b.enDesc desc,b.offers,b.favorite from businessentity b left join itemCategory ic on b.id=ic.itemid where (enName like ? OR arName like ? ) AND favorite=1 limit %1$s,%2$s collate nocase</string>
+    <string name="sql.findBusinessEntitiesInCategory">select b._id,b.id,b.hotline,b.arName name,b.enDesc desc,b.offers,b.favorite from businessentity b left join itemCategory ic on b.id=ic.itemid where (enName like ? OR arName like ? ) AND ic.categoryid like ? limit %1$s,%2$s</string>
+    <string name="sql.findCategories">select c._id,c.id,c.arName name,offers,count(ic.itemId) entities from category  c left join itemCategory ic on c.id=ic.categoryId   where (c.enName like ? or c.arName like ? or searchText like ?) and type=%3$s group by c.id order by count(ic.itemId) desc limit %1$s,%2$s</string>
+</resources>

@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">Sayolin</string>
+    <string name="help">Help</string>
+    <string name="about">About</string>
+    <string name="search">Search</string>
+    <string name="arabic" translatable="false">عربي</string>
+    <string name="english" translatable="false">English</string>
+    <string name="context">Device Language</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="msgExit">Do you want to exit?</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+    <string name="app_name">ZobonApp</string>
+
+
+    <string name="hotlinesTitle">Hotlines</string>
+    <string name="menusTitle">Menus</string>
+
+    <string name="favoriteTitle">Favorites</string>
+    <string name="offersTitle">Offers</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>

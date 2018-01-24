@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ListPreference
+        android:defaultValue="ctx"
+        android:entries="@array/languages"
+        android:entryValues="@array/langCodes"
+        android:key="interfaceLang"
+        android:title="Interface Language"
+        android:summary="your choice is %s"/>
+    <ListPreference
+        android:defaultValue="ctx"
+        android:entries="@array/languages"
+        android:entryValues="@array/langCodes"
+        android:key="contentLang"
+        android:title="Contents Language"
+        android:summary="your choice is %s"/>
+</PreferenceScreen>

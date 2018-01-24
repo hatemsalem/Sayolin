@@ -1,4 +1,4 @@
-package com.itraters.sayolin;
+package com.zobonapp;
 
 import org.junit.Test;
 

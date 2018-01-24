@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="languages">
+            <item>@string/arabic</item>
+            <item>@string/english</item>
+            <item>@string/context</item>
+        </string-array>
+        <string-array name="langCodes" translatable="false">
+            <item>ar</item>
+            <item>en</item>
+            <item>ctx</item>
+        </string-array>
+        <string-array name="titles">
+            <item>@string/hotlinesTitle</item>
+            <item>@string/menusTitle</item>
+            <item>@string/favoriteTitle</item>
+            <item>@string/offersTitle</item>
+
+        </string-array>
+</resources>
