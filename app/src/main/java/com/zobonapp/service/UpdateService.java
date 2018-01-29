@@ -88,9 +88,11 @@ public class UpdateService extends IntentService
             {
                 case 0:
                     ZobonApp.getContext().getDataManager().updateCategories(dataCollection.getCategories());
+                    ZobonApp.getContext().getDataManager().updateBusinessEntities(dataCollection.getEntities());
+                    ZobonApp.getContext().getDataManager().insertContacts(dataCollection.getContacts());
                     QueryPreferences.setInitializeStep(step++);
                 case 1:
-                    ZobonApp.getContext().getDataManager().updateBusinessEntities(dataCollection.getEntities());
+
                     QueryPreferences.setInitializeStep(step++);
                     EventBus.getDefault().post(new InitializationEvent(InitializationEvent.Status.COMPLETED));
                 case 2:

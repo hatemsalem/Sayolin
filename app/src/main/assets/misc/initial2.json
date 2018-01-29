@@ -14,11 +14,152 @@
     "8c9b6601-a083-49c8-a13f-3326bd35f5ba":["ea5b5b99-a4bd-41bb-af58-6ffae1a16719"],
     "0dd9b4ef-a879-411c-8b84-f5409dabf410":["ea5b5b99-a4bd-41bb-af58-6ffae1a16719"]
   },
+  "contacts":[
+    {
+      "id":"d58b356a-01f5-11e8-ba89-0ed5f89f718b",
+      "itemId":"4a260f0c-da2d-4e8e-b828-6da8ae260e0f",
+      "uri":"tel:19210"
+    },
+    {
+      "id":"bdf35558-01f6-11e8-ba89-0ed5f89f718b",
+      "itemId":"4d80ab9a-bd3d-479e-bdf1-efb85a275a68",
+      "uri":"tel:19852"
+    },
+    {
+      "id":"bdf357f6-01f6-11e8-ba89-0ed5f89f718b",
+      "itemId":"5d7c7cc6-dc59-4a13-a874-273a6af57551",
+      "uri":"tel:19290"
+    },
+    {
+      "id":"bdf3594a-01f6-11e8-ba89-0ed5f89f718b",
+      "itemId":"6a5d81e6-0b65-4324-91fb-11e312dd996a",
+      "uri":"tel:19450"
+    },
+    {
+      "id":"ec7e0d0e-036e-11e8-ba89-0ed5f89f718b",
+      "itemId":"6a5d81e6-0b65-4324-91fb-11e312dd996a",
+      "uri":"http://resala.org/"
+    },
+    {
+      "id":"d9d76030-035d-11e8-ba89-0ed5f89f718b",
+      "itemId":"6a5d81e6-0b65-4324-91fb-11e312dd996a",
+      "uri":"fb://Resala.org/"
+    },
+    {
+      "id":"bdf35a80-01f6-11e8-ba89-0ed5f89f718b",
+      "itemId":"8c9b6601-a083-49c8-a13f-3326bd35f5ba",
+      "uri":"tel:19106"
+    },
+    {
+      "id":"bdf35bac-01f6-11e8-ba89-0ed5f89f718b",
+      "itemId":"12fa7029-04ac-4a78-988b-22cac767627d",
+      "uri":"tel:19830"
+    },
+    {
+      "id":"a7e46986-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"12fa7029-04ac-4a78-988b-22cac767627d",
+      "uri":"tel:19830"
+    },
+    {
+      "id":"a7e471c4-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"36bc9629-2a77-47f6-a3c5-7ec4319ce263",
+      "uri":"tel:19014"
+    },
+    {
+      "id":"a7e476e2-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"65d4a76a-f3f9-4dbd-a003-517e53e2b49c",
+      "uri":"tel:19067"
+    },
+    {
+      "id":"a7e47494-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"71f7e72e-fbca-4179-b6b7-5b998177bb40",
+      "uri":"tel:19570"
+    },
+    {
+      "id":"e575e9dc-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"081e888c-c4d8-4b12-81b5-dc6192a98147",
+      "uri":"tel:16101"
+    },
+    {
+      "id":"e575ec52-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"553bddc6-a0b6-4d00-8f99-9042157a1e90",
+      "uri":"tel:19377"
+    },
+    {
+      "id":"e575eda6-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"1059b74f-495e-4ca0-868b-98307e3f00b2",
+      "uri":"tel:19419"
+    },
+    {
+      "id":"e575eed2-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"3280d227-168b-4b96-9811-b73793d8dccc",
+      "uri":"tel:16944"
+    },
+    {
+      "id":"e575eff4-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"d87399e5-92f6-4b32-8e28-38e074c1a289",
+      "uri":"tel:19002"
+    },
+    {
+      "id":"e575f116-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"3c45c574-e69a-4170-b9f4-f36505ab7e03",
+      "uri":"tel:19099"
+    },
+    {
+      "id":"e575f6e8-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"1f91b6ba-88c7-482f-8d67-48a6f3f1c4a2",
+      "uri":"tel:19422"
+    },
+    {
+      "id":"e575f238-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"01e26a32-f95f-406b-a807-e39a1c6c866d",
+      "uri":"tel:16400"
+    },
+    {
+      "id":"e575f49a-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"0dd9b4ef-a879-411c-8b84-f5409dabf410",
+      "uri":"tel:16116"
+    },
+    {
+      "id":"e575f5d0-01f7-11e8-ba89-0ed5f89f718b",
+      "itemId":"00efbbae-77b5-4990-b417-4e2c79cd3995",
+      "uri":"tel:19882"
+    }
+
+  ],
   "categories":[
     {
       "id":"892c9d6d-d01c-4edf-993a-4a376737f8a4",
       "enName":"Chinese Food",
       "arName":"الأكل الصيني",
+      "type":1,
+      "searchText":""
+    },
+    {
+      "id":"8e27b4d8-01e0-11e8-ba89-0ed5f89f718b",
+      "enName":"Italian Food",
+      "arName":"الأكل الإيطالي",
+      "type":1,
+      "searchText":""
+    },
+    {
+      "id":"8e27b8de-01e0-11e8-ba89-0ed5f89f718b",
+      "enName":"Fast Food",
+      "arName":"الأكل السريع",
+      "type":1,
+      "searchText":""
+    },
+    {
+      "id":"8e27bf28-01e0-11e8-ba89-0ed5f89f718b",
+      "enName":"Traditional Food",
+      "arName":"الأكل الشعبي",
+      "type":1,
+      "searchText":""
+    },
+    {
+      "id":"8e27c1a8-01e0-11e8-ba89-0ed5f89f718b",
+      "enName":"Cafe",
+      "arName":"كافيه",
       "type":1,
       "searchText":""
     },
@@ -127,136 +268,124 @@
       "id": "4a260f0c-da2d-4e8e-b828-6da8ae260e0f",
       "enName": "Yalla Misr",
       "arName": "يلا مصر",
-      "hotline": "19210"
+      "contactId": "d58b356a-01f5-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "4d80ab9a-bd3d-479e-bdf1-efb85a275a68",
       "enName": "Sipes Paints",
       "arName": "سايبس للدهانات",
-      "hotline": "19852"
+      "contactId": "bdf35558-01f6-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "5d7c7cc6-dc59-4a13-a874-273a6af57551",
       "enName": "ABB Electronics",
       "arName": "اي بي بي الكترونيات",
-      "hotline": "19290"
+      "contactId": "bdf357f6-01f6-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "6a5d81e6-0b65-4324-91fb-11e312dd996a",
       "enName": "Resala Charity Association",
       "arName": "جمعية رسالة للاعمال الخيرية",
-      "hotline": "19450"
+      "contactId": "bdf3594a-01f6-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "8c9b6601-a083-49c8-a13f-3326bd35f5ba",
       "enName": "Amer Group for Tourism Resorts",
       "arName": "عامر جروب للمنتجعات السياحية",
-      "hotline": "19106"
+      "contactId": "bdf35a80-01f6-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "12fa7029-04ac-4a78-988b-22cac767627d",
       "enName": "Masria (Mitsubishi)",
       "arName": "شركة مصرية (متسوبيشى)",
-      "hotline": "19830"
+      "contactId": "a7e46986-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "31fad517-22d7-4814-8088-4d6156267353",
       "enName": "Electrostar For Engineering Industries ",
       "arName": "الكتروستار للصناعات الهندسية",
-      "hotline": "16505"
+      "contactId": "bdf35bac-01f6-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "36bc9629-2a77-47f6-a3c5-7ec4319ce263",
       "enName": "Al Mokhtabar Moamena Kamel Laboratories",
       "arName": "معامل المختبر مؤمنة كامل",
-      "hotline": "19014"
+      "contactId": "a7e471c4-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "65d4a76a-f3f9-4dbd-a003-517e53e2b49c",
       "enName": "Hadramoot",
       "arName": "مطعم حضرموت",
-      "hotline": "19067"
+      "contactId": "a7e476e2-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "71f7e72e-fbca-4179-b6b7-5b998177bb40",
       "enName": "Abou Ghaly Motors",
       "arName": "ابو غالي موتورز",
-      "hotline": "19570"
+      "contactId": "a7e47494-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "081e888c-c4d8-4b12-81b5-dc6192a98147",
       "enName": "Ghabbour Auto (GB)",
       "arName": "غبور اوتو",
-      "hotline": "16101"
+      "contactId": "e575e9dc-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "553bddc6-a0b6-4d00-8f99-9042157a1e90",
       "enName": "Arab Co. For Food Industries (Teama)",
       "arName": "الشركة العربية للصناعات الغذائية (طعمة)",
-      "hotline": "19377"
+      "contactId": "e575ec52-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "1059b74f-495e-4ca0-868b-98307e3f00b2",
       "enName": "Radio Shack",
       "arName": "راديو شاك",
-      "hotline": "19419"
+      "contactId": "e575eda6-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "3280d227-168b-4b96-9811-b73793d8dccc",
       "enName": "Bisco Misr Customer Services",
       "arName": "خدمة عملاء بسكو مصر",
-      "hotline": "16944"
+      "contactId": "e575eed2-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "d87399e5-92f6-4b32-8e28-38e074c1a289",
       "enName": "Chili's",
       "arName": "تشيليز",
-      "hotline": "19002"
+      "contactId": "e575eff4-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "3c45c574-e69a-4170-b9f4-f36505ab7e03",
       "enName": "Chicken Tikka",
       "arName": "دجاج تكا",
-      "hotline": "19099"
+      "contactId": "e575f116-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "1f91b6ba-88c7-482f-8d67-48a6f3f1c4a2",
       "enName": "International Co. For Engineering Industries (Union Air)",
       "arName": "العالمية للصناعات الهندسية يونيون اير",
-      "hotline": "19422"
+      "contactId": "e575f6e8-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "01e26a32-f95f-406b-a807-e39a1c6c866d",
       "enName": "Basmatio Restaurant",
       "arName": "مطعم بسماتيو",
-      "hotline": "16400"
+      "contactId": "e575f238-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "0dd9b4ef-a879-411c-8b84-f5409dabf410",
       "enName": "Emaar Misr For Development",
       "arName": "اعمار مصر للتنمية",
-      "hotline": "16116"
+      "contactId": "e575f49a-01f7-11e8-ba89-0ed5f89f718b"
     },
     {
       "id": "00efbbae-77b5-4990-b417-4e2c79cd3995",
       "enName": "Halwani Bros",
       "arName": "حلواني اخوان مصر",
-      "hotline": "19882"
+      "contactId": "e575f5d0-01f7-11e8-ba89-0ed5f89f718b"
     }
 
 
-  ],
-  "contacts":[
-    {
-      "id": "hotline",
-      "arName": "الخط الساخن",
-      "enName": "Hotlines"
-    },
-    {
-      "id": "web",
-      "arName": "الموقع الإلكتروني",
-      "enName": "Web Site"
-    }
   ],
   "offers":[
     {

@@ -60,7 +60,15 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ui.hotline.ItemsActivity" android:parentActivityName=".MainActivity" android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.hotline.ItemsActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".ItemDetailsActivity"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 

@@ -35,9 +35,12 @@ public class DatabaseHelper extends SQLiteOpenHelper
     {
         db.execSQL(BusinessEntityTable.getCreateStatement());
         db.execSQL(CategoryTable.getCreateStatement());
-        db.execSQL(ContactTable.getCreateStatement());
+        db.execSQL(MenutTable.getCreateStatement());
         db.execSQL(OfferTable.getCreateStatement());
         db.execSQL(ItemCategoryTable.getCreateStatement());
+        db.execSQL(ContactTable.getCreateStatement());
+
+
 
     }
 
@@ -46,9 +49,12 @@ public class DatabaseHelper extends SQLiteOpenHelper
     {
         db.execSQL("Drop table if exists "+ BusinessEntityTable.NAME);
         db.execSQL("Drop table if exists "+ CategoryTable.NAME);
-        db.execSQL("Drop table if exists "+ ContactTable.NAME);
+        db.execSQL("Drop table if exists " +MenutTable.NAME);
         db.execSQL("Drop table if exists "+ OfferTable.NAME);
         db.execSQL("Drop table if exists "+ ItemCategoryTable.NAME);
+        db.execSQL("Drop table if exists "+ ContactTable.NAME);
+
+
 
         onCreate(db);
     }

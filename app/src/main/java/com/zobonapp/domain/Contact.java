@@ -1,5 +1,9 @@
 package com.zobonapp.domain;
 
+import android.net.Uri;
+
+import java.util.UUID;
+
 /**
  * Created by hasalem on 12/13/2017.
  */
@@ -7,9 +11,9 @@ package com.zobonapp.domain;
 public class Contact
 {
     private int pk;
-    private String id;
-    private String arName;
-    private String enName;
+    private UUID id;
+    private UUID itemId;
+    private String uri;
 
     public int getPk()
     {
@@ -21,34 +25,33 @@ public class Contact
         this.pk = pk;
     }
 
-    public String getId()
+    public UUID getId()
     {
         return id;
     }
 
-    public void setId(String id)
+    public void setId(UUID id)
     {
         this.id = id;
     }
 
-    public String getArName()
+    public UUID getItemId()
     {
-        return arName;
+        return itemId;
     }
 
-    public void setArName(String arName)
+    public void setItemId(UUID itemId)
     {
-        this.arName = arName;
+        this.itemId = itemId;
     }
 
-    public String getEnName()
+    public String getUri()
     {
-        return enName;
+        return uri;
     }
 
-    public void setEnName(String enName)
+    public void setUri(String uri)
     {
-        this.enName = enName;
+        this.uri = uri;
     }
-
 }

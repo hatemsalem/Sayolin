@@ -1,13 +1,11 @@
 package com.zobonapp;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
@@ -16,26 +14,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.zobonapp.ui.hotline.BusinessEntityAdapter;
-import com.zobonapp.ui.hotline.CategoriesFragment;
-import com.zobonapp.ui.hotline.CategoryAdapter;
-import com.zobonapp.ui.hotline.ItemsFragment;
-import com.zobonapp.utils.QueryPreferences;
 import com.zobonapp.utils.RootActivity;
 import com.zobonapp.utils.ZobonApp;
-
-import io.karim.MaterialTabs;
 
 public class MainActivity extends RootActivity implements NavigationView.OnNavigationItemSelectedListener,DialogInterface.OnClickListener
 {
     private static final String TAG=MainActivity.class.getSimpleName();
-    private ViewPager pager;
-    private MaterialTabs tabs;
     private ShareActionProvider share;
     private ContentAdapter adapter;
     private Intent shareIntent=new Intent(Intent.ACTION_SEND).setType("text/plain").putExtra(Intent.EXTRA_TEXT,"Hello");
@@ -44,7 +31,6 @@ public class MainActivity extends RootActivity implements NavigationView.OnNavig
     {
 
         super.onCreate(savedInstanceState);
-
         strictModeSetup();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -61,13 +47,12 @@ public class MainActivity extends RootActivity implements NavigationView.OnNavig
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        pager=findViewById(R.id.pager);
-        tabs=findViewById(R.id.tabs);
+        ViewPager pager = findViewById(R.id.pager);
         adapter=new ContentAdapter(this);
         pager.setAdapter(adapter);
-        pager.setOffscreenPageLimit(3);
-        tabs.setViewPager(pager);
-
+//        pager.setOffscreenPageLimit(3);
+        TabLayout tabs=findViewById(R.id.tabs);
+        tabs.setupWithViewPager(pager);
 
     }
 

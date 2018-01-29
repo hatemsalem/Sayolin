@@ -3,10 +3,12 @@ package com.zobonapp.manager.impl;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Log;
 
 import com.zobonapp.R;
+import com.zobonapp.domain.Contact;
 import com.zobonapp.utils.QueryPreferences;
 import com.zobonapp.db.DbSchema;
 import com.zobonapp.db.DatabaseHelper;
@@ -145,6 +147,40 @@ public class MockDataManager implements DataManager
     }
 
     @Override
+    public List<Contact> findContactsForItem(String itemId)
+    {
+        String query=null;
+        Vector<String> queryArgs=new Vector<>();
+//        String searchQuery=null;
+//        if(searchQuery==null)
+//            searchQuery="";
+//        searchQuery= "%"+searchQuery+"%";
+//        queryArgs.add(searchQuery);
+//        queryArgs.add(searchQuery);
+//        queryArgs.add(searchQuery);
+        queryArgs.add(itemId);
+        query= ZobonApp.getContext().getResources().getString(R.string.sql_findContactsForItem);
+        Cursor cursor=DatabaseHelper.getInstance().getReadableDatabase().rawQuery(query,queryArgs.toArray(new String[]{}));
+        List<Contact> entities=new ArrayList<>();
+        try
+        {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast())
+            {
+                entities.add(getContact(cursor));
+                cursor.moveToNext();
+            }
+        }
+        finally
+        {
+            cursor.close();
+        }
+        return entities;
+    }
+
+
+
+    @Override
     public void updateBusinessEntities(List<BusinessEntity> entities)
     {
         SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
@@ -202,10 +238,29 @@ public class MockDataManager implements DataManager
         {
 
             long i=database.insert(DbSchema.CategoryTable.NAME,null,getContentValues(category));
+            Log.d("DataManager","inserted records:"+i);
         }
         database.setTransactionSuccessful();
         database.endTransaction();
     }
+
+    @Override
+    public void insertContacts(List<Contact> contacts)
+    {
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
+
+        database.beginTransaction();
+        for(Contact contact:contacts)
+        {
+
+            long i=database.insert(DbSchema.ContactTable.NAME,null,getContentValues(contact));
+            Log.d("DataManager","inserted records:"+i);
+        }
+        database.setTransactionSuccessful();
+        database.endTransaction();
+    }
+
+
 
     @Override
     public void updateEntityTags(List<Category> tags)
@@ -228,9 +283,9 @@ public class MockDataManager implements DataManager
         values.put(BusinessEntityTable.Cols.EN_DESC,entity.getEnDesc());
         values.put(BusinessEntityTable.Cols.AR_NAME,entity.getArName());
         values.put(BusinessEntityTable.Cols.AR_DESC,entity.getArDesc());
-        values.put(BusinessEntityTable.Cols.HOTLINE,entity.getHotline());
         values.put(BusinessEntityTable.Cols.OFFERS,entity.getOffers());
         values.put(BusinessEntityTable.Cols.FAVORITE,entity.isFavorite());
+        values.put(BusinessEntityTable.Cols.DEFAULT_CONTACT,entity.getContactId().toString());
         return values;
     }
     private ContentValues getContentValues(UUID item,UUID category)
@@ -247,10 +302,17 @@ public class MockDataManager implements DataManager
         values.put(CategoryTable.Cols.EN_NAME,tag.getEnName());
         values.put(CategoryTable.Cols.AR_NAME,tag.getArName());
         values.put(CategoryTable.Cols.TYPE,tag.getType());
-        values.put(CategoryTable.Cols.ENTITIES,tag.getEntities());
-        values.put(CategoryTable.Cols.OFFERS,tag.getOffers());
         return values;
     }
+    private ContentValues getContentValues(Contact contact)
+    {
+        ContentValues values=new ContentValues();
+        values.put(ContactTable.Cols.ID, contact.getId().toString());
+        values.put(ContactTable.Cols.ITEM_ID,contact.getItemId().toString());
+        values.put(ContactTable.Cols.URI,contact.getUri());
+        return values;
+    }
+
     private BusinessEntity getBusinessEntity(Cursor cursor)
     {
         BusinessEntity entity=new BusinessEntity();
@@ -258,9 +320,9 @@ public class MockDataManager implements DataManager
         entity.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.ID))));
         entity.setName(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.NAME)));
         entity.setDesc(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.DESC)));
-        entity.setHotline(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.HOTLINE)));
         int fav=cursor.getInt(cursor.getColumnIndex(BusinessEntityTable.Cols.FAVORITE));
         entity.setFavorite(fav!=0);
+        entity.setContact(Uri.parse(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.URI))));
         return entity;
     }
     private Category getCategory(Cursor cursor)
@@ -273,5 +335,13 @@ public class MockDataManager implements DataManager
         return category;
     }
 
+    private Contact getContact(Cursor cursor)
+    {
+        Contact contact=new Contact();
+        contact.setPk(cursor.getInt(cursor.getColumnIndex("_id")));
+        contact.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(ContactTable.Cols.ID))));
+        contact.setUri(cursor.getString(cursor.getColumnIndex(ContactTable.Cols.URI)));
+        return contact;
+    }
 
 }

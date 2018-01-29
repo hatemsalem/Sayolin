@@ -3,6 +3,7 @@ package com.zobonapp.ui.hotline;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.LayoutRes;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zobonapp.ItemDetailsActivity;
 import com.zobonapp.R;
 import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.ui.ViewHolder;
@@ -32,7 +34,7 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     {
 
         super(parent, layout);
-
+        itemView.setOnClickListener(this);
         btnCall=itemView.findViewById(R.id.btnCall);
         btnCall.setOnClickListener(this);
         lblName=itemView.findViewById(R.id.lblName);
@@ -46,7 +48,7 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     public void bind(BusinessEntity businessEntity)
     {
         this.entity=businessEntity;
-        btnCall.setText(entity.getHotline());
+        btnCall.setText(entity.getContact().getSchemeSpecificPart());
         lblName.setText(entity.getName());
         lblOffers.setText(entity.getEnDesc());
         lblFavorite.setText(String.valueOf(entity.isFavorite()));
@@ -76,18 +78,21 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
         {
             case R.id.btnCall:
                 Intent dialIntent = new Intent(Intent.ACTION_DIAL);
-                dialIntent.setData(Uri.parse("tel:"+btnCall.getText().toString()));
+                dialIntent.setData(entity.getContact());
                 if (dialIntent.resolveActivity(ZobonApp.getContext().getPackageManager()) != null) {
                     v.getContext().startActivity(dialIntent);
                 } else {
                     //TODO: to inform the user about this issue
                     Log.e(TAG, "Can't resolve app for ACTION_DIAL Intent.");
                 }
+                break;
             case R.id.lblFavorite:
                 entity.setFavorite(!entity.isFavorite());
                 ZobonApp.getContext().getDataManager().updateBusinessItem(entity);
                 lblFavorite.setText(String.valueOf(entity.isFavorite()));
-
+                break;
+            default:
+                ItemDetailsActivity.start(v.getContext(),entity.getId().toString());
         }
 
     }

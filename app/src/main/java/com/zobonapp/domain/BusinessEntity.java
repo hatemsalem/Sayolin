@@ -1,5 +1,7 @@
 package com.zobonapp.domain;
 
+import android.net.Uri;
+
 import java.util.UUID;
 
 /**
@@ -16,9 +18,10 @@ public class BusinessEntity
     private String arDesc;
     private String enName;
     private String enDesc;
-    private String hotline;
     private boolean favorite;
     private int offers;
+    private UUID contactId;
+    private Uri contact;
 
     public int getPk()
     {
@@ -100,15 +103,6 @@ public class BusinessEntity
         this.enDesc = enDesc;
     }
 
-    public String getHotline()
-    {
-        return hotline;
-    }
-
-    public void setHotline(String hotline)
-    {
-        this.hotline = hotline;
-    }
 
     public boolean isFavorite()
     {
@@ -128,5 +122,25 @@ public class BusinessEntity
     public void setOffers(int offers)
     {
         this.offers = offers;
+    }
+
+    public UUID getContactId()
+    {
+        return contactId;
+    }
+
+    public void setContactId(UUID contactId)
+    {
+        this.contactId = contactId;
+    }
+
+    public Uri getContact()
+    {
+        return contact;
+    }
+
+    public void setContact(Uri contact)
+    {
+        this.contact = contact;
     }
 }
