@@ -27,8 +27,8 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     protected Button btnCall;
     protected TextView lblName;
     protected TextView lblOffers;
-    protected TextView lblFavorite;
     protected ImageView imgLogo;
+    protected ImageView imgFavorite;
     protected BusinessEntity entity;
     public ItemHolder(ViewGroup parent, @LayoutRes int layout)
     {
@@ -40,8 +40,8 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
         lblName=itemView.findViewById(R.id.lblName);
         lblOffers=itemView.findViewById(R.id.lblOffers);
         imgLogo=itemView.findViewById(R.id.imgLogo);
-        lblFavorite =itemView.findViewById(R.id.lblFavorite);
-        lblFavorite.setOnClickListener(this);
+        imgFavorite=itemView.findViewById(R.id.imgFavorite);
+        imgFavorite.setOnClickListener(this);
     }
 
     @Override
@@ -51,7 +51,14 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
         btnCall.setText(entity.getContact().getSchemeSpecificPart());
         lblName.setText(entity.getName());
         lblOffers.setText(entity.getEnDesc());
-        lblFavorite.setText(String.valueOf(entity.isFavorite()));
+        if(entity.isFavorite())
+        {
+            imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_24dp));
+        }
+        else
+        {
+            imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_border_24dp));
+        }
         final Uri  uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/initial/"+entity.getId().toString()+".webp");
         ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
 
@@ -86,10 +93,17 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
                     Log.e(TAG, "Can't resolve app for ACTION_DIAL Intent.");
                 }
                 break;
-            case R.id.lblFavorite:
+            case R.id.imgFavorite:
                 entity.setFavorite(!entity.isFavorite());
                 ZobonApp.getContext().getDataManager().updateBusinessItem(entity);
-                lblFavorite.setText(String.valueOf(entity.isFavorite()));
+                if(entity.isFavorite())
+                {
+                    imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_24dp));
+                }
+                else
+                {
+                    imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_border_24dp));
+                }
                 break;
             default:
                 ItemDetailsActivity.start(v.getContext(),entity.getId().toString());
