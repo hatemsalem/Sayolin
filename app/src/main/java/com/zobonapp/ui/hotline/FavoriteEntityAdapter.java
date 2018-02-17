@@ -32,7 +32,7 @@ public class FavoriteEntityAdapter extends GenericPagerAdapter<ItemHolder,Busine
     @Override
     public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return new ItemHolder(parent, R.layout.cell_hotline);
+        return new ItemHolder(parent, R.layout.cell_hotline3);
     }
 
     @Override
@@ -52,5 +52,19 @@ public class FavoriteEntityAdapter extends GenericPagerAdapter<ItemHolder,Busine
         }
     }
 
-
+    @Override
+    protected void notifyItemChanged(BusinessEntity item, int position)
+    {
+        super.notifyItemChanged(item, position);
+        if(item.isFavorite()&&position<0)
+        {
+            entities.add(item);
+            notifyItemInserted(entities.size());
+        }
+        else if( !item.isFavorite() && position>=0)
+        {
+            entities.remove(position);
+            notifyItemRemoved(position);
+        }
+    }
 }

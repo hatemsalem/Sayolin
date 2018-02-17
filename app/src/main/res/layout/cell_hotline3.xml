@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="10dp">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_background"
+        android:padding="4dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="152dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/circle_background" />
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/placeholder"/>
+        <ImageView
+            android:id="@+id/imgFavorite"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_favorite_border_48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"/>
+        <TextView
+            android:id="@+id/lblName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:layout_below="@+id/imgLogo"/>
+
+        <TextView
+            android:id="@+id/btnCall"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/lblName"
+
+            android:background="@drawable/call_now"
+            android:padding="4dp"
+            android:textAlignment="textEnd"
+            android:gravity="center"
+            android:text="19666"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/lblOffers"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@id/btnCall"
+            android:background="@drawable/offers"
+            android:padding="4dp"
+            android:text="555"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

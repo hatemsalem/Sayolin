@@ -15,6 +15,7 @@ public class RootActivity extends AppCompatActivity
     @Override
     protected void attachBaseContext(Context newBase)
     {
+
         Locale locale = new Locale(ZobonApp.getContext().getLang());
         Locale.setDefault(locale);
         Configuration localConfiguration = newBase.getResources().getConfiguration();

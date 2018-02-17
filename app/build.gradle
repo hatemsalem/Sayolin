@@ -1,9 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'ZobonApp'
+            keyPassword ''
+            storeFile file('C:/Users/Admin/ZobonApp.jks')
+            storePassword ''
+        }
+    }
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.zobonapp"
+        applicationId "com.zoboonapp.test"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
@@ -11,12 +19,16 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //Using VectorDrawableCompat version ?!
         vectorDrawables.generatedDensities = ['hdpi', 'xxhdpi']
+//        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//            signingConfig signingConfigs.config
         }
+    }
+    productFlavors {
     }
 }
 repositories {
@@ -24,35 +36,29 @@ repositories {
 }
 dependencies {
     //Added through the default project creation
-//    implementation fileTree(dir: 'libs', include: ['*.jar'])
-//    implementation 'com.android.support:appcompat-v7:26.1.0'
-//    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //    implementation 'com.android.support:appcompat-v7:26.1.0'
+    //    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     implementation 'com.android.support:support-v13:26.1.0'
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
-
-//    implementation 'com.android.support:support-v4:26.1.0'
+    //    implementation 'com.android.support:support-v4:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     //Added through the development process
-
     implementation 'org.greenrobot:eventbus:3.0.0'
     implementation 'com.google.code.gson:gson:2.8.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
+    //    implementation 'com.squareup.okhttp3:okhttp:3.8.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-//    implementation 'com.commonsware.cwac:security:0.8.0'
-
-//    implementation 'io.karim:materialtabs:2.0.5'
-
-
+    //    implementation 'com.commonsware.cwac:security:0.8.0'
+    //    implementation 'io.karim:materialtabs:2.0.5'
     compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
     //////
     implementation('com.github.tosslife:pullloadview:1.1.0') {
         exclude module: 'recyclerview-v7'
     }
-
 }

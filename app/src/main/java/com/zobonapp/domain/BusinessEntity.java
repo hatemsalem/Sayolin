@@ -143,4 +143,21 @@ public class BusinessEntity
     {
         this.contact = contact;
     }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        BusinessEntity that = (BusinessEntity) o;
+
+        return getId().equals(that.getId());
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return getId().hashCode();
+    }
 }

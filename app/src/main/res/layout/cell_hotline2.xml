@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:layout_margin="10dp"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/item_background"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/imgFavorite"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_favorite_border_48dp"
+            android:layout_gravity="end|top"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/circle_background"/>
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_favorite_border_48dp"/>
+
+        <TextView
+            android:id="@+id/lblName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/btnCall"
+            android:layout_width="96dp"
+            android:layout_height="48dp"
+            android:layout_gravity="start|bottom"
+            android:background="@drawable/call_now"
+            android:gravity="center_vertical|end"
+            android:padding="8dp"
+            android:text="19666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/lblOffers"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_gravity="end|bottom"
+            android:background="@drawable/offers"
+            android:gravity="start"
+            android:padding="8dp"
+            android:text="5"
+            android:textSize="24sp" />
+
+    </FrameLayout>
+</android.support.v7.widget.CardView>

@@ -5,12 +5,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.zobonapp.R;
+import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.utils.QueryPreferences;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * Created by hasalem on 13/1/2018.
@@ -19,7 +21,7 @@ import java.util.List;
 public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends RecyclerView.Adapter<VH>
 {
 
-    private ArrayList<T> entities=new ArrayList<>();
+    protected Vector<T> entities=new Vector<>();
     protected String searchQuery;
     protected static String ARG_SEARCH_KEY="searchKey";
     protected static String ARG_ADAPTER_CLASS="adapterClass";
@@ -59,6 +61,7 @@ public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends Re
     {
         entities.clear();
         notifyDataSetChanged();
+
     }
 
     public Bundle getArguments()
@@ -89,4 +92,14 @@ public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends Re
     }
 
 
+    public void refresh(T item)
+    {
+        int position=entities.indexOf(item);
+        notifyItemChanged(item,position);
+
+     }
+     protected void notifyItemChanged(T item,int position)
+     {
+         //Default implementation, do nothing
+     }
 }

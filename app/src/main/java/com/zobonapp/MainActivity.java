@@ -50,7 +50,7 @@ public class MainActivity extends RootActivity implements NavigationView.OnNavig
         ViewPager pager = findViewById(R.id.pager);
         adapter=new ContentAdapter(this);
         pager.setAdapter(adapter);
-//        pager.setOffscreenPageLimit(3);
+        pager.setOffscreenPageLimit(3);
         TabLayout tabs=findViewById(R.id.tabs);
         tabs.setupWithViewPager(pager);
 

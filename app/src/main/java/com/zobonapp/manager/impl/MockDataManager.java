@@ -9,6 +9,7 @@ import android.util.Log;
 
 import com.zobonapp.R;
 import com.zobonapp.domain.Contact;
+import com.zobonapp.manager.ItemChangeEvent;
 import com.zobonapp.utils.QueryPreferences;
 import com.zobonapp.db.DbSchema;
 import com.zobonapp.db.DatabaseHelper;
@@ -226,6 +227,7 @@ public class MockDataManager implements DataManager
 
         database.setTransactionSuccessful();
         database.endTransaction();
+        EventBus.getDefault().post(new ItemChangeEvent(entity));
     }
 
     @Override

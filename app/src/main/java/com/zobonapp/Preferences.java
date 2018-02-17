@@ -26,6 +26,8 @@ public class Preferences extends RootActivity
         {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings);
+            
+
         }
     }
 }
