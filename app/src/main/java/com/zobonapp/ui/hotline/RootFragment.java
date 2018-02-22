@@ -102,7 +102,6 @@ public class RootFragment extends Fragment
     public void setHasOptionsMenu(boolean hasMenu)
     {
         super.setHasOptionsMenu(hasMenu);
-
         itemsFragment.setHasOptionsMenu(hasMenu);
         categoriesFragment.setHasOptionsMenu(hasMenu);
     }
