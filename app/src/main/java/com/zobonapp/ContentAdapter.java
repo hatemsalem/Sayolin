@@ -64,16 +64,13 @@ public class ContentAdapter extends FragmentStatePagerAdapter
         return super.getItemPosition(object);
     }
 
-    public Fragment getCurrentFragment()
-    {
-        return currentFragment;
-    }
 
     @Override
     public void setPrimaryItem(ViewGroup container, int position, Object object)
     {
         super.setPrimaryItem(container, position, object);
-        if(getCurrentFragment()!=object)
+        if(((Fragment)object).getActivity()==null)return;
+        if(currentFragment!=object)
         {
             if(currentFragment!=null)
                 currentFragment.setHasOptionsMenu(false);

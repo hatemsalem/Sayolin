@@ -14,7 +14,7 @@ android {
         applicationId "com.zoboonapp.test"
         minSdkVersion 19
         targetSdkVersion 26
-        versionCode 1
+        versionCode 3
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //Using VectorDrawableCompat version ?!
@@ -23,7 +23,8 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+//            shrinkResources true
+//            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.config
         }
@@ -35,6 +36,8 @@ repositories {
     maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
 }
 dependencies {
+//    compile 'com.google.firebase:firebase-core:11.8.0'
+//    compile 'com.google.firebase:firebase-messaging:11.8.0'
     //Added through the default project creation
     //    implementation fileTree(dir: 'libs', include: ['*.jar'])
     //    implementation 'com.android.support:appcompat-v7:26.1.0'
@@ -60,5 +63,8 @@ dependencies {
     //////
     implementation('com.github.tosslife:pullloadview:1.1.0') {
         exclude module: 'recyclerview-v7'
+
     }
 }
+
+//apply plugin: 'com.google.gms.google-services'
