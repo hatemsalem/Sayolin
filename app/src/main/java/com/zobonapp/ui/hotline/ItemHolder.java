@@ -3,13 +3,11 @@ package com.zobonapp.ui.hotline;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.LayoutRes;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,8 +18,6 @@ import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.ui.ViewHolder;
 import com.zobonapp.utils.ZobonApp;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by hasalem on 24/12/2017.
  */
@@ -29,11 +25,12 @@ import org.w3c.dom.Text;
 public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnClickListener,View.OnCreateContextMenuListener,MenuItem.OnMenuItemClickListener
 {
     private final static String TAG =ItemHolder.class.getSimpleName();
-//    protected Button btnCall;
-    protected TextView btnCall;
+//    protected Button imgCall;
+    protected ImageView imgCall;
     protected TextView lblName;
+    protected TextView lblHotline;
 
-    protected TextView lblOffers;
+    protected ImageView imgOffers;
     protected ImageView imgLogo;
     protected ImageView imgFavorite;
     protected BusinessEntity entity;
@@ -41,16 +38,17 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     {
 
         super(parent, layout);
-        btnCall=itemView.findViewById(R.id.btnCall);
-        btnCall.setOnClickListener(this);
+        lblHotline=itemView.findViewById(R.id.lblHotline);
+        imgCall =itemView.findViewById(R.id.imgCall);
+        imgCall.setOnClickListener(this);
         lblName=itemView.findViewById(R.id.lblName);
         lblName.setOnClickListener(this);
-        lblOffers=itemView.findViewById(R.id.lblOffers);
+        imgOffers =itemView.findViewById(R.id.imgOffers);
         imgLogo=itemView.findViewById(R.id.imgLogo);
         imgLogo.setOnClickListener(this);
         imgFavorite=itemView.findViewById(R.id.imgFavorite);
         imgFavorite.setOnClickListener(this);
-        btnCall.setOnCreateContextMenuListener(this);
+        imgCall.setOnCreateContextMenuListener(this);
 
     }
 
@@ -58,18 +56,18 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     public void bind(BusinessEntity businessEntity)
     {
         this.entity=businessEntity;
-        btnCall.setText(entity.getContact().getSchemeSpecificPart());
+        lblHotline.setText(entity.getContact().getSchemeSpecificPart());
         lblName.setText(entity.getName());
-//        lblOffers.setText(entity.getEnDesc());
-        lblOffers.setText("5");
+//        imgOffers.setText(entity.getEnDesc());
+//        imgOffers.setText("5");
         if(entity.isFavorite())
 
         {
-            imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_48dp));
+            imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_on));
         }
         else
         {
-            imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_border_48dp));
+            imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
         final Uri  uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/initial/"+entity.getId().toString()+".webp");
         ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);

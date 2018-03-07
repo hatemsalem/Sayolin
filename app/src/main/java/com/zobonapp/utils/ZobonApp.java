@@ -114,7 +114,7 @@ public class ZobonApp extends Application
             Log.d(TAG, "Alarm settled");
         }
         lang = QueryPreferences.getLanguage();
-        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+        picasso = new Picasso.Builder(this).indicatorsEnabled(false).memoryCache(new LruCache(5000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
         //        PicassoTools.clearCache(picasso);
         //        deleteDirectoryTree(getCacheDir());
         Picasso.setSingletonInstance(picasso);

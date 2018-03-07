@@ -28,7 +28,7 @@ public class Paginator
         this.adapter=adapter;
         this.pullToLoadView = pullToLoadView;
         RecyclerView recyclerView =pullToLoadView.getRecyclerView();
-        recyclerView.setLayoutManager(new GridLayoutManager(pullToLoadView.getContext(),3));
+        recyclerView.setLayoutManager(new GridLayoutManager(pullToLoadView.getContext(),5));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setItemViewCacheSize(20);
