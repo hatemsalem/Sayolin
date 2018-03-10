@@ -13,7 +13,7 @@ public class Category
     private String name;
     private String arName;
     private String enName;
-    private String searchText;
+    private String keywords;
     private int type;
     private int offers;
     private int entities;
@@ -98,13 +98,13 @@ public class Category
         this.entities = entities;
     }
 
-    public String getSearchText()
+    public String getKeywords()
     {
-        return searchText;
+        return keywords;
     }
 
-    public void setSearchText(String searchText)
+    public void setKeywords(String keywords)
     {
-        this.searchText = searchText;
+        this.keywords = keywords;
     }
 }

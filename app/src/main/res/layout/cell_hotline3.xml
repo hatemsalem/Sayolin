@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="4dp"
-        android:background="@drawable/bg"
+
         android:orientation="vertical">
         <ImageView
             android:id="@+id/imgFavorite"
@@ -36,20 +36,23 @@
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:visibility="visible"/>
-        <ImageView
-            android:layout_width="98dp"
-            android:layout_height="98dp"
+        <ImageView android:id="@+id/imgCircle"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_centerHorizontal="true"
+
             android:layout_below="@id/imgFavorite"
-            android:src="@drawable/circle_background"/>
+            android:src="@drawable/circle"/>
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:layout_centerHorizontal="true"
 
+            android:layout_centerHorizontal="true"
+            android:layout_alignBaseline="@id/imgCircle"
             android:layout_below="@id/imgFavorite"
-            android:src="@drawable/placeholder"/>
+            android:src="@drawable/notfoundimage"/>
+
 
         <TextView
             android:id="@+id/lblName"
@@ -61,7 +64,7 @@
             android:lines="2"
             android:ellipsize="marquee"
             android:textAlignment="center"
-            android:layout_below="@+id/imgLogo"/>
+            android:layout_below="@+id/imgCircle"/>
 
 
         <LinearLayout
@@ -69,7 +72,8 @@
             android:layout_height="wrap_content"
 
             android:layout_alignParentBottom="true"
-            android:gravity="center_horizontal"
+            android:layout_below="@id/lblName"
+
             android:orientation="horizontal">
 
             <ImageView
@@ -84,6 +88,7 @@
                 android:layout_width="34dp"
                 android:layout_height="34dp"
                 android:layout_weight="1"
+                android:visibility="gone"
                 android:src="@drawable/share"/>
 
             <ImageView

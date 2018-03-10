@@ -27,6 +27,7 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     private final static String TAG =ItemHolder.class.getSimpleName();
 //    protected Button imgCall;
     protected ImageView imgCall;
+    protected ImageView imgShare;
     protected TextView lblName;
     protected TextView lblHotline;
 
@@ -39,16 +40,25 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
 
         super(parent, layout);
         lblHotline=itemView.findViewById(R.id.lblHotline);
+        lblHotline.setOnClickListener(this);
+
         imgCall =itemView.findViewById(R.id.imgCall);
         imgCall.setOnClickListener(this);
-        lblName=itemView.findViewById(R.id.lblName);
-        lblName.setOnClickListener(this);
+        imgCall.setOnCreateContextMenuListener(this);
+
         imgOffers =itemView.findViewById(R.id.imgOffers);
+        imgOffers.setOnClickListener(this);
+
         imgLogo=itemView.findViewById(R.id.imgLogo);
         imgLogo.setOnClickListener(this);
+
         imgFavorite=itemView.findViewById(R.id.imgFavorite);
         imgFavorite.setOnClickListener(this);
-        imgCall.setOnCreateContextMenuListener(this);
+
+        imgShare=itemView.findViewById(R.id.imgShare);
+        imgShare.setOnClickListener(this);
+
+        lblName=itemView.findViewById(R.id.lblName);
 
     }
 
@@ -70,7 +80,9 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
             imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
         final Uri  uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/initial/"+entity.getId().toString()+".webp");
-        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
+//        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
+        ZobonApp.getContext().getPicasso().load(R.drawable.placeholder).into(imgLogo);
+
 
 //        ZobonApp.getContext().getPicasso()
 //                .load(uri)
@@ -93,7 +105,8 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     {
         switch (v.getId())
         {
-            case R.id.btnCall:
+            case R.id.imgCall:
+            case R.id.lblHotline:
                 Intent dialIntent = new Intent(Intent.ACTION_DIAL);
                 dialIntent.setData(entity.getContact());
                 if (dialIntent.resolveActivity(ZobonApp.getContext().getPackageManager()) != null) {
@@ -115,6 +128,13 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
 //                    imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_border_48dp));
 //                }
                 break;
+            case R.id.imgShare:
+                Toast.makeText(ZobonApp.getContext(),"Share...",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.imgOffers:
+                Toast.makeText(ZobonApp.getContext(),"Offers...",Toast.LENGTH_SHORT).show();
+                break;
+
             default:
                 ItemDetailsActivity.start(v.getContext(),entity.getId().toString());
         }

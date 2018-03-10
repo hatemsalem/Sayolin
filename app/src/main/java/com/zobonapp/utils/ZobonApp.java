@@ -1,7 +1,9 @@
 package com.zobonapp.utils;
 
+import android.annotation.TargetApi;
 import android.app.Application;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -9,6 +11,8 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.LocaleList;
 import android.preference.PreferenceManager;
+import android.support.v4.app.NotificationCompat;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -34,13 +38,14 @@ import static com.zobonapp.utils.QueryPreferences.ENGLISH;
  * Created by hasalem on 11/26/2017.
  */
 
-public class ZobonApp extends Application
+public class ZobonApp extends Application implements SharedPreferences.OnSharedPreferenceChangeListener
 {
     private static final String TAG = ZobonApp.class.getSimpleName();
     private String lang;
     private static ZobonApp appInstance;
     private ManagerRegistry registry;
     private SharedPreferences prefs;
+    private NotificationManager notificationManager;
     private Picasso picasso;
     private static String resolution="ldpi";
 
@@ -98,6 +103,7 @@ public class ZobonApp extends Application
     {
         super.onCreate();
         initializeResoution();
+        PreferenceManager.setDefaultValues(this,R.xml.settings,false);
         Log.d(TAG, "ZobonApp created");
         appInstance = this;
         registry = new MockManagerRegistry();
@@ -118,9 +124,29 @@ public class ZobonApp extends Application
         //        PicassoTools.clearCache(picasso);
         //        deleteDirectoryTree(getCacheDir());
         Picasso.setSingletonInstance(picasso);
+        createNotificationChannel();
         showNotificationCenter();
+        getPrefs().registerOnSharedPreferenceChangeListener(this);
     }
-
+    @TargetApi(Build.VERSION_CODES.O)
+    private void createNotificationChannel()
+    {
+        notificationManager=(NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+        String id="ZobonApp";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+        {
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = notificationManager.getNotificationChannel(id);
+            if (mChannel == null)
+            {
+                mChannel = new NotificationChannel(id, id, importance);
+                mChannel.setDescription(id);
+//                mChannel.enableVibration(true);
+//                mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
+                notificationManager.createNotificationChannel(mChannel);
+            }
+        }
+    }
     public static void deleteDirectoryTree(File fileOrDirectory)
     {
         if (fileOrDirectory.isDirectory())
@@ -140,24 +166,30 @@ public class ZobonApp extends Application
 
 //        Notification.Builder builder = new Notification.Builder(this);
 //        builder.setOngoing(true).setContent(getComplexNotificationView());
-        Notification.Builder builder = new Notification.Builder(this);
-        builder.setOngoing(true)
-                .setSmallIcon(R.drawable.call_now)
-                .setContentTitle("Notification Center")
-                .setContentText("Details")
+        if(QueryPreferences.isShowShortcutCenter())
+        {
+            NotificationCompat.Builder builder =new NotificationCompat.Builder(this,"ZobonApp");
+//            Notification.Builder builder = new Notification.Builder(this);
+            builder.setOngoing(true).setSmallIcon(R.drawable.call_now).setContentTitle("Notification Center").setContentText("Details");
+            builder.setContent(getComplexNotificationView());
+//            builder.setChannelId("abc");
 
-        ;
-        builder.setContent(getComplexNotificationView());
-//                .setContent(getComplexNotificationView());
-//        builder.setSmallIcon(R.drawable.call_now);
-//                .setTicker("Hello Title");
-//                .setContentText("Hello Text")
-//                .setDefaults(Notification.DEFAULT_ALL)
-//                .setOngoing(true)
-//                .setContent(getComplexNotificationView())
-//                .setAutoCancel(true);
-        Notification notification=builder.build();
-        notificationManager.notify(0,notification);
+            //                .setContent(getComplexNotificationView());
+            //        builder.setSmallIcon(R.drawable.call_now);
+            //                .setTicker("Hello Title");
+            //                .setContentText("Hello Text")
+            //                .setDefaults(Notification.DEFAULT_ALL)
+            //                .setOngoing(true)
+            //                .setContent(getComplexNotificationView())
+            //                .setAutoCancel(true);
+            Notification notification = builder.build();
+            notificationManager.notify(0, notification);
+        }
+        else
+        {
+            notificationManager.cancel(0);
+        }
+
     }
 
     private RemoteViews getComplexNotificationView()
@@ -197,8 +229,27 @@ public class ZobonApp extends Application
                 break;
         }
     }
+    public static int calculateColumns(int columnWidth)
+    {
+        int columns=(int)(160f/getContext().getResources().getDisplayMetrics().densityDpi*getContext().getResources().getDisplayMetrics().widthPixels/columnWidth);
+        if(QueryPreferences.isShowLargeDisplay())
+            columns=columns-columns/4;
+//            columns--;
+        return columns;
+    }
     public static String getResoultionPath()
     {
         return resolution;
     }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
+    {
+        switch (key)
+        {
+            case "showShortcutCenter":
+                showNotificationCenter();
+        }
+    }
+
 }

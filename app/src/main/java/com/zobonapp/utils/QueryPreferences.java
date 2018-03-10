@@ -2,8 +2,6 @@ package com.zobonapp.utils;
 
 import android.text.TextUtils;
 
-import com.zobonapp.utils.ZobonApp;
-
 /**
  * Created by hasalem on 11/30/2017.
  */
@@ -41,12 +39,15 @@ public class QueryPreferences
     private static final String SEARCH_QUERY="searchQuery";
     private static final String INITIALIZE_STEP="initializeStep";
     private static final String HOTLINES_VIEW_TYPE="hotilinesViewType";
+    private static final String SHOW_LARGE_DISPLAY="showLargeDisplay";
+    private static final String SHOW_SHORTCUT_CENTER ="showShortcutCenter";
 
 
     public static boolean isInitialized()
     {
         return  ZobonApp.getContext().getPrefs().getBoolean(IS_INITIALIZED,false);
     }
+
     public static void setIsInitialized(boolean isInitialized)
     {
         ZobonApp.getContext().getPrefs().edit().putBoolean(IS_INITIALIZED,isInitialized).apply();
@@ -114,5 +115,14 @@ public class QueryPreferences
     public static void setViewType(String key,ViewType type)
     {
         ZobonApp.getContext().getPrefs().edit().putInt(key,type.getCode()).apply();
+    }
+
+    public static boolean isShowLargeDisplay()
+    {
+        return ZobonApp.getContext().getPrefs().getBoolean(SHOW_LARGE_DISPLAY,false);
+    }
+    public static boolean isShowShortcutCenter()
+    {
+        return ZobonApp.getContext().getPrefs().getBoolean(SHOW_SHORTCUT_CENTER,false);
     }
 }

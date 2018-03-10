@@ -19,7 +19,7 @@ import com.zobonapp.utils.ZobonApp;
 public class ContentAdapter extends FragmentStatePagerAdapter
 {
     Fragment fragments[]={
-            RootFragment.newInstance(CategoryAdapter.newArguments(0),BusinessEntityAdapter.newArguments(null,"root"),"hotlines"),
+            RootFragment.newInstance(CategoryAdapter.newArguments(1001),BusinessEntityAdapter.newArguments(null,"root"),"hotlines"),
             RootFragment.newInstance( CategoryAdapter.newArguments(1),FavoriteEntityAdapter.newArguments(null,"favorite"),"menus"),
             RootFragment.newInstance( CategoryAdapter.newArguments(0),FavoriteEntityAdapter.newArguments(null,"favorite"),"favorites"),
 //            FavoriteFragment.newInstance( CategoryAdapter.newArguments(0),FavoriteEntityAdapter.newArguments(null,"favorite")),

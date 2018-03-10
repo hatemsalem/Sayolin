@@ -1,8 +1,10 @@
 package com.zobonapp.ui.hotline;
 
 import android.app.Fragment;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Debug;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -23,6 +25,7 @@ import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.ui.Paginator;
 import com.srx.widget.PullToLoadView;
 import com.zobonapp.utils.QueryPreferences;
+import com.zobonapp.utils.ZobonApp;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -34,13 +37,14 @@ import org.greenrobot.eventbus.ThreadMode;
  * Created by hasalem on 11/26/2017.
  */
 
-public class ItemsFragment extends Fragment
+public class ItemsFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener
 {
     private static String TAG = ItemsFragment.class.getSimpleName();
     private static final String ARG_ADAPTER_CLASS = "adapterClass";
     private PullToLoadView pullToLoadView;
     private TextView emptyView;
     private GenericPagerAdapter adapter;
+    private Paginator paginator;
 
     public static ItemsFragment newInstance(Bundle arguments, Class<? extends GenericPagerAdapter> clazz)
     {
@@ -121,12 +125,25 @@ public class ItemsFragment extends Fragment
             }
 
             @Override
-            public boolean onQueryTextChange(String query)
+            public boolean onQueryTextChange(final String query)
             {
                 Log.d(TAG, "QueryTextSubmit:" + query);
                 QueryPreferences.setSearchQuery(adapter.getSearchKey(), query);
                 adapter.setSearchQuery(query);
                 pullToLoadView.initLoad();
+//                searchView.postDelayed(new Runnable()
+//                {
+//                    @Override
+//                    public void run()
+//                    {
+//                        if(query.equals(QueryPreferences.getSearchQuery(adapter.getSearchKey())))
+//                        {
+//                            QueryPreferences.setSearchQuery(adapter.getSearchKey(), query);
+//                            pullToLoadView.initLoad();
+//
+//                        }
+//                    }
+//                },200);
                 return false;
             }
         });
@@ -157,7 +174,9 @@ public class ItemsFragment extends Fragment
         emptyView = result.findViewById(R.id.emptyView);
         adapter.registerAdapterDataObserver(adapterObserver);
 
-        new Paginator(pullToLoadView, adapter);
+        paginator=new Paginator(pullToLoadView, adapter);
+
+        ZobonApp.getContext().getPrefs().registerOnSharedPreferenceChangeListener(this);
 
         return result;
     }
@@ -165,6 +184,7 @@ public class ItemsFragment extends Fragment
     @Override
     public void onDestroyView()
     {
+        ZobonApp.getContext().getPrefs().unregisterOnSharedPreferenceChangeListener(this);
         adapter.unregisterAdapterDataObserver(adapterObserver);
         super.onDestroyView();
     }
@@ -173,6 +193,15 @@ public class ItemsFragment extends Fragment
     public void setHasOptionsMenu(boolean hasMenu)
     {
         super.setHasOptionsMenu(hasMenu);
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
+    {
+        if(TextUtils.equals(key,"showLargeDisplay"))
+        {
+            paginator.reLayout();
+        }
     }
 
     private RecyclerView.AdapterDataObserver adapterObserver=new RecyclerView.AdapterDataObserver()

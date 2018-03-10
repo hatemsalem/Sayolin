@@ -76,7 +76,7 @@ public class UpdateService extends IntentService
         Gson gson=new Gson();
         try
         {
-            InputStream is= ZobonApp.getContext().getAssets().open("misc/initial2.json");
+            InputStream is= ZobonApp.getContext().getAssets().open("misc/liveInitial.json");
             BufferedReader reader = new BufferedReader(new InputStreamReader(is));
             DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
             reader.close();

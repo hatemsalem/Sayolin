@@ -38,6 +38,7 @@ public class BusinessEntityAdapter extends GenericPagerAdapter<ItemHolder,Busine
     @Override
     public List<BusinessEntity> loadData(int page)
     {
+
         return ZobonApp.getContext().getDataManager().findBusinessEntitiesForPage(page * PAGE_SIZE, PAGE_SIZE,searchQuery,categoryId);
     }
 

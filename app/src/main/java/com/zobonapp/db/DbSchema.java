@@ -24,7 +24,7 @@ public class DbSchema
             public static final String EN_DESC="enDesc";
             public static final String FAVORITE="favorite";
             public static final String OFFERS="offers";
-            public static final String SEARCH_TEXT="searchText";
+            public static final String KEY_WORDS ="keywords";
         }
         public static String getCreateStatement()
         {
@@ -38,7 +38,7 @@ public class DbSchema
                     .append(Cols.EN_NAME).append(", ")
                     .append(Cols.EN_DESC).append(", ")
                     .append(Cols.OFFERS).append(", ")
-                    .append(Cols.SEARCH_TEXT).append(", ")
+                    .append(Cols.KEY_WORDS).append(", ")
                     .append(Cols.FAVORITE).append(")");
             return statement.toString();
         }
@@ -52,7 +52,7 @@ public class DbSchema
             public static final String NAME="name";
             public static final String AR_NAME="arName";
             public static final String EN_NAME="enName";
-            public static final String SEARCH_TEXT="searchText";
+            public static final String KEY_WORDS ="keywords";
             public static final String TYPE="type";
             public static final String OFFERS="offers";
             public static final String ENTITIES="entities";
@@ -67,7 +67,7 @@ public class DbSchema
                     .append(Cols.AR_NAME).append(", ")
                     .append(Cols.EN_NAME).append(", ")
                     .append(Cols.TYPE).append(", ")
-                    .append(Cols.SEARCH_TEXT).append(") ");
+                    .append(Cols.KEY_WORDS).append(") ");
             return statement.toString();
         }
     }
@@ -104,7 +104,7 @@ public class DbSchema
             public static final String AR_DESC="arDesc";
             public static final String EN_NAME="enName";
             public static final String EN_DESC="enDesc";
-            public static final String SEARCH_TEXT="searchText";
+            public static final String KEY_WORDS="keywords";
         }
         public static String getCreateStatement()
         {
@@ -117,7 +117,7 @@ public class DbSchema
                     .append(Cols.EN_NAME).append(", ")
                     .append(Cols.AR_DESC).append(", ")
                     .append(Cols.EN_DESC).append(", ")
-                    .append(Cols.SEARCH_TEXT).append(") ");
+                    .append(Cols.KEY_WORDS).append(") ");
             return statement.toString();
         }
     }
@@ -137,7 +137,7 @@ public class DbSchema
             public static final String EN_DESC="enDesc";
             public static final String START_DATE="startDate";
             public static final String END_DATE="endDate";
-            public static final String SEARCH_TEXT="searchText";
+            public static final String KEY_WORDS ="keywords";
         }
         public static String getCreateStatement()
         {
@@ -152,7 +152,7 @@ public class DbSchema
                     .append(Cols.EN_DESC).append(", ")
                     .append(Cols.START_DATE).append(", ")
                     .append(Cols.END_DATE).append(", ")
-                    .append(Cols.SEARCH_TEXT).append(") ");
+                    .append(Cols.KEY_WORDS).append(") ");
             return statement.toString();
         }
     }
