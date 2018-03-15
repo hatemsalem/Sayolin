@@ -8,15 +8,14 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.zobonapp.R;
-import com.zobonapp.domain.Contact;
-import com.zobonapp.manager.ItemChangeEvent;
-import com.zobonapp.utils.QueryPreferences;
-import com.zobonapp.db.DbSchema;
 import com.zobonapp.db.DatabaseHelper;
+import com.zobonapp.db.DbSchema;
+import com.zobonapp.db.DbSchema.L10NCols;
 import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.domain.Category;
-import com.zobonapp.manager.BusinessEntitiesLoadedEvent;
+import com.zobonapp.domain.Contact;
 import com.zobonapp.manager.DataManager;
+import com.zobonapp.manager.ItemChangeEvent;
 import com.zobonapp.utils.ZobonApp;
 
 import org.greenrobot.eventbus.EventBus;
@@ -24,11 +23,13 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.UUID;
 import java.util.Vector;
 
-import static com.zobonapp.db.DbSchema.*;
+import static com.zobonapp.db.DbSchema.BusinessEntityTable;
+import static com.zobonapp.db.DbSchema.CategoryTable;
+import static com.zobonapp.db.DbSchema.ContactTable;
+import static com.zobonapp.db.DbSchema.ItemCategoryTable;
 
 /**
  * Created by hasalem on 11/26/2017.
@@ -181,38 +182,25 @@ public class MockDataManager implements DataManager
 
 
 
-    @Override
-    public void updateBusinessEntities(List<BusinessEntity> entities)
-    {
-        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
 
-        database.beginTransaction();
-        for(BusinessEntity entity:entities)
-        {
 
-            long i=database.insert(DbSchema.BusinessEntityTable.NAME,null,getContentValues(entity));
-            Log.d("UpdateService","No. of inserted records="+i);
-        }
-        database.setTransactionSuccessful();
-        database.endTransaction();
-    }
 
     @Override
-    public void updateItemCategoryRelations(HashMap<UUID, Vector<UUID>> relation)
+    public void populateItemCategoryRelations(HashMap<String, Vector<String>> objects)
     {
-        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
 
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
         database.beginTransaction();
-        for(Map.Entry<UUID,Vector<UUID>> entry:relation.entrySet())
+        for(String item:objects.keySet())
         {
-            UUID item=entry.getKey();
-            for(UUID category:entry.getValue())
+            for (String category:objects.get(item))
             {
-                long i=database.insert(DbSchema.ItemCategoryTable.NAME,null,getContentValues(item,category));
-                Log.d("UpdateService","No. of inserted records="+i);
+                ContentValues values=new ContentValues();
+                values.put(ItemCategoryTable.Cols.ITEM_ID,item);
+                values.put(ItemCategoryTable.Cols.CATEGORY_ID,category);
+                long i=database.insert(DbSchema.ItemCategoryTable.NAME,null,values);
+                Log.d("DataManager","inserted records:"+i);
             }
-
-
         }
         database.setTransactionSuccessful();
         database.endTransaction();
@@ -223,105 +211,107 @@ public class MockDataManager implements DataManager
     {
         SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
         database.beginTransaction();
-        database.execSQL("update businessentity set favorite=? where _id=?",new Object[]{entity.isFavorite(),entity.getPk()});
+        database.execSQL("update businessentity set favorite=? where id=?",new Object[]{entity.isFavorite(),entity.getId()});
 
         database.setTransactionSuccessful();
         database.endTransaction();
         EventBus.getDefault().post(new ItemChangeEvent(entity));
     }
 
+
     @Override
-    public void updateCategories(List<Category> categories)
+    public void populateCategories(List<HashMap<String,?>> objects)
     {
         SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
-
         database.beginTransaction();
-        for(Category category:categories)
+        for(HashMap<String,?> object:objects)
         {
+            ContentValues values=new ContentValues();
+            values.put(CategoryTable.Cols.ID,(String)object.get(CategoryTable.Cols.ID));
+            values.put(CategoryTable.Cols.AR_NAME,(String)object.get(CategoryTable.Cols.AR_NAME));
+            values.put(CategoryTable.Cols.EN_NAME,(String)object.get(CategoryTable.Cols.EN_NAME));
+            values.put(CategoryTable.Cols.TYPE,((Double) object.get(CategoryTable.Cols.TYPE)).intValue());
 
-            long i=database.insert(DbSchema.CategoryTable.NAME,null,getContentValues(category));
+            long i=database.insert(DbSchema.CategoryTable.NAME,null,values);
+            Log.d("DataManager","inserted records:"+i);
+        }
+        database.setTransactionSuccessful();
+        database.endTransaction();
+
+    }
+
+    @Override
+    public void populateBusinessEntities(List<HashMap<String, ?>> objects)
+    {
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
+        database.beginTransaction();
+        for(HashMap<String,?> object:objects)
+        {
+            ContentValues values=new ContentValues();
+            String itemId=(String)object.get(CategoryTable.Cols.ID);
+            values.put(BusinessEntityTable.Cols.ID,itemId);
+            values.put(BusinessEntityTable.Cols.AR_NAME,(String)object.get(CategoryTable.Cols.AR_NAME));
+            values.put(BusinessEntityTable.Cols.EN_NAME,(String)object.get(CategoryTable.Cols.EN_NAME));
+            values.put(BusinessEntityTable.Cols.DEFAULT_CONTACT,(String)object.get(BusinessEntityTable.Cols.DEFAULT_CONTACT));
+
+            long i=database.insert(DbSchema.BusinessEntityTable.NAME,null,values);
+
+            List<String> categories=(List<String>) object.get("categories");
+
+                for (String categoryId:categories)
+                {
+                    ContentValues catValues=new ContentValues();
+                    catValues.put(ItemCategoryTable.Cols.ITEM_ID,itemId);
+                    catValues.put(ItemCategoryTable.Cols.CATEGORY_ID,categoryId);
+                    i=database.insert(DbSchema.ItemCategoryTable.NAME,null,catValues);
+                    Log.d("DataManager","inserted records:"+i);
+                }
+
+            Log.d("DataManager","inserted records:"+i);
+        }
+        database.setTransactionSuccessful();
+        database.endTransaction();
+
+
+    }
+    @Override
+    public void populateContacts(List<HashMap<String, ?>> objects)
+    {
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
+        database.beginTransaction();
+        for(HashMap<String,?> object:objects)
+        {
+            ContentValues values=new ContentValues();
+            values.put(ContactTable.Cols.ID,(String)object.get(ContactTable.Cols.ID));
+            values.put(ContactTable.Cols.URI,(String)object.get(ContactTable.Cols.URI));
+            values.put(ContactTable.Cols.ITEM_ID,(String)object.get(ContactTable.Cols.ITEM_ID));
+            values.put(ContactTable.Cols.AR_NAME,(String)object.get(ContactTable.Cols.AR_NAME));
+            values.put(ContactTable.Cols.EN_NAME,(String)object.get(ContactTable.Cols.EN_NAME));
+
+            long i=database.insert(DbSchema.ContactTable.NAME,null,values);
             Log.d("DataManager","inserted records:"+i);
         }
         database.setTransactionSuccessful();
         database.endTransaction();
     }
 
-    @Override
-    public void insertContacts(List<Contact> contacts)
-    {
-        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
-
-        database.beginTransaction();
-        for(Contact contact:contacts)
-        {
-
-            long i=database.insert(DbSchema.ContactTable.NAME,null,getContentValues(contact));
-            Log.d("DataManager","inserted records:"+i);
-        }
-        database.setTransactionSuccessful();
-        database.endTransaction();
-    }
 
 
 
-    @Override
-    public void updateEntityTags(List<Category> tags)
-    {
-        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
-
-        for(Category tag:tags)
-        {
-            long i=database.insert(CategoryTable.NAME,null,getContentValues(tag));
-            Log.d("Database","No. of inserted records="+i);
-        }
-    }
-
-
-    private ContentValues getContentValues(BusinessEntity entity)
-    {
-        ContentValues values=new ContentValues();
-        values.put(BusinessEntityTable.Cols.ID,entity.getId().toString());
-        values.put(BusinessEntityTable.Cols.EN_NAME,entity.getEnName());
-        values.put(BusinessEntityTable.Cols.EN_DESC,entity.getEnDesc());
-        values.put(BusinessEntityTable.Cols.AR_NAME,entity.getArName());
-        values.put(BusinessEntityTable.Cols.AR_DESC,entity.getArDesc());
-        values.put(BusinessEntityTable.Cols.OFFERS,entity.getOffers());
-        values.put(BusinessEntityTable.Cols.FAVORITE,entity.isFavorite());
-        values.put(BusinessEntityTable.Cols.DEFAULT_CONTACT,entity.getContactId().toString());
-        return values;
-    }
-    private ContentValues getContentValues(UUID item,UUID category)
+    private ContentValues getContentValues(UUID item, UUID category)
     {
         ContentValues values=new ContentValues();
         values.put(ItemCategoryTable.Cols.ITEM_ID,item.toString());
         values.put(ItemCategoryTable.Cols.CATEGORY_ID,category.toString());
         return values;
     }
-    private ContentValues getContentValues(Category tag)
-    {
-        ContentValues values=new ContentValues();
-        values.put(CategoryTable.Cols.ID, tag.getId().toString());
-        values.put(CategoryTable.Cols.EN_NAME,tag.getEnName());
-        values.put(CategoryTable.Cols.AR_NAME,tag.getArName());
-        values.put(CategoryTable.Cols.TYPE,tag.getType());
-        return values;
-    }
-    private ContentValues getContentValues(Contact contact)
-    {
-        ContentValues values=new ContentValues();
-        values.put(ContactTable.Cols.ID, contact.getId().toString());
-        values.put(ContactTable.Cols.ITEM_ID,contact.getItemId().toString());
-        values.put(ContactTable.Cols.URI,contact.getUri());
-        return values;
-    }
 
     private BusinessEntity getBusinessEntity(Cursor cursor)
     {
         BusinessEntity entity=new BusinessEntity();
-        entity.setPk(cursor.getInt(cursor.getColumnIndex("_id")));
         entity.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.ID))));
-        entity.setName(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.NAME)));
-        entity.setDesc(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.DESC)));
+        entity.setName(cursor.getString(cursor.getColumnIndex(L10NCols.NAME)));
+        entity.setDesc(cursor.getString(cursor.getColumnIndex(L10NCols.DESC)));
         int fav=cursor.getInt(cursor.getColumnIndex(BusinessEntityTable.Cols.FAVORITE));
         entity.setFavorite(fav!=0);
         entity.setContact(Uri.parse(cursor.getString(cursor.getColumnIndex(BusinessEntityTable.Cols.URI))));
@@ -330,9 +320,8 @@ public class MockDataManager implements DataManager
     private Category getCategory(Cursor cursor)
     {
         Category category=new Category();
-        category.setPk(cursor.getInt(cursor.getColumnIndex("_id")));
         category.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(CategoryTable.Cols.ID))));
-        category.setName(cursor.getString(cursor.getColumnIndex(CategoryTable.Cols.NAME)));
+        category.setName(cursor.getString(cursor.getColumnIndex(L10NCols.NAME)));
         category.setEntities(cursor.getInt(cursor.getColumnIndex(CategoryTable.Cols.ENTITIES)));
         return category;
     }
@@ -340,9 +329,9 @@ public class MockDataManager implements DataManager
     private Contact getContact(Cursor cursor)
     {
         Contact contact=new Contact();
-        contact.setPk(cursor.getInt(cursor.getColumnIndex("_id")));
         contact.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(ContactTable.Cols.ID))));
         contact.setUri(cursor.getString(cursor.getColumnIndex(ContactTable.Cols.URI)));
+        contact.setName(cursor.getString(cursor.getColumnIndex(L10NCols.NAME)));
         return contact;
     }
 

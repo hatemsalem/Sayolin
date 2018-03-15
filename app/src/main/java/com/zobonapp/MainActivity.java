@@ -1,5 +1,6 @@
 package com.zobonapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +15,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
+import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.zobonapp.utils.RootActivity;
 import com.zobonapp.utils.ZobonApp;
@@ -53,7 +57,15 @@ public class MainActivity extends RootActivity implements NavigationView.OnNavig
         pager.setOffscreenPageLimit(3);
         TabLayout tabs=findViewById(R.id.tabs);
         tabs.setupWithViewPager(pager);
+        Log.i(TAG,"in create method");
 
+    }
+
+    @Override
+    protected void onResume()
+    {
+        Log.i(TAG,"in resume method");
+        super.onResume();
     }
 
     private void strictModeSetup()

@@ -10,20 +10,11 @@ import java.util.UUID;
 
 public class Contact
 {
-    private int pk;
     private UUID id;
     private UUID itemId;
     private String uri;
 
-    public int getPk()
-    {
-        return pk;
-    }
-
-    public void setPk(int pk)
-    {
-        this.pk = pk;
-    }
+    private String name;
 
     public UUID getId()
     {
@@ -53,5 +44,15 @@ public class Contact
     public void setUri(String uri)
     {
         this.uri = uri;
+    }
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
     }
 }

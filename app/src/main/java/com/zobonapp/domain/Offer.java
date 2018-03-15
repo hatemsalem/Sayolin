@@ -9,7 +9,6 @@ import java.util.UUID;
 
 public class Offer
 {
-    private int pk;
     private UUID id;
     private UUID entityId;
     private String arName;
@@ -18,15 +17,6 @@ public class Offer
     private Date endDate;
     private int pages;
 
-    public int getPk()
-    {
-        return pk;
-    }
-
-    public void setPk(int pk)
-    {
-        this.pk = pk;
-    }
 
     public UUID getId()
     {

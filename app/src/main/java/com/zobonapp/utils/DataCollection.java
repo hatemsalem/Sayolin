@@ -1,8 +1,5 @@
 package com.zobonapp.utils;
 
-import com.zobonapp.domain.BusinessEntity;
-import com.zobonapp.domain.Category;
-import com.zobonapp.domain.Contact;
 import com.zobonapp.domain.Offer;
 
 import java.util.HashMap;
@@ -17,23 +14,32 @@ import java.util.Vector;
 public class DataCollection
 {
     private Vector<Integer> vector;
-    private HashMap<UUID,Vector<UUID>> map;
-    private HashMap<UUID,Vector<UUID>> itemsCategories;
-    private List<BusinessEntity> entities;
-    private List<Category> categories;
-    private List<Contact> contacts;
+    private HashMap<UUID, Vector<UUID>> map;
+
+    private int steps=0;
+    private long latestUpdate=0;
+
+
+    private HashMap<String, Vector<String>> itemsCategories = new HashMap<>();
+    private List<HashMap<String, ?>> entities = new Vector<>();
+    private List<HashMap<String, ?>> categories = new Vector<>();
+
+
+    private List<HashMap<String, ?>> contacts = new Vector<>();
+
     private List<Offer> offers;
-    public List<BusinessEntity> getEntities()
+
+    public List<HashMap<String, ?>> getEntities()
     {
         return entities;
     }
 
-    public List<Category> getCategories()
+    public List<HashMap<String, ?>> getCategories()
     {
         return categories;
     }
 
-    public List<Contact> getContacts()
+    public List<HashMap<String, ?>> getContacts()
     {
         return contacts;
     }
@@ -53,8 +59,21 @@ public class DataCollection
         return map;
     }
 
-    public HashMap<UUID, Vector<UUID>> getItemsCategories()
+    public HashMap<String, Vector<String>> getItemsCategories()
     {
         return itemsCategories;
     }
+
+
+    public int getSteps()
+    {
+        return steps;
+    }
+
+
+    public long getLatestUpdate()
+    {
+        return latestUpdate;
+    }
+
 }

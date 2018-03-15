@@ -38,9 +38,11 @@ public class QueryPreferences
     private static final String LANGUAGE="language";
     private static final String SEARCH_QUERY="searchQuery";
     private static final String INITIALIZE_STEP="initializeStep";
+    private static final String TOTAL_STEPS ="totalSteps";
     private static final String HOTLINES_VIEW_TYPE="hotilinesViewType";
     private static final String SHOW_LARGE_DISPLAY="showLargeDisplay";
     private static final String SHOW_SHORTCUT_CENTER ="showShortcutCenter";
+    private static final String LATEST_UPDATE="latestUpdate";
 
 
     public static boolean isInitialized()
@@ -91,13 +93,21 @@ public class QueryPreferences
 
         return ZobonApp.getContext().getPrefs().getString(key,"");
     }
+    public static void setTotalSteps(int steps)
+    {
+        ZobonApp.getContext().getPrefs().edit().putInt(TOTAL_STEPS,steps).apply();
+    }
+    public static int getTotalSteps()
+    {
+        return ZobonApp.getContext().getPrefs().getInt(TOTAL_STEPS,-1);
+    }
     public static void setInitializeStep(int step)
     {
         ZobonApp.getContext().getPrefs().edit().putInt(INITIALIZE_STEP,step).apply();
     }
     public static int getInitializeStep()
     {
-        return ZobonApp.getContext().getPrefs().getInt(INITIALIZE_STEP,0);
+        return ZobonApp.getContext().getPrefs().getInt(INITIALIZE_STEP,-1);
     }
     public static void setHotlinesViewType(ViewType type)
     {
@@ -116,6 +126,14 @@ public class QueryPreferences
     {
         ZobonApp.getContext().getPrefs().edit().putInt(key,type.getCode()).apply();
     }
+    public static void setLatestUpdate(long latestUpdate)
+    {
+        ZobonApp.getContext().getPrefs().edit().putLong(LATEST_UPDATE,latestUpdate).apply();
+    }
+    public static long getLatestUpdate()
+    {
+        return ZobonApp.getContext().getPrefs().getInt(LATEST_UPDATE,0);
+    }
 
     public static boolean isShowLargeDisplay()
     {
@@ -125,4 +143,5 @@ public class QueryPreferences
     {
         return ZobonApp.getContext().getPrefs().getBoolean(SHOW_SHORTCUT_CENTER,false);
     }
+
 }

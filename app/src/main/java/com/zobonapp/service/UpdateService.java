@@ -10,15 +10,14 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.google.gson.Gson;
-import com.zobonapp.utils.QueryPreferences;
-import com.zobonapp.utils.DataCollection;
 import com.zobonapp.manager.InitializationEvent;
+import com.zobonapp.utils.DataCollection;
+import com.zobonapp.utils.QueryPreferences;
 import com.zobonapp.utils.ZobonApp;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.concurrent.TimeUnit;
@@ -76,34 +75,66 @@ public class UpdateService extends IntentService
         Gson gson=new Gson();
         try
         {
-            InputStream is= ZobonApp.getContext().getAssets().open("misc/liveInitial.json");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-            DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
-            reader.close();
-            is.close();
-            Log.d(TAG,"InitialParsing completed with: "+dataCollection.getEntities().size()+" items");
             int step=QueryPreferences.getInitializeStep();
-            Log.d(TAG,"Initializing......");
-            switch (step)
+            if(step<0)
             {
-                case 0:
-                    ZobonApp.getContext().getDataManager().updateCategories(dataCollection.getCategories());
-                    ZobonApp.getContext().getDataManager().updateBusinessEntities(dataCollection.getEntities());
-                    ZobonApp.getContext().getDataManager().insertContacts(dataCollection.getContacts());
-                    QueryPreferences.setInitializeStep(step++);
-                case 1:
-
-                    QueryPreferences.setInitializeStep(step++);
-                    EventBus.getDefault().post(new InitializationEvent(InitializationEvent.Status.COMPLETED));
-                case 2:
-                    ZobonApp.getContext().getDataManager().updateItemCategoryRelations(dataCollection.getItemsCategories());
-                    QueryPreferences.setInitializeStep(step++);
-                case 3:
-                    QueryPreferences.setIsInitialized(true);
-                    Log.d(TAG,"Event to be sent");
-                    EventBus.getDefault().post(new InitializationEvent(InitializationEvent.Status.COMPLETED));
-                    Log.d(TAG,"MainSetup completed");
+                InputStream is= ZobonApp.getContext().getAssets().open("misc/initial.json");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
+                reader.close();
+                is.close();
+                Log.i(TAG,"InitialParsing completed with: "+dataCollection.getEntities().size()+" items");
+                ZobonApp.getContext().getDataManager().populateCategories(dataCollection.getCategories());
+                ZobonApp.getContext().getDataManager().populateBusinessEntities(dataCollection.getEntities());
+                ZobonApp.getContext().getDataManager().populateContacts(dataCollection.getContacts());
+//                ZobonApp.getContext().getDataManager().populateItemCategoryRelations(dataCollection.getItemsCategories());
+                QueryPreferences.setInitializeStep(step=0);
+                QueryPreferences.setTotalSteps(dataCollection.getSteps());
+                QueryPreferences.setLatestUpdate(dataCollection.getLatestUpdate());
             }
+            Log.i(TAG,"Event to be sent");
+            EventBus.getDefault().post(new InitializationEvent(InitializationEvent.Status.COMPLETED));
+            Log.i(TAG,"MainSetup completed");
+
+            int totalSteps=QueryPreferences.getTotalSteps();
+            if(step>=0&&step<totalSteps)
+            {
+
+                for(int i=step;i<totalSteps;i++)
+                {
+                    InputStream is= ZobonApp.getContext().getAssets().open(String.format("misc/step%d.json",i));
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                    DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
+                    reader.close();
+                    is.close();
+                    Log.i(TAG,"InitialParsing completed with step No.: "+i);
+                    ZobonApp.getContext().getDataManager().populateCategories(dataCollection.getCategories());
+                    ZobonApp.getContext().getDataManager().populateBusinessEntities(dataCollection.getEntities());
+                    ZobonApp.getContext().getDataManager().populateContacts(dataCollection.getContacts());
+                    ZobonApp.getContext().getDataManager().populateItemCategoryRelations(dataCollection.getItemsCategories());
+                    QueryPreferences.setInitializeStep(i+1);
+                }
+            }
+            QueryPreferences.setIsInitialized(true);
+
+
+
+
+//            int step=QueryPreferences.getInitializeStep();
+//            Log.i(TAG,"Initializing......");
+//            switch (step)
+//            {
+//                case 0:
+//
+//
+//                case 1:
+//
+//                    QueryPreferences.setInitializeStep(step++);
+//                case 2:
+//                    QueryPreferences.setInitializeStep(step++);
+//                case 3:
+//                    QueryPreferences.setIsInitialized(true);
+//            }
         } catch (Exception e)
         {
             Log.e(TAG,"Initialization Problem",e);

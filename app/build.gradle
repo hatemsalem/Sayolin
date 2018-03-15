@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    splits {
+        density{
+            enable true
+//            reset()
+
+        }
+    }
+    lintOptions { checkReleaseBuilds false }
     signingConfigs {
         config {
             keyAlias 'ZobonApp'
@@ -9,6 +17,7 @@ android {
             storePassword ''
         }
     }
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.zoboonapp.test"
@@ -31,6 +40,7 @@ android {
     }
     productFlavors {
     }
+
 }
 repositories {
     maven { url "https://s3.amazonaws.com/repo.commonsware.com" }

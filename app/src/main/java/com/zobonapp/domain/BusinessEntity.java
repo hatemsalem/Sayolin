@@ -10,28 +10,14 @@ import java.util.UUID;
 
 public class BusinessEntity
 {
-    private int pk;
     private UUID id;
     private String name;
     private String desc;
-    private String arName;
-    private String arDesc;
-    private String enName;
-    private String enDesc;
     private boolean favorite;
     private int offers;
     private UUID contactId;
     private Uri contact;
 
-    public int getPk()
-    {
-        return pk;
-    }
-
-    public void setPk(int pk)
-    {
-        this.pk = pk;
-    }
 
     public UUID getId()
     {
@@ -63,45 +49,6 @@ public class BusinessEntity
         this.desc = desc;
     }
 
-    public String getArName()
-    {
-        return arName;
-    }
-
-    public void setArName(String arName)
-    {
-        this.arName = arName;
-    }
-
-    public String getArDesc()
-    {
-        return arDesc;
-    }
-
-    public void setArDesc(String arDesc)
-    {
-        this.arDesc = arDesc;
-    }
-
-    public String getEnName()
-    {
-        return enName;
-    }
-
-    public void setEnName(String enName)
-    {
-        this.enName = enName;
-    }
-
-    public String getEnDesc()
-    {
-        return enDesc;
-    }
-
-    public void setEnDesc(String enDesc)
-    {
-        this.enDesc = enDesc;
-    }
 
 
     public boolean isFavorite()

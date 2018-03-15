@@ -65,9 +65,13 @@ public class SplashActivity extends AppCompatActivity
     }
     private void finishSpalsh()
     {
+        Log.i(LOG_TAG,"finish splash & Initiate Main activity");
         Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+        Log.i(LOG_TAG,"to start the main activity");
         startActivity(intent);
+        Log.i(LOG_TAG,"main activity started");
         finish();
+        Log.i(LOG_TAG,"Splash activity finished");
 
     }
 }

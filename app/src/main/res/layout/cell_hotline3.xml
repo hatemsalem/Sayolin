@@ -29,8 +29,7 @@
             android:layout_height="24dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-
-
+            android:textStyle="bold"
             android:textAlignment="textEnd"
             android:gravity="center"
             android:textColor="@android:color/black"
@@ -49,6 +48,8 @@
             android:layout_height="96dp"
 
             android:layout_centerHorizontal="true"
+
+
             android:layout_alignBaseline="@id/imgCircle"
             android:layout_below="@id/imgFavorite"
             android:src="@drawable/notfoundimage"/>

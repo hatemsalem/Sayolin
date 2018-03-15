@@ -22,6 +22,7 @@ public class ContactHolder extends ViewHolder<Contact>
 {
     private final static String TAG =ContactHolder.class.getSimpleName();
     protected TextView lblTitle;
+    protected TextView lblSubtitle;
     protected ImageView imgBanner;
     protected Contact contact;
     public ContactHolder(ViewGroup parent, @LayoutRes int layout)
@@ -29,6 +30,7 @@ public class ContactHolder extends ViewHolder<Contact>
 
         super(parent, layout);
         lblTitle=itemView.findViewById(R.id.lblTitle);
+        lblSubtitle=itemView.findViewById(R.id.subTitle);
         imgBanner=itemView.findViewById(R.id.contactImage);
     }
 
@@ -38,6 +40,7 @@ public class ContactHolder extends ViewHolder<Contact>
         this.contact =cont;
         Uri uri=Uri.parse(contact.getUri());
         lblTitle.setText(uri.getSchemeSpecificPart());
+        lblSubtitle.setText(cont.getName());
         ZobonApp.getContext().getPicasso().load(R.drawable.img_running).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgBanner);
     }
 }

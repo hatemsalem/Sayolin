@@ -8,25 +8,13 @@ import java.util.UUID;
 
 public class Category
 {
-    private int pk;
     private UUID id;
     private String name;
-    private String arName;
-    private String enName;
     private String keywords;
     private int type;
     private int offers;
     private int entities;
 
-    public int getPk()
-    {
-        return pk;
-    }
-
-    public void setPk(int pk)
-    {
-        this.pk = pk;
-    }
 
     public UUID getId()
     {
@@ -48,25 +36,6 @@ public class Category
         this.name = name;
     }
 
-    public String getArName()
-    {
-        return arName;
-    }
-
-    public void setArName(String arName)
-    {
-        this.arName = arName;
-    }
-
-    public String getEnName()
-    {
-        return enName;
-    }
-
-    public void setEnName(String enName)
-    {
-        this.enName = enName;
-    }
 
     public int getType()
     {
