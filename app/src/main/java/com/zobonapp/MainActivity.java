@@ -124,6 +124,7 @@ public class MainActivity extends RootActivity implements NavigationView.OnNavig
 
     private void toggleLang()
     {
+
         ZobonApp.getContext().toggleLang() ;
 //        Context baseContext=getBaseContext();
 //        Locale localLocale = new Locale(SayolinApp.getContext().toggleLang());

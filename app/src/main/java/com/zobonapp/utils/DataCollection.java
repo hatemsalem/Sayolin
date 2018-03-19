@@ -24,6 +24,9 @@ public class DataCollection
     private List<HashMap<String, ?>> entities = new Vector<>();
     private List<HashMap<String, ?>> categories = new Vector<>();
 
+    private Vector<String> deletedEntities=new Vector<>();
+    private Vector<String> deletedCategories=new Vector<>();
+
 
     private List<HashMap<String, ?>> contacts = new Vector<>();
 
@@ -76,4 +79,13 @@ public class DataCollection
         return latestUpdate;
     }
 
+    public Vector<String> getDeletedEntities()
+    {
+        return deletedEntities;
+    }
+
+    public Vector<String> getDeletedCategories()
+    {
+        return deletedCategories;
+    }
 }

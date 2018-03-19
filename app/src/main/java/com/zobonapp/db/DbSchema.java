@@ -91,7 +91,8 @@ public class DbSchema
         {
             StringBuilder fields=new StringBuilder();
             fields.append(Cols.CATEGORY_ID).append(" NOT NULL, ")
-                    .append(Cols.ITEM_ID).append(" NOT NULL ");
+                    .append(Cols.ITEM_ID).append(" NOT NULL, ")
+                    .append(String.format("UNIQUE(%s,%s) ON CONFLICT REPLACE",Cols.CATEGORY_ID,Cols.ITEM_ID));
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
     }

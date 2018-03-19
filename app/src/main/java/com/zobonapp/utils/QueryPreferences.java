@@ -38,6 +38,7 @@ public class QueryPreferences
     private static final String LANGUAGE="language";
     private static final String SEARCH_QUERY="searchQuery";
     private static final String INITIALIZE_STEP="initializeStep";
+    private static final String UPDATE_STEP="updateStep";
     private static final String TOTAL_STEPS ="totalSteps";
     private static final String HOTLINES_VIEW_TYPE="hotilinesViewType";
     private static final String SHOW_LARGE_DISPLAY="showLargeDisplay";
@@ -109,6 +110,14 @@ public class QueryPreferences
     {
         return ZobonApp.getContext().getPrefs().getInt(INITIALIZE_STEP,-1);
     }
+    public static void setUpdateStep(int step)
+    {
+        ZobonApp.getContext().getPrefs().edit().putInt(UPDATE_STEP,step).apply();
+    }
+    public static int getUpdateStep()
+    {
+        return ZobonApp.getContext().getPrefs().getInt(UPDATE_STEP,-1);
+    }
     public static void setHotlinesViewType(ViewType type)
     {
         ZobonApp.getContext().getPrefs().edit().putInt(HOTLINES_VIEW_TYPE,type.getCode()).apply();
@@ -132,7 +141,7 @@ public class QueryPreferences
     }
     public static long getLatestUpdate()
     {
-        return ZobonApp.getContext().getPrefs().getInt(LATEST_UPDATE,0);
+        return ZobonApp.getContext().getPrefs().getLong(LATEST_UPDATE,0);
     }
 
     public static boolean isShowLargeDisplay()

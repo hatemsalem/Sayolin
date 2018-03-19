@@ -6,8 +6,10 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.LocaleList;
 import android.preference.PreferenceManager;
@@ -30,6 +32,7 @@ import com.zobonapp.manager.impl.MockManagerRegistry;
 import com.zobonapp.service.UpdateService;
 
 import java.io.File;
+import java.util.Locale;
 
 import static com.zobonapp.utils.QueryPreferences.ARABIC;
 import static com.zobonapp.utils.QueryPreferences.ENGLISH;
@@ -82,6 +85,16 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
             lang = ARABIC;
         }
         QueryPreferences.setLanguage(lang);
+        attachBaseContext(getBaseContext());
+//        Context newBase=getBaseContext();
+//        Locale locale = new Locale(getLang());
+//        Locale.setDefault(locale);
+//        Configuration localConfiguration = newBase.getResources().getConfiguration();
+//        localConfiguration.setLayoutDirection(locale);
+//        localConfiguration.setLocale(locale);
+//        newBase.getResources().updateConfiguration(localConfiguration, newBase.getResources().getDisplayMetrics());
+
+
         return lang;
     }
 
@@ -252,4 +265,21 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         }
     }
 
+    @Override
+    protected void attachBaseContext(Context base)
+    {
+        if(appInstance!=null)
+        {
+            Log.d(TAG,"appInstance is not null");
+            Context newBase=getBaseContext();
+            Locale locale = new Locale(getLang());
+            Locale.setDefault(locale);
+            Configuration localConfiguration = newBase.getResources().getConfiguration();
+            localConfiguration.setLayoutDirection(locale);
+            localConfiguration.setLocale(locale);
+            newBase.getResources().updateConfiguration(localConfiguration, newBase.getResources().getDisplayMetrics());
+        }
+        else
+            super.attachBaseContext(base);
+    }
 }

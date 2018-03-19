@@ -180,10 +180,32 @@ public class MockDataManager implements DataManager
         return entities;
     }
 
+    @Override
+    public void deleteItems(List<String> items)
+    {
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
+        database.beginTransaction();
+        for (String item:items)
+        {
+            database.delete(ContactTable.NAME,"itemId=?",new String[]{item});
+            database.delete(BusinessEntityTable.NAME,"id=?",new String[]{item});
+        }
+        database.setTransactionSuccessful();
+        database.endTransaction();
+    }
 
-
-
-
+    @Override
+    public void deleteCategories(List<String> categories)
+    {
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
+        database.beginTransaction();
+        for (String category:categories)
+        {
+            database.delete(CategoryTable.NAME,"id=?",new String[]{category});
+        }
+        database.setTransactionSuccessful();
+        database.endTransaction();
+    }
 
     @Override
     public void populateItemCategoryRelations(HashMap<String, Vector<String>> objects)
@@ -232,7 +254,7 @@ public class MockDataManager implements DataManager
             values.put(CategoryTable.Cols.EN_NAME,(String)object.get(CategoryTable.Cols.EN_NAME));
             values.put(CategoryTable.Cols.TYPE,((Double) object.get(CategoryTable.Cols.TYPE)).intValue());
 
-            long i=database.insert(DbSchema.CategoryTable.NAME,null,values);
+            long i=database.insertWithOnConflict(DbSchema.CategoryTable.NAME,null,values,SQLiteDatabase.CONFLICT_REPLACE);
             Log.d("DataManager","inserted records:"+i);
         }
         database.setTransactionSuccessful();
@@ -254,8 +276,12 @@ public class MockDataManager implements DataManager
             values.put(BusinessEntityTable.Cols.EN_NAME,(String)object.get(CategoryTable.Cols.EN_NAME));
             values.put(BusinessEntityTable.Cols.DEFAULT_CONTACT,(String)object.get(BusinessEntityTable.Cols.DEFAULT_CONTACT));
 
-            long i=database.insert(DbSchema.BusinessEntityTable.NAME,null,values);
+            long i=database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,values,SQLiteDatabase.CONFLICT_IGNORE);
+            if(i<=0)
+                database.update(DbSchema.BusinessEntityTable.NAME,values,"id=?",new String[]{itemId});
 
+
+            database.delete(ContactTable.NAME,"itemId=?",new String[]{itemId});
             List<String> categories=(List<String>) object.get("categories");
 
                 for (String categoryId:categories)
@@ -288,7 +314,7 @@ public class MockDataManager implements DataManager
             values.put(ContactTable.Cols.AR_NAME,(String)object.get(ContactTable.Cols.AR_NAME));
             values.put(ContactTable.Cols.EN_NAME,(String)object.get(ContactTable.Cols.EN_NAME));
 
-            long i=database.insert(DbSchema.ContactTable.NAME,null,values);
+            long i=database.insertWithOnConflict(DbSchema.ContactTable.NAME,null,values,SQLiteDatabase.CONFLICT_REPLACE);
             Log.d("DataManager","inserted records:"+i);
         }
         database.setTransactionSuccessful();
@@ -298,13 +324,6 @@ public class MockDataManager implements DataManager
 
 
 
-    private ContentValues getContentValues(UUID item, UUID category)
-    {
-        ContentValues values=new ContentValues();
-        values.put(ItemCategoryTable.Cols.ITEM_ID,item.toString());
-        values.put(ItemCategoryTable.Cols.CATEGORY_ID,category.toString());
-        return values;
-    }
 
     private BusinessEntity getBusinessEntity(Cursor cursor)
     {
