@@ -19,9 +19,4 @@ public class ContentActivity extends RootActivity
         }
     }
 
-    @Override
-    protected void attachBaseContext(Context baseContext)
-    {
-        super.attachBaseContext(baseContext);
-    }
 }

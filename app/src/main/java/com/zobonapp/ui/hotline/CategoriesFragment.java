@@ -16,6 +16,7 @@ import android.widget.GridLayout;
 import com.srx.widget.PullToLoadView;
 import com.zobonapp.R;
 import com.zobonapp.ui.AdapterFactory;
+import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.ui.Paginator;
 import com.zobonapp.utils.QueryPreferences;
 import com.zobonapp.utils.ZobonApp;
@@ -26,8 +27,10 @@ import com.zobonapp.utils.ZobonApp;
 public class CategoriesFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener
 {
     private static final String TAG=CategoriesFragment.class.getSimpleName();
+    private static final String ARG_ADAPTER_CLASS = "adapterClass";
     private PullToLoadView pullToLoadView;
     private Paginator paginator;
+    private GenericPagerAdapter adapter;
     public static CategoriesFragment newInstance(Bundle arguments)
     {
         CategoriesFragment fragment = new CategoriesFragment();
@@ -42,6 +45,14 @@ public class CategoriesFragment extends Fragment implements SharedPreferences.On
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        try
+        {
+            Class<? extends GenericPagerAdapter> clazz = Class.forName(getArguments().getString(ARG_ADAPTER_CLASS)).asSubclass(GenericPagerAdapter.class);
+            adapter = AdapterFactory.getAdapter(clazz, getArguments());
+        } catch (ClassNotFoundException e)
+        {
+            throw new IllegalArgumentException(e);
+        }
     }
 
     @Override

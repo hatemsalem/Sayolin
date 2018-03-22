@@ -16,7 +16,7 @@ import java.util.List;
 
 public class BusinessEntityAdapter extends GenericPagerAdapter<ItemHolder,BusinessEntity>
 {
-    private static String ARG_CATEGORY="category";
+    private static String ARG_CATEGORY="offer";
 
     private String categoryId;
 

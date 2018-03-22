@@ -119,7 +119,6 @@ public class UpdateService extends IntentService
                         if(stepFile.exists())
                         {
                             InputStream stepStream=new FileInputStream(stepFile);
-                            //TODO:remove contacts
                             updateContactsData(stepStream);
                             stepFile.delete();
                         }
@@ -164,8 +163,6 @@ public class UpdateService extends IntentService
                     InputStream is= new FileInputStream(file);
                     deleteItems(is);
                     is.close();
-                   //TODO: delete categories , entities and contacts
-
                     file.delete();
                 }
 

@@ -54,7 +54,8 @@ public class RootFragment extends Fragment
         Bundle args=(Bundle) getArguments().get(ARG_ITEMS_ARGS);
         itemsFragment=ItemsFragment.newInstance(args);
         args=(Bundle)getArguments().get(ARG_CATEGORIES_ARGS);
-        categoriesFragment=CategoriesFragment.newInstance(args);
+//        categoriesFragment=CategoriesFragment.newInstance(args);
+        categoriesFragment=ItemsFragment.newInstance(args);
         viewTypeKey=getArguments().getString(ARG_VIEW_TYPE_KEY);
     }
 

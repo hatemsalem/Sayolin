@@ -7,13 +7,11 @@ import java.util.UUID;
  * Created by hasalem on 12/13/2017.
  */
 
-public class Offer
+public class Menu
 {
     private UUID id;
     private UUID entityId;
     private String name;
-    private Date startDate;
-    private Date endDate;
     private int pages;
     private String keywords;
     private int rank;
@@ -39,26 +37,6 @@ public class Offer
         this.entityId = entityId;
     }
 
-
-    public Date getStartDate()
-    {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate)
-    {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate()
-    {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate)
-    {
-        this.endDate = endDate;
-    }
 
     public int getPages()
     {

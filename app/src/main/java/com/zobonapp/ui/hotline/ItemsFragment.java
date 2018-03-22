@@ -109,7 +109,7 @@ public class ItemsFragment extends Fragment implements SharedPreferences.OnShare
             searchView.setIconified(false);
 
             searchView.setQuery(query, true);
-            adapter.setSearchQuery(query);
+             adapter.setSearchQuery(query);
         }
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
         {
@@ -189,11 +189,11 @@ public class ItemsFragment extends Fragment implements SharedPreferences.OnShare
         super.onDestroyView();
     }
 
-    @Override
-    public void setHasOptionsMenu(boolean hasMenu)
-    {
-        super.setHasOptionsMenu(hasMenu);
-    }
+//    @Override
+//    public void setHasOptionsMenu(boolean hasMenu)
+//    {
+//        super.setHasOptionsMenu(hasMenu);
+//    }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)

@@ -5,6 +5,7 @@ import android.view.ViewGroup;
 
 import com.zobonapp.R;
 import com.zobonapp.domain.Category;
+import com.zobonapp.domain.Offer;
 import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.utils.ZobonApp;
 
@@ -14,7 +15,7 @@ import java.util.List;
  * Created by hasalem on 14/1/2018.
  */
 
-public class CategoryAdapter extends GenericPagerAdapter<CategoryHolder,Category>
+public class OffersAdapter extends GenericPagerAdapter<OfferHolder,Offer>
 {
     private static final String ARG_CATEGORY_TYPE="categoryType";
     private int type;
@@ -23,18 +24,19 @@ public class CategoryAdapter extends GenericPagerAdapter<CategoryHolder,Category
     {
         Bundle arguments=new Bundle();
         arguments.putInt(ARG_CATEGORY_TYPE,type);
-        arguments.putString(ARG_ADAPTER_CLASS,CategoryAdapter.class.getName());
+        arguments.putString(ARG_ADAPTER_CLASS,OffersAdapter.class.getName());
         return arguments;
     }
     @Override
-    public CategoryHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    public OfferHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return new CategoryHolder(parent, R.layout.cell_category);
+        return new OfferHolder(parent, R.layout.cell_offer);
     }
     @Override
-    public List<Category> loadData(int page)
+    public List<Offer> loadData(int page)
     {
-        return ZobonApp.getContext().getDataManager().findCategoriesForPage(type,page * PAGE_SIZE, PAGE_SIZE,searchQuery);
+//        return ZobonApp.getContext().getDataManager().findCategoriesForPage(type,page * PAGE_SIZE, PAGE_SIZE,searchQuery);
+        return null;
     }
 
     @Override

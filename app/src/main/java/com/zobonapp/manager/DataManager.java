@@ -16,13 +16,15 @@ import java.util.Vector;
 public interface DataManager
 {
    void populateItemCategoryRelations(HashMap<String,Vector<String>> objects);
+   BusinessEntity findBusinessItemById(String id);
+   Category findCategoryById(String id);
    void updateBusinessItem(BusinessEntity entity);
    void populateCategories(List<HashMap<String,?>> objects);
    void populateBusinessEntities(List<HashMap<String,?>> objects);
    void populateContacts(List<HashMap<String,?>> objects);
    List<BusinessEntity> findBusinessEntitiesForPage(int offset,int limit,String searchQuery,String categoryId);
    List<BusinessEntity> findFavoriteEntitiesForPage(int offset,int limit,String searchQuery,String categoryId);
-   List<Category> findCategoriesForPage(int type,int offset,int limit);
+   List<Category> findCategoriesForPage(int type,int offset,int limit,String searchQuery);
    List<Contact> findContactsForItem(String itemId);
    void deleteItems(List<String> items);
    void deleteCategories(List<String> items);

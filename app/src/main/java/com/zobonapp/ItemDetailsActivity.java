@@ -8,15 +8,19 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.domain.Contact;
 import com.zobonapp.ui.GenericPagerAdapter;
+import com.zobonapp.utils.RootActivity;
+import com.zobonapp.utils.ZobonApp;
 
 import java.util.List;
 
-public class ItemDetailsActivity extends AppCompatActivity
+public class ItemDetailsActivity extends RootActivity
 {
     private static final String EXTRA_ITEM_ID="itemId";
     private GenericPagerAdapter adapter;
+    private BusinessEntity item;
     public static Intent newIntent(Context ctx, String itemId)
     {
         Intent intent=new Intent(ctx,ItemDetailsActivity.class);
@@ -31,13 +35,18 @@ public class ItemDetailsActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        String itemId=getIntent().getStringExtra(EXTRA_ITEM_ID);
+        item= ZobonApp.getContext().getDataManager().findBusinessItemById(itemId);
+        if(item!=null)
+            getSupportActionBar().setSubtitle(item.getName());
         setContentView(R.layout.activity_item_details);
         adapter=new ContactsAdapter();
-        adapter.setArguments(ContactsAdapter.newArguments(getIntent().getStringExtra(EXTRA_ITEM_ID),"contacts"));
+        adapter.setArguments(ContactsAdapter.newArguments(itemId,"contacts"));
         adapter.onCreate();
         RecyclerView recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
         new AsyncTask<Void, Void, List<?>>()
         {
             @Override

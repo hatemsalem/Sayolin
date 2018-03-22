@@ -80,14 +80,14 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
             imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
         final Uri  uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/initial/"+entity.getId().toString()+".webp");
-//        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
+//        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
         ZobonApp.getContext().getPicasso().load(R.drawable.placeholder).into(imgLogo);
 
 
 //        ZobonApp.getContext().getPicasso()
 //                .load(uri)
 //                .networkPolicy(NetworkPolicy.OFFLINE)
-//                .into(imgLogo, new Callback() {
+//                .into(imgItem, new Callback() {
 //                    @Override
 //                    public void onSuccess() { }
 //
@@ -96,7 +96,7 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
 //                        // Try again online if cache failed
 //                        ZobonApp.getContext().getPicasso()
 //                                .load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   )
-//                                .into(imgLogo);
+//                                .into(imgItem);
 //                    }
 //                });
     }

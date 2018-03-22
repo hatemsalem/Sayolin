@@ -24,7 +24,7 @@ public class ContentAdapter extends FragmentStatePagerAdapter
             RootFragment.newInstance( CategoryAdapter.newArguments(0),FavoriteEntityAdapter.newArguments(null,"favorite"),"favorites"),
 //            FavoriteFragment.newInstance( CategoryAdapter.newArguments(0),FavoriteEntityAdapter.newArguments(null,"favorite")),
 //            FavoriteFragment.newInstance(),
-//            ItemsFragment.newInstance(FavoriteEntityAdapter.newArguments(null,"category"),FavoriteEntityAdapter.class),
+//            ItemsFragment.newInstance(FavoriteEntityAdapter.newArguments(null,"offer"),FavoriteEntityAdapter.class),
 //            ContentFragment.newInstance("file:///android_asset/misc/initial2.json"),
             ContentFragment.newInstance("file:///android_asset/misc/initial2.json")
 

@@ -116,11 +116,10 @@ public class MockDataManager implements DataManager
     }
 
     @Override
-    public List<Category> findCategoriesForPage(int type,int offset, int limit)
+    public List<Category> findCategoriesForPage(int type,int offset, int limit,String searchQuery)
     {
         String query=null;
         Vector<String> queryArgs=new Vector<>();
-        String searchQuery=null;
         if(searchQuery==null)
             searchQuery="";
         searchQuery= "%"+searchQuery+"%";
@@ -226,6 +225,32 @@ public class MockDataManager implements DataManager
         }
         database.setTransactionSuccessful();
         database.endTransaction();
+    }
+
+    @Override
+    public BusinessEntity findBusinessItemById(String id)
+    {
+        SQLiteDatabase database=DatabaseHelper.getInstance().getReadableDatabase();
+        Cursor cursor=database.rawQuery(ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntity),new String[]{id});
+        BusinessEntity item=null;
+        if(cursor.moveToFirst()==true)
+        {
+            item=getBusinessEntity(cursor);
+        }
+        return item;
+    }
+
+    @Override
+    public Category findCategoryById(String id)
+    {
+        SQLiteDatabase database=DatabaseHelper.getInstance().getReadableDatabase();
+        Cursor cursor=database.rawQuery(ZobonApp.getContext().getResources().getString(R.string.sql_findCategory),new String[]{id});
+        Category item=null;
+        if(cursor.moveToFirst()==true)
+        {
+            item=getCategory(cursor);
+        }
+        return item;
     }
 
     @Override
@@ -342,6 +367,7 @@ public class MockDataManager implements DataManager
         category.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(CategoryTable.Cols.ID))));
         category.setName(cursor.getString(cursor.getColumnIndex(L10NCols.NAME)));
         category.setEntities(cursor.getInt(cursor.getColumnIndex(CategoryTable.Cols.ENTITIES)));
+        category.setOffers(cursor.getInt(cursor.getColumnIndex(CategoryTable.Cols.OFFERS)));
         return category;
     }
 

@@ -37,10 +37,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
     {
         db.execSQL(BusinessEntityTable.getCreateStatement());
         db.execSQL(CategoryTable.getCreateStatement());
-        db.execSQL(MenutTable.getCreateStatement());
-        db.execSQL(OfferTable.getCreateStatement());
         db.execSQL(ItemCategoryTable.getCreateStatement());
         db.execSQL(ContactTable.getCreateStatement());
+        db.execSQL(OfferTable.getCreateStatement());
+
+        db.execSQL(MenutTable.getCreateStatement());
 
 
 

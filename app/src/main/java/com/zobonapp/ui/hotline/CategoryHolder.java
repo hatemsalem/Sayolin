@@ -22,6 +22,7 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
     private final static String TAG=CategoryHolder.class.getSimpleName();
     protected TextView lblName;
     protected TextView lblEntities;
+    protected TextView lblOffers;
     protected ImageView imgLogo;
     protected Category category;
     public CategoryHolder(ViewGroup parent, int layout)
@@ -30,6 +31,7 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
         itemView.setOnClickListener(this);
         lblName=itemView.findViewById(R.id.lblName);
         lblEntities=itemView.findViewById(R.id.lblEntities);
+        lblOffers=itemView.findViewById(R.id.lblOffers);
         imgLogo=itemView.findViewById(R.id.imgLogo);
     }
 
@@ -38,8 +40,9 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
     {
         this.category=category;
         lblName.setText(category.getName());
-        lblEntities.setText("Includes:"+category.getEntities());
-        Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/category/"+category.getId().toString()+".webp");
+        lblEntities.setText(category.getEntities()+" item");
+        lblOffers.setText(category.getOffers()+" offer");
+        Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/offer/"+category.getId().toString()+".webp");
         ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
     }
 
