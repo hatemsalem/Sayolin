@@ -23,6 +23,8 @@ public class DataCollection
     private HashMap<String, Vector<String>> itemsCategories = new HashMap<>();
     private List<HashMap<String, ?>> entities = new Vector<>();
     private List<HashMap<String, ?>> categories = new Vector<>();
+    private List<HashMap<String, ?>> offers = new Vector<>();
+    private List<HashMap<String, ?>> menus = new Vector<>();
 
     private Vector<String> deletedEntities=new Vector<>();
     private Vector<String> deletedCategories=new Vector<>();
@@ -30,7 +32,6 @@ public class DataCollection
 
     private List<HashMap<String, ?>> contacts = new Vector<>();
 
-    private List<Offer> offers;
 
     public List<HashMap<String, ?>> getEntities()
     {
@@ -47,9 +48,13 @@ public class DataCollection
         return contacts;
     }
 
-    public List<Offer> getOffers()
+    public List<HashMap<String, ?>> getOffers()
     {
         return offers;
+    }
+    public List<HashMap<String, ?>> getMenus()
+    {
+        return menus;
     }
 
     public Vector<Integer> getVector()

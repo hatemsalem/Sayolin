@@ -11,6 +11,7 @@ import android.util.Log;
 
 import com.commonsware.cwac.security.ZipUtils;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.zobonapp.BuildConfig;
 import com.zobonapp.manager.InitializationEvent;
 import com.zobonapp.utils.DataCollection;
@@ -230,8 +231,15 @@ public class UpdateService extends IntentService
                 QueryPreferences.setTotalSteps(updateBasicData(is));
                 is.close();
                 QueryPreferences.setInitializeStep(step=0);
+
+                EventBus.getDefault().post(new InitializationEvent(InitializationEvent.Status.COMPLETED));
+                is= ZobonApp.getContext().getAssets().open(String.format(Locale.US, "misc/offers.json"));
+                updateOffersData(is);
+                is.close();
             }
-            EventBus.getDefault().post(new InitializationEvent(InitializationEvent.Status.COMPLETED));
+
+
+
 
             int totalSteps=QueryPreferences.getTotalSteps();
             if(step>=0&&step<totalSteps)
@@ -260,9 +268,20 @@ public class UpdateService extends IntentService
 
     }
 
+    private void updateOffersData(InputStream is) throws IOException
+    {
+        Gson gson = new Gson();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
+        reader.close();
+
+        ZobonApp.getContext().getDataManager().populateOffers(dataCollection.getOffers());
+    }
+
     private void updateContactsData(InputStream is) throws IOException
     {
         Gson gson = new Gson();
+
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
         reader.close();

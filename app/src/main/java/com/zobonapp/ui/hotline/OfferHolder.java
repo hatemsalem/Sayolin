@@ -28,7 +28,7 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
         itemView.setOnClickListener(this);
         lblName=itemView.findViewById(R.id.lblName);
         lblPages=itemView.findViewById(R.id.lblPages);
-        imgItem =itemView.findViewById(R.id.imgLogo);
+        imgItem =itemView.findViewById(R.id.imgItem);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
     {
         this.offer =offer;
         lblName.setText(offer.getName());
-        lblPages.setText(""+offer.getPages());
+        lblPages.setText("pages:"+offer.getPages());
         Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/offer/"+offer.getId().toString()+".webp");
         ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
     }

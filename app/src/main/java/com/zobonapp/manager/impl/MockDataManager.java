@@ -14,6 +14,7 @@ import com.zobonapp.db.DbSchema.L10NCols;
 import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.domain.Category;
 import com.zobonapp.domain.Contact;
+import com.zobonapp.domain.Offer;
 import com.zobonapp.manager.DataManager;
 import com.zobonapp.manager.ItemChangeEvent;
 import com.zobonapp.utils.ZobonApp;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.Vector;
 
+import static com.zobonapp.db.DbSchema.*;
 import static com.zobonapp.db.DbSchema.BusinessEntityTable;
 import static com.zobonapp.db.DbSchema.CategoryTable;
 import static com.zobonapp.db.DbSchema.ContactTable;
@@ -114,6 +116,47 @@ public class MockDataManager implements DataManager
         }
         return entities;
     }
+
+    @Override
+    public List<Offer> findOffersForPage(int offset, int limit, String searchQuery, String categoryId)
+    {
+        String query=null;
+        Vector<String> queryArgs=new Vector<>();
+        if(searchQuery==null)
+            searchQuery="";
+        searchQuery= "%"+searchQuery+"%";
+        queryArgs.add(searchQuery);
+        queryArgs.add(searchQuery);
+        //TODO: order by should be handled for consistent results.
+        if(TextUtils.isEmpty(categoryId))
+        {
+            query= ZobonApp.getContext().getResources().getString(R.string.sql_findOfferss,offset,limit);
+        }
+        else
+        {
+            query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntitiesInCategory,offset,limit);
+            queryArgs.add(categoryId);
+        }
+
+        Cursor cursor=DatabaseHelper.getInstance().getReadableDatabase().rawQuery(query, queryArgs.toArray(new String[]{}));
+        List<Offer> offers=new ArrayList<>();
+        try
+        {
+            cursor.moveToFirst();
+            while (!cursor.isAfterLast())
+            {
+                offers.add(getOffer(cursor));
+                cursor.moveToNext();
+            }
+        }
+        finally
+        {
+            cursor.close();
+        }
+        return offers;
+    }
+
+
 
     @Override
     public List<Category> findCategoriesForPage(int type,int offset, int limit,String searchQuery)
@@ -219,7 +262,7 @@ public class MockDataManager implements DataManager
                 ContentValues values=new ContentValues();
                 values.put(ItemCategoryTable.Cols.ITEM_ID,item);
                 values.put(ItemCategoryTable.Cols.CATEGORY_ID,category);
-                long i=database.insert(DbSchema.ItemCategoryTable.NAME,null,values);
+                long i=database.insert(ItemCategoryTable.NAME,null,values);
                 Log.d("DataManager","inserted records:"+i);
             }
         }
@@ -279,11 +322,52 @@ public class MockDataManager implements DataManager
             values.put(CategoryTable.Cols.EN_NAME,(String)object.get(CategoryTable.Cols.EN_NAME));
             values.put(CategoryTable.Cols.TYPE,((Double) object.get(CategoryTable.Cols.TYPE)).intValue());
 
-            long i=database.insertWithOnConflict(DbSchema.CategoryTable.NAME,null,values,SQLiteDatabase.CONFLICT_REPLACE);
+            long i=database.insertWithOnConflict(CategoryTable.NAME,null,values,SQLiteDatabase.CONFLICT_REPLACE);
             Log.d("DataManager","inserted records:"+i);
         }
         database.setTransactionSuccessful();
         database.endTransaction();
+
+    }
+
+    @Override
+    public void populateOffers(List<HashMap<String, ?>> objects)
+    {
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
+        database.beginTransaction();
+        for(HashMap<String,?> object:objects)
+        {
+            ContentValues values=new ContentValues();
+            String itemId=(String)object.get(OfferTable.Cols.ID);
+            values.put(OfferTable.Cols.ID,itemId);
+            values.put(OfferTable.Cols.AR_NAME,(String)object.get(OfferTable.Cols.AR_NAME));
+            values.put(OfferTable.Cols.EN_NAME,(String)object.get(OfferTable.Cols.EN_NAME));
+
+
+            long i=database.insertWithOnConflict(OfferTable.NAME,null,values,SQLiteDatabase.CONFLICT_IGNORE);
+            if(i<=0)
+                database.update(OfferTable.NAME,values,"id=?",new String[]{itemId});
+
+
+            List<String> categories=(List<String>) object.get("categories");
+
+            for (String categoryId:categories)
+            {
+                ContentValues catValues=new ContentValues();
+                catValues.put(ItemCategoryTable.Cols.ITEM_ID,itemId);
+                catValues.put(ItemCategoryTable.Cols.CATEGORY_ID,categoryId);
+                i=database.insert(ItemCategoryTable.NAME,null,catValues);
+                Log.d("DataManager","inserted records:"+i);
+            }
+
+        }
+        database.setTransactionSuccessful();
+        database.endTransaction();
+    }
+
+    @Override
+    public void populateMenus(List<HashMap<String, ?>> objects)
+    {
 
     }
 
@@ -301,9 +385,9 @@ public class MockDataManager implements DataManager
             values.put(BusinessEntityTable.Cols.EN_NAME,(String)object.get(CategoryTable.Cols.EN_NAME));
             values.put(BusinessEntityTable.Cols.DEFAULT_CONTACT,(String)object.get(BusinessEntityTable.Cols.DEFAULT_CONTACT));
 
-            long i=database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,values,SQLiteDatabase.CONFLICT_IGNORE);
+            long i=database.insertWithOnConflict(BusinessEntityTable.NAME,null,values,SQLiteDatabase.CONFLICT_IGNORE);
             if(i<=0)
-                database.update(DbSchema.BusinessEntityTable.NAME,values,"id=?",new String[]{itemId});
+                database.update(BusinessEntityTable.NAME,values,"id=?",new String[]{itemId});
 
 
             database.delete(ContactTable.NAME,"itemId=?",new String[]{itemId});
@@ -314,7 +398,7 @@ public class MockDataManager implements DataManager
                     ContentValues catValues=new ContentValues();
                     catValues.put(ItemCategoryTable.Cols.ITEM_ID,itemId);
                     catValues.put(ItemCategoryTable.Cols.CATEGORY_ID,categoryId);
-                    i=database.insert(DbSchema.ItemCategoryTable.NAME,null,catValues);
+                    i=database.insert(ItemCategoryTable.NAME,null,catValues);
                     Log.d("DataManager","inserted records:"+i);
                 }
 
@@ -339,7 +423,7 @@ public class MockDataManager implements DataManager
             values.put(ContactTable.Cols.AR_NAME,(String)object.get(ContactTable.Cols.AR_NAME));
             values.put(ContactTable.Cols.EN_NAME,(String)object.get(ContactTable.Cols.EN_NAME));
 
-            long i=database.insertWithOnConflict(DbSchema.ContactTable.NAME,null,values,SQLiteDatabase.CONFLICT_REPLACE);
+            long i=database.insertWithOnConflict(ContactTable.NAME,null,values,SQLiteDatabase.CONFLICT_REPLACE);
             Log.d("DataManager","inserted records:"+i);
         }
         database.setTransactionSuccessful();
@@ -348,7 +432,14 @@ public class MockDataManager implements DataManager
 
 
 
-
+    private Offer getOffer(Cursor cursor)
+    {
+        Offer offer=new Offer();
+        offer.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(OfferTable.Cols.ID))));
+        offer.setName(cursor.getString(cursor.getColumnIndex(L10NCols.NAME)));
+        offer.setPages(cursor.getInt(cursor.getColumnIndex(OfferTable.Cols.PAGES)));
+        return offer;
+    }
 
     private BusinessEntity getBusinessEntity(Cursor cursor)
     {
