@@ -22,9 +22,9 @@ import com.zobonapp.utils.ZobonApp;
  * Created by hasalem on 24/12/2017.
  */
 
-public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnClickListener,View.OnCreateContextMenuListener,MenuItem.OnMenuItemClickListener
+public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnClickListener,View.OnCreateContextMenuListener,MenuItem.OnMenuItemClickListener
 {
-    private final static String TAG =ItemHolder.class.getSimpleName();
+    private final static String TAG =EntityHolder.class.getSimpleName();
 //    protected Button imgCall;
     protected ImageView imgCall;
     protected ImageView imgShare;
@@ -35,7 +35,7 @@ public class ItemHolder extends ViewHolder<BusinessEntity> implements View.OnCli
     protected ImageView imgLogo;
     protected ImageView imgFavorite;
     protected BusinessEntity entity;
-    public ItemHolder(ViewGroup parent, @LayoutRes int layout)
+    public EntityHolder(ViewGroup parent, @LayoutRes int layout)
     {
 
         super(parent, layout);

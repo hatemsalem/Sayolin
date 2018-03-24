@@ -1,14 +1,11 @@
 package com.zobonapp;
 
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.zobonapp.domain.Contact;
 import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.ui.ViewHolder;
-import com.zobonapp.ui.hotline.BusinessEntityAdapter;
-import com.zobonapp.ui.hotline.ItemHolder;
 import com.zobonapp.utils.ZobonApp;
 
 import java.util.List;

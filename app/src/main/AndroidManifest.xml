@@ -63,7 +63,7 @@
         </receiver>
 
         <activity
-            android:name=".ui.hotline.ItemsActivity"
+            android:name=".ui.hotline.EntitiesActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
         </activity>

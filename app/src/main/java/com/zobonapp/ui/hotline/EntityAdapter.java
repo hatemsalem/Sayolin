@@ -14,7 +14,7 @@ import java.util.List;
  * Created by hasalem on 24/12/2017.
  */
 
-public class BusinessEntityAdapter extends GenericPagerAdapter<ItemHolder,BusinessEntity>
+public class EntityAdapter extends GenericPagerAdapter<EntityHolder,BusinessEntity>
 {
     private static String ARG_CATEGORY="menu";
 
@@ -26,13 +26,13 @@ public class BusinessEntityAdapter extends GenericPagerAdapter<ItemHolder,Busine
         Bundle arguments=new Bundle();
         arguments.putString(ARG_CATEGORY,categoryId);
         arguments.putString(ARG_SEARCH_KEY,searchKey);
-        arguments.putString(ARG_ADAPTER_CLASS,BusinessEntityAdapter.class.getName());
+        arguments.putString(ARG_ADAPTER_CLASS,EntityAdapter.class.getName());
         return arguments;
     }
     @Override
-    public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    public EntityHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return new ItemHolder(parent, R.layout.cell_hotline3);
+        return new EntityHolder(parent, R.layout.cell_hotline3);
     }
 
     @Override
