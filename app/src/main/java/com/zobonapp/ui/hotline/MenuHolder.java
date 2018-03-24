@@ -44,7 +44,7 @@ public class MenuHolder extends ViewHolder<Menu> implements View.OnClickListener
     @Override
     public void onClick(View v)
     {
-        ItemsActivity.start(v.getContext(), menu.getId().toString());
+        EntitiesActivity.start(v.getContext(), menu.getId().toString());
 
     }
 }

@@ -44,7 +44,7 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
     @Override
     public void onClick(View v)
     {
-        ItemsActivity.start(v.getContext(), offer.getId().toString());
+        EntitiesActivity.start(v.getContext(), offer.getId().toString());
 
     }
 }

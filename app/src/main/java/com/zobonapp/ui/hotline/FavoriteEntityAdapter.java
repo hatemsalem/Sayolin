@@ -14,7 +14,7 @@ import java.util.List;
  * Created by hasalem on 24/12/2017.
  */
 
-public class FavoriteEntityAdapter extends GenericPagerAdapter<ItemHolder,BusinessEntity>
+public class FavoriteEntityAdapter extends GenericPagerAdapter<EntityHolder,BusinessEntity>
 {
     private static String ARG_CATEGORY="menu";
 
@@ -30,9 +30,9 @@ public class FavoriteEntityAdapter extends GenericPagerAdapter<ItemHolder,Busine
         return arguments;
     }
     @Override
-    public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType)
+    public EntityHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return new ItemHolder(parent, R.layout.cell_hotline3);
+        return new EntityHolder(parent, R.layout.cell_hotline3);
     }
 
     @Override

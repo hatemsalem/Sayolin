@@ -1,12 +1,10 @@
 package com.zobonapp.ui.hotline;
 
 import android.net.Uri;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zobonapp.R;
 import com.zobonapp.domain.Category;
@@ -49,7 +47,7 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
     @Override
     public void onClick(View v)
     {
-        ItemsActivity.start(v.getContext(),category.getId().toString());
+        EntitiesActivity.start(v.getContext(),category.getId().toString());
 
     }
 }
