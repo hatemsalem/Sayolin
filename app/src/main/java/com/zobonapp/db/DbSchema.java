@@ -104,6 +104,8 @@ public class DbSchema
         {
             public static final String ID="id";
             public static final String ITEM_ID="itemId";
+            public static final String START_DATE="startDate";
+            public static final String END_DATE="endDate";
             public static final String KEY_WORDS="keywords";
             public static final String PAGES="pages";
             public static final String RANK="rank";
@@ -117,6 +119,8 @@ public class DbSchema
                     .append(Cols.EN_NAME).append(", ")
                     .append(Cols.AR_DESC).append(", ")
                     .append(Cols.EN_DESC).append(", ")
+                    .append(Cols.START_DATE).append(", ")
+                    .append(Cols.END_DATE).append(", ")
                     .append(Cols.PAGES).append(", ")
                     .append(Cols.RANK).append(", ")
                     .append(Cols.KEY_WORDS);

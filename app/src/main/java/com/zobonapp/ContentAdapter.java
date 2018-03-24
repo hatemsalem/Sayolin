@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import com.zobonapp.ui.hotline.BusinessEntityAdapter;
 import com.zobonapp.ui.hotline.CategoryAdapter;
 import com.zobonapp.ui.hotline.FavoriteEntityAdapter;
+import com.zobonapp.ui.hotline.MenuAdapter;
 import com.zobonapp.ui.hotline.OffersAdapter;
 import com.zobonapp.ui.hotline.RootFragment;
 import com.zobonapp.utils.ZobonApp;
@@ -21,12 +22,12 @@ public class ContentAdapter extends FragmentStatePagerAdapter
 {
     Fragment fragments[]={
             RootFragment.newInstance(CategoryAdapter.newArguments(1001),BusinessEntityAdapter.newArguments(null,"root"),"hotlines"),
-            ContentFragment.newInstance("file:///android_asset/misc/offers.json"),
+            RootFragment.newInstance( CategoryAdapter.newArguments(0), MenuAdapter.newArguments(1),"menus"),
             RootFragment.newInstance( CategoryAdapter.newArguments(1),FavoriteEntityAdapter.newArguments(null,"favorite"),"menus"),
             RootFragment.newInstance( CategoryAdapter.newArguments(0), OffersAdapter.newArguments(1),"offers"),
 //            FavoriteFragment.newInstance( CategoryAdapter.newArguments(0),FavoriteEntityAdapter.newArguments(null,"favorite")),
 //            FavoriteFragment.newInstance(),
-//            ItemsFragment.newInstance(FavoriteEntityAdapter.newArguments(null,"offer"),FavoriteEntityAdapter.class),
+//            ItemsFragment.newInstance(FavoriteEntityAdapter.newArguments(null,"menu"),FavoriteEntityAdapter.class),
 //            ContentFragment.newInstance("file:///android_asset/misc/initial2.json"),
 
 

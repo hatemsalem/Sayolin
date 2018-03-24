@@ -42,7 +42,7 @@ public class ItemsActivity extends RootActivity
         }
         if(getFragmentManager().findFragmentById(android.R.id.content)==null)
         {
-            Bundle args=BusinessEntityAdapter.newArguments(categoryId,"offer");
+            Bundle args=BusinessEntityAdapter.newArguments(categoryId,"menu");
             itemsFragment=ItemsFragment.newInstance(args,BusinessEntityAdapter.class);
             getFragmentManager().beginTransaction().add(android.R.id.content, itemsFragment).commit();
             itemsFragment.setHasOptionsMenu(true);

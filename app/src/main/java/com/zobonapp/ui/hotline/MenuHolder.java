@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zobonapp.R;
-import com.zobonapp.domain.Offer;
+import com.zobonapp.domain.Menu;
 import com.zobonapp.ui.ViewHolder;
 import com.zobonapp.utils.ZobonApp;
 
@@ -15,14 +15,14 @@ import com.zobonapp.utils.ZobonApp;
  * Created by hasalem on 14/1/2018.
  */
 
-public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListener
+public class MenuHolder extends ViewHolder<Menu> implements View.OnClickListener
 {
-    private final static String TAG=OfferHolder.class.getSimpleName();
+    private final static String TAG=MenuHolder.class.getSimpleName();
     protected TextView lblName;
     protected TextView lblPages;
     protected ImageView imgItem;
-    protected Offer offer;
-    public OfferHolder(ViewGroup parent, int layout)
+    protected Menu menu;
+    public MenuHolder(ViewGroup parent, int layout)
     {
         super(parent, layout);
         itemView.setOnClickListener(this);
@@ -32,19 +32,19 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
     }
 
     @Override
-    public void bind(Offer offer)
+    public void bind(Menu menu)
     {
-        this.offer =offer;
-        lblName.setText(offer.getName());
-        lblPages.setText("pages:"+offer.getPages());
-        Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/menu/"+offer.getId().toString()+".webp");
+        this.menu =menu;
+        lblName.setText(menu.getName());
+        lblPages.setText("pages:"+menu.getPages());
+        Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/menu/"+menu.getId().toString()+".webp");
         ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
     }
 
     @Override
     public void onClick(View v)
     {
-        ItemsActivity.start(v.getContext(), offer.getId().toString());
+        ItemsActivity.start(v.getContext(), menu.getId().toString());
 
     }
 }

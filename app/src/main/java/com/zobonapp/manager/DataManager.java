@@ -3,6 +3,7 @@ package com.zobonapp.manager;
 import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.domain.Category;
 import com.zobonapp.domain.Contact;
+import com.zobonapp.domain.Menu;
 import com.zobonapp.domain.Offer;
 
 import java.util.HashMap;
@@ -28,6 +29,7 @@ public interface DataManager
    List<BusinessEntity> findBusinessEntitiesForPage(int offset,int limit,String searchQuery,String categoryId);
    List<BusinessEntity> findFavoriteEntitiesForPage(int offset,int limit,String searchQuery,String categoryId);
    List<Offer> findOffersForPage(int offset,int limit,String searchQuery,String categoryId);
+   List<Menu> findMenusForPage(int offset, int limit, String searchQuery, String categoryId);
    List<Category> findCategoriesForPage(int type,int offset,int limit,String searchQuery);
    List<Contact> findContactsForItem(String itemId);
    void deleteItems(List<String> items);

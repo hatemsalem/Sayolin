@@ -276,7 +276,9 @@ public class UpdateService extends IntentService
         reader.close();
 
         ZobonApp.getContext().getDataManager().populateOffers(dataCollection.getOffers());
+        ZobonApp.getContext().getDataManager().populateMenus(dataCollection.getMenus());
     }
+
 
     private void updateContactsData(InputStream is) throws IOException
     {
