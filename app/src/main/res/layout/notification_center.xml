@@ -9,6 +9,7 @@
         android:id="@+id/myNotificationTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
         android:text="TextView"
         />
     <ImageView
@@ -17,6 +18,13 @@
         android:layout_height="wrap_content"
         app:srcCompat="@android:color/background_dark"
         android:layout_toEndOf="@id/myNotificationTitle"
+        />
+    <ImageView
+        android:id="@+id/calculatorIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:color/background_dark"
+        android:layout_toEndOf="@id/notificationIcon"
         />
 
 

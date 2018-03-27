@@ -31,6 +31,8 @@ public interface DataManager
    List<Offer> findOffersForPage(int offset,int limit,String searchQuery,String categoryId);
    List<Menu> findMenusForPage(int offset, int limit, String searchQuery, String categoryId);
    List<Category> findCategoriesForPage(int type,int offset,int limit,String searchQuery);
+   List<Category> findOffersCategoriesForPage(int type,int offset,int limit,String searchQuery);
+   List<Category> findFavoriteCategoriesForPage(int type,int offset,int limit,String searchQuery);
    List<Contact> findContactsForItem(String itemId);
    void deleteItems(List<String> items);
    void deleteCategories(List<String> items);

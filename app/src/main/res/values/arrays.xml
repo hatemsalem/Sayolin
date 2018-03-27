@@ -12,9 +12,10 @@
         </string-array>
         <string-array name="titles">
             <item>@string/hotlinesTitle</item>
+            <item>@string/offersTitle</item>
             <item>@string/menusTitle</item>
             <item>@string/favoriteTitle</item>
-            <item>@string/offersTitle</item>
+
 
         </string-array>
 </resources>

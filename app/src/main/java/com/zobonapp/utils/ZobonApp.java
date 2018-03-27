@@ -6,6 +6,7 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -211,8 +212,21 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         RemoteViews notificationView = new RemoteViews(getPackageName(), R.layout.notification_center);
         notificationView.setTextViewText(R.id.myNotificationTitle,"Click to start ZobonApp");
         notificationView.setImageViewResource(R.id.notificationIcon,R.mipmap.ic_launcher);
+        notificationView.setImageViewResource(R.id.calculatorIcon,R.mipmap.ic_launcher);
 
         notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
+//        notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+        intent.setComponent(new ComponentName("com.android.calculator2","com.android.calculator2.Calculator"));
+        notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+        notificationView.setOnClickPendingIntent(R.id.myNotificationTitle, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+//        startActivity(intent);
+
+
         return notificationView;
     }
     private void initializeResoution()

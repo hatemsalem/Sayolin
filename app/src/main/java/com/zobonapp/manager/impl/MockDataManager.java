@@ -187,6 +187,40 @@ public class MockDataManager implements DataManager
     }
 
     @Override
+    public List<Category> findOffersCategoriesForPage(int type, int offset, int limit, String searchQuery)
+    {
+        String query=null;
+        Vector<String> queryArgs=new Vector<>();
+        if(searchQuery==null)
+            searchQuery="";
+        searchQuery= "%"+searchQuery+"%";
+        queryArgs.add(searchQuery);
+        queryArgs.add(searchQuery);
+        queryArgs.add(searchQuery);
+
+        query= ZobonApp.getContext().getResources().getString(R.string.sql_findOffersCategories,offset,limit,type);
+
+        return queryExecutor(query,queryArgs.toArray(new String[]{}),categoryMapper);
+    }
+
+    @Override
+    public List<Category> findFavoriteCategoriesForPage(int type, int offset, int limit, String searchQuery)
+    {
+        String query=null;
+        Vector<String> queryArgs=new Vector<>();
+        if(searchQuery==null)
+            searchQuery="";
+        searchQuery= "%"+searchQuery+"%";
+//        queryArgs.add(searchQuery);
+//        queryArgs.add(searchQuery);
+//        queryArgs.add(searchQuery);
+
+        query= ZobonApp.getContext().getResources().getString(R.string.sql_findFavoriteCategories,offset,limit,type);
+
+        return queryExecutor(query,queryArgs.toArray(new String[]{}),categoryMapper);
+    }
+
+    @Override
     public List<Contact> findContactsForItem(String itemId)
     {
         String query=null;
