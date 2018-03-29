@@ -8,7 +8,10 @@ android {
 //
 //        }
 //    }
-    lintOptions { checkReleaseBuilds false }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
     signingConfigs {
         config {
             keyAlias 'ZobonApp'
