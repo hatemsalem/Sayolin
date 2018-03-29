@@ -39,6 +39,7 @@ public class DbSchema
             public static final String FAVORITE="favorite";
             public static final String OFFERS="offers";
             public static final String KEY_WORDS ="keywords";
+            public static final String RANK="rank";
         }
         public static String getCreateStatement()
         {
@@ -51,6 +52,7 @@ public class DbSchema
                     .append(Cols.EN_DESC).append(", ")
                     .append(Cols.OFFERS).append(", ")
                     .append(Cols.KEY_WORDS).append(", ")
+                    .append(Cols.RANK).append(", ")
                     .append(Cols.FAVORITE);
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
@@ -65,6 +67,7 @@ public class DbSchema
             public static final String TYPE="type";
             public static final String OFFERS="offers";
             public static final String ENTITIES="entities";
+            public static final String RANK="rank";
 
         }
         public static String getCreateStatement()
@@ -74,6 +77,7 @@ public class DbSchema
                     .append(Cols.AR_NAME).append(", ")
                     .append(Cols.EN_NAME).append(", ")
                     .append(Cols.TYPE).append(", ")
+                    .append(Cols.RANK).append(", ")
                     .append(Cols.KEY_WORDS);
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }

@@ -17,6 +17,7 @@ public class BusinessEntity
     private int offers;
     private UUID contactId;
     private Uri contact;
+    private int rank;
 
 
     public UUID getId()
@@ -89,6 +90,16 @@ public class BusinessEntity
     public void setContact(Uri contact)
     {
         this.contact = contact;
+    }
+
+    public int getRank()
+    {
+        return rank;
+    }
+
+    public void setRank(int rank)
+    {
+        this.rank = rank;
     }
 
     @Override

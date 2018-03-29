@@ -32,6 +32,7 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         int fav=cursor.getInt(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.FAVORITE));
         entity.setFavorite(fav!=0);
         entity.setContact(Uri.parse(cursor.getString(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.URI))));
+//        entity.setRank(cursor.getInt(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.RANK)));
         return entity;
     }
 
@@ -43,6 +44,7 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         cv.put(DbSchema.BusinessEntityTable.Cols.AR_NAME,(String)object.get(DbSchema.CategoryTable.Cols.AR_NAME));
         cv.put(DbSchema.BusinessEntityTable.Cols.EN_NAME,(String)object.get(DbSchema.CategoryTable.Cols.EN_NAME));
         cv.put(DbSchema.BusinessEntityTable.Cols.DEFAULT_CONTACT,(String)object.get(DbSchema.BusinessEntityTable.Cols.DEFAULT_CONTACT));
+        cv.put(DbSchema.BusinessEntityTable.Cols.RANK,(String)object.get(DbSchema.BusinessEntityTable.Cols.RANK));
         return cv;
     }
 

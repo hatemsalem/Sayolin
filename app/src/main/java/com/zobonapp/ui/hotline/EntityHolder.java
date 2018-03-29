@@ -66,7 +66,8 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
     public void bind(BusinessEntity businessEntity)
     {
         this.entity=businessEntity;
-        lblHotline.setText(entity.getContact().getSchemeSpecificPart());
+        String hotline=entity.getContact().getSchemeSpecificPart();
+        lblHotline.setText(hotline);
         lblName.setText(entity.getName());
 //        imgOffers.setText(entity.getEnDesc());
 //        imgOffers.setText("5");
@@ -79,9 +80,9 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
         {
             imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
-        final Uri  uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/initial/"+entity.getId().toString()+".webp");
-//        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
-        ZobonApp.getContext().getPicasso().load(R.drawable.placeholder).into(imgLogo);
+        final Uri  uri=Uri.parse("http://test.zobonapp.com/web/resources/"+hotline+".webp");
+        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
+//        ZobonApp.getContext().getPicasso().load(R.drawable.placeholder).into(imgLogo);
 
 
 //        ZobonApp.getContext().getPicasso()

@@ -65,7 +65,7 @@ public class RootFragment extends Fragment
     {
         // Inflate the layout for this fragment
         View result= inflater.inflate(R.layout.fragment_root, container, false);
-        FloatingActionButton fab = (FloatingActionButton) result.findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) result.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -83,9 +83,9 @@ public class RootFragment extends Fragment
                         QueryPreferences.setViewType(viewTypeKey,QueryPreferences.ViewType.CATEGORY);
                         break;
                 }
+
             }
         });
-
         FragmentTransaction transaction=getChildFragmentManager().beginTransaction();
         switch (QueryPreferences.getViewType(viewTypeKey))
         {

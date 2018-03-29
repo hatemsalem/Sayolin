@@ -21,9 +21,9 @@ android {
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.zoboonapp.test"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 27
-        versionCode 3
+        versionCode 4
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //Using VectorDrawableCompat version ?!

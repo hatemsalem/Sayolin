@@ -54,7 +54,8 @@ public class CategoryMapper extends AbstractRowMapper<Category>
             ContentValues cv=buildCV(object);
 
 
-            database.insertWithOnConflict(DbSchema.CategoryTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
+            long i=database.insertWithOnConflict(DbSchema.CategoryTable.NAME,null,cv,SQLiteDatabase.CONFLICT_IGNORE);
+            i++;
 
         }
         database.setTransactionSuccessful();

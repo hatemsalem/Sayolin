@@ -265,9 +265,7 @@ public class UpdateService extends IntentService
         {
             inInitialize =false;
         }
-
     }
-
     private void updateOffersData(InputStream is) throws IOException
     {
         Gson gson = new Gson();
