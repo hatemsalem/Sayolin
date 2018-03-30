@@ -15,16 +15,13 @@ import android.os.Build;
 import android.os.LocaleList;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
-import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.RemoteViews;
 
-import com.jakewharton.picasso.OkHttp3Downloader;
 import com.squareup.picasso.LruCache;
+import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.PicassoTools;
-import com.zobonapp.MainActivity;
 import com.zobonapp.R;
 import com.zobonapp.SplashActivity;
 import com.zobonapp.manager.DataManager;
@@ -134,7 +131,8 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
             Log.d(TAG, "Alarm settled");
         }
         lang = QueryPreferences.getLanguage();
-        picasso = new Picasso.Builder(this).indicatorsEnabled(false).memoryCache(new LruCache(5000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+//        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).build();
         //        PicassoTools.clearCache(picasso);
         //        deleteDirectoryTree(getCacheDir());
         Picasso.setSingletonInstance(picasso);

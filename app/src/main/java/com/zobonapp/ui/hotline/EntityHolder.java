@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.NetworkPolicy;
 import com.zobonapp.ItemDetailsActivity;
 import com.zobonapp.R;
 import com.zobonapp.domain.BusinessEntity;
@@ -81,7 +82,9 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
             imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
         final Uri  uri=Uri.parse("http://test.zobonapp.com/web/resources/"+hotline+".webp");
-        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
+        ZobonApp.getContext().getPicasso().load(uri)
+                .error(R.drawable.notfoundimage)
+                .placeholder(R.drawable.placeholder   ).into(imgLogo);
 //        ZobonApp.getContext().getPicasso().load(R.drawable.placeholder).into(imgLogo);
 
 
