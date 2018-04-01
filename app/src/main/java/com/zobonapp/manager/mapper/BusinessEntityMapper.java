@@ -4,17 +4,18 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
-import android.util.Log;
 
+import com.zobonapp.R;
 import com.zobonapp.db.AbstractRowMapper;
 import com.zobonapp.db.DatabaseHelper;
 import com.zobonapp.db.DbSchema;
-import com.zobonapp.db.RowMapper;
 import com.zobonapp.domain.BusinessEntity;
+import com.zobonapp.utils.ZobonApp;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.Vector;
 
 /**
  * Created by Admin on 3/24/2018.
@@ -22,6 +23,7 @@ import java.util.UUID;
 
 public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
 {
+
     @Override
     public BusinessEntity mapRow(Cursor cursor)
     {
@@ -61,7 +63,7 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
             database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
             database.delete(DbSchema.ContactTable.NAME,"itemId=?",new String[]{itemId});
             List<String> categories=(List<String>) object.get("categories");
-
+            database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{itemId});
             for (String categoryId:categories)
             {
                 ContentValues catValues=new ContentValues();
@@ -73,5 +75,43 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         }
         database.setTransactionSuccessful();
         database.endTransaction();
+    }
+
+    @Override
+    public List<BusinessEntity> findItems(int offset, int limit,TYPE queryType, String... searchQuery)
+    {
+
+        List<String> varArgs=new Vector<>();
+
+        String qry=searchQuery[1];
+        if(qry==null)
+            qry="";
+        qry="%"+qry+"%";
+        varArgs.add(qry); //enName
+        varArgs.add(qry); //arName
+
+        String query="";
+        switch (queryType)
+        {
+            case BY_FAVORITE:
+                varArgs.add(qry);//tel
+                varArgs.add(searchQuery[0]); //favorite
+                query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntities);
+                break;
+            case BY_CATEGORY:
+                varArgs.add(searchQuery[0]);//categoryid
+                query=ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntitiesInCategory);
+                break;
+        }
+        varArgs.add(String.valueOf(offset));
+        varArgs.add(String.valueOf(limit));
+        return queryAll(query,varArgs.toArray(new String[0]));
+    }
+
+    @Override
+    public BusinessEntity findItemById(String id)
+    {
+        String query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntity);
+        return queryOne(query,id);
     }
 }

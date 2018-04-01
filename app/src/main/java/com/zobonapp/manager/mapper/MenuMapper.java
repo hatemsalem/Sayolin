@@ -58,6 +58,7 @@ public class MenuMapper extends AbstractRowMapper<Menu>
 
 
             List<String> categories=(List<String>) object.get("categories");
+            database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{itemId});
 
             for (String categoryId:categories)
             {

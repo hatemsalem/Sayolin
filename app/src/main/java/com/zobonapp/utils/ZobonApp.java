@@ -22,6 +22,7 @@ import android.widget.RemoteViews;
 import com.squareup.picasso.LruCache;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
+import com.zobonapp.BuildConfig;
 import com.zobonapp.R;
 import com.zobonapp.SplashActivity;
 import com.zobonapp.manager.DataManager;
@@ -48,8 +49,8 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     private SharedPreferences prefs;
     private NotificationManager notificationManager;
     private Picasso picasso;
-    private static String resolution="ldpi";
-
+    private static String resolution="mdpi";
+    private final static String BASE_URL= BuildConfig.BASE_URL;
 
     public synchronized SharedPreferences getPrefs()
     {

@@ -1,7 +1,5 @@
 package com.zobonapp.db;
 
-import java.util.StringJoiner;
-
 /**
  * Created by hasalem on 11/26/2017.
  */
@@ -28,57 +26,62 @@ public class DbSchema
         String EN_DESC="enDesc";
     }
 
+    public static class ItemCols implements NameI18NCols,DescI18NCols
+    {
+        public static String ID ="id";
+        public static String FAVORITE="favorite";
+        public static String KEY_WORDS ="keywords";
+        public static String RANK="rank";
+        public static String getItemFields()
+        {
+            StringBuilder fields=new StringBuilder();
+            fields.append(ID).append(" UNIQUE NOT NULL, ")
+                    .append(AR_NAME).append(", ")
+                    .append(AR_DESC).append(", ")
+                    .append(EN_NAME).append(", ")
+                    .append(EN_DESC).append(", ")
+                    .append(KEY_WORDS).append(", ")
+                    .append(RANK).append(" DEFAULT 0, ")
+                    .append(FAVORITE).append(" DEFAULT '0' ");
+            return fields.toString();
+        }
+
+    }
+
+
     public static final class BusinessEntityTable
     {
         public static final String NAME="businessentity";
-        public static final class Cols implements NameI18NCols,DescI18NCols
+        public static final class Cols extends ItemCols
         {
-            public static final String ID ="id";
             public static final String DEFAULT_CONTACT="contactId";
             public static final String URI="uri";
-            public static final String FAVORITE="favorite";
             public static final String OFFERS="offers";
-            public static final String KEY_WORDS ="keywords";
-            public static final String RANK="rank";
         }
         public static String getCreateStatement()
         {
             StringBuilder fields=new StringBuilder();
-            fields.append(Cols.ID).append(" UNIQUE NOT NULL, ")
+            fields.append(Cols.getItemFields()).append(", ")
                     .append(Cols.DEFAULT_CONTACT).append(", ")
-                    .append(Cols.AR_NAME).append(", ")
-                    .append(Cols.AR_DESC).append(", ")
-                    .append(Cols.EN_NAME).append(", ")
-                    .append(Cols.EN_DESC).append(", ")
-                    .append(Cols.OFFERS).append(", ")
-                    .append(Cols.KEY_WORDS).append(", ")
-                    .append(Cols.RANK).append(", ")
-                    .append(Cols.FAVORITE);
+                    .append(Cols.OFFERS);
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
     }
     public static final class CategoryTable
     {
         public static final String NAME="category";
-        public static final class Cols implements NameI18NCols
+        public static final class Cols extends ItemCols
         {
-            public static final String ID ="id";
-            public static final String KEY_WORDS ="keywords";
             public static final String TYPE="type";
             public static final String OFFERS="offers";
             public static final String ENTITIES="entities";
-            public static final String RANK="rank";
 
         }
         public static String getCreateStatement()
         {
             StringBuilder fields=new StringBuilder();
-            fields.append(Cols.ID).append(" UNIQUE NOT NULL, ")
-                    .append(Cols.AR_NAME).append(", ")
-                    .append(Cols.EN_NAME).append(", ")
-                    .append(Cols.TYPE).append(", ")
-                    .append(Cols.RANK).append(", ")
-                    .append(Cols.KEY_WORDS);
+            fields.append(Cols.getItemFields()).append(", ")
+                    .append(Cols.TYPE);
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
     }
@@ -104,30 +107,21 @@ public class DbSchema
     public static final class MenutTable
     {
         public static final String NAME="menu";
-        public static final class Cols implements NameI18NCols,DescI18NCols
+        public static final class Cols extends ItemCols
         {
-            public static final String ID="id";
             public static final String ITEM_ID="itemId";
             public static final String START_DATE="startDate";
             public static final String END_DATE="endDate";
-            public static final String KEY_WORDS="keywords";
             public static final String PAGES="pages";
-            public static final String RANK="rank";
         }
         public static String getCreateStatement()
         {
             StringBuilder fields=new StringBuilder();
-            fields.append(Cols.ID).append(" UNIQUE NOT NULL, ")
+            fields.append(Cols.getItemFields()).append(", ")
                     .append(Cols.ITEM_ID).append(", ")
-                    .append(Cols.AR_NAME).append(", ")
-                    .append(Cols.EN_NAME).append(", ")
-                    .append(Cols.AR_DESC).append(", ")
-                    .append(Cols.EN_DESC).append(", ")
                     .append(Cols.START_DATE).append(", ")
                     .append(Cols.END_DATE).append(", ")
-                    .append(Cols.PAGES).append(", ")
-                    .append(Cols.RANK).append(", ")
-                    .append(Cols.KEY_WORDS);
+                    .append(Cols.PAGES);
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
     }
@@ -135,30 +129,21 @@ public class DbSchema
     public static final class OfferTable
     {
         public static final String NAME="offer";
-        public static final class Cols implements NameI18NCols,DescI18NCols
+        public static final class Cols extends ItemCols
         {
-            public static final String ID="id";
             public static final String ITEM_ID="itemId";
             public static final String START_DATE="startDate";
             public static final String END_DATE="endDate";
-            public static final String KEY_WORDS ="keywords";
             public static final String PAGES="pages";
-            public static final String RANK="rank";
         }
         public static String getCreateStatement()
         {
             StringBuilder fields=new StringBuilder();
-            fields.append(Cols.ID).append(" UNIQUE NOT NULL, ")
+            fields.append(Cols.getItemFields()).append(", ")
                     .append(Cols.ITEM_ID).append(", ")
-                    .append(Cols.AR_NAME).append(", ")
-                    .append(Cols.EN_NAME).append(", ")
-                    .append(Cols.AR_DESC).append(", ")
-                    .append(Cols.EN_DESC).append(", ")
                     .append(Cols.START_DATE).append(", ")
                     .append(Cols.END_DATE).append(", ")
-                    .append(Cols.PAGES).append(", ")
-                    .append(Cols.RANK).append(", ")
-                    .append(Cols.KEY_WORDS);
+                    .append(Cols.PAGES);
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
     }

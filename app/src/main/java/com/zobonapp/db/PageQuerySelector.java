@@ -2,6 +2,7 @@ package com.zobonapp.db;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by Admin on 3/25/2018.
@@ -9,5 +10,10 @@ import java.util.Map;
 
 public interface PageQuerySelector <T>
 {
-    List<T> findItemsForPage(int offset, int limit, Map<String,?> args);
+    enum TYPE
+    {
+        BY_FAVORITE,BY_CATEGORY
+    }
+    List<T> findItems(int offset, int limit, TYPE queryType,String...searchQuery);
+    T findItemById(String id);
 }

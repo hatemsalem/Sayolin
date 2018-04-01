@@ -53,7 +53,7 @@ public class OfferMapper extends AbstractRowMapper<Offer>
             String itemId=(String)object.get(DbSchema.OfferTable.Cols.ID);
             database.insertWithOnConflict(DbSchema.OfferTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
             List<String> categories=(List<String>) object.get("categories");
-
+            database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{itemId});
             for (String categoryId:categories)
             {
                 ContentValues catValues=new ContentValues();

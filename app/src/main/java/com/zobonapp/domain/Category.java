@@ -6,35 +6,13 @@ import java.util.UUID;
  * Created by hasalem on 12/13/2017.
  */
 
-public class Category
+public class Category extends AbstractItem
 {
-    private UUID id;
-    private String name;
-    private String keywords;
     private int type;
     private int offers;
     private int entities;
 
 
-    public UUID getId()
-    {
-        return id;
-    }
-
-    public void setId(UUID id)
-    {
-        this.id = id;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
 
 
     public int getType()
@@ -67,13 +45,4 @@ public class Category
         this.entities = entities;
     }
 
-    public String getKeywords()
-    {
-        return keywords;
-    }
-
-    public void setKeywords(String keywords)
-    {
-        this.keywords = keywords;
-    }
 }

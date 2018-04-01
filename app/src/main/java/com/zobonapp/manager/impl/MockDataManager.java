@@ -3,14 +3,11 @@ package com.zobonapp.manager.impl;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.text.TextUtils;
-import android.util.Log;
 
 import com.zobonapp.R;
 import com.zobonapp.db.DatabaseHelper;
-import com.zobonapp.db.DbSchema;
-import com.zobonapp.db.DbSchema.L10NCols;
+import com.zobonapp.db.PageQuerySelector;
 import com.zobonapp.db.RowMapper;
 import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.domain.Category;
@@ -31,10 +28,8 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.UUID;
 import java.util.Vector;
 
-import static com.zobonapp.db.DbSchema.*;
 import static com.zobonapp.db.DbSchema.BusinessEntityTable;
 import static com.zobonapp.db.DbSchema.CategoryTable;
 import static com.zobonapp.db.DbSchema.ContactTable;
@@ -74,50 +69,29 @@ public class MockDataManager implements DataManager
     @Override
     public  List<BusinessEntity> findBusinessEntitiesForPage(int offset,int limit,String searchQuery,String categoryId)
     {
-        String query=null;
-        Vector<String> queryArgs=new Vector<>();
-        if(searchQuery==null)
-            searchQuery="";
-        searchQuery= "%"+searchQuery+"%";
-        queryArgs.add(searchQuery);
-        queryArgs.add(searchQuery);
-        //TODO: order by should be handled for consistent results.
-        if(TextUtils.isEmpty(categoryId))
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntities,offset,limit);
-        }
-        else
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntitiesInCategory,offset,limit);
-            queryArgs.add(categoryId);
-        }
-        return queryExecutor(query,queryArgs.toArray(new String[]{}),entityMapper);
+        if(categoryId==null)
+            return entityMapper.findItems(offset,limit, PageQuerySelector.TYPE.BY_FAVORITE,"0",searchQuery);
+        return entityMapper.findItems(offset,limit, PageQuerySelector.TYPE.BY_CATEGORY,categoryId,searchQuery);
+
+
     }
 
     @Override
     public List<BusinessEntity> findFavoriteEntitiesForPage(int offset, int limit, String searchQuery, String categoryId)
     {
-        String query=null;
-        Vector<String> queryArgs=new Vector<>();
+
+
+        return entityMapper.findItems(offset,limit, PageQuerySelector.TYPE.BY_FAVORITE,"1",searchQuery);
+
+    }
+    @Override
+    public List<Category> findCategoriesForPage(int type,int offset, int limit,String searchQuery)
+    {
         if(searchQuery==null)
             searchQuery="";
         searchQuery= "%"+searchQuery+"%";
-        queryArgs.add(searchQuery);
-        queryArgs.add(searchQuery);
-        //TODO: order by should be handled for consistent results.
-        if(TextUtils.isEmpty(categoryId))
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findFavoriteBusinessEntities,offset,limit);
-        }
-        else
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntitiesInCategory,offset,limit);
-            queryArgs.add(categoryId);
-        }
-        return queryExecutor(query,queryArgs.toArray(new String[]{}),entityMapper);
-
+        return categoryMapper.findItems(offset,limit,null,searchQuery,String.valueOf(type));
     }
-
     @Override
     public List<Offer> findOffersForPage(int offset, int limit, String searchQuery, String categoryId)
     {
@@ -169,22 +143,7 @@ public class MockDataManager implements DataManager
 
 
 
-    @Override
-    public List<Category> findCategoriesForPage(int type,int offset, int limit,String searchQuery)
-    {
-        String query=null;
-        Vector<String> queryArgs=new Vector<>();
-        if(searchQuery==null)
-            searchQuery="";
-        searchQuery= "%"+searchQuery+"%";
-        queryArgs.add(searchQuery);
-        queryArgs.add(searchQuery);
-        queryArgs.add(searchQuery);
 
-        query= ZobonApp.getContext().getResources().getString(R.string.sql_findCategories,offset,limit,type);
-
-        return queryExecutor(query,queryArgs.toArray(new String[]{}),categoryMapper);
-    }
 
     @Override
     public List<Category> findOffersCategoriesForPage(int type, int offset, int limit, String searchQuery)
@@ -288,27 +247,13 @@ public class MockDataManager implements DataManager
     @Override
     public BusinessEntity findBusinessItemById(String id)
     {
-        SQLiteDatabase database=DatabaseHelper.getInstance().getReadableDatabase();
-        Cursor cursor=database.rawQuery(ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntity),new String[]{id});
-        BusinessEntity item=null;
-        if(cursor.moveToFirst()==true)
-        {
-            item=entityMapper.mapRow(cursor);
-        }
-        return item;
+        return entityMapper.findItemById(id);
     }
 
     @Override
     public Category findCategoryById(String id)
     {
-        SQLiteDatabase database=DatabaseHelper.getInstance().getReadableDatabase();
-        Cursor cursor=database.rawQuery(ZobonApp.getContext().getResources().getString(R.string.sql_findCategory),new String[]{id});
-        Category item=null;
-        if(cursor.moveToFirst()==true)
-        {
-            item=categoryMapper.mapRow(cursor);
-        }
-        return item;
+        return categoryMapper.findItemById(id);
     }
 
     @Override

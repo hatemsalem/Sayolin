@@ -3,13 +3,13 @@ package com.zobonapp.manager.mapper;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
+import com.zobonapp.R;
 import com.zobonapp.db.AbstractRowMapper;
 import com.zobonapp.db.DatabaseHelper;
 import com.zobonapp.db.DbSchema;
-import com.zobonapp.db.RowMapper;
 import com.zobonapp.domain.Category;
+import com.zobonapp.utils.ZobonApp;
 
 import java.util.HashMap;
 import java.util.List;
@@ -60,5 +60,22 @@ public class CategoryMapper extends AbstractRowMapper<Category>
         }
         database.setTransactionSuccessful();
         database.endTransaction();
+    }
+    @Override
+    public Category findItemById(String id)
+    {
+        String query= ZobonApp.getContext().getResources().getString(R.string.sql_findCategory);
+        return queryOne(query,id);
+    }
+
+    @Override
+    public List<Category> findItems(int offset, int limit,TYPE queryType, String... searchQuery)
+    {
+        String query= ZobonApp.getContext().getResources().getString(R.string.sql_findCategories);
+        String arName=searchQuery[0];
+        String enName=searchQuery[0];
+        String keywords=searchQuery[0];
+        String type=searchQuery[1];
+        return queryAll(query,enName,arName,keywords,type,String.valueOf(offset),String.valueOf(limit));
     }
 }
