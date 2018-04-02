@@ -1,11 +1,12 @@
 package com.zobonapp.ui.hotline;
 
-import android.app.Fragment;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Debug;
 import android.os.Looper;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
@@ -24,6 +25,7 @@ import com.zobonapp.ui.AdapterFactory;
 import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.ui.Paginator;
 import com.srx.widget.PullToLoadView;
+import com.zobonapp.utils.BasicFragment;
 import com.zobonapp.utils.QueryPreferences;
 import com.zobonapp.utils.ZobonApp;
 
@@ -37,7 +39,7 @@ import org.greenrobot.eventbus.ThreadMode;
  * Created by hasalem on 11/26/2017.
  */
 
-public class ItemsFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener
+public class ItemsFragment extends BasicFragment implements SharedPreferences.OnSharedPreferenceChangeListener
 {
     private static String TAG = ItemsFragment.class.getSimpleName();
     private static final String ARG_ADAPTER_CLASS = "adapterClass";
@@ -204,6 +206,7 @@ public class ItemsFragment extends Fragment implements SharedPreferences.OnShare
         }
     }
 
+
     private RecyclerView.AdapterDataObserver adapterObserver=new RecyclerView.AdapterDataObserver()
     {
         @Override
@@ -249,4 +252,10 @@ public class ItemsFragment extends Fragment implements SharedPreferences.OnShare
 
         }
     };
+
+    @Override
+    public void updateSubtitle()
+    {
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle("Items");
+    }
 }

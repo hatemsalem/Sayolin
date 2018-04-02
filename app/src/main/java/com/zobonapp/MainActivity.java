@@ -18,10 +18,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.zobonapp.utils.RootActivity;
+import com.zobonapp.utils.BasicActivity;
 import com.zobonapp.utils.ZobonApp;
 
-public class MainActivity extends RootActivity implements NavigationView.OnNavigationItemSelectedListener,DialogInterface.OnClickListener
+public class MainActivity extends BasicActivity implements NavigationView.OnNavigationItemSelectedListener,DialogInterface.OnClickListener
 {
     private static final String TAG=MainActivity.class.getSimpleName();
     private ShareActionProvider share;
@@ -36,9 +36,9 @@ public class MainActivity extends RootActivity implements NavigationView.OnNavig
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
-        toolbar.setSubtitle("Hotlines");
-        setSupportActionBar(toolbar);
+//        toolbar.setSubtitle("Hotlines");
 
+        setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);

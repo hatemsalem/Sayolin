@@ -1,13 +1,12 @@
 package com.zobonapp;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import android.support.annotation.Nullable;
 
-import com.zobonapp.utils.RootActivity;
+import com.zobonapp.utils.BasicActivity;
 
-public class PreferencesActivity extends RootActivity
+public class PreferencesActivity extends BasicActivity
 {
 
     @Override

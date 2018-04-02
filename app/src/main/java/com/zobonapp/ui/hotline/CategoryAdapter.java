@@ -19,10 +19,11 @@ public class CategoryAdapter extends GenericPagerAdapter<CategoryHolder,Category
     private static final String ARG_CATEGORY_TYPE="categoryType";
     private int type;
 
-    public static Bundle newArguments(int type)
+    public static Bundle newArguments(int type,String searchKey)
     {
         Bundle arguments=new Bundle();
         arguments.putInt(ARG_CATEGORY_TYPE,type);
+        arguments.putString(ARG_SEARCH_KEY,searchKey);
         arguments.putString(ARG_ADAPTER_CLASS,CategoryAdapter.class.getName());
         return arguments;
     }

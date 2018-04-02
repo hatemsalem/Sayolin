@@ -3,20 +3,19 @@ package com.zobonapp;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.zobonapp.domain.BusinessEntity;
-import com.zobonapp.domain.Contact;
+import com.zobonapp.ui.AdapterFactory;
 import com.zobonapp.ui.GenericPagerAdapter;
-import com.zobonapp.utils.RootActivity;
+import com.zobonapp.utils.BasicActivity;
 import com.zobonapp.utils.ZobonApp;
 
 import java.util.List;
 
-public class ItemDetailsActivity extends RootActivity
+public class ItemDetailsActivity extends BasicActivity
 {
     private static final String EXTRA_ITEM_ID="itemId";
     private GenericPagerAdapter adapter;
@@ -40,9 +39,7 @@ public class ItemDetailsActivity extends RootActivity
         if(item!=null)
             getSupportActionBar().setSubtitle(item.getName());
         setContentView(R.layout.activity_item_details);
-        adapter=new ContactsAdapter();
-        adapter.setArguments(ContactsAdapter.newArguments(itemId,"contacts"));
-        adapter.onCreate();
+        adapter= AdapterFactory.getAdapter(ContactsAdapter.class,ContactsAdapter.newArguments(itemId,"contacts"));
         RecyclerView recyclerView=findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);

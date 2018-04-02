@@ -1,15 +1,17 @@
 package com.zobonapp.ui.hotline;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.zobonapp.R;
+import com.zobonapp.utils.BasicFragment;
 import com.zobonapp.utils.QueryPreferences;
 
 /**
@@ -17,7 +19,7 @@ import com.zobonapp.utils.QueryPreferences;
  * Use the {@link RootFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RootFragment extends Fragment
+public class RootFragment extends BasicFragment
 {
     private static final String ARG_CATEGORIES_ARGS="categoriesArgs";
     private static final String ARG_ITEMS_ARGS="itemsArgs";
@@ -35,6 +37,8 @@ public class RootFragment extends Fragment
      * @return A new instance of fragment RootFragment.
      */
     // TODO: Rename and change types and number of parameters
+
+
     public static RootFragment newInstance(Bundle categoriesArgs,Bundle itemsArgs,String viewTypeKey)
     {
         RootFragment fragment = new RootFragment();
@@ -75,14 +79,17 @@ public class RootFragment extends Fragment
                 switch (QueryPreferences.getViewType(viewTypeKey))
                 {
                     case CATEGORY:
+
                         transaction.replace(R.id.rootFrame, itemsFragment).commit();
                         QueryPreferences.setViewType(viewTypeKey,QueryPreferences.ViewType.ITEM);
                         break;
                     case ITEM:
+
                         transaction.replace(R.id.rootFrame, categoriesFragment).commit();
                         QueryPreferences.setViewType(viewTypeKey,QueryPreferences.ViewType.CATEGORY);
                         break;
                 }
+                updateSubtitle();
 
             }
         });
@@ -105,5 +112,21 @@ public class RootFragment extends Fragment
         super.setHasOptionsMenu(hasMenu);
         itemsFragment.setHasOptionsMenu(hasMenu);
         categoriesFragment.setHasOptionsMenu(hasMenu);
+    }
+    public void updateSubtitle()
+    {
+        if(getUserVisibleHint())
+        {
+            switch (QueryPreferences.getViewType(viewTypeKey))
+            {
+                case ITEM:
+                    ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle("Items");
+                    break;
+                case CATEGORY:
+                    ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle("Categories");
+                    break;
+            }
+        }
+
     }
 }

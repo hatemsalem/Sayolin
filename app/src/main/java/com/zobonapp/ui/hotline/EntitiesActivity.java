@@ -1,15 +1,15 @@
 package com.zobonapp.ui.hotline;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 
 import com.zobonapp.domain.Category;
-import com.zobonapp.utils.RootActivity;
+import com.zobonapp.utils.BasicActivity;
 import com.zobonapp.utils.ZobonApp;
 
-public class EntitiesActivity extends RootActivity
+public class EntitiesActivity extends BasicActivity
 {
     private final static String EXTRA_CATEGORY_ID="categoryId";
     private String categoryId;
@@ -42,7 +42,8 @@ public class EntitiesActivity extends RootActivity
         {
             Bundle args= EntityAdapter.newArguments(categoryId,"menu");
             itemsFragment=ItemsFragment.newInstance(args,EntityAdapter.class);
-            getFragmentManager().beginTransaction().add(android.R.id.content, itemsFragment).commit();
+            getSupportFragmentManager().beginTransaction().add(android.R.id.content, itemsFragment).commit();
+
             itemsFragment.setHasOptionsMenu(true);
         }
 

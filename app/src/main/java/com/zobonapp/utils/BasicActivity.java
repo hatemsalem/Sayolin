@@ -10,7 +10,7 @@ import java.util.Locale;
  * Created by hasalem on 12/2/2017.
  */
 
-public class RootActivity extends AppCompatActivity
+public class BasicActivity extends AppCompatActivity
 {
     @Override
     protected void attachBaseContext(Context newBase)

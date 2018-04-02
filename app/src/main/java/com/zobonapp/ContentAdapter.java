@@ -1,8 +1,9 @@
 package com.zobonapp;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.support.v13.app.FragmentStatePagerAdapter;
+//import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
 
 import com.zobonapp.ui.hotline.EntityAdapter;
@@ -13,6 +14,8 @@ import com.zobonapp.ui.hotline.MenuAdapter;
 import com.zobonapp.ui.hotline.OfferCategoryAdapter;
 import com.zobonapp.ui.hotline.OffersAdapter;
 import com.zobonapp.ui.hotline.RootFragment;
+import com.zobonapp.utils.BasicActivity;
+import com.zobonapp.utils.BasicFragment;
 import com.zobonapp.utils.ZobonApp;
 
 
@@ -23,9 +26,9 @@ import com.zobonapp.utils.ZobonApp;
 public class ContentAdapter extends FragmentStatePagerAdapter
 {
     Fragment fragments[]={
-            RootFragment.newInstance(CategoryAdapter.newArguments(1001), EntityAdapter.newArguments(null,"root"),"hotlines"),
-            RootFragment.newInstance( OfferCategoryAdapter.newArguments(1001), OffersAdapter.newArguments(1),"offers"),
-            RootFragment.newInstance( CategoryAdapter.newArguments(0), MenuAdapter.newArguments(1),"menus"),
+            RootFragment.newInstance(CategoryAdapter.newArguments(1001,"cat_hotline"), EntityAdapter.newArguments(null,"root"),"hotlines"),
+            RootFragment.newInstance( OfferCategoryAdapter.newArguments(1001,"cat_offer"), OffersAdapter.newArguments(1),"offers"),
+            RootFragment.newInstance( CategoryAdapter.newArguments(0,"cat_menus"), MenuAdapter.newArguments(1),"menus"),
 //            RootFragment.newInstance( FavoriteCategoryAdapter.newArguments(2000),FavoriteEntityAdapter.newArguments(null,"favorite"),"menus"),
             ItemsFragment.newInstance(FavoriteEntityAdapter.newArguments(null,"favorite"))
 
@@ -40,9 +43,9 @@ public class ContentAdapter extends FragmentStatePagerAdapter
     Activity ctx;
     private String items[] = ZobonApp.getContext().getResources().getStringArray(R.array.titles);
 
-    public ContentAdapter(Activity ctx)
+    public ContentAdapter(BasicActivity ctx)
     {
-        super(ctx.getFragmentManager());
+        super(ctx.getSupportFragmentManager());
 
         this.ctx = ctx;
     }
@@ -84,6 +87,11 @@ public class ContentAdapter extends FragmentStatePagerAdapter
             currentFragment=(Fragment)object;
             currentFragment.setHasOptionsMenu(true);
             currentFragment.getActivity().invalidateOptionsMenu();
+            if(currentFragment instanceof BasicFragment)
+            {
+                ((BasicFragment)currentFragment).updateSubtitle();
+            }
+
         }
     }
 }

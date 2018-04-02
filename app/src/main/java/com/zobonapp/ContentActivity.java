@@ -1,11 +1,10 @@
 package com.zobonapp;
 
-import android.content.Context;
 import android.os.Bundle;
 
-import com.zobonapp.utils.RootActivity;
+import com.zobonapp.utils.BasicActivity;
 
-public class ContentActivity extends RootActivity
+public class ContentActivity extends BasicActivity
 {
     public static String EXTRA_URL="url";
     @Override
