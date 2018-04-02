@@ -15,7 +15,15 @@
             <item>@string/offersTitle</item>
             <item>@string/menusTitle</item>
             <item>@string/favoriteTitle</item>
-
-
         </string-array>
+        <string-array name="saveSearchTitles" >
+            <item>Separate for each item</item>
+            <item>Common for All</item>
+            <item>Consolidated for  type</item>
+        </string-array>
+    <string-array name="saveSearchValues" >
+        <item>separate</item>
+        <item>common</item>
+        <item>consolidated</item>
+    </string-array>
 </resources>

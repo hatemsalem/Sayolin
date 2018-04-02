@@ -5,11 +5,14 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.zobonapp.R;
 import com.zobonapp.db.AbstractRowMapper;
 import com.zobonapp.db.DatabaseHelper;
 import com.zobonapp.db.DbSchema;
+import com.zobonapp.db.PageQuerySelector;
 import com.zobonapp.db.RowMapper;
 import com.zobonapp.domain.Contact;
+import com.zobonapp.utils.ZobonApp;
 
 import java.util.HashMap;
 import java.util.List;
@@ -58,5 +61,13 @@ public class ContactMapper extends AbstractRowMapper<Contact>
         }
         database.setTransactionSuccessful();
         database.endTransaction();
+    }
+
+    @Override
+    public List<Contact> findItems(int offset, int limit, TYPE queryType, String... searchQuery)
+    {
+        String query= ZobonApp.getContext().getResources().getString(R.string.sql_findContactsForItem);
+        return queryAll(query,searchQuery[0]);
+
     }
 }

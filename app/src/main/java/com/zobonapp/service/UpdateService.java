@@ -204,8 +204,10 @@ public class UpdateService extends IntentService
         File output=new File(getFilesDir(),UPDATE_FILE_NAME);
         if(output.exists())
             output.delete();
-        OkHttpClient client=new OkHttpClient();
+//        OkHttpClient client=new OkHttpClient.Builder().connectTimeout(60,TimeUnit.SECONDS).readTimeout(60,TimeUnit.SECONDS).tim  build();
+        OkHttpClient client=new OkHttpClient.Builder().build();
         Request request=new Request.Builder().url(url).build();
+
         Response response=client.newCall(request).execute();
         BufferedSink sink= Okio.buffer(Okio.sink(output));
         sink.writeAll(response.body().source());

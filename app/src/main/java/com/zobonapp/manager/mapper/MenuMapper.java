@@ -4,15 +4,19 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.zobonapp.R;
 import com.zobonapp.db.AbstractRowMapper;
 import com.zobonapp.db.DatabaseHelper;
 import com.zobonapp.db.DbSchema;
+import com.zobonapp.db.PageQuerySelector;
 import com.zobonapp.db.RowMapper;
 import com.zobonapp.domain.Menu;
+import com.zobonapp.utils.ZobonApp;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.Vector;
 
 import static com.zobonapp.db.DbSchema.*;
 
@@ -72,4 +76,24 @@ public class MenuMapper extends AbstractRowMapper<Menu>
         database.setTransactionSuccessful();
         database.endTransaction();
     }
+    @Override
+    public List<Menu> findItems(int offset, int limit, TYPE queryType, String... searchQuery)
+    {
+
+        List<String> queryArgs=new Vector<>();
+        String qry=searchQuery[0];
+        if(qry==null)
+            qry="";
+        qry= "%"+qry+"%";
+        queryArgs.add(qry);
+        queryArgs.add(qry);
+        queryArgs.add(String.valueOf(offset));
+        queryArgs.add(String.valueOf(limit));
+        //TODO: order by should be handled for consistent results.
+
+        String query= ZobonApp.getContext().getResources().getString(R.string.sql_findMenus,offset,limit);
+
+        return queryAll(query,queryArgs.toArray(new String[]{}));
+    }
+
 }

@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 
 import com.zobonapp.utils.RootActivity;
 
-public class Preferences extends RootActivity
+public class PreferencesActivity extends RootActivity
 {
 
     @Override

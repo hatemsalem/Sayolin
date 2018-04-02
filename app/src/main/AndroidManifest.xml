@@ -48,7 +48,7 @@
             
             android:theme="@style/AppTheme.NoActionBar"
             android:uiOptions="splitActionBarWhenNarrow"/>
-        <activity android:name=".Preferences">
+        <activity android:name=".PreferencesActivity">
         </activity>
 
         <service

@@ -95,49 +95,13 @@ public class MockDataManager implements DataManager
     @Override
     public List<Offer> findOffersForPage(int offset, int limit, String searchQuery, String categoryId)
     {
-        String query=null;
-        Vector<String> queryArgs=new Vector<>();
-        if(searchQuery==null)
-            searchQuery="";
-        searchQuery= "%"+searchQuery+"%";
-        queryArgs.add(searchQuery);
-        queryArgs.add(searchQuery);
-        //TODO: order by should be handled for consistent results.
-        if(TextUtils.isEmpty(categoryId))
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findOfferss,offset,limit);
-        }
-        else
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntitiesInCategory,offset,limit);
-            queryArgs.add(categoryId);
-        }
-
-        return queryExecutor(query,queryArgs.toArray(new String[]{}),offerMapper);
+        return offerMapper.findItems(offset,limit,null,searchQuery);
     }
 
     @Override
     public List<Menu> findMenusForPage(int offset, int limit, String searchQuery, String categoryId)
     {
-        String query=null;
-        Vector<String> queryArgs=new Vector<>();
-        if(searchQuery==null)
-            searchQuery="";
-        searchQuery= "%"+searchQuery+"%";
-        queryArgs.add(searchQuery);
-        queryArgs.add(searchQuery);
-        //TODO: order by should be handled for consistent results.
-        if(TextUtils.isEmpty(categoryId))
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findMenus,offset,limit);
-        }
-        else
-        {
-            query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntitiesInCategory,offset,limit);
-            queryArgs.add(categoryId);
-        }
-
-        return queryExecutor(query,queryArgs.toArray(new String[]{}),menuMapper);
+        return menuMapper.findItems(offset,limit,null,searchQuery);
     }
 
 
@@ -182,18 +146,7 @@ public class MockDataManager implements DataManager
     @Override
     public List<Contact> findContactsForItem(String itemId)
     {
-        String query=null;
-        Vector<String> queryArgs=new Vector<>();
-//        String searchQuery=null;
-//        if(searchQuery==null)
-//            searchQuery="";
-//        searchQuery= "%"+searchQuery+"%";
-//        queryArgs.add(searchQuery);
-//        queryArgs.add(searchQuery);
-//        queryArgs.add(searchQuery);
-        queryArgs.add(itemId);
-        query= ZobonApp.getContext().getResources().getString(R.string.sql_findContactsForItem);
-        return queryExecutor(query,queryArgs.toArray(new String[]{}),contactMapper);
+        return contactMapper.findItems(0,0,null,itemId);
     }
 
     @Override

@@ -4,15 +4,19 @@ import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.zobonapp.R;
 import com.zobonapp.db.AbstractRowMapper;
 import com.zobonapp.db.DatabaseHelper;
 import com.zobonapp.db.DbSchema;
+import com.zobonapp.db.PageQuerySelector;
 import com.zobonapp.db.RowMapper;
 import com.zobonapp.domain.Offer;
+import com.zobonapp.utils.ZobonApp;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.Vector;
 
 /**
  * Created by Admin on 3/24/2018.
@@ -65,5 +69,23 @@ public class OfferMapper extends AbstractRowMapper<Offer>
         database.setTransactionSuccessful();
         database.endTransaction();
 
+    }
+
+    @Override
+    public List<Offer> findItems(int offset, int limit, TYPE queryType, String... searchQuery)
+    {
+        String qry=searchQuery[0];
+        List<String> queryArgs=new Vector<>();
+        if(qry==null)
+            qry="";
+        qry= "%"+qry+"%";
+        queryArgs.add(qry);
+        queryArgs.add(qry);
+        queryArgs.add(String.valueOf(offset));
+        queryArgs.add(String.valueOf(limit));
+        String query= ZobonApp.getContext().getResources().getString(R.string.sql_findOfferss);
+
+
+        return queryAll(query,queryArgs.toArray(new String[]{}));
     }
 }

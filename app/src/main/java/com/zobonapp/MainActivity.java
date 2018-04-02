@@ -1,6 +1,5 @@
 package com.zobonapp;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,11 +14,9 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
-import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.zobonapp.utils.RootActivity;
 import com.zobonapp.utils.ZobonApp;
@@ -152,7 +149,7 @@ public class MainActivity extends RootActivity implements NavigationView.OnNavig
         switch (item.getItemId())
         {
             case R.id.nav_manage:
-                startActivity(new Intent(this,Preferences.class));
+                startActivity(new Intent(this,PreferencesActivity.class));
                 break;
             case R.id.nav_camera:
                 break;

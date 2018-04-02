@@ -15,6 +15,12 @@
         android:summaryOn="Notification bar is on"
         android:title="Show Shortcut Notifcation Bar " />
     <ListPreference
+        android:defaultValue="common"
+        android:entries="@array/saveSearchTitles"
+        android:entryValues="@array/saveSearchValues"
+        android:key="saveSearchPolicy"
+        android:title="Save Search Policy" />
+    <ListPreference
         android:defaultValue="ctx"
         android:entries="@array/languages"
         android:entryValues="@array/langCodes"
