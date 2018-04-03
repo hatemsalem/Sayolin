@@ -4,13 +4,10 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.zobonapp.R;
-import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.utils.QueryPreferences;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 
@@ -21,7 +18,7 @@ import java.util.Vector;
 public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends RecyclerView.Adapter<VH>
 {
 
-    protected Vector<T> entities=new Vector<>();
+    protected Vector<T> items =new Vector<>();
     protected String searchQuery;
     protected static String ARG_SEARCH_KEY="searchKey";
     protected static String ARG_ADAPTER_CLASS="adapterClass";
@@ -39,27 +36,27 @@ public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends Re
     @Override
     public void onBindViewHolder(VH holder, int position)
     {
-        holder.bind(entities.get(position));
+        holder.bind(items.get(position));
     }
 
     @Override
     public int getItemCount()
     {
-        return entities.size();
+        return items.size();
     }
     public void add(T entity)
     {
-        entities.add(entity);
+        items.add(entity);
         notifyDataSetChanged();
     }
     public void  add(Collection<T> moreEntities)
     {
-        entities.addAll(moreEntities);
+        items.addAll(moreEntities);
         notifyDataSetChanged();
     }
     public void clear()
     {
-        entities.clear();
+        items.clear();
         notifyDataSetChanged();
 
     }
@@ -94,7 +91,7 @@ public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends Re
 
     public void refresh(T item)
     {
-        int position=entities.indexOf(item);
+        int position= items.indexOf(item);
         notifyItemChanged(item,position);
 
      }

@@ -58,12 +58,12 @@ public class FavoriteEntityAdapter extends GenericPagerAdapter<EntityHolder,Busi
         super.notifyItemChanged(item, position);
         if(item.isFavorite()&&position<0)
         {
-            entities.add(item);
-            notifyItemInserted(entities.size());
+            items.add(item);
+            notifyItemInserted(items.size());
         }
         else if( !item.isFavorite() && position>=0)
         {
-            entities.remove(position);
+            items.remove(position);
             notifyItemRemoved(position);
         }
     }

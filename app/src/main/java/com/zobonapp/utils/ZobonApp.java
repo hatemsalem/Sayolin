@@ -50,7 +50,6 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     private NotificationManager notificationManager;
     private Picasso picasso;
     private static String resolution="mdpi";
-    private final static String BASE_URL= BuildConfig.BASE_URL;
 
     public synchronized SharedPreferences getPrefs()
     {
@@ -263,10 +262,7 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
 //            columns--;
         return columns;
     }
-    public static String getResoultionPath()
-    {
-        return resolution;
-    }
+
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
@@ -294,5 +290,13 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         }
         else
             super.attachBaseContext(base);
+    }
+    public static String getResoultionPath()
+    {
+        return resolution;
+    }
+    public static String getAssetPath(String id)
+    {
+        return String.format("%s/resources/%s/%s.webp",BuildConfig.BASE_URL,resolution,id);
     }
 }

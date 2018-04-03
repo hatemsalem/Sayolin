@@ -1,10 +1,7 @@
 package com.zobonapp;
 
-import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.LayoutRes;
-import android.util.Log;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,17 +18,15 @@ import com.zobonapp.utils.ZobonApp;
 public class ContactHolder extends ViewHolder<Contact>
 {
     private final static String TAG =ContactHolder.class.getSimpleName();
-    protected TextView lblTitle;
-    protected TextView lblSubtitle;
-    protected ImageView imgBanner;
+    protected TextView lblName;
+    protected Button btnAction;
     protected Contact contact;
     public ContactHolder(ViewGroup parent, @LayoutRes int layout)
     {
 
         super(parent, layout);
-        lblTitle=itemView.findViewById(R.id.lblTitle);
-        lblSubtitle=itemView.findViewById(R.id.subTitle);
-        imgBanner=itemView.findViewById(R.id.contactImage);
+        lblName =itemView.findViewById(R.id.lblName);
+        btnAction=itemView.findViewById(R.id.btnAction);
     }
 
     @Override
@@ -39,8 +34,9 @@ public class ContactHolder extends ViewHolder<Contact>
     {
         this.contact =cont;
         Uri uri=Uri.parse(contact.getUri());
-        lblTitle.setText(uri.getSchemeSpecificPart());
-        lblSubtitle.setText(cont.getName());
-        ZobonApp.getContext().getPicasso().load(R.drawable.img_running).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgBanner);
+//        lblName.setText(uri.getSchemeSpecificPart());
+        lblName.setText(cont.getName());
+        btnAction.setText(uri.getScheme());
+//        ZobonApp.getContext().getPicasso().load(R.drawable.img_running).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgBanner);
     }
 }

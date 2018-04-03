@@ -43,7 +43,7 @@ public class UpdateService extends IntentService
 {
 
     public static final String TAG=UpdateService.class.getSimpleName();
-    private static final String UPDATE_URL="http://test.zobonapp.com/web/updates/ver-%s/%d";
+
     private static final String UPDATE_FILE_NAME="update.zip";
     public static final String UPDATE_BASE_DIR="updates";
     private static final long POLL_INTERVAL_MS= TimeUnit.MINUTES.toMillis(1);
@@ -80,6 +80,11 @@ public class UpdateService extends IntentService
 
         }
     }
+    private String getUpdatePath()
+    {
+        return String.format(Locale.US,"%s/updates/ver-%s/%d",BuildConfig.BASE_URL,BuildConfig.VERSION_NAME,QueryPreferences.getLatestUpdate());
+    }
+
     protected void update()
     {
         Log.i(TAG,"Check update will be here");
@@ -90,7 +95,6 @@ public class UpdateService extends IntentService
             else
                 return;
         }
-        String url=String.format(Locale.US,UPDATE_URL,BuildConfig.VERSION_NAME,QueryPreferences.getLatestUpdate());
         try
         {
 
@@ -98,7 +102,7 @@ public class UpdateService extends IntentService
 
             if(step<0)
             {
-                File update=download(url);
+                File update=download(getUpdatePath());
                 File updateDir=new File(getFilesDir(),UPDATE_BASE_DIR);
                 ZipUtils.delete(updateDir);
                 updateDir.mkdirs();
@@ -204,8 +208,8 @@ public class UpdateService extends IntentService
         File output=new File(getFilesDir(),UPDATE_FILE_NAME);
         if(output.exists())
             output.delete();
-//        OkHttpClient client=new OkHttpClient.Builder().connectTimeout(60,TimeUnit.SECONDS).readTimeout(60,TimeUnit.SECONDS).tim  build();
-        OkHttpClient client=new OkHttpClient.Builder().build();
+        OkHttpClient client=new OkHttpClient.Builder().connectTimeout(60,TimeUnit.SECONDS).readTimeout(60,TimeUnit.SECONDS).build();
+//        OkHttpClient client=new OkHttpClient.Builder().build();
         Request request=new Request.Builder().url(url).build();
 
         Response response=client.newCall(request).execute();

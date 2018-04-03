@@ -74,7 +74,7 @@ public class DbSchema
         {
             public static final String TYPE="type";
             public static final String OFFERS="offers";
-            public static final String ENTITIES="entities";
+            public static final String ENTITIES="items";
 
         }
         public static String getCreateStatement()

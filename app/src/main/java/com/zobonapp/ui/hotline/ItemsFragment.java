@@ -176,7 +176,7 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
         emptyView = result.findViewById(R.id.emptyView);
         adapter.registerAdapterDataObserver(adapterObserver);
 
-        paginator=new Paginator(pullToLoadView, adapter);
+        paginator=new Paginator(pullToLoadView, adapter,120);
 
         ZobonApp.getContext().getPrefs().registerOnSharedPreferenceChangeListener(this);
 

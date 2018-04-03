@@ -82,7 +82,7 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
             imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
         ;
-        final Uri  uri=Uri.parse(String.format("http://test.zobonapp.com/web/resources/%s/%s.webp",ZobonApp.getResoultionPath(),entity.getId()));
+        final Uri  uri=Uri.parse(ZobonApp.getAssetPath(entity.getId().toString()));
         ZobonApp.getContext().getPicasso().load(uri)
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   ).into(imgLogo);

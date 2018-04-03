@@ -22,7 +22,6 @@ import java.util.List;
 
 public class Paginator
 {
-    private final int COLUMN_WIDTH=120;
 
     private PullToLoadView pullToLoadView;
     private GenericPagerAdapter adapter;
@@ -30,14 +29,15 @@ public class Paginator
     private boolean hasLoadingAll;
     private int nextPage;
     private GridLayoutManager layoutManager;
+    private int columnWidth;
 
-    public Paginator(PullToLoadView pullToLoadView, GenericPagerAdapter adapter)
+    public Paginator(PullToLoadView pullToLoadView, GenericPagerAdapter adapter,int columnWidth)
     {
         this.adapter=adapter;
         this.pullToLoadView = pullToLoadView;
-
+        this.columnWidth=columnWidth;
         RecyclerView recyclerView =pullToLoadView.getRecyclerView();
-        layoutManager=new GridLayoutManager(pullToLoadView.getContext(), ZobonApp.calculateColumns(COLUMN_WIDTH));
+        layoutManager=new GridLayoutManager(pullToLoadView.getContext(), ZobonApp.calculateColumns(columnWidth));
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
@@ -126,7 +126,7 @@ public class Paginator
     }
     public void reLayout()
     {
-        layoutManager.setSpanCount(ZobonApp.calculateColumns(COLUMN_WIDTH));
+        layoutManager.setSpanCount(ZobonApp.calculateColumns(columnWidth));
     }
 //    private class LoaderTask extends AsyncTask<Void, Void, List<?>>
 //    {
@@ -138,14 +138,14 @@ public class Paginator
 //        }
 //
 //        @Override
-//        protected void onPostExecute(List<?> entities)
+//        protected void onPostExecute(List<?> items)
 //        {
 //            isLoading = false;
 //
 //
-//            if (entities.size() > 0)
+//            if (items.size() > 0)
 //            {
-//                adapter.add(entities);
+//                adapter.add(items);
 //                nextPage = page + 1;
 //            }
 //

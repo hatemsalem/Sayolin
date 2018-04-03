@@ -59,7 +59,7 @@ public class EntityAdapter extends GenericPagerAdapter<EntityHolder,BusinessEnti
         super.notifyItemChanged(item, position);
         if(position>=0)
         {
-            entities.set(position,item);
+            items.set(position,item);
             notifyItemChanged(position);
         }
     }

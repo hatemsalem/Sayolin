@@ -36,6 +36,13 @@ public class ContactsAdapter extends GenericPagerAdapter<ViewHolder<Contact>,Con
     }
 
     @Override
+    public int getItemViewType(int position)
+    {
+
+        return super.getItemViewType(position);
+    }
+
+    @Override
     public List loadData(int page)
     {
        return ZobonApp.getContext().getDataManager().findContactsForItem(itemId);
