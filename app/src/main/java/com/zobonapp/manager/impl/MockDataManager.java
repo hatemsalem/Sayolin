@@ -144,9 +144,12 @@ public class MockDataManager implements DataManager
     }
 
     @Override
-    public List<Contact> findContactsForItem(String itemId)
+    public List<Contact> findContactsForItem(String itemId,String searchQuery)
     {
-        return contactMapper.findItems(0,0,null,itemId);
+        if(searchQuery==null)
+            searchQuery="";
+        searchQuery= "%"+searchQuery+"%";
+        return contactMapper.findItems(0,0,null,itemId,searchQuery);
     }
 
     @Override

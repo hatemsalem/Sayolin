@@ -2,10 +2,7 @@ package com.zobonapp.ui.hotline;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Debug;
-import android.os.Looper;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -102,7 +99,7 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
     {
         super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.fragment_hotlines, menu);
+        inflater.inflate(R.menu.fragment_search, menu);
         MenuItem searchItem = menu.findItem(R.id.search);
         final SearchView searchView = (SearchView) searchItem.getActionView();
         String query = QueryPreferences.getSearchQuery(adapter.getSearchKey());

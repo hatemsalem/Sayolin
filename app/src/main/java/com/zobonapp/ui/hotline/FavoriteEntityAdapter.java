@@ -32,7 +32,7 @@ public class FavoriteEntityAdapter extends GenericPagerAdapter<EntityHolder,Busi
     @Override
     public EntityHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return new EntityHolder(parent, R.layout.cell_hotline3);
+        return new EntityHolder(parent, R.layout.cell_hotline);
     }
 
     @Override

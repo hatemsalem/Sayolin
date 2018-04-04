@@ -50,6 +50,7 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     private NotificationManager notificationManager;
     private Picasso picasso;
     private static String resolution="mdpi";
+    private IntentHelper intentHelper;
 
     public synchronized SharedPreferences getPrefs()
     {
@@ -70,6 +71,11 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     public Picasso getPicasso()
     {
         return picasso;
+    }
+
+    public static IntentHelper getIntentHelper()
+    {
+        return  ZobonApp.getContext().intentHelper;
     }
 
     public String toggleLang()
@@ -132,6 +138,7 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         }
         lang = QueryPreferences.getLanguage();
         picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+        intentHelper=new IntentHelper();
 //        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).build();
         //        PicassoTools.clearCache(picasso);
         //        deleteDirectoryTree(getCacheDir());

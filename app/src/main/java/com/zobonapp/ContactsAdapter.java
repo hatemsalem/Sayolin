@@ -17,6 +17,9 @@ import java.util.List;
 public class ContactsAdapter extends GenericPagerAdapter<ViewHolder<Contact>,Contact>
 {
     private static String ARG_ITEM="item";
+    private static final int TEL_VIEW_TYPE=0;
+    private static final int GEO_VIEW_TYPE=1;
+
 
 
     private String itemId;
@@ -32,20 +35,38 @@ public class ContactsAdapter extends GenericPagerAdapter<ViewHolder<Contact>,Con
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
     {
-        return new ContactHolder(parent,R.layout.cell_contact);
+
+        switch (viewType)
+        {
+            case GEO_VIEW_TYPE:
+                return new GeoContactHolder(parent,R.layout.cell_geo_contact);
+            case TEL_VIEW_TYPE:
+            default:
+                return new TelContactHolder(parent,R.layout.cell_tel_contact);
+
+        }
+
     }
 
     @Override
     public int getItemViewType(int position)
     {
+        switch (items.get(position).getUri().substring(0,3).toLowerCase())
+        {
+            case "geo":
+                return GEO_VIEW_TYPE;
 
-        return super.getItemViewType(position);
+            case "tel":
+            default:
+                return TEL_VIEW_TYPE;
+        }
     }
 
     @Override
     public List loadData(int page)
     {
-       return ZobonApp.getContext().getDataManager().findContactsForItem(itemId);
+
+       return ZobonApp.getContext().getDataManager().findContactsForItem(itemId,searchQuery);
     }
 
     @Override

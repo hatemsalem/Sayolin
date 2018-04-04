@@ -23,18 +23,25 @@
                   android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/lblTel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@id/btnAction"/>
+        <TextView
             android:id="@+id/lblName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_toStartOf="@id/btnAction"
-            android:text="TextView" />
+            android:layout_below="@id/lblTel"
+            android:layout_toStartOf="@id/btnAction"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btnAction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
             android:layout_alignParentEnd="true"
-            android:text="" />
+            android:src="@drawable/call"
+            />
     </RelativeLayout>
 </android.support.v7.widget.CardView>

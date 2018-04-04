@@ -15,25 +15,30 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:layout_margin="6dp">
 
+
+        <TextView
+            android:id="@+id/lblHotline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:layout_toEndOf="@id/imgCircle"/>
 
         <TextView
             android:id="@+id/lblName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
             android:textSize="16sp"
-            android:layout_centerVertical="true"
             android:textColor="@android:color/black"
+            android:layout_below="@id/lblHotline"
             android:layout_toEndOf="@id/imgCircle"/>
 
         <TextView
             android:id="@+id/lblDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            android:layout_centerVertical="true"
             android:textSize="12sp"
             android:layout_toEndOf="@id/imgCircle"
             android:layout_below="@id/lblName"/>

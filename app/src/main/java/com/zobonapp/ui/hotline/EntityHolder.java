@@ -12,8 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.NetworkPolicy;
-import com.zobonapp.ItemDetailsActivity;
+import com.zobonapp.EntityDetailsActivity;
 import com.zobonapp.R;
 import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.ui.ViewHolder;
@@ -141,7 +140,7 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
                 break;
 
             default:
-                ItemDetailsActivity.start(v.getContext(),entity.getId().toString());
+                EntityDetailsActivity.start(v.getContext(),entity.getId().toString());
         }
 
     }

@@ -72,10 +72,10 @@ public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends Re
     }
     public  void onCreate()
     {
-        Bundle args=getArguments();
-        if(args!=null)
+        String searchKey=getSearchKey();
+        if(searchKey!=null)
         {
-            searchQuery= QueryPreferences.getSearchQuery(args.getString(ARG_SEARCH_KEY));
+            searchQuery= QueryPreferences.getSearchQuery(searchKey);
         }
     }
 

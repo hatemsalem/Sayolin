@@ -33,7 +33,7 @@ public interface DataManager
    List<Category> findCategoriesForPage(int type,int offset,int limit,String searchQuery);
    List<Category> findOffersCategoriesForPage(int type,int offset,int limit,String searchQuery);
    List<Category> findFavoriteCategoriesForPage(int type,int offset,int limit,String searchQuery);
-   List<Contact> findContactsForItem(String itemId);
+   List<Contact> findContactsForItem(String itemId,String searchQuery);
    void deleteItems(List<String> items);
    void deleteCategories(List<String> items);
 }

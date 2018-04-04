@@ -31,6 +31,7 @@ public class ContactMapper extends AbstractRowMapper<Contact>
         contact.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(DbSchema.ContactTable.Cols.ID))));
         contact.setUri(cursor.getString(cursor.getColumnIndex(DbSchema.ContactTable.Cols.URI)));
         contact.setName(cursor.getString(cursor.getColumnIndex(DbSchema.L10NCols.NAME)));
+        contact.setItemId(UUID.fromString(cursor.getString(cursor.getColumnIndex(DbSchema.ContactTable.Cols.ITEM_ID))));
         return contact;
     }
 
@@ -67,7 +68,11 @@ public class ContactMapper extends AbstractRowMapper<Contact>
     public List<Contact> findItems(int offset, int limit, TYPE queryType, String... searchQuery)
     {
         String query= ZobonApp.getContext().getResources().getString(R.string.sql_findContactsForItem);
-        return queryAll(query,searchQuery[0]);
+        String itemId=searchQuery[0];
+        String arName=searchQuery[1];
+        String enName=searchQuery[1];
+
+        return queryAll(query,itemId,arName,enName);
 
     }
 }

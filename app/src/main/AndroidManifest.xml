@@ -68,7 +68,7 @@
             android:theme="@style/AppTheme">
         </activity>
         <activity
-            android:name=".ItemDetailsActivity"
+            android:name=".EntityDetailsActivity"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
         </activity>
