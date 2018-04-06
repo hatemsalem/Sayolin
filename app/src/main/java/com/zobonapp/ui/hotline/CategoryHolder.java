@@ -40,8 +40,10 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
         lblName.setText(category.getName());
         lblEntities.setText(category.getEntities()+" item");
         lblOffers.setText(category.getOffers()+" menu");
-        Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/menu/"+category.getId().toString()+".webp");
-        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgLogo);
+        final Uri  uri=Uri.parse(ZobonApp.getAssetPath(category.getId().toString()));
+        ZobonApp.getContext().getPicasso().load(uri)
+                .error(R.drawable.notfoundimage)
+                .placeholder(R.drawable.placeholder   ).into(imgLogo);
     }
 
     @Override

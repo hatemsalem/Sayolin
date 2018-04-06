@@ -42,6 +42,6 @@ public class GeoContactHolder extends ViewHolder<Contact> implements View.OnClic
     public void onClick(View v)
     {
         BusinessEntity entity=ZobonApp.getContext().getDataManager().findBusinessItemById(contact.getItemId().toString());
-        ZobonApp.getIntentHelper().showMap(entity.getName()," بالقرب من  ",contact.getName());
+        ZobonApp.getIntentHelper().showMap(entity.getName(),contact.getName());
     }
 }
