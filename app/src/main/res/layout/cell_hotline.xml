@@ -35,7 +35,13 @@
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:visibility="visible"/>
-
+        <ImageView android:id="@+id/imgCircle"
+            android:layout_width="106dp"
+            android:layout_height="106dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="0dp"
+            android:layout_below="@id/imgFavorite"
+            android:src="@drawable/circle"/>
         <ImageView
             android:id="@+id/imgLogo"
             android:layout_width="96dp"
@@ -49,13 +55,7 @@
             android:layout_below="@id/imgFavorite"
             android:src="@drawable/notfoundimage"/>
 
-        <ImageView android:id="@+id/imgCircle"
-            android:layout_width="106dp"
-            android:layout_height="106dp"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="0dp"
-            android:layout_below="@id/imgFavorite"
-            android:src="@drawable/circle"/>
+
         <TextView
             android:id="@+id/lblName"
             android:layout_width="match_parent"

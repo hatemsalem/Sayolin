@@ -239,9 +239,6 @@ public class UpdateService extends IntentService
                 QueryPreferences.setInitializeStep(step=0);
 
                 EventBus.getDefault().post(new InitializationEvent(InitializationEvent.Status.COMPLETED));
-                is= ZobonApp.getContext().getAssets().open(String.format(Locale.US, "misc/offers.json"));
-                updateOffersData(is);
-                is.close();
             }
 
 
@@ -272,16 +269,6 @@ public class UpdateService extends IntentService
             inInitialize =false;
         }
     }
-    private void updateOffersData(InputStream is) throws IOException
-    {
-        Gson gson = new Gson();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-        DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
-        reader.close();
-
-        ZobonApp.getContext().getDataManager().populateOffers(dataCollection.getOffers());
-        ZobonApp.getContext().getDataManager().populateMenus(dataCollection.getMenus());
-    }
 
 
     private void updateContactsData(InputStream is) throws IOException
@@ -304,6 +291,8 @@ public class UpdateService extends IntentService
         ZobonApp.getContext().getDataManager().populateCategories(dataCollection.getCategories());
         ZobonApp.getContext().getDataManager().populateBusinessEntities(dataCollection.getEntities());
         ZobonApp.getContext().getDataManager().populateContacts(dataCollection.getContacts());
+        ZobonApp.getContext().getDataManager().populateOffers(dataCollection.getOffers());
+        ZobonApp.getContext().getDataManager().populateMenus(dataCollection.getMenus());
         QueryPreferences.setLatestUpdate(dataCollection.getLatestUpdate());
         return dataCollection.getSteps();
 

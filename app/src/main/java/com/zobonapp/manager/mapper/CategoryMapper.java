@@ -30,6 +30,7 @@ public class CategoryMapper extends AbstractRowMapper<Category>
         category.setName(cursor.getString(cursor.getColumnIndex(DbSchema.L10NCols.NAME)));
         category.setEntities(cursor.getInt(cursor.getColumnIndex(DbSchema.CategoryTable.Cols.ENTITIES)));
         category.setOffers(cursor.getInt(cursor.getColumnIndex(DbSchema.CategoryTable.Cols.OFFERS)));
+        category.setType(cursor.getInt(cursor.getColumnIndex(DbSchema.CategoryTable.Cols.TYPE)));
         return category;
     }
 

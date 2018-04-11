@@ -6,8 +6,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zobonapp.BuildConfig;
 import com.zobonapp.R;
 import com.zobonapp.domain.Offer;
+import com.zobonapp.ui.GalleryActivity;
 import com.zobonapp.ui.ViewHolder;
 import com.zobonapp.utils.ZobonApp;
 
@@ -37,14 +39,13 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
         this.offer =offer;
         lblName.setText(offer.getName());
         lblPages.setText("pages:"+offer.getPages());
-        Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/menu/"+offer.getId().toString()+".webp");
+        Uri uri=Uri.parse(BuildConfig.BASE_URL+"/resources/offers/"+offer.getId().toString()+"/thumbnail.jpg");
         ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
     }
 
     @Override
     public void onClick(View v)
     {
-        EntitiesActivity.start(v.getContext(), offer.getId().toString());
-
+        GalleryActivity.start(v.getContext(),BuildConfig.BASE_URL+"/resources/offers/"+offer.getId()+"/",offer.getPages(),"jpg");
     }
 }

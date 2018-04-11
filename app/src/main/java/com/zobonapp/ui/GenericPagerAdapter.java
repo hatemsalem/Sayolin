@@ -22,7 +22,7 @@ public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends Re
     protected String searchQuery;
     protected static String ARG_SEARCH_KEY="searchKey";
     protected static String ARG_ADAPTER_CLASS="adapterClass";
-    protected final static int PAGE_SIZE=200;
+    protected final static int PAGE_SIZE=50;
     private Bundle arguments;
     @Override
     public abstract VH onCreateViewHolder(ViewGroup parent, int viewType);

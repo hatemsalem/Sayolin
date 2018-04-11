@@ -137,7 +137,8 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
             Log.d(TAG, "Alarm settled");
         }
         lang = QueryPreferences.getLanguage();
-        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+//        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(20000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(this)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
         intentHelper=new IntentHelper();
 //        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).build();
         //        PicassoTools.clearCache(picasso);
@@ -225,6 +226,13 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         intent.setAction(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_LAUNCHER);
         intent.setComponent(new ComponentName("com.android.calculator2","com.android.calculator2.Calculator"));
+//        Intent intent = new Intent();
+//        intent.setAction(Intent.ACTION_MAIN);
+//        intent.addCategory(Intent.CATEGORY_APP_CALCULATOR);
+//        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+
         notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
         notificationView.setOnClickPendingIntent(R.id.myNotificationTitle, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
 //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

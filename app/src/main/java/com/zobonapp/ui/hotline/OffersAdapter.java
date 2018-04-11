@@ -17,13 +17,14 @@ import java.util.List;
 
 public class OffersAdapter extends GenericPagerAdapter<OfferHolder,Offer>
 {
-    private static final String ARG_CATEGORY_TYPE="categoryType";
-    private int type;
+    private static final String ARG_CATEGORY="offer";
+    private String categoryId;
 
-    public static Bundle newArguments(int type)
+    public static Bundle newArguments(String categoryId,String searchKey)
     {
         Bundle arguments=new Bundle();
-        arguments.putInt(ARG_CATEGORY_TYPE,type);
+        arguments.putString(ARG_CATEGORY,categoryId);
+        arguments.putString(ARG_SEARCH_KEY,searchKey);
         arguments.putString(ARG_ADAPTER_CLASS,OffersAdapter.class.getName());
         return arguments;
     }
@@ -35,7 +36,7 @@ public class OffersAdapter extends GenericPagerAdapter<OfferHolder,Offer>
     @Override
     public List<Offer> loadData(int page)
     {
-        return ZobonApp.getContext().getDataManager().findOffersForPage(page*PAGE_SIZE,PAGE_SIZE,searchQuery,null);
+        return ZobonApp.getContext().getDataManager().findOffersForPage(page*PAGE_SIZE,PAGE_SIZE,searchQuery,categoryId);
     }
 
     @Override
@@ -44,7 +45,7 @@ public class OffersAdapter extends GenericPagerAdapter<OfferHolder,Offer>
         super.onCreate();
         if(getArguments()!=null)
         {
-            type=getArguments().getInt(ARG_CATEGORY_TYPE);
+            categoryId=getArguments().getString(ARG_CATEGORY);
         }
     }
 

@@ -42,6 +42,7 @@ public class OfferMapper extends AbstractRowMapper<Offer>
         cv.put(DbSchema.OfferTable.Cols.ID,(String)object.get(DbSchema.OfferTable.Cols.ID));
         cv.put(DbSchema.OfferTable.Cols.AR_NAME,(String)object.get(DbSchema.OfferTable.Cols.AR_NAME));
         cv.put(DbSchema.OfferTable.Cols.EN_NAME,(String)object.get(DbSchema.OfferTable.Cols.EN_NAME));
+        cv.put(DbSchema.OfferTable.Cols.PAGES,((Double) object.get(DbSchema.OfferTable.Cols.PAGES)).intValue());
 
         return cv;
     }
@@ -74,18 +75,28 @@ public class OfferMapper extends AbstractRowMapper<Offer>
     @Override
     public List<Offer> findItems(int offset, int limit, TYPE queryType, String... searchQuery)
     {
-        String qry=searchQuery[0];
+        String qry=searchQuery[1];
         List<String> queryArgs=new Vector<>();
         if(qry==null)
             qry="";
         qry= "%"+qry+"%";
         queryArgs.add(qry);
         queryArgs.add(qry);
+
+        String query="";
+        switch (queryType)
+        {
+            case BY_FAVORITE:
+                query= ZobonApp.getContext().getResources().getString(R.string.sql_findOfferss);
+                break;
+            case BY_CATEGORY:
+                queryArgs.add(searchQuery[0]);
+                query= ZobonApp.getContext().getResources().getString(R.string.sql_findOfferssInCategory);
+                break;
+        }
+
         queryArgs.add(String.valueOf(offset));
         queryArgs.add(String.valueOf(limit));
-        String query= ZobonApp.getContext().getResources().getString(R.string.sql_findOfferss);
-
-
         return queryAll(query,queryArgs.toArray(new String[]{}));
     }
 }

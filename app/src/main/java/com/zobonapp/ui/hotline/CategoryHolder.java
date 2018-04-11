@@ -49,7 +49,16 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
     @Override
     public void onClick(View v)
     {
-        EntitiesActivity.start(v.getContext(),category.getId().toString());
+        switch (category.getType())
+        {
+            case 1001:
+                EntitiesActivity.start(v.getContext(),category.getId().toString());
+                break;
+            case 3001:
+                OffersActivity.start(v.getContext(),category.getId().toString());
+                break;
+        }
+
 
     }
 }

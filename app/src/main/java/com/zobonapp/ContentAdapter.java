@@ -1,22 +1,22 @@
 package com.zobonapp;
 
 import android.app.Activity;
-//import android.app.Fragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.ViewGroup;
 
-import com.zobonapp.ui.hotline.EntityAdapter;
 import com.zobonapp.ui.hotline.CategoryAdapter;
+import com.zobonapp.ui.hotline.EntityAdapter;
 import com.zobonapp.ui.hotline.FavoriteEntityAdapter;
 import com.zobonapp.ui.hotline.ItemsFragment;
 import com.zobonapp.ui.hotline.MenuAdapter;
-import com.zobonapp.ui.hotline.OfferCategoryAdapter;
 import com.zobonapp.ui.hotline.OffersAdapter;
 import com.zobonapp.ui.hotline.RootFragment;
 import com.zobonapp.utils.BasicActivity;
 import com.zobonapp.utils.BasicFragment;
 import com.zobonapp.utils.ZobonApp;
+
+//import android.app.Fragment;
 
 
 /**
@@ -26,8 +26,8 @@ import com.zobonapp.utils.ZobonApp;
 public class ContentAdapter extends FragmentStatePagerAdapter
 {
     Fragment fragments[]={
-            RootFragment.newInstance(CategoryAdapter.newArguments(1001,"cat_hotline"), EntityAdapter.newArguments(null,"root"),"hotlines"),
-            RootFragment.newInstance( OfferCategoryAdapter.newArguments(1001,"cat_offer"), OffersAdapter.newArguments(1),"offers"),
+            RootFragment.newInstance(CategoryAdapter.newArguments(1001,"cat_hotline"), EntityAdapter.newArguments(null,"hotline.root"),"hotlines"),
+            RootFragment.newInstance( CategoryAdapter.newArguments(3001,"cat_offer"), OffersAdapter.newArguments(null,"offers.root"),"offers"),
             RootFragment.newInstance( CategoryAdapter.newArguments(0,"cat_menus"), MenuAdapter.newArguments(1),"menus"),
 //            RootFragment.newInstance( FavoriteCategoryAdapter.newArguments(2000),FavoriteEntityAdapter.newArguments(null,"favorite"),"menus"),
             ItemsFragment.newInstance(FavoriteEntityAdapter.newArguments(null,"favorite"))
