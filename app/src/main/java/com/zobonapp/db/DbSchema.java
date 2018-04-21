@@ -63,7 +63,7 @@ public class DbSchema
             StringBuilder fields=new StringBuilder();
             fields.append(Cols.getItemFields()).append(", ")
                     .append(Cols.DEFAULT_CONTACT).append(", ")
-                    .append(Cols.OFFERS);
+                    .append(Cols.OFFERS).append(" DEFAULT 0 ");
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
     }
@@ -131,7 +131,7 @@ public class DbSchema
         public static final String NAME="offer";
         public static final class Cols extends ItemCols
         {
-            public static final String ITEM_ID="itemId";
+            public static final String ENTITY_ID="entityId";
             public static final String START_DATE="startDate";
             public static final String END_DATE="endDate";
             public static final String PAGES="pages";
@@ -140,7 +140,7 @@ public class DbSchema
         {
             StringBuilder fields=new StringBuilder();
             fields.append(Cols.getItemFields()).append(", ")
-                    .append(Cols.ITEM_ID).append(", ")
+                    .append(Cols.ENTITY_ID).append(", ")
                     .append(Cols.START_DATE).append(", ")
                     .append(Cols.END_DATE).append(", ")
                     .append(Cols.PAGES);
@@ -153,14 +153,14 @@ public class DbSchema
         public static final class Cols implements NameI18NCols
         {
             public static final String ID ="id";
-            public static final String ITEM_ID="itemId";
+            public static final String ENTITY_ID="entityId";
             public static final String URI="uri";
         }
         public static String getCreateStatement()
         {
             StringBuilder fields=new StringBuilder();
             fields.append(Cols.ID).append(" UNIQUE NOT NULL, ")
-                .append(Cols.ITEM_ID).append(", ")
+                .append(Cols.ENTITY_ID).append(", ")
                 .append(Cols.AR_NAME).append(", ")
                 .append(Cols.EN_NAME).append(", ")
                 .append(Cols.URI);

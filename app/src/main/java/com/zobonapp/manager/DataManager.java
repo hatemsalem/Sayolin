@@ -35,4 +35,7 @@ public interface DataManager
    List<Contact> findContactsForItem(String itemId,String searchQuery);
    void deleteItems(List<String> items);
    void deleteCategories(List<String> items);
+
+   void deleteOffers(List<String> deletedOffers);
+   void resetData();
 }

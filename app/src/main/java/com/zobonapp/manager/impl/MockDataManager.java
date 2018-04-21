@@ -7,6 +7,8 @@ import android.text.TextUtils;
 
 import com.zobonapp.R;
 import com.zobonapp.db.DatabaseHelper;
+import com.zobonapp.db.DbSchema;
+import com.zobonapp.db.DbSchema.OfferTable;
 import com.zobonapp.db.PageQuerySelector;
 import com.zobonapp.db.RowMapper;
 import com.zobonapp.domain.BusinessEntity;
@@ -168,6 +170,22 @@ public class MockDataManager implements DataManager
     }
 
     @Override
+    public void deleteOffers(List<String> deletedOffers)
+    {
+        SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
+        database.beginTransaction();
+        for (String offer:deletedOffers)
+        {
+            //TODO: decrease no. of offers in BusinessEntity
+
+            database.delete(OfferTable.NAME,"id=?",new String[]{offer});
+        }
+        database.setTransactionSuccessful();
+        database.endTransaction();
+
+    }
+
+    @Override
     public void populateItemCategoryRelations(HashMap<String, Vector<String>> objects)
     {
 
@@ -240,5 +258,11 @@ public class MockDataManager implements DataManager
     public void populateContacts(List<HashMap<String, ?>> objects)
     {
         contactMapper.populate(objects);
+    }
+
+    @Override
+    public void resetData()
+    {
+        //TODO: to be implemented
     }
 }

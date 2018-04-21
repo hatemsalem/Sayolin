@@ -35,7 +35,7 @@ public class CategoryAdapter extends GenericPagerAdapter<CategoryHolder,Category
     @Override
     public List<Category> loadData(int page)
     {
-        return ZobonApp.getContext().getDataManager().findCategoriesForPage(type,page * PAGE_SIZE, PAGE_SIZE,searchQuery);
+        return ZobonApp.getDataManager().findCategoriesForPage(type,page * PAGE_SIZE, PAGE_SIZE,searchQuery);
     }
 
     @Override

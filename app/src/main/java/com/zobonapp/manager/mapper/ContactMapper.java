@@ -31,7 +31,7 @@ public class ContactMapper extends AbstractRowMapper<Contact>
         contact.setId(UUID.fromString(cursor.getString(cursor.getColumnIndex(DbSchema.ContactTable.Cols.ID))));
         contact.setUri(cursor.getString(cursor.getColumnIndex(DbSchema.ContactTable.Cols.URI)));
         contact.setName(cursor.getString(cursor.getColumnIndex(DbSchema.L10NCols.NAME)));
-        contact.setItemId(UUID.fromString(cursor.getString(cursor.getColumnIndex(DbSchema.ContactTable.Cols.ITEM_ID))));
+        contact.setItemId(UUID.fromString(cursor.getString(cursor.getColumnIndex(DbSchema.ContactTable.Cols.ENTITY_ID))));
         return contact;
     }
 
@@ -41,7 +41,7 @@ public class ContactMapper extends AbstractRowMapper<Contact>
         ContentValues cv= super.buildCV(object);
         cv.put(DbSchema.ContactTable.Cols.ID,(String)object.get(DbSchema.ContactTable.Cols.ID));
         cv.put(DbSchema.ContactTable.Cols.URI,(String)object.get(DbSchema.ContactTable.Cols.URI));
-        cv.put(DbSchema.ContactTable.Cols.ITEM_ID,(String)object.get(DbSchema.ContactTable.Cols.ITEM_ID));
+        cv.put(DbSchema.ContactTable.Cols.ENTITY_ID,(String)object.get(DbSchema.ContactTable.Cols.ENTITY_ID));
         cv.put(DbSchema.ContactTable.Cols.AR_NAME,(String)object.get(DbSchema.ContactTable.Cols.AR_NAME));
         cv.put(DbSchema.ContactTable.Cols.EN_NAME,(String)object.get(DbSchema.ContactTable.Cols.EN_NAME));
 

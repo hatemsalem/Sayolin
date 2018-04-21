@@ -12,6 +12,10 @@ import android.util.Log;
 import com.commonsware.cwac.security.ZipUtils;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParseException;
 import com.zobonapp.BuildConfig;
 import com.zobonapp.manager.InitializationEvent;
 import com.zobonapp.utils.DataCollection;
@@ -20,18 +24,26 @@ import com.zobonapp.utils.ZobonApp;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.lang.reflect.Type;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.CacheControl;
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 import okio.BufferedSink;
 import okio.Okio;
 
@@ -82,11 +94,13 @@ public class UpdateService extends IntentService
     }
     private String getUpdatePath()
     {
-        return String.format(Locale.US,"%s/updates/ver-%s/%d",BuildConfig.BASE_URL,BuildConfig.VERSION_NAME,QueryPreferences.getLatestUpdate());
+        return String.format(Locale.US,"%s/updates/ver-%s/%d",BuildConfig.BASE_URL,BuildConfig.VERSION_CODE,QueryPreferences.getLatestUpdate());
+//        return String.format(Locale.US,"%s/updates/ver-%s/%d",BuildConfig.BASE_URL,BuildConfig.VERSION_CODE,0);
     }
 
     protected void update()
     {
+
         Log.i(TAG,"Check update will be here");
         synchronized (this)
         {
@@ -198,8 +212,9 @@ public class UpdateService extends IntentService
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
         reader.close();
-        ZobonApp.getContext().getDataManager().deleteItems(dataCollection.getDeletedEntities());
-        ZobonApp.getContext().getDataManager().deleteCategories(dataCollection.getDeletedCategories());
+        ZobonApp.getDataManager().deleteItems(dataCollection.getDeletedEntities());
+        ZobonApp.getDataManager().deleteCategories(dataCollection.getDeletedCategories());
+        ZobonApp.getDataManager().deleteOffers(dataCollection.getDeletedOffers());
 
     }
 
@@ -208,11 +223,36 @@ public class UpdateService extends IntentService
         File output=new File(getFilesDir(),UPDATE_FILE_NAME);
         if(output.exists())
             output.delete();
-        OkHttpClient client=new OkHttpClient.Builder().connectTimeout(60,TimeUnit.SECONDS).readTimeout(60,TimeUnit.SECONDS).build();
+        OkHttpClient client=new OkHttpClient.Builder()
+                .connectTimeout(60,TimeUnit.SECONDS)
+                .readTimeout(60,TimeUnit.SECONDS)
+                .build();
 //        OkHttpClient client=new OkHttpClient.Builder().build();
-        Request request=new Request.Builder().url(url).build();
+
+
+        RequestBody reqbody = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), "{}");
+        Request request=new Request.Builder()
+                .cacheControl(CacheControl.FORCE_NETWORK)
+                .url(url).post(reqbody).build();
+//        Request request=new Request.Builder()
+//                .cacheControl(CacheControl.FORCE_NETWORK)
+//                .url(url).build();
 
         Response response=client.newCall(request).execute();
+//        InputStream is=response.body().byteStream();
+//        BufferedInputStream input=new BufferedInputStream(is);
+//        OutputStream outputStream=new FileOutputStream(output);
+//        byte[] data=new byte[1024*100];
+//        long total=0;
+//        int count;
+//        while((count=input.read(data))!=-1)
+//        {
+//            total+=count;
+//            outputStream.write(data,0,count);
+//        }
+//        outputStream.flush();
+//        outputStream.close();
+//        input.close();
         BufferedSink sink= Okio.buffer(Okio.sink(output));
         sink.writeAll(response.body().source());
         sink.close();
@@ -279,20 +319,32 @@ public class UpdateService extends IntentService
         DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
         reader.close();
 
-        ZobonApp.getContext().getDataManager().populateContacts(dataCollection.getContacts());
+        ZobonApp.getDataManager().populateContacts(dataCollection.getContacts());
     }
 
     private int updateBasicData(InputStream is)throws IOException
     {
-        Gson gson = new Gson();
+
+        Gson gson = new GsonBuilder().create();
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
         DataCollection dataCollection = gson.fromJson(reader, DataCollection.class);
         reader.close();
-        ZobonApp.getContext().getDataManager().populateCategories(dataCollection.getCategories());
-        ZobonApp.getContext().getDataManager().populateBusinessEntities(dataCollection.getEntities());
-        ZobonApp.getContext().getDataManager().populateContacts(dataCollection.getContacts());
-        ZobonApp.getContext().getDataManager().populateOffers(dataCollection.getOffers());
-        ZobonApp.getContext().getDataManager().populateMenus(dataCollection.getMenus());
+        switch (dataCollection.getType())
+        {
+            case "BLOCK":
+                break;
+            case "INIT":
+            case "NORM":
+            case "RESET":
+                ZobonApp.getDataManager().resetData();
+                break;
+            case "WARN":
+        }
+        ZobonApp.getDataManager().populateCategories(dataCollection.getCategories());
+        ZobonApp.getDataManager().populateBusinessEntities(dataCollection.getEntities());
+        ZobonApp.getDataManager().populateContacts(dataCollection.getContacts());
+        ZobonApp.getDataManager().populateOffers(dataCollection.getOffers());
+        ZobonApp.getDataManager().populateMenus(dataCollection.getMenus());
         QueryPreferences.setLatestUpdate(dataCollection.getLatestUpdate());
         return dataCollection.getSteps();
 

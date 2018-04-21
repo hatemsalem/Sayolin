@@ -16,7 +16,7 @@ public class BasicActivity extends AppCompatActivity
     protected void attachBaseContext(Context newBase)
     {
 
-        Locale locale = new Locale(ZobonApp.getContext().getLang());
+        Locale locale = new Locale(ZobonApp.getLang());
         Locale.setDefault(locale);
         Configuration localConfiguration = newBase.getResources().getConfiguration();
         localConfiguration.setLayoutDirection(locale);

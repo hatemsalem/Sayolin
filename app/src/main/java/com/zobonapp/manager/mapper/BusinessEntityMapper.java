@@ -35,6 +35,7 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         entity.setFavorite(fav!=0);
         entity.setContact(Uri.parse(cursor.getString(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.URI))));
 //        entity.setRank(cursor.getInt(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.RANK)));
+        entity.setOffers(cursor.getInt(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.OFFERS)));
         return entity;
     }
 
@@ -61,7 +62,7 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
             String itemId=(String)object.get(DbSchema.BusinessEntityTable.Cols.ID);
 
             database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
-            database.delete(DbSchema.ContactTable.NAME,"itemId=?",new String[]{itemId});
+            database.delete(DbSchema.ContactTable.NAME,"entityId=?",new String[]{itemId});
             List<String> categories=(List<String>) object.get("categories");
             database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{itemId});
             for (String categoryId:categories)
@@ -89,12 +90,13 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         qry="%"+qry+"%";
         varArgs.add(qry); //enName
         varArgs.add(qry); //arName
+        varArgs.add(qry);//tel
 
         String query="";
         switch (queryType)
         {
             case BY_FAVORITE:
-                varArgs.add(qry);//tel
+
                 varArgs.add(searchQuery[0]); //favorite
                 query= ZobonApp.getContext().getResources().getString(R.string.sql_findBusinessEntities);
                 break;

@@ -38,7 +38,7 @@ public class MenuHolder extends ViewHolder<Menu> implements View.OnClickListener
         lblName.setText(menu.getName());
         lblPages.setText("pages:"+menu.getPages());
         Uri uri=Uri.parse("https://s3.amazonaws.com/static.zobonapp.com/menu/"+menu.getId().toString()+".webp");
-        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
+        ZobonApp.getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
     }
 
     @Override

@@ -38,7 +38,7 @@ public class FavoriteEntityAdapter extends GenericPagerAdapter<EntityHolder,Busi
     @Override
     public List<BusinessEntity> loadData(int page)
     {
-        return ZobonApp.getContext().getDataManager().findFavoriteEntitiesForPage(page * PAGE_SIZE, PAGE_SIZE,searchQuery,categoryId);
+        return ZobonApp.getDataManager().findFavoriteEntitiesForPage(page * PAGE_SIZE, PAGE_SIZE,searchQuery,categoryId);
     }
 
     @Override

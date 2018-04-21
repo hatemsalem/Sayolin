@@ -39,7 +39,7 @@ public class EntityAdapter extends GenericPagerAdapter<EntityHolder,BusinessEnti
     public List<BusinessEntity> loadData(int page)
     {
 
-        return ZobonApp.getContext().getDataManager().findBusinessEntitiesForPage(page * PAGE_SIZE, PAGE_SIZE,searchQuery,categoryId);
+        return ZobonApp.getDataManager().findBusinessEntitiesForPage(page * PAGE_SIZE, PAGE_SIZE,searchQuery,categoryId);
     }
 
     @Override
@@ -63,4 +63,5 @@ public class EntityAdapter extends GenericPagerAdapter<EntityHolder,BusinessEnti
             notifyItemChanged(position);
         }
     }
+
 }

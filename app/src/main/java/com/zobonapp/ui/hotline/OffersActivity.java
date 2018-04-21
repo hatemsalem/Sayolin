@@ -30,7 +30,7 @@ public class OffersActivity extends BasicActivity
     {
         super.onCreate(savedInstanceState);
         categoryId=getIntent().getStringExtra(EXTRA_CATEGORY_ID);
-        category= ZobonApp.getContext().getDataManager().findCategoryById(categoryId);
+        category= ZobonApp.getDataManager().findCategoryById(categoryId);
         if(category!=null)
         {
             getSupportActionBar().setTitle(category.getName());

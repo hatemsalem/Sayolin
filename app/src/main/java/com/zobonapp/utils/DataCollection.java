@@ -19,7 +19,7 @@ public class DataCollection
     private int steps=0;
     private long latestUpdate=0;
 
-
+    private String type="";
     private HashMap<String, Vector<String>> itemsCategories = new HashMap<>();
     private List<HashMap<String, ?>> entities = new Vector<>();
     private List<HashMap<String, ?>> categories = new Vector<>();
@@ -28,6 +28,7 @@ public class DataCollection
 
     private Vector<String> deletedEntities=new Vector<>();
     private Vector<String> deletedCategories=new Vector<>();
+    private Vector<String> deletedOffers=new Vector<>();
 
 
     private List<HashMap<String, ?>> contacts = new Vector<>();
@@ -92,5 +93,15 @@ public class DataCollection
     public Vector<String> getDeletedCategories()
     {
         return deletedCategories;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public Vector<String> getDeletedOffers()
+    {
+        return deletedOffers;
     }
 }

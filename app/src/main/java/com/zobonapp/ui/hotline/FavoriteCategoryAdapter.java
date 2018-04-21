@@ -34,7 +34,7 @@ public class FavoriteCategoryAdapter extends GenericPagerAdapter<CategoryHolder,
     @Override
     public List<Category> loadData(int page)
     {
-        return ZobonApp.getContext().getDataManager().findFavoriteCategoriesForPage(type,page * PAGE_SIZE, PAGE_SIZE,searchQuery);
+        return ZobonApp.getDataManager().findFavoriteCategoriesForPage(type,page * PAGE_SIZE, PAGE_SIZE,searchQuery);
     }
 
     @Override

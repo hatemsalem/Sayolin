@@ -82,6 +82,11 @@
             android:name=".ui.GalleryActivity"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".gallery.GalleryActivity2"
+            android:theme="@style/AppTheme.Full.NoTitle" />
+        <activity
+            android:name=".gallery.GalleryActivity3"/>
     </application>
 
 </manifest>

@@ -41,8 +41,8 @@ android {
         applicationId "com.zoboonapp.test"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 16
-        versionName "1.0.16"
+        versionCode 22
+        versionName "1.0.22"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //Using VectorDrawableCompat version ?!
         vectorDrawables.generatedDensities = ['hdpi', 'xxhdpi']
@@ -70,6 +70,10 @@ android {
     productFlavors {
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 repositories {
     maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
@@ -110,6 +114,11 @@ dependencies {
         exclude module: 'recyclerview-v7'
 
     }
+    implementation 'com.alexvasilkov:gesture-views:2.5.1'
+    implementation 'com.alexvasilkov:android-commons:2.0.2'
+    implementation 'com.alexvasilkov:events:1.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    implementation 'com.googlecode.flickrj-android:flickrj-android:2.1.0'
 
     //    android.applicationVariants.all { variant ->
 

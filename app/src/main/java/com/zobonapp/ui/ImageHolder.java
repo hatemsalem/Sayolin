@@ -19,7 +19,7 @@ import java.util.Locale;
 
 public class ImageHolder extends ViewHolder<Integer>
 {
-    private ImageView imgPage;
+    ImageView imgPage;
     private String rootPath;
     private String imgType;
     public ImageHolder(ViewGroup parent,String rootPath,String imgType)
@@ -35,6 +35,12 @@ public class ImageHolder extends ViewHolder<Integer>
     {
 
         Uri uri=Uri.parse(String.format(Locale.US,"%s%03d.%s",rootPath,position+1,imgType));
-        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgPage);
+        ZobonApp.getPicasso()
+                .load(uri)
+                .resize(280,0)
+                .centerInside()
+                .error(R.drawable.notfoundimage)
+                .placeholder(R.drawable.placeholder   )
+                .into(imgPage);
     }
 }

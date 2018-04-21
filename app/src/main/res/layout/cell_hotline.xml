@@ -99,7 +99,7 @@
                 android:layout_height="34dp"
                 android:layout_weight="1"
                 android:src="@drawable/offer"
-                />
+                android:visibility="invisible" />
         </LinearLayout>
 
     </RelativeLayout>

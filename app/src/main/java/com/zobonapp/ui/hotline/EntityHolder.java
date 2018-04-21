@@ -1,6 +1,7 @@
 package com.zobonapp.ui.hotline;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.annotation.LayoutRes;
 import android.util.Log;
@@ -80,9 +81,12 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
         {
             imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
-        ;
+        if(entity.getOffers()>0)
+            imgOffers.setVisibility(View.VISIBLE);
+        else
+            imgOffers.setVisibility(View.INVISIBLE);
         final Uri  uri=Uri.parse(ZobonApp.getAssetPath(entity.getId().toString()));
-        ZobonApp.getContext().getPicasso().load(uri)
+        ZobonApp.getPicasso().load(uri)
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   ).into(imgLogo);
 //        ZobonApp.getContext().getPicasso().load(R.drawable.placeholder).into(imgLogo);
@@ -103,6 +107,7 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
 //                                .into(imgItem);
 //                    }
 //                });
+
     }
     @Override
     public void onClick(View v)
@@ -122,7 +127,7 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
                 break;
             case R.id.imgFavorite:
                 entity.setFavorite(!entity.isFavorite());
-                ZobonApp.getContext().getDataManager().updateBusinessItem(entity);
+                ZobonApp.getDataManager().updateBusinessItem(entity);
 //                if(entity.isFavorite())
 //                {
 //                    imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.ic_favorite_48dp));

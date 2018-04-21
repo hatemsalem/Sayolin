@@ -41,7 +41,7 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
         lblEntities.setText(category.getEntities()+" item");
         lblOffers.setText(category.getOffers()+" menu");
         final Uri  uri=Uri.parse(ZobonApp.getAssetPath(category.getId().toString()));
-        ZobonApp.getContext().getPicasso().load(uri)
+        ZobonApp.getPicasso().load(uri)
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   ).into(imgLogo);
     }

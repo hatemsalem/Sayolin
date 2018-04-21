@@ -43,7 +43,9 @@ public class OfferMapper extends AbstractRowMapper<Offer>
         cv.put(DbSchema.OfferTable.Cols.AR_NAME,(String)object.get(DbSchema.OfferTable.Cols.AR_NAME));
         cv.put(DbSchema.OfferTable.Cols.EN_NAME,(String)object.get(DbSchema.OfferTable.Cols.EN_NAME));
         cv.put(DbSchema.OfferTable.Cols.PAGES,((Double) object.get(DbSchema.OfferTable.Cols.PAGES)).intValue());
-
+        cv.put(DbSchema.OfferTable.Cols.ENTITY_ID,(String) object.get(DbSchema.OfferTable.Cols.ENTITY_ID));
+        Object startDate=object.get(DbSchema.OfferTable.Cols.START_DATE);
+        Object endDate=object.get(DbSchema.OfferTable.Cols.END_DATE);
         return cv;
     }
 
@@ -55,8 +57,11 @@ public class OfferMapper extends AbstractRowMapper<Offer>
         for(HashMap<String,?> object:objects)
         {
             ContentValues cv=buildCV(object);
-            String itemId=(String)object.get(DbSchema.OfferTable.Cols.ID);
+
+            String itemId=cv.getAsString(DbSchema.OfferTable.Cols.ID);
+            String entityId=cv.getAsString(DbSchema.OfferTable.Cols.ENTITY_ID);
             database.insertWithOnConflict(DbSchema.OfferTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
+            database.execSQL("update businessentity set offers=offers+1 where id=?",new Object[]{entityId});
             List<String> categories=(List<String>) object.get("categories");
             database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{itemId});
             for (String categoryId:categories)

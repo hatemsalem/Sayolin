@@ -36,7 +36,7 @@ public class OffersAdapter extends GenericPagerAdapter<OfferHolder,Offer>
     @Override
     public List<Offer> loadData(int page)
     {
-        return ZobonApp.getContext().getDataManager().findOffersForPage(page*PAGE_SIZE,PAGE_SIZE,searchQuery,categoryId);
+        return ZobonApp.getDataManager().findOffersForPage(page*PAGE_SIZE,PAGE_SIZE,searchQuery,categoryId);
     }
 
     @Override

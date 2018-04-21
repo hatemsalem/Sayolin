@@ -33,6 +33,7 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
     private BusinessEntity entity;
     private ImageView imgLogo;
     private ImageView imgFavorite;
+    private ImageView imgOffers;
     private TextView lblHotline;
     private TextView lblName;
     private TextView lblDesc;
@@ -52,12 +53,17 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
         super.onCreate(savedInstanceState);
 
         String itemId=getIntent().getStringExtra(EXTRA_ITEM_ID);
-        entity = ZobonApp.getContext().getDataManager().findBusinessItemById(itemId);
+        entity = ZobonApp.getDataManager().findBusinessItemById(itemId);
         if(entity !=null)
             getSupportActionBar().setSubtitle(entity.getName());
         setContentView(R.layout.activity_entity_details);
         imgLogo=findViewById(R.id.imgLogo);
         imgFavorite =findViewById(R.id.imgFavorite);
+        imgOffers=findViewById(R.id.imgOffers);
+        if(entity.getOffers()>0)
+        {
+            imgOffers.setVisibility(View.VISIBLE);
+        }
         imgFavorite.setOnClickListener(this);
         if(entity.isFavorite())
 
@@ -72,7 +78,7 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
         lblHotline.setText(entity.getContact().getSchemeSpecificPart());
         lblName=findViewById(R.id.lblName);
         lblDesc=findViewById(R.id.lblDesc);
-        ZobonApp.getContext().getPicasso().load(Uri.parse(ZobonApp.getAssetPath(entity.getId().toString())))
+        ZobonApp.getPicasso().load(Uri.parse(ZobonApp.getAssetPath(entity.getId().toString())))
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   ).into(imgLogo);
         lblName.setText(entity.getName());
@@ -160,7 +166,7 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
         {
             case R.id.imgFavorite:
                 entity.setFavorite(!entity.isFavorite());
-                ZobonApp.getContext().getDataManager().updateBusinessItem(entity);
+                ZobonApp.getDataManager().updateBusinessItem(entity);
                 if(entity.isFavorite())
 
                 {

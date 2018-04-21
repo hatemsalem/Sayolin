@@ -19,12 +19,14 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import com.alexvasilkov.events.Events;
 import com.squareup.picasso.LruCache;
 import com.squareup.picasso.OkHttp3Downloader;
 import com.squareup.picasso.Picasso;
 import com.zobonapp.BuildConfig;
 import com.zobonapp.R;
 import com.zobonapp.SplashActivity;
+import com.zobonapp.gallery.utils.FlickrApi;
 import com.zobonapp.manager.DataManager;
 import com.zobonapp.manager.ManagerRegistry;
 import com.zobonapp.manager.impl.MockManagerRegistry;
@@ -52,7 +54,7 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     private static String resolution="mdpi";
     private IntentHelper intentHelper;
 
-    public synchronized SharedPreferences getPrefs()
+    public SharedPreferences getPrefs()
     {
         return prefs;
     }
@@ -63,14 +65,16 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         return appInstance;
     }
 
-    public DataManager getDataManager()
+    public static DataManager getDataManager()
     {
-        return registry.getDataManager();
+        validateState();
+        return appInstance.registry.getDataManager();
     }
 
-    public Picasso getPicasso()
+    public static Picasso getPicasso()
     {
-        return picasso;
+        validateState();
+        return appInstance.picasso;
     }
 
     public static IntentHelper getIntentHelper()
@@ -78,18 +82,18 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         return  ZobonApp.getContext().intentHelper;
     }
 
-    public String toggleLang()
+    public static String toggleLang()
     {
         if (ARABIC.equals(getLang()))
         {
-            lang = ENGLISH;
+            appInstance.lang = ENGLISH;
 
         } else
         {
-            lang = ARABIC;
+            appInstance.lang = ARABIC;
         }
-        QueryPreferences.setLanguage(lang);
-        attachBaseContext(getBaseContext());
+        QueryPreferences.setLanguage(appInstance.lang);
+        appInstance.attachBaseContext(appInstance.getBaseContext());
 //        Context newBase=getBaseContext();
 //        Locale locale = new Locale(getLang());
 //        Locale.setDefault(locale);
@@ -99,19 +103,24 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
 //        newBase.getResources().updateConfiguration(localConfiguration, newBase.getResources().getDisplayMetrics());
 
 
-        return lang;
+        return appInstance.lang;
     }
-
-    public String getLang()
+    private static void validateState()
     {
-        if (lang == null)
+        if(appInstance==null)
+            throw new IllegalStateException("ZobonApp not initialezed yet");
+    }
+    public static String getLang()
+    {
+        validateState();
+        if (appInstance.lang == null)
         {
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                lang = LocaleList.getDefault().get(0).getLanguage();
-            else lang = getResources().getConfiguration().locale.getLanguage();
+                appInstance.lang = LocaleList.getDefault().get(0).getLanguage();
+            else appInstance.lang = appInstance.getResources().getConfiguration().locale.getLanguage();
         }
-        return lang;
+        return appInstance.lang;
     }
 
 
@@ -119,12 +128,29 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     public void onCreate()
     {
         super.onCreate();
+        //TODO: to be removed
+        Events.register(FlickrApi.class);
         initializeResoution();
         PreferenceManager.setDefaultValues(this,R.xml.settings,false);
         Log.d(TAG, "ZobonApp created");
-        appInstance = this;
+
         registry = new MockManagerRegistry();
-        prefs = PreferenceManager.getDefaultSharedPreferences(appInstance.getBaseContext());
+        prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+
+        //        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(20000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(this)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+
+        //        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).build();
+        //        PicassoTools.clearCache(picasso);
+        //        deleteDirectoryTree(getCacheDir());
+        Picasso.setSingletonInstance(picasso);
+
+        intentHelper=new IntentHelper(this);
+
+
+        appInstance = this;
+
+
         if (!QueryPreferences.isInitialized())
         {
             UpdateService.startActionInitialize(this);
@@ -137,16 +163,11 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
             Log.d(TAG, "Alarm settled");
         }
         lang = QueryPreferences.getLanguage();
-//        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(20000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
-        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(this)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
-        intentHelper=new IntentHelper();
-//        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).build();
-        //        PicassoTools.clearCache(picasso);
-        //        deleteDirectoryTree(getCacheDir());
-        Picasso.setSingletonInstance(picasso);
+
         createNotificationChannel();
         showNotificationCenter();
         getPrefs().registerOnSharedPreferenceChangeListener(this);
+
     }
     @TargetApi(Build.VERSION_CODES.O)
     private void createNotificationChannel()
@@ -167,18 +188,6 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
             }
         }
     }
-    public static void deleteDirectoryTree(File fileOrDirectory)
-    {
-        if (fileOrDirectory.isDirectory())
-        {
-            for (File child : fileOrDirectory.listFiles())
-            {
-                deleteDirectoryTree(child);
-            }
-        }
-
-        fileOrDirectory.delete();
-    }
 
     private void showNotificationCenter()
     {
@@ -190,7 +199,7 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         {
             NotificationCompat.Builder builder =new NotificationCompat.Builder(this,"ZobonApp");
 //            Notification.Builder builder = new Notification.Builder(this);
-            builder.setOngoing(true).setSmallIcon(R.drawable.call_now).setContentTitle("Notification Center").setContentText("Details");
+            builder.setOngoing(true).setSmallIcon(R.drawable.zobon).setContentTitle("Notification Center").setContentText("Details");
             builder.setContent(getComplexNotificationView());
 //            builder.setChannelId("abc");
 
@@ -216,9 +225,11 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     {
         // Using RemoteViews to bind custom layouts into Notification
         RemoteViews notificationView = new RemoteViews(getPackageName(), R.layout.notification_center);
-        notificationView.setTextViewText(R.id.myNotificationTitle,"Click to start ZobonApp");
-        notificationView.setImageViewResource(R.id.notificationIcon,R.mipmap.ic_launcher);
-        notificationView.setImageViewResource(R.id.calculatorIcon,R.mipmap.ic_launcher);
+//        notificationView.setTextViewText(R.id.myNotificationTitle,"ZobonApp");
+        notificationView.setImageViewResource(R.id.notificationIcon,R.drawable.zobon);
+        notificationView.setImageViewResource(R.id.calculatorIcon,R.drawable.calculator);
+        notificationView.setImageViewResource(R.id.FlashIcon,R.drawable.flash);
+        notificationView.setImageViewResource(R.id.QRCodeIcon,R.drawable.qrcode);
 
         notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
 //        notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
@@ -234,8 +245,10 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
 
 
         notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
-        notificationView.setOnClickPendingIntent(R.id.myNotificationTitle, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
-//        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        notificationView.setOnClickPendingIntent(R.id.myNotificationTitle, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+
+
+        //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //        notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
 //        startActivity(intent);
 

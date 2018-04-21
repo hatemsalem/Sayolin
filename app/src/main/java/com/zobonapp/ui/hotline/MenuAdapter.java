@@ -35,7 +35,7 @@ public class MenuAdapter extends GenericPagerAdapter<MenuHolder,Menu>
     @Override
     public List<Menu> loadData(int page)
     {
-        return ZobonApp.getContext().getDataManager().findMenusForPage(page*PAGE_SIZE,PAGE_SIZE,searchQuery,null);
+        return ZobonApp.getDataManager().findMenusForPage(page*PAGE_SIZE,PAGE_SIZE,searchQuery,null);
     }
 
     @Override

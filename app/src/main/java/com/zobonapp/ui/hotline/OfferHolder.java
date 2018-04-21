@@ -1,5 +1,6 @@
 package com.zobonapp.ui.hotline;
 
+import android.content.Context;
 import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,8 @@ import android.widget.TextView;
 import com.zobonapp.BuildConfig;
 import com.zobonapp.R;
 import com.zobonapp.domain.Offer;
-import com.zobonapp.ui.GalleryActivity;
+import com.zobonapp.gallery.GalleryActivity2;
+import com.zobonapp.gallery.GalleryActivity3;
 import com.zobonapp.ui.ViewHolder;
 import com.zobonapp.utils.ZobonApp;
 
@@ -40,12 +42,21 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
         lblName.setText(offer.getName());
         lblPages.setText("pages:"+offer.getPages());
         Uri uri=Uri.parse(BuildConfig.BASE_URL+"/resources/offers/"+offer.getId().toString()+"/thumbnail.jpg");
-        ZobonApp.getContext().getPicasso().load(uri).error(R.drawable.notfoundimage).placeholder(R.drawable.placeholder   ).into(imgItem);
+        ZobonApp.getPicasso()
+                .load(uri)
+                .fit()
+                .error(R.drawable.notfoundimage)
+                .placeholder(R.drawable.placeholder   )
+                .into(imgItem);
     }
 
     @Override
     public void onClick(View v)
     {
-        GalleryActivity.start(v.getContext(),BuildConfig.BASE_URL+"/resources/offers/"+offer.getId()+"/",offer.getPages(),"jpg");
+//        GalleryActivity.start(v.getContext(),BuildConfig.BASE_URL+"/resources/offers/"+offer.getId()+"/",offer.getPages(),"jpg");
+        Context ctx=v.getContext();
+//        GalleryActivity2.start(ctx,BuildConfig.BASE_URL+"/resources/offers/"+offer.getId()+"/",offer.getName(),offer.getPages(),"jpg");
+        GalleryActivity3.start(ctx,BuildConfig.BASE_URL+"/resources/offers/"+offer.getId()+"/",offer.getName(),offer.getPages(),"jpg");
     }
+
 }

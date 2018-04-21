@@ -66,7 +66,7 @@ public class ContactsAdapter extends GenericPagerAdapter<ViewHolder<Contact>,Con
     public List loadData(int page)
     {
 
-       return ZobonApp.getContext().getDataManager().findContactsForItem(itemId,searchQuery);
+       return ZobonApp.getDataManager().findContactsForItem(itemId,searchQuery);
     }
 
     @Override

@@ -20,4 +20,8 @@
     <string name="favoriteTitle">Favorites</string>
     <string name="offersTitle">Offers</string>
 
+
+    <string name="demo_reload_photos">Load photos</string>
+    <string name="demo_loading_photos">Loading photos…</string>
+    <string name="demo_photo_by">by</string>
 </resources>
