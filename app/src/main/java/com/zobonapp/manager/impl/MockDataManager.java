@@ -151,6 +151,7 @@ public class MockDataManager implements DataManager
         {
             database.delete(ContactTable.NAME,"entityId=?",new String[]{item});
             database.delete(BusinessEntityTable.NAME,"id=?",new String[]{item});
+            database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{item});
             database.delete(OfferTable.NAME,"entityId=?",new String[]{item});
         }
         database.setTransactionSuccessful();
@@ -180,8 +181,10 @@ public class MockDataManager implements DataManager
         for (String offer:deletedOffers)
         {
             //TODO: decrease no. of offers in BusinessEntity
-
+            database.execSQL("update businessentity set offers=offers-1 where id=(select entityId from offer where id=?)",new Object[]{offer});
             database.delete(OfferTable.NAME,"id=?",new String[]{offer});
+            database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{offer});
+
         }
         database.setTransactionSuccessful();
         database.endTransaction();

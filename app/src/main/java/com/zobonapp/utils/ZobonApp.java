@@ -10,6 +10,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.LocaleList;
@@ -33,7 +36,11 @@ import com.zobonapp.manager.impl.MockManagerRegistry;
 import com.zobonapp.service.UpdateService;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import static com.zobonapp.utils.QueryPreferences.ARABIC;
 import static com.zobonapp.utils.QueryPreferences.ENGLISH;
@@ -236,18 +243,38 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
 
         notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
 //        notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-        intent.setComponent(new ComponentName("com.android.calculator2","com.android.calculator2.Calculator"));
 //        Intent intent = new Intent();
+//        intent.setAction(Intent.ACTION_MAIN);
+//        intent.addCategory(Intent.CATEGORY_LAUNCHER);
+//        intent.setComponent(new ComponentName("com.android.calculator2","com.android.calculator2.Calculator"));
+
+
+        //        Intent intent = new Intent();
 //        intent.setAction(Intent.ACTION_MAIN);
 //        intent.addCategory(Intent.CATEGORY_APP_CALCULATOR);
 //        intent.addCategory(Intent.CATEGORY_LAUNCHER);
 //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-
-        notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+        String packageName="com.android.calculator2";
+        PackageManager pm=getPackageManager();
+        List<PackageInfo> packs=pm.getInstalledPackages(0);
+        for (PackageInfo pi:packs)
+        {
+            if(pi.packageName.toLowerCase().contains("calcul"))
+            {
+                packageName=pi.packageName;
+                if((pi.applicationInfo.flags& ApplicationInfo.FLAG_SYSTEM)!=0)
+                    break;
+            }
+        }
+        Intent intent=pm.getLaunchIntentForPackage(packageName);
+        if(intent!=null)
+        {
+            notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
+        }
+        else
+        {
+            //TODO: Disable the calculator
+        }
 //        notificationView.setOnClickPendingIntent(R.id.myNotificationTitle, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
 
 
