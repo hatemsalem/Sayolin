@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,7 @@ public class GalleryActivity extends BasicActivity
         imageType=getIntent().getStringExtra(IMAGE_TYPE);
         setContentView(R.layout.activity_gallery);
         gallery=findViewById(R.id.gallery);
-        gallery.setLayoutManager(new GridLayoutManager(this,2));
+        gallery.setLayoutManager(new StaggeredGridLayoutManager(2,1));
 //        gallery.setItemViewCacheSize(20);
 //        gallery.setDrawingCacheEnabled(true);
 //        gallery.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);

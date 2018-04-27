@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
 import com.zobonapp.R;
 import com.zobonapp.utils.BasicFragment;
@@ -70,6 +72,7 @@ public class RootFragment extends BasicFragment
         // Inflate the layout for this fragment
         View result= inflater.inflate(R.layout.fragment_root, container, false);
         final FloatingActionButton fab = (FloatingActionButton) result.findViewById(R.id.fab);
+        Animation animation= AnimationUtils.loadAnimation(getActivity(), R.anim.morph);
         fab.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -82,11 +85,16 @@ public class RootFragment extends BasicFragment
 
                         transaction.replace(R.id.rootFrame, itemsFragment).commit();
                         QueryPreferences.setViewType(viewTypeKey,QueryPreferences.ViewType.ITEM);
+
+                        fab.startAnimation(animation);
+                        fab.setImageResource(R.drawable.category);
                         break;
                     case ITEM:
 
                         transaction.replace(R.id.rootFrame, categoriesFragment).commit();
                         QueryPreferences.setViewType(viewTypeKey,QueryPreferences.ViewType.CATEGORY);
+                        fab.setImageResource(R.drawable.items);
+                        fab.startAnimation(animation);
                         break;
                 }
                 updateSubtitle();
@@ -98,9 +106,11 @@ public class RootFragment extends BasicFragment
         {
             case ITEM:
                 transaction.replace(R.id.rootFrame, itemsFragment).commit();
+                fab.setImageResource(R.drawable.category);
                 break;
             case CATEGORY:
                 transaction.replace(R.id.rootFrame, categoriesFragment).commit();
+                fab.setImageResource(R.drawable.items);
                 break;
         }
         return result;

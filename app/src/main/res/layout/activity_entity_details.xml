@@ -86,7 +86,8 @@
             android:layout_width="34dp"
             android:layout_height="34dp"
             android:layout_weight="1"
-            android:src="@drawable/call"/>
+            android:onClick="onClick"
+            android:src="@drawable/call" />
 
         <ImageView
             android:id="@+id/imgShare"
@@ -104,7 +105,23 @@
             android:layout_height="34dp"
             android:layout_weight="1"
             android:src="@drawable/offer"
-            android:visibility="invisible" />
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/imgWebSite"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:srcCompat="@drawable/webpage" />
+
+        <ImageView
+            android:id="@+id/imgFacebook"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:srcCompat="@drawable/facebook" />
 
     </LinearLayout>
     <android.support.v7.widget.RecyclerView

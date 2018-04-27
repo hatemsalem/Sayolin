@@ -12,4 +12,8 @@
     <string name="offersTitle">العروض</string>
     <string name="hotlinesTitle">الأرقام</string>
     <string name="menusTitle">القوائم</string>
+    <string name="settings">إعدادات</string>
+    <string name="app_slogan">معنا ،توفير أكثر</string>
+    <string name="share_app">مشاركة التطبيق</string>
+    <string name="rate_app">تقييم التطبيق</string>
 </resources>

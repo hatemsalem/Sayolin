@@ -34,8 +34,9 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         int fav=cursor.getInt(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.FAVORITE));
         entity.setFavorite(fav!=0);
         entity.setContact(Uri.parse(cursor.getString(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.URI))));
-//        entity.setRank(cursor.getInt(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.RANK)));
         entity.setOffers(cursor.getInt(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.OFFERS)));
+        entity.setWebSite(cursor.getString(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.WEB_SITE)));
+        entity.setFbPage(cursor.getString(cursor.getColumnIndex(DbSchema.BusinessEntityTable.Cols.FB_PAGE)));
         return entity;
     }
 
@@ -47,7 +48,9 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         cv.put(DbSchema.BusinessEntityTable.Cols.AR_NAME,(String)object.get(DbSchema.CategoryTable.Cols.AR_NAME));
         cv.put(DbSchema.BusinessEntityTable.Cols.EN_NAME,(String)object.get(DbSchema.CategoryTable.Cols.EN_NAME));
         cv.put(DbSchema.BusinessEntityTable.Cols.DEFAULT_CONTACT,(String)object.get(DbSchema.BusinessEntityTable.Cols.DEFAULT_CONTACT));
-        cv.put(DbSchema.BusinessEntityTable.Cols.RANK,(String)object.get(DbSchema.BusinessEntityTable.Cols.RANK));
+        cv.put(DbSchema.ItemCols.RANK,(String)object.get(DbSchema.BusinessEntityTable.Cols.RANK));
+        cv.put(DbSchema.BusinessEntityTable.Cols.WEB_SITE,(String)object.get(DbSchema.BusinessEntityTable.Cols.WEB_SITE));
+        cv.put(DbSchema.BusinessEntityTable.Cols.FB_PAGE,(String)object.get(DbSchema.BusinessEntityTable.Cols.FB_PAGE));
         return cv;
     }
 
@@ -61,7 +64,15 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
             ContentValues cv=buildCV(object);
             String itemId=(String)object.get(DbSchema.BusinessEntityTable.Cols.ID);
 
-            database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
+            long result= database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,cv,SQLiteDatabase.CONFLICT_IGNORE);
+            if(result<0)
+            {
+                BusinessEntity entity=findItemById(itemId);
+                if(entity!=null)
+                    cv.put(DbSchema.BusinessEntityTable.Cols.FAVORITE,entity.isFavorite()?"1":"0");
+                result =database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
+            }
+
             database.delete(DbSchema.ContactTable.NAME,"entityId=?",new String[]{itemId});
             List<String> categories=(List<String>) object.get("categories");
             database.delete(DbSchema.ItemCategoryTable.NAME,"itemId=?",new String[]{itemId});

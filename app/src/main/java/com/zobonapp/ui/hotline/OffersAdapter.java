@@ -26,6 +26,7 @@ public class OffersAdapter extends GenericPagerAdapter<OfferHolder,Offer>
         arguments.putString(ARG_CATEGORY,categoryId);
         arguments.putString(ARG_SEARCH_KEY,searchKey);
         arguments.putString(ARG_ADAPTER_CLASS,OffersAdapter.class.getName());
+        arguments.putInt(ARGS_COLUMNS_COUNT,2);
         return arguments;
     }
     @Override

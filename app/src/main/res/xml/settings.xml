@@ -14,7 +14,7 @@
         android:summaryOff="Notification bar is off"
         android:summaryOn="Notification bar is on"
         android:title="Show Shortcut Notifcation Bar " />
-    <ListPreference
+   <!-- <ListPreference
         android:defaultValue="common"
         android:entries="@array/saveSearchTitles"
         android:entryValues="@array/saveSearchValues"
@@ -33,5 +33,5 @@
         android:entryValues="@array/langCodes"
         android:key="contentLang"
         android:title="Contents Language"
-        android:summary="your choice is %s"/>
+        android:summary="your choice is %s"/>-->
 </PreferenceScreen>

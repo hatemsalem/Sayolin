@@ -12,6 +12,8 @@ public class BusinessEntity extends  AbstractItem
 {
     private int offers;
     private Uri contact;
+    private String webSite;
+    private String fbPage;
 
     public int getOffers()
     {
@@ -33,8 +35,23 @@ public class BusinessEntity extends  AbstractItem
         this.contact = contact;
     }
 
+    public String getWebSite()
+    {
+        return webSite;
+    }
 
+    public void setWebSite(String webSite)
+    {
+        this.webSite = webSite;
+    }
 
+    public String getFbPage()
+    {
+        return fbPage;
+    }
 
-
+    public void setFbPage(String fbPage)
+    {
+        this.fbPage = fbPage;
+    }
 }

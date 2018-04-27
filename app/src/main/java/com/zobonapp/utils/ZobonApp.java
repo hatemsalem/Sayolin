@@ -54,9 +54,10 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     private static String resolution="mdpi";
     private IntentHelper intentHelper;
 
-    public SharedPreferences getPrefs()
+    public static SharedPreferences getPrefs()
     {
-        return prefs;
+        validateState();
+        return appInstance.prefs;
     }
 
 
@@ -129,7 +130,9 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
     {
         super.onCreate();
         //TODO: to be removed
-        Events.register(FlickrApi.class);
+//        Events.register(FlickrApi.class);
+
+
         initializeResoution();
         PreferenceManager.setDefaultValues(this,R.xml.settings,false);
         Log.d(TAG, "ZobonApp created");
@@ -290,7 +293,10 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
 //            columns--;
         return columns;
     }
-
+    public static int calculateColumnWidth(int columnsCount)
+    {
+        return (int)(getContext().getResources().getDisplayMetrics().widthPixels/columnsCount)-30;
+    }
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)

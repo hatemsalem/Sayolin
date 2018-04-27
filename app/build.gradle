@@ -41,8 +41,8 @@ android {
         applicationId "com.zoboonapp.test"
         minSdkVersion 21
         targetSdkVersion 27
-        versionCode 22
-        versionName "1.0.22"
+        versionCode 27
+        versionName "1.0.27"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //Using VectorDrawableCompat version ?!
         vectorDrawables.generatedDensities = ['hdpi', 'xxhdpi']

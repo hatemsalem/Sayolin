@@ -44,6 +44,7 @@ public class MenuMapper extends AbstractRowMapper<Menu>
         cv.put(MenutTable.Cols.ID,(String)object.get(MenutTable.Cols.ID));
         cv.put(MenutTable.Cols.AR_NAME,(String)object.get(MenutTable.Cols.AR_NAME));
         cv.put(MenutTable.Cols.EN_NAME,(String)object.get(MenutTable.Cols.EN_NAME));
+        cv.put(DbSchema.ItemCols.RANK,(String)object.get(DbSchema.BusinessEntityTable.Cols.RANK));
         return cv;
     }
 

@@ -149,8 +149,9 @@ public class MockDataManager implements DataManager
         database.beginTransaction();
         for (String item:items)
         {
-            database.delete(ContactTable.NAME,"itemId=?",new String[]{item});
+            database.delete(ContactTable.NAME,"entityId=?",new String[]{item});
             database.delete(BusinessEntityTable.NAME,"id=?",new String[]{item});
+            database.delete(OfferTable.NAME,"entityId=?",new String[]{item});
         }
         database.setTransactionSuccessful();
         database.endTransaction();
@@ -163,7 +164,9 @@ public class MockDataManager implements DataManager
         database.beginTransaction();
         for (String category:categories)
         {
+            database.delete(DbSchema.ItemCategoryTable.NAME,"categoryId=?",new String[]{category});
             database.delete(CategoryTable.NAME,"id=?",new String[]{category});
+
         }
         database.setTransactionSuccessful();
         database.endTransaction();

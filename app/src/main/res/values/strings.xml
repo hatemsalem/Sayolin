@@ -24,4 +24,8 @@
     <string name="demo_reload_photos">Load photos</string>
     <string name="demo_loading_photos">Loading photos…</string>
     <string name="demo_photo_by">by</string>
+    <string name="settings">Settings</string>
+    <string name="app_slogan">Save More with us</string>
+    <string name="rate_app">Rate ZobonApp</string>
+    <string name="share_app">Share</string>
 </resources>

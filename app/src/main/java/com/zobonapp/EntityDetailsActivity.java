@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,8 +22,6 @@ import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.utils.BasicActivity;
 import com.zobonapp.utils.ZobonApp;
 
-import org.greenrobot.eventbus.EventBus;
-
 import java.util.List;
 
 public class EntityDetailsActivity extends BasicActivity implements View.OnClickListener
@@ -34,6 +33,8 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
     private ImageView imgLogo;
     private ImageView imgFavorite;
     private ImageView imgOffers;
+    private ImageView imgWebSite;
+    private ImageView imgFacebook;
     private TextView lblHotline;
     private TextView lblName;
     private TextView lblDesc;
@@ -64,6 +65,19 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
         {
             imgOffers.setVisibility(View.VISIBLE);
         }
+        imgWebSite=findViewById(R.id.imgWebSite);
+        if(!TextUtils.isEmpty(entity.getWebSite()))
+        {
+            imgWebSite.setVisibility(View.VISIBLE);
+            imgWebSite.setOnClickListener(this);
+        }
+        imgFacebook =findViewById(R.id.imgFacebook);
+        if(!TextUtils.isEmpty(entity.getFbPage()))
+        {
+            imgFacebook.setVisibility(View.VISIBLE);
+            imgFacebook.setOnClickListener(this);
+        }
+
         imgFavorite.setOnClickListener(this);
         if(entity.isFavorite())
 
@@ -177,6 +191,18 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
                     imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
                 }
                 break;
+            case R.id.imgWebSite:
+
+                ZobonApp.getIntentHelper().browse(entity.getWebSite());
+
+                break;
+            case R.id.imgCall:
+                ZobonApp.getIntentHelper().dial(entity.getContact());
+                break;
+            case R.id.imgFacebook:
+                ZobonApp.getIntentHelper().openFacebookPage(entity.getFbPage());
+                break;
+
         }
     }
 }

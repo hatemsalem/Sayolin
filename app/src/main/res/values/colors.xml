@@ -12,10 +12,10 @@
 -->
 
 
-    <color name="colorPrimary">#9c27b0</color>
-    <color name="colorPrimaryDark">#9C27B0</color>
-    <color name="colorAccent">#E1BEE7</color>
-    <color name="splashBackground">#794013</color>
+    <color name="colorPrimary">#8120c1</color>
+    <color name="colorPrimaryDark">#8120c1</color>
+    <!--<color name="colorPrimaryDark">#9C27B0</color>-->
+    <color name="colorAccent">#9C27B0</color>
     <color name="window_background_dark">#000000</color>
     <color name="error_color">#CC3322</color>
     <color name="text_secondary_light">#AAAAAA</color>

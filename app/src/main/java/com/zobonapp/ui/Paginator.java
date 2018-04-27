@@ -28,16 +28,15 @@ public class Paginator
     private boolean isLoading;
     private boolean hasLoadingAll;
     private int nextPage;
-    private GridLayoutManager layoutManager;
     private int columnWidth;
 
-    public Paginator(PullToLoadView pullToLoadView, GenericPagerAdapter adapter,int columnWidth)
+    public Paginator(PullToLoadView pullToLoadView, GenericPagerAdapter adapter,RecyclerView.LayoutManager layoutManager)
     {
         this.adapter=adapter;
         this.pullToLoadView = pullToLoadView;
         this.columnWidth=columnWidth;
         RecyclerView recyclerView =pullToLoadView.getRecyclerView();
-        layoutManager=new GridLayoutManager(pullToLoadView.getContext(), ZobonApp.calculateColumns(columnWidth));
+//        layoutManager=new GridLayoutManager(pullToLoadView.getContext(), ZobonApp.calculateColumns(columnWidth));
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
@@ -123,10 +122,6 @@ public class Paginator
 
             }
         }.execute();
-    }
-    public void reLayout()
-    {
-        layoutManager.setSpanCount(ZobonApp.calculateColumns(columnWidth));
     }
 //    private class LoaderTask extends AsyncTask<Void, Void, List<?>>
 //    {

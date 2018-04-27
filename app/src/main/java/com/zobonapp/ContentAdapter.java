@@ -28,7 +28,7 @@ public class ContentAdapter extends FragmentStatePagerAdapter
     Fragment fragments[]={
             RootFragment.newInstance(CategoryAdapter.newArguments(1001,"cat_hotline"), EntityAdapter.newArguments(null,"hotline.root"),"hotlines"),
             RootFragment.newInstance( CategoryAdapter.newArguments(3001,"cat_offer"), OffersAdapter.newArguments(null,"offers.root"),"offers"),
-            RootFragment.newInstance( CategoryAdapter.newArguments(0,"cat_menus"), MenuAdapter.newArguments(1),"menus"),
+//            RootFragment.newInstance( CategoryAdapter.newArguments(0,"cat_menus"), MenuAdapter.newArguments(1),"menus"),
 //            RootFragment.newInstance( FavoriteCategoryAdapter.newArguments(2000),FavoriteEntityAdapter.newArguments(null,"favorite"),"menus"),
             ItemsFragment.newInstance(FavoriteEntityAdapter.newArguments(null,"favorite"))
 

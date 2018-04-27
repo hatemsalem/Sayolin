@@ -17,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.zobonapp.utils.BasicActivity;
 import com.zobonapp.utils.ZobonApp;
@@ -153,11 +154,22 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
                 break;
             case R.id.nav_camera:
                 break;
+            case R.id.nav_rate:
+                    if(!ZobonApp.getIntentHelper().launchMarket())
+                        Toast.makeText(this, " unable to find market app", Toast.LENGTH_LONG).show();
+                    break;
             case R.id.nav_gallery:
                 break;
-            case R.id.nav_send:
-                break;
             case R.id.nav_share:
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                StringBuilder sb = new StringBuilder();
+                sb.append("Hi, I am using ZobonApp. I like this and I want you to check it out.\n");
+                sb.append("https://play.google.com/store/apps/details?id=" + getPackageName());
+                sharingIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Test");
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, sb.toString());
+                startActivity(Intent.createChooser(sharingIntent, "Test"));
                 break;
             case R.id.nav_slideshow:
                 break;

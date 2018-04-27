@@ -11,16 +11,19 @@
         android:title="@string/arabic"
         app:showAsAction="always"/>
     <item
+        android:visible="false"
         android:id="@+id/about"
         android:icon="@drawable/ic_info_outline_black_24dp"
         android:title="@string/about"
         />
     <item
+        android:visible="false"
         android:id="@+id/help"
         android:icon="@drawable/ic_help_outline_black_24dp"
         android:title="@string/help"
         />
     <item
+        android:visible="false"
         android:id="@+id/nav_share"
         android:icon="@drawable/ic_menu_share"
         android:title="Share"

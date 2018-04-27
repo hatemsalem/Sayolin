@@ -4,8 +4,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,10 +42,13 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
 {
     private static String TAG = ItemsFragment.class.getSimpleName();
     private static final String ARG_ADAPTER_CLASS = "adapterClass";
+    private static final String ARGS_COLUMN_WIDTH="columnWidth";
+    protected static final String ARGS_COLUMNS_COUNT="columnsCount";
     private PullToLoadView pullToLoadView;
     private TextView emptyView;
     private GenericPagerAdapter adapter;
     private Paginator paginator;
+    private RecyclerView.LayoutManager layoutManager;
 
     public static ItemsFragment newInstance(Bundle arguments, Class<? extends GenericPagerAdapter> clazz)
     {
@@ -68,6 +73,8 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
     public void onCreate(@Nullable Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+
         try
         {
             Class<? extends GenericPagerAdapter> clazz = Class.forName(getArguments().getString(ARG_ADAPTER_CLASS)).asSubclass(GenericPagerAdapter.class);
@@ -172,19 +179,42 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
         pullToLoadView = result.findViewById(R.id.pullToLoadView);
         emptyView = result.findViewById(R.id.emptyView);
         adapter.registerAdapterDataObserver(adapterObserver);
+        paginator=new Paginator(pullToLoadView, adapter,getLayoutManager());
 
-        paginator=new Paginator(pullToLoadView, adapter,120);
-
-        ZobonApp.getContext().getPrefs().registerOnSharedPreferenceChangeListener(this);
+        ZobonApp.getPrefs().registerOnSharedPreferenceChangeListener(this);
 
         return result;
     }
+    public synchronized RecyclerView.LayoutManager getLayoutManager()
+    {
+        if(layoutManager==null)
+        {
+//            setLayoutManager(new GridLayoutManager(getContext(), getColumnCount()));
+            setLayoutManager(new StaggeredGridLayoutManager(getColumnCount(),1));
 
+        }
+
+        return layoutManager;
+    }
+    private int getColumnCount()
+    {
+        int columnsCount =getArguments().getInt(ARGS_COLUMNS_COUNT,-1);
+        if(columnsCount <0)
+        {
+            columnsCount =ZobonApp.calculateColumns(getArguments().getInt(ARGS_COLUMN_WIDTH,120));
+        }
+        return columnsCount;
+    }
+    public void setLayoutManager(RecyclerView.LayoutManager layoutManager)
+    {
+        this.layoutManager=layoutManager;
+    }
     @Override
     public void onDestroyView()
     {
-        ZobonApp.getContext().getPrefs().unregisterOnSharedPreferenceChangeListener(this);
+        ZobonApp.getPrefs().unregisterOnSharedPreferenceChangeListener(this);
         adapter.unregisterAdapterDataObserver(adapterObserver);
+        setLayoutManager(null);
         super.onDestroyView();
     }
 
@@ -199,7 +229,7 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
     {
         if(TextUtils.equals(key,"showLargeDisplay"))
         {
-            paginator.reLayout();
+            ((StaggeredGridLayoutManager)getLayoutManager()).setSpanCount(getColumnCount());
         }
     }
 

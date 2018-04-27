@@ -42,9 +42,12 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
         lblName.setText(offer.getName());
         lblPages.setText("pages:"+offer.getPages());
         Uri uri=Uri.parse(BuildConfig.BASE_URL+"/resources/offers/"+offer.getId().toString()+"/thumbnail.jpg");
+        int size=ZobonApp.calculateColumnWidth(2);
         ZobonApp.getPicasso()
                 .load(uri)
-                .fit()
+                .resize(ZobonApp.calculateColumnWidth(2),0)
+//                .fit()
+                .centerInside()
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   )
                 .into(imgItem);

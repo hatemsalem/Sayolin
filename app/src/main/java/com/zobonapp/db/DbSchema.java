@@ -57,12 +57,16 @@ public class DbSchema
             public static final String DEFAULT_CONTACT="contactId";
             public static final String URI="uri";
             public static final String OFFERS="offers";
+            public static final String WEB_SITE ="web";
+            public static final String FB_PAGE="fb";
         }
         public static String getCreateStatement()
         {
             StringBuilder fields=new StringBuilder();
             fields.append(Cols.getItemFields()).append(", ")
                     .append(Cols.DEFAULT_CONTACT).append(", ")
+                    .append(Cols.WEB_SITE).append(", ")
+                    .append(Cols.FB_PAGE).append(", ")
                     .append(Cols.OFFERS).append(" DEFAULT 0 ");
             return String.format(CREATE_TEMPLATE,NAME,fields);
         }
