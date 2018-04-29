@@ -48,7 +48,8 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
         cv.put(DbSchema.BusinessEntityTable.Cols.AR_NAME,(String)object.get(DbSchema.CategoryTable.Cols.AR_NAME));
         cv.put(DbSchema.BusinessEntityTable.Cols.EN_NAME,(String)object.get(DbSchema.CategoryTable.Cols.EN_NAME));
         cv.put(DbSchema.BusinessEntityTable.Cols.DEFAULT_CONTACT,(String)object.get(DbSchema.BusinessEntityTable.Cols.DEFAULT_CONTACT));
-        cv.put(DbSchema.ItemCols.RANK,(String)object.get(DbSchema.BusinessEntityTable.Cols.RANK));
+
+        cv.put(DbSchema.ItemCols.RANK,Integer.parseInt(object.get(DbSchema.BusinessEntityTable.Cols.RANK).toString()));
         cv.put(DbSchema.BusinessEntityTable.Cols.WEB_SITE,(String)object.get(DbSchema.BusinessEntityTable.Cols.WEB_SITE));
         cv.put(DbSchema.BusinessEntityTable.Cols.FB_PAGE,(String)object.get(DbSchema.BusinessEntityTable.Cols.FB_PAGE));
         return cv;

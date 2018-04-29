@@ -40,7 +40,7 @@ public class OfferHolder extends ViewHolder<Offer> implements View.OnClickListen
     {
         this.offer =offer;
         lblName.setText(offer.getName());
-        lblPages.setText("pages:"+offer.getPages());
+        lblPages.setText(ZobonApp.getContext().getResources().getQuantityString(R.plurals.offerPages,offer.getPages(),offer.getPages()));
         Uri uri=Uri.parse(BuildConfig.BASE_URL+"/resources/offers/"+offer.getId().toString()+"/thumbnail.jpg");
         int size=ZobonApp.calculateColumnWidth(2);
         ZobonApp.getPicasso()

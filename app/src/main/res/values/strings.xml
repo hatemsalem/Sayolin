@@ -13,6 +13,8 @@
     <string name="cancel">Cancel</string>
     <string name="app_name">ZoboonApp</string>
 
+    <string name="app_name_ver">%1$s (%2$s)</string>
+
 
     <string name="hotlinesTitle">Hotlines</string>
     <string name="menusTitle">Menus</string>
@@ -28,4 +30,10 @@
     <string name="app_slogan">Save More with us</string>
     <string name="rate_app">Rate ZobonApp</string>
     <string name="share_app">Share</string>
-</resources>
+    <plurals
+        name="offerPages">
+        <item quantity="one">One page</item>
+        <item quantity="other">%d pages</item>
+    </plurals>
+
+    </resources>

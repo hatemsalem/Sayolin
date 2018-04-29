@@ -14,6 +14,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.LocaleList;
 import android.preference.PreferenceManager;
@@ -29,6 +30,7 @@ import com.squareup.picasso.Picasso;
 import com.zobonapp.BuildConfig;
 import com.zobonapp.R;
 import com.zobonapp.SplashActivity;
+import com.zobonapp.flashlight.FlashLightActivity;
 import com.zobonapp.gallery.utils.FlickrApi;
 import com.zobonapp.manager.DataManager;
 import com.zobonapp.manager.ManagerRegistry;
@@ -186,13 +188,15 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         String id="ZobonApp";
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
-            int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel mChannel = notificationManager.getNotificationChannel(id);
             if (mChannel == null)
             {
-                mChannel = new NotificationChannel(id, id, importance);
+                mChannel = new NotificationChannel(id, id, NotificationManager.IMPORTANCE_HIGH);
                 mChannel.setDescription(id);
-//                mChannel.enableVibration(true);
+                mChannel.setSound(null,null);
+                mChannel.setShowBadge(false);
+                mChannel.setVibrationPattern(null);
+                mChannel.enableVibration(false);
 //                mChannel.setVibrationPattern(new long[]{100, 200, 300, 400, 500, 400, 300, 200, 400});
                 notificationManager.createNotificationChannel(mChannel);
             }
@@ -209,7 +213,7 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         {
             NotificationCompat.Builder builder =new NotificationCompat.Builder(this,"ZobonApp");
 //            Notification.Builder builder = new Notification.Builder(this);
-            builder.setOngoing(true).setSmallIcon(R.drawable.zobon).setContentTitle("Notification Center").setContentText("Details");
+            builder.setOngoing(true).setSmallIcon(R.drawable.ic_z).setContentTitle("Notification Center").setContentText("Details").setPriority(NotificationCompat.PRIORITY_HIGH);
             builder.setContent(getComplexNotificationView());
 //            builder.setChannelId("abc");
 
@@ -240,8 +244,12 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         notificationView.setImageViewResource(R.id.calculatorIcon,R.drawable.calculator);
         notificationView.setImageViewResource(R.id.FlashIcon,R.drawable.flash);
         notificationView.setImageViewResource(R.id.QRCodeIcon,R.drawable.qrcode);
-
-        notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
+        Intent intent=new Intent(this, SplashActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+        intent=new Intent(this, FlashLightActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        notificationView.setOnClickPendingIntent(R.id.FlashIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_CANCEL_CURRENT));
 //        notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
 //        Intent intent = new Intent();
 //        intent.setAction(Intent.ACTION_MAIN);
@@ -254,19 +262,8 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
 //        intent.addCategory(Intent.CATEGORY_APP_CALCULATOR);
 //        intent.addCategory(Intent.CATEGORY_LAUNCHER);
 //        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        String packageName="com.android.calculator2";
-        PackageManager pm=getPackageManager();
-        List<PackageInfo> packs=pm.getInstalledPackages(0);
-        for (PackageInfo pi:packs)
-        {
-            if(pi.packageName.toLowerCase().contains("calcul"))
-            {
-                packageName=pi.packageName;
-                if((pi.applicationInfo.flags& ApplicationInfo.FLAG_SYSTEM)!=0)
-                    break;
-            }
-        }
-        Intent intent=pm.getLaunchIntentForPackage(packageName);
+
+        intent=getCalculatorIntent();
         if(intent!=null)
         {
             notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
@@ -284,6 +281,46 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
 
 
         return notificationView;
+    }
+    private Intent getCalculatorIntent()
+    {
+        String packageName="com.android.calculator2";
+        PackageManager pm=getPackageManager();
+        List<PackageInfo> packs=pm.getInstalledPackages(0);
+
+        for (PackageInfo pi:packs)
+        {
+
+
+            if(pi.packageName.toLowerCase().contains("cal") )
+            {
+
+
+                String appName=pi.applicationInfo.loadLabel(pm).toString();
+                try
+                {
+                    Resources res=pm.getResourcesForApplication(pi.applicationInfo);
+                    Configuration conf= res.getConfiguration();
+                    conf.setLocale(Locale.US);
+                    res.updateConfiguration(conf,res.getDisplayMetrics());
+                    appName=res.getString(pi.applicationInfo.labelRes);
+                    appName=appName.toLowerCase();
+                } catch (PackageManager.NameNotFoundException |Resources.NotFoundException e)
+                {
+                    //TODO: Nothing
+                }
+                appName=appName.toLowerCase();
+
+
+
+                if(appName.contains("calculator")||appName.contains("حاسبة"))
+                {
+                    packageName = pi.packageName;
+                    if ((pi.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) break;
+                }
+            }
+        }
+        return pm.getLaunchIntentForPackage(packageName);
     }
     private void initializeResoution()
     {

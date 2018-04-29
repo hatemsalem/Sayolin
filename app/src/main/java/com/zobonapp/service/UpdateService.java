@@ -2,11 +2,14 @@ package com.zobonapp.service;
 
 import android.app.AlarmManager;
 import android.app.IntentService;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.SystemClock;
 import android.support.annotation.Nullable;
+import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.commonsware.cwac.security.ZipUtils;
@@ -17,6 +20,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParseException;
 import com.zobonapp.BuildConfig;
+import com.zobonapp.R;
 import com.zobonapp.manager.InitializationEvent;
 import com.zobonapp.utils.DataCollection;
 import com.zobonapp.utils.QueryPreferences;
@@ -34,6 +38,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.Type;
+import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
@@ -100,7 +105,16 @@ public class UpdateService extends IntentService
 
     protected void update()
     {
+        ////////////////////TODO: to be removed/////////
 
+//        NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+//
+//        NotificationCompat.Builder builder =new NotificationCompat.Builder(this,"ZobonApp");
+//        builder.setSmallIcon(R.drawable.ic_z).setContentTitle("Update").setContentText("Update @:"+new Date());
+//        Notification notification = builder.build();
+//        notificationManager.notify(2, notification);
+
+        ////////////////////////////////////////////
         Log.i(TAG,"Check update will be here");
         synchronized (this)
         {

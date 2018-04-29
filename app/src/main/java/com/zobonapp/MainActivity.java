@@ -2,6 +2,7 @@ package com.zobonapp;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.design.widget.NavigationView;
@@ -17,6 +18,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zobonapp.utils.BasicActivity;
@@ -35,10 +38,12 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         strictModeSetup();
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.app_name);
 //        toolbar.setSubtitle("Hotlines");
-
+        updateNavText();
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -58,7 +63,18 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
         Log.i(TAG,"in create method");
 
     }
+    private void updateNavText()
+    {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View headerView = navigationView.getHeaderView(0);
+        Resources res=getResources();
+        TextView lblAppVer=headerView.findViewById(R.id.lblAppVer);
 
+
+        String value=res.getString(R.string.app_name_ver,res.getString(R.string.app_name),BuildConfig.VERSION_NAME);
+        lblAppVer.setText(value);
+
+    }
     @Override
     protected void onResume()
     {

@@ -46,7 +46,7 @@ public class OfferMapper extends AbstractRowMapper<Offer>
         cv.put(DbSchema.OfferTable.Cols.ENTITY_ID,(String) object.get(DbSchema.OfferTable.Cols.ENTITY_ID));
         cv.put(DbSchema.OfferTable.Cols.START_DATE,((Double)object.get(DbSchema.OfferTable.Cols.START_DATE)).longValue());
         cv.put(DbSchema.OfferTable.Cols.END_DATE,((Double)object.get(DbSchema.OfferTable.Cols.END_DATE)).longValue());
-        cv.put(DbSchema.ItemCols.RANK,(String)object.get(DbSchema.BusinessEntityTable.Cols.RANK));
+        cv.put(DbSchema.ItemCols.RANK,Integer.parseInt(object.get(DbSchema.BusinessEntityTable.Cols.RANK).toString()));
         Object startDate=object.get(DbSchema.OfferTable.Cols.START_DATE);
         Object endDate=object.get(DbSchema.OfferTable.Cols.END_DATE);
         return cv;

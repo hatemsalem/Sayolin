@@ -67,6 +67,8 @@ public class SplashActivity extends AppCompatActivity
     {
         Log.i(LOG_TAG,"finish splash & Initiate Main activity");
         Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
         Log.i(LOG_TAG,"to start the main activity");
         startActivity(intent);
         Log.i(LOG_TAG,"main activity started");

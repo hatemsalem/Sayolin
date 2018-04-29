@@ -42,7 +42,7 @@ public class CategoryMapper extends AbstractRowMapper<Category>
         cv.put(DbSchema.CategoryTable.Cols.AR_NAME,(String)object.get(DbSchema.CategoryTable.Cols.AR_NAME));
         cv.put(DbSchema.CategoryTable.Cols.EN_NAME,(String)object.get(DbSchema.CategoryTable.Cols.EN_NAME));
         cv.put(DbSchema.CategoryTable.Cols.TYPE,((Double) object.get(DbSchema.CategoryTable.Cols.TYPE)).intValue());
-        cv.put(DbSchema.ItemCols.RANK,(String)object.get(DbSchema.BusinessEntityTable.Cols.RANK));
+        cv.put(DbSchema.ItemCols.RANK,Integer.parseInt(object.get(DbSchema.BusinessEntityTable.Cols.RANK).toString()));
         return cv;
     }
 

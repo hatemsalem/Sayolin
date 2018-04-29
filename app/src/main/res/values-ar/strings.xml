@@ -16,4 +16,11 @@
     <string name="app_slogan">معنا ،توفير أكثر</string>
     <string name="share_app">مشاركة التطبيق</string>
     <string name="rate_app">تقييم التطبيق</string>
+    <plurals
+        name="offerPages">
+        <item quantity="one">صفحة واحدة</item>
+        <item quantity="two">صفحتان</item>
+        <item quantity="many">%d صفحة</item>
+        <item quantity="few">%d صفحات</item>
+    </plurals>
 </resources>
