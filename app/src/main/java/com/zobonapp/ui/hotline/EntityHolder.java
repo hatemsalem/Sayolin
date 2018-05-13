@@ -141,7 +141,7 @@ public class EntityHolder extends ViewHolder<BusinessEntity> implements View.OnC
                 Toast.makeText(ZobonApp.getContext(),"Share...",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.imgOffers:
-                Toast.makeText(ZobonApp.getContext(),"Offers...",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ZobonApp.getContext(),ZobonApp.getContext().getResources().getQuantityString(R.plurals.offersCount,entity.getOffers(),entity.getName(),entity.getOffers()),Toast.LENGTH_SHORT).show();
                 break;
 
             default:

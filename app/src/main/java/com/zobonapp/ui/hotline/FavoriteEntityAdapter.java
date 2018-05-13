@@ -5,8 +5,13 @@ import android.view.ViewGroup;
 
 import com.zobonapp.R;
 import com.zobonapp.domain.BusinessEntity;
+import com.zobonapp.manager.ItemChangeEvent;
 import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.utils.ZobonApp;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -66,5 +71,22 @@ public class FavoriteEntityAdapter extends GenericPagerAdapter<EntityHolder,Busi
             items.remove(position);
             notifyItemRemoved(position);
         }
+    }
+    @Override
+    public void onStart()
+    {
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop()
+    {
+        EventBus.getDefault().unregister(this);
+    }
+    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+    public void onInitialized(ItemChangeEvent<BusinessEntity> event)
+    {
+        refresh(event.getItem());
+
     }
 }

@@ -36,4 +36,35 @@
         <item quantity="other">%d pages</item>
     </plurals>
 
+    <string name="pageCount">Page %1$d of %2$d </string>
+    <string name="pagePosition">Page %1$d </string>
+    <string name="shareSubject">I liked ZoboonApp, have you tried it before?</string>
+    <string name="shareText">Hi, I am using ZobonApp. I like this and I want you to check it out.  \n https://play.google.com/store/apps/details?id=%s</string>
+    <string name="shareAppTitle">Share ZoboonApp</string>
+    <string name="shareEntityTitle">Share %s Info</string>
+    <string name="shareEntitySubject">%s Info</string>
+    <string name="shareEntityText">%s Info \nHotline: %s \nWebsite: %s\nFacebook: http://www.facebook.com/%s\n\nAll Info provided by ZoboonApp.com</string>
+
+    <string name="showShortcutCenterTitle">Show/Hide Shortcut Notifcation Bar</string>
+    <string name="showShortcutCenterOn">Shortcuts center is visible</string>
+    <string name="showShortcutCenterOff">Shortcuts center is hidden</string>
+
+    <string name="showLargeDisplayTitle">Enable/Disable Large Display</string>
+    <string name="showLargeDisplayOn">Large Size</string>
+    <string name="showLargeDisplayOff">Normal Size</string>
+
+    <string name="items">Items</string>
+    <string name="categories">Categories</string>
+
+    <plurals
+        name="itemsCount">
+        <item quantity="one">One item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+    <plurals name="offersCount">
+        <item quantity="one"> %s has one offer\n Check them in the offers pages</item>
+        <item quantity="other"> %s has %d offers\n Check them in the offers pages</item>
+    </plurals>
+    <string name="newOffersNotification">New offers published, check the offers page</string>
+
     </resources>

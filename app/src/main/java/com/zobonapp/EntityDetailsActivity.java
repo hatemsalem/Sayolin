@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.ui.AdapterFactory;
@@ -30,14 +31,9 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
     private static final String EXTRA_ITEM_ID="itemId";
     private GenericPagerAdapter adapter;
     private BusinessEntity entity;
-    private ImageView imgLogo;
     private ImageView imgFavorite;
-    private ImageView imgOffers;
-    private ImageView imgWebSite;
-    private ImageView imgFacebook;
-    private TextView lblHotline;
-    private TextView lblName;
-    private TextView lblDesc;
+
+
     public static Intent newIntent(Context ctx, String itemId)
     {
         Intent intent=new Intent(ctx,EntityDetailsActivity.class);
@@ -58,20 +54,23 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
         if(entity !=null)
             getSupportActionBar().setSubtitle(entity.getName());
         setContentView(R.layout.activity_entity_details);
-        imgLogo=findViewById(R.id.imgLogo);
+        ImageView imgLogo=findViewById(R.id.imgLogo);
         imgFavorite =findViewById(R.id.imgFavorite);
-        imgOffers=findViewById(R.id.imgOffers);
+        ImageView imgOffers=findViewById(R.id.imgOffers);
         if(entity.getOffers()>0)
         {
             imgOffers.setVisibility(View.VISIBLE);
+            imgOffers.setOnClickListener(this);
         }
-        imgWebSite=findViewById(R.id.imgWebSite);
+        ImageView imgShare=findViewById(R.id.imgShare);
+        imgShare.setOnClickListener(this);
+        ImageView imgWebSite=findViewById(R.id.imgWebSite);
         if(!TextUtils.isEmpty(entity.getWebSite()))
         {
             imgWebSite.setVisibility(View.VISIBLE);
             imgWebSite.setOnClickListener(this);
         }
-        imgFacebook =findViewById(R.id.imgFacebook);
+        ImageView imgFacebook =findViewById(R.id.imgFacebook);
         if(!TextUtils.isEmpty(entity.getFbPage()))
         {
             imgFacebook.setVisibility(View.VISIBLE);
@@ -88,10 +87,10 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
         {
             imgFavorite.setImageDrawable(ZobonApp.getContext().getResources().getDrawable(R.drawable.fav_off));
         }
-        lblHotline=findViewById(R.id.lblHotline);
+        TextView lblHotline=findViewById(R.id.lblHotline);
         lblHotline.setText(entity.getContact().getSchemeSpecificPart());
-        lblName=findViewById(R.id.lblName);
-        lblDesc=findViewById(R.id.lblDesc);
+        TextView lblName=findViewById(R.id.lblName);
+        TextView lblDesc=findViewById(R.id.lblDesc);
         ZobonApp.getPicasso().load(Uri.parse(ZobonApp.getAssetPath(entity.getId().toString())))
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   ).into(imgLogo);
@@ -196,11 +195,26 @@ public class EntityDetailsActivity extends BasicActivity implements View.OnClick
                 ZobonApp.getIntentHelper().browse(entity.getWebSite());
 
                 break;
+            case R.id.imgOffers:
+                Toast.makeText(ZobonApp.getContext(),ZobonApp.getContext().getResources().getQuantityString(R.plurals.offersCount,entity.getOffers(),entity.getName(),entity.getOffers()),Toast.LENGTH_SHORT).show();
+                break;
+
             case R.id.imgCall:
                 ZobonApp.getIntentHelper().dial(entity.getContact());
                 break;
             case R.id.imgFacebook:
                 ZobonApp.getIntentHelper().openFacebookPage(entity.getFbPage());
+                break;
+            case R.id.imgShare:
+                String subject=getResources().getString(R.string.shareEntitySubject,entity.getName());
+//                %s Info \nHotline:%s(%s)\nWebsite:%s\nFacebook:%s
+                String text=getResources().getString(R.string.shareEntityText,
+                        entity.getName(),
+                        entity.getContact().getSchemeSpecificPart(),
+                        entity.getWebSite()==null?"---":entity.getWebSite(),
+                        entity.getFbPage()==null?"---":entity.getFbPage());
+                ZobonApp.getIntentHelper().share(this,getResources().getString(R.string.shareEntityTitle,entity.getName()),
+                        subject,text);
                 break;
 
         }

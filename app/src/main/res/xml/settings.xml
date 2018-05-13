@@ -4,16 +4,15 @@
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="showLargeDisplay"
-        android:summaryOff="Normal Size"
-        android:summaryOn="Large Size "
-        android:title="Show Large Display " />
+        android:summaryOff="@string/showLargeDisplayOff"
+        android:summaryOn="@string/showLargeDisplayOn"
+        android:title="@string/showLargeDisplayTitle" />
     <CheckBoxPreference
         android:defaultValue="true"
         android:key="showShortcutCenter"
-        android:summary="show/hide notification bar"
-        android:summaryOff="Notification bar is off"
-        android:summaryOn="Notification bar is on"
-        android:title="Show Shortcut Notifcation Bar " />
+        android:summaryOff="@string/showShortcutCenterOff"
+        android:summaryOn="@string/showShortcutCenterOn"
+        android:title="@string/showShortcutCenterTitle" />
    <!-- <ListPreference
         android:defaultValue="common"
         android:entries="@array/saveSearchTitles"

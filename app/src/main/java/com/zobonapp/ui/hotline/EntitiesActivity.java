@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 
+import com.zobonapp.R;
 import com.zobonapp.domain.Category;
 import com.zobonapp.utils.BasicActivity;
 import com.zobonapp.utils.ZobonApp;
@@ -35,7 +36,7 @@ public class EntitiesActivity extends BasicActivity
         {
             getSupportActionBar().setTitle(category.getName());
             //TODO:
-            getSupportActionBar().setSubtitle("Total:"+category.getEntities());
+            getSupportActionBar().setSubtitle(getResources().getQuantityString(R.plurals.itemsCount,category.getEntities(),category.getEntities()));
 
         }
         if(getFragmentManager().findFragmentById(android.R.id.content)==null)

@@ -130,10 +130,10 @@ public class RootFragment extends BasicFragment
             switch (QueryPreferences.getViewType(viewTypeKey))
             {
                 case ITEM:
-                    ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle("Items");
+                    ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle(getResources().getString(R.string.items));
                     break;
                 case CATEGORY:
-                    ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle("Categories");
+                    ((AppCompatActivity) getActivity()).getSupportActionBar().setSubtitle(getResources().getString(R.string.categories));
                     break;
             }
         }

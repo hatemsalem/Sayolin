@@ -3,7 +3,6 @@ package com.zobonapp.manager.impl;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.text.TextUtils;
 
 import com.zobonapp.R;
 import com.zobonapp.db.DatabaseHelper;
@@ -18,6 +17,7 @@ import com.zobonapp.domain.Menu;
 import com.zobonapp.domain.Offer;
 import com.zobonapp.manager.DataManager;
 import com.zobonapp.manager.ItemChangeEvent;
+import com.zobonapp.manager.OffersChangeEvent;
 import com.zobonapp.manager.mapper.BusinessEntityMapper;
 import com.zobonapp.manager.mapper.CategoryMapper;
 import com.zobonapp.manager.mapper.ContactMapper;
@@ -189,6 +189,7 @@ public class MockDataManager implements DataManager
         database.setTransactionSuccessful();
         database.endTransaction();
 
+
     }
 
     @Override
@@ -229,7 +230,7 @@ public class MockDataManager implements DataManager
     {
         SQLiteDatabase database= DatabaseHelper.getInstance().getWritableDatabase();
         database.beginTransaction();
-        database.execSQL("update businessentity set favorite=? where id=?",new Object[]{entity.isFavorite(),entity.getId()});
+        database.execSQL("update businessentity set favorite=? where id=?",new Object[]{entity.isFavorite()?1:0,entity.getId()});
 
         database.setTransactionSuccessful();
         database.endTransaction();
@@ -247,6 +248,11 @@ public class MockDataManager implements DataManager
     public void populateOffers(List<HashMap<String, ?>> objects)
     {
         offerMapper.populate(objects);
+        if(objects.size()>0)
+        {
+            EventBus.getDefault().post(new OffersChangeEvent());
+        }
+
     }
 
     @Override

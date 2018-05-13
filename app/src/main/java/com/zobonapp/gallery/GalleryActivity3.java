@@ -72,6 +72,7 @@ public class GalleryActivity3 extends BasicActivity
         pagerAdapter = new PagerAdapter(pager, pages,rootPath);
         pager.setAdapter(pagerAdapter);
         pager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.view_pager_margin));
+        pager.setOffscreenPageLimit(3);
 
         // Initializing images animator. It requires us to provide FromTracker and IntoTracker items
         // that are used to find images views for particular item IDs in the list and in the pager

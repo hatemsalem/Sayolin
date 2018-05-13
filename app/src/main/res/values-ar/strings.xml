@@ -6,7 +6,7 @@
     <string name="msgExit">هل تريد الخروج من التطبيق؟</string>
     <string name="ok">نعم</string>
     <string name="cancel">لا</string>
-    <string name="app_name">تطبيق زبون</string>
+    <string name="app_name">زبون آب</string>
     <string name="context">لغة الجهاز</string>
     <string name="favoriteTitle">المفضلة</string>
     <string name="offersTitle">العروض</string>
@@ -23,4 +23,37 @@
         <item quantity="many">%d صفحة</item>
         <item quantity="few">%d صفحات</item>
     </plurals>
+    <string name="pageCount">صفحة %1$d من  %2$d </string>
+    <string name="pagePosition">صفحة %1$d </string>
+    <string name="shareSubject">لقد أعجبني تطبيق زبون آب، هل جربته؟</string>
+    <string name="shareText">أنا استخدم تطبيق زبون آب، وقد أعجبني وأريدك أن تجربه  \n https://play.google.com/store/apps/details?id=%s</string>
+    <string name="shareAppTitle">شارك زبون آب</string>
+
+    <string name="shareEntityTitle"> شارك بيانات %s</string>
+    <string name="shareEntityText">%s بيانات \nالرقم المختصر: %s \nالموقع الإلكتروني: %s\nصفحة الفيسبوك: http://www.facebook.com/%s\n كل البيانات تم توفيرها من خلال تطبيق ZoboonApp.com</string>
+
+    <string name="showShortcutCenterTitle">إظهار/إخفاء شريط مركز الاختصارات</string>
+    <string name="showShortcutCenterOn">مركز الاختصارات ظاهر</string>
+    <string name="showShortcutCenterOff">مركز الاختصارات مخفي</string>
+
+    <string name="showLargeDisplayTitle">تمكين/تعطيل عرض الحجم الكبير</string>
+    <string name="showLargeDisplayOn">الحجم الكبير</string>
+    <string name="showLargeDisplayOff">الحجم العادي</string>
+
+    <string name="items">العناصر</string>
+    <string name="categories">التصنيفات</string>
+    <plurals
+        name="itemsCount">
+        <item quantity="one">عنصر واحد</item>
+        <item quantity="two">عنصران</item>
+        <item quantity="many">%d عنصر</item>
+        <item quantity="few">%d عناصر</item>
+    </plurals>
+    <plurals name="offersCount">
+        <item quantity="one"> %s لديه عرض واحد\n العروض موجودة في صفحة العروض</item>
+        <item quantity="two"> %s لديه عرضان\n العروض موجودة في صفحة العروض</item>
+        <item quantity="many"> %s لديه %d عرض\n العروض موجودة في صفحة العروض</item>
+        <item quantity="few"> %s لديه %d عروض\n العروض موجودة في صفحة العروض</item>
+    </plurals>
+    <string name="newOffersNotification">لقد تم نشر عروض جديدة، ألق نظرة علي صفحة العروض</string>
 </resources>

@@ -3,8 +3,11 @@ package com.zobonapp.gallery;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.alexvasilkov.android.commons.ui.Views;
 import com.alexvasilkov.gestures.commons.RecyclePagerAdapter;
 import com.alexvasilkov.gestures.views.GestureImageView;
 import com.zobonapp.R;
@@ -56,6 +59,9 @@ class PagerAdapter extends RecyclePagerAdapter<PagerAdapter.ViewHolder>
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   )
                 .into(holder.image);
+        ;
+        holder.lblPage.setText(ZobonApp.getContext().getResources().getString(R.string.pageCount,position+1,getCount()));
+
     }
 
     static GestureImageView getImageView(RecyclePagerAdapter.ViewHolder holder)
@@ -67,11 +73,16 @@ class PagerAdapter extends RecyclePagerAdapter<PagerAdapter.ViewHolder>
     static class ViewHolder extends RecyclePagerAdapter.ViewHolder
     {
         final GestureImageView image;
+        final TextView lblPage;
 
         ViewHolder(ViewGroup container)
         {
-            super(new GestureImageView(container.getContext()));
-            image = (GestureImageView) itemView;
+            super(Views.inflate(container, R.layout.cell_offer_page));
+//            super(LayoutInflater.from(container.getContext()).inflate(R.layout.cell_offer_page,container));
+//            super(new GestureImageView(container.getContext()));
+//            image = (GestureImageView) itemView;
+            image=itemView.findViewById(R.id.imgOfferPage);
+            lblPage=itemView.findViewById(R.id.lblPage);
         }
     }
 

@@ -6,10 +6,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.alexvasilkov.android.commons.ui.Views;
 import com.zobonapp.R;
 import com.zobonapp.utils.ZobonApp;
+
+import org.w3c.dom.Text;
 
 import java.util.Locale;
 
@@ -54,6 +57,7 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>
                 .error(R.drawable.notfoundimage)
                 .placeholder(R.drawable.placeholder   )
                 .into(holder.image);
+        holder.lblPage.setText(ZobonApp.getContext().getResources().getString(R.string.pagePosition,position+1));
 
     }
 
@@ -72,11 +76,12 @@ class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder>
     static class ViewHolder extends RecyclerView.ViewHolder
     {
         final ImageView image;
-
+        final TextView lblPage;
         ViewHolder(ViewGroup parent)
         {
             super(Views.inflate(parent, R.layout.list_image_item));
             image = itemView.findViewById(R.id.list_image);
+            lblPage=itemView.findViewById(R.id.lblPage);
         }
     }
 

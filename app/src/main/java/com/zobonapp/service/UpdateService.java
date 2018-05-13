@@ -131,12 +131,15 @@ public class UpdateService extends IntentService
             if(step<0)
             {
                 File update=download(getUpdatePath());
-                File updateDir=new File(getFilesDir(),UPDATE_BASE_DIR);
-                ZipUtils.delete(updateDir);
-                updateDir.mkdirs();
-                ZipUtils.unzip(update,updateDir);
-                update.delete();
-                QueryPreferences.setUpdateStep(step=0);
+                if(update!=null)
+                {
+                    File updateDir = new File(getFilesDir(), UPDATE_BASE_DIR);
+                    ZipUtils.delete(updateDir);
+                    updateDir.mkdirs();
+                    ZipUtils.unzip(update, updateDir);
+                    update.delete();
+                    QueryPreferences.setUpdateStep(step = 0);
+                }
             }
             if(step==0)
             {
@@ -267,6 +270,9 @@ public class UpdateService extends IntentService
 //        outputStream.flush();
 //        outputStream.close();
 //        input.close();
+        if(response.code()!=200)
+            return null;
+        Log.d(TAG,"Response:"+response.code());
         BufferedSink sink= Okio.buffer(Okio.sink(output));
         sink.writeAll(response.body().source());
         sink.close();

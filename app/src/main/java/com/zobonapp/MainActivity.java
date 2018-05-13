@@ -177,15 +177,10 @@ public class MainActivity extends BasicActivity implements NavigationView.OnNavi
             case R.id.nav_gallery:
                 break;
             case R.id.nav_share:
-                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                sharingIntent.setType("text/plain");
-                StringBuilder sb = new StringBuilder();
-                sb.append("Hi, I am using ZobonApp. I like this and I want you to check it out.\n");
-                sb.append("https://play.google.com/store/apps/details?id=" + getPackageName());
-                sharingIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, "Test");
-                sharingIntent.putExtra(Intent.EXTRA_TEXT, sb.toString());
-                startActivity(Intent.createChooser(sharingIntent, "Test"));
+
+                ZobonApp.getIntentHelper().share(this,getResources().getString(R.string.shareAppTitle),
+                        getResources().getString(R.string.shareSubject),
+                        getResources().getString(R.string.shareText,BuildConfig.APPLICATION_ID));
                 break;
             case R.id.nav_slideshow:
                 break;

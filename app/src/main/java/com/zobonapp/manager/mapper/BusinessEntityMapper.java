@@ -70,7 +70,10 @@ public class BusinessEntityMapper extends AbstractRowMapper<BusinessEntity>
             {
                 BusinessEntity entity=findItemById(itemId);
                 if(entity!=null)
-                    cv.put(DbSchema.BusinessEntityTable.Cols.FAVORITE,entity.isFavorite()?"1":"0");
+                {
+                    cv.put(DbSchema.BusinessEntityTable.Cols.FAVORITE, entity.isFavorite() ? 1 : 0);
+                    cv.put(DbSchema.BusinessEntityTable.Cols.OFFERS,entity.getOffers());
+                }
                 result =database.insertWithOnConflict(DbSchema.BusinessEntityTable.NAME,null,cv,SQLiteDatabase.CONFLICT_REPLACE);
             }
 

@@ -20,7 +20,6 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
     private final static String TAG=CategoryHolder.class.getSimpleName();
     protected TextView lblName;
     protected TextView lblEntities;
-    protected TextView lblOffers;
     protected ImageView imgLogo;
     protected Category category;
     public CategoryHolder(ViewGroup parent, int layout)
@@ -29,7 +28,6 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
         itemView.setOnClickListener(this);
         lblName=itemView.findViewById(R.id.lblName);
         lblEntities=itemView.findViewById(R.id.lblEntities);
-        lblOffers=itemView.findViewById(R.id.lblOffers);
         imgLogo=itemView.findViewById(R.id.imgLogo);
     }
 
@@ -38,8 +36,7 @@ public class CategoryHolder extends ViewHolder<Category> implements View.OnClick
     {
         this.category=category;
         lblName.setText(category.getName());
-        lblEntities.setText(category.getEntities()+" item");
-        lblOffers.setText(category.getOffers()+" menu");
+        lblEntities.setText(itemView.getResources().getQuantityString(R.plurals.itemsCount,category.getEntities(),category.getEntities()));
         final Uri  uri=Uri.parse(ZobonApp.getAssetPath(category.getId().toString()));
         ZobonApp.getPicasso().load(uri)
                 .error(R.drawable.notfoundimage)

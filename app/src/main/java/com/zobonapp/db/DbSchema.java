@@ -42,7 +42,7 @@ public class DbSchema
                     .append(EN_DESC).append(", ")
                     .append(KEY_WORDS).append(", ")
                     .append(RANK).append(" DEFAULT 0, ")
-                    .append(FAVORITE).append(" DEFAULT '0' ");
+                    .append(FAVORITE).append(" DEFAULT 0 ");
             return fields.toString();
         }
 

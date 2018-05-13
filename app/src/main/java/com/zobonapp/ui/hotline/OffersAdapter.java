@@ -2,12 +2,18 @@ package com.zobonapp.ui.hotline;
 
 import android.os.Bundle;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.zobonapp.R;
 import com.zobonapp.domain.Category;
 import com.zobonapp.domain.Offer;
+import com.zobonapp.manager.OffersChangeEvent;
 import com.zobonapp.ui.GenericPagerAdapter;
 import com.zobonapp.utils.ZobonApp;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.List;
 
@@ -50,4 +56,31 @@ public class OffersAdapter extends GenericPagerAdapter<OfferHolder,Offer>
         }
     }
 
+    @Override
+    protected void notifyItemChanged(Offer item, int position)
+    {
+        super.notifyItemChanged(item, position);
+
+    }
+    @Override
+    public void onStart()
+    {
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    public void onStop()
+    {
+        EventBus.getDefault().unregister(this);
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onInitialized(OffersChangeEvent event)
+    {
+//        refresh(event.getItem());
+//        clear();
+//        add(loadData(0));
+//        notifyItemInserted(0);
+
+        Toast.makeText(ZobonApp.getContext(),ZobonApp.getContext().getString(R.string.newOffersNotification),Toast.LENGTH_LONG).show();
+    }
 }

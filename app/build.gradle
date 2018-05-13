@@ -34,15 +34,21 @@ android {
             keyAlias RELEASE_KEY_ALIAS
             keyPassword RELEASE_KEY_PASSWORD
         }
+        stagging {
+            storeFile file(STAGGING_STORE_FILE)
+            storePassword STAGGING_STORE_PASSWORD
+            keyAlias STAGGING_KEY_ALIAS
+            keyPassword STAGGING_KEY_PASSWORD
+        }
     }
 
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.zoboonapp.test"
+        applicationId "com.zoboonapp"
         minSdkVersion 21
-        targetSdkVersion 27
-        versionCode 32
-        versionName "1.0.32"
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         //Using VectorDrawableCompat version ?!
         vectorDrawables.generatedDensities = ['hdpi', 'xxhdpi']
@@ -50,25 +56,64 @@ android {
         buildConfigField 'String', 'BASE_URL','"http://dev.zobonapp.com/web"'
     }
     buildTypes {
+
         release {
 //            shrinkResources true
 //            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-            buildConfigField 'String', 'BASE_URL', '"http://test.zobonapp.com/web"'
+
         }
-        stagging {
+//        stagging {
+//                initWith release
+//                debuggable false
+//                zipAlignEnabled true
+//                jniDebuggable false
+//                renderscriptDebuggable false
+//                renderscriptOptimLevel 3
+//
+//        }
+        debug{
             debuggable true
-            zipAlignEnabled true
-            buildConfigField 'String', 'BASE_URL', '"http://test.zobonapp.com/web"'
-            jniDebuggable false
-            renderscriptDebuggable false
-            renderscriptOptimLevel 3
-            signingConfig signingConfigs.release
         }
+
     }
+    flavorDimensions( "B2C")
     productFlavors {
+
+        prod{
+            versionCode 4
+            versionName "1.0.4"
+            targetSdkVersion 21
+            signingConfig signingConfigs.release
+            buildConfigField 'String', 'BASE_URL', '"http://prod.zoboonapp.com/web"'
+        }
+        stag{
+            versionCode 36
+            versionName "1.0.36-Stagging"
+            targetSdkVersion 23
+            signingConfig signingConfigs.stagging
+            applicationIdSuffix 'test'
+            buildConfigField 'String', 'BASE_URL', '"http://test.zobonapp.com/web"'
+        }
+        dev{
+            applicationIdSuffix 'dev'
+        }
+
     }
+//    applicationVariants.all { variant ->
+//        def flavor = variant.mergedFlavor
+//        def versionCode = flavor.versionCode
+//        if (variant.buildType.isDebuggable()) {
+//            versionCode += 5
+//        }
+//        else
+//        {
+//            versionCode +=10
+//        }
+//        flavor.versionCode = 100
+//    }
+
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

@@ -96,9 +96,17 @@ public abstract class GenericPagerAdapter<VH extends ViewHolder<T>,T> extends Re
         int position= items.indexOf(item);
         notifyItemChanged(item,position);
 
-     }
-     protected void notifyItemChanged(T item,int position)
-     {
-         //Default implementation, do nothing
-     }
+    }
+    protected void notifyItemChanged(T item,int position)
+    {
+     //Default implementation, do nothing
+    }
+    public void onStart()
+    {
+
+    }
+    public  void onStop()
+    {
+
+    }
 }

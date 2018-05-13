@@ -7,6 +7,8 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.text.TextUtils;
 
+import com.zobonapp.BuildConfig;
+import com.zobonapp.R;
 import com.zobonapp.domain.Contact;
 
 /**
@@ -65,6 +67,10 @@ public class IntentHelper
             } else { //older versions of fb app
                 uri= "fb://page/" + id;
             }
+            intent.setData(Uri.parse(uri));
+            if (intent.resolveActivity(packageManager) == null)
+                uri=FACEBOOK_URL+ id;
+
         }
         catch (PackageManager.NameNotFoundException e)
         {
@@ -140,5 +146,15 @@ public class IntentHelper
     public boolean isSupportDial()
     {
         return supportDial;
+    }
+    public void share(Context ctx,String chooserTitle,String subject,String text)
+    {
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("text/plain");
+        sharingIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        ;
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT,subject);
+        sharingIntent.putExtra(Intent.EXTRA_TEXT,text );
+        ctx.startActivity(Intent.createChooser(sharingIntent, chooserTitle));
     }
 }

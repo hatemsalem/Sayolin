@@ -18,6 +18,7 @@ import android.content.res.Resources;
 import android.os.Build;
 import android.os.LocaleList;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.support.v4.app.NotificationCompat;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -150,7 +151,8 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
 
         //        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(20000000)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
-        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(this)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
+
+        picasso = new Picasso.Builder(this).indicatorsEnabled(BuildConfig.DEBUG).memoryCache(new LruCache(this)).downloader(new OkHttp3Downloader(getFilesDir(), 25000000)).build();
 
         //        picasso = new Picasso.Builder(this).indicatorsEnabled(true).memoryCache(new LruCache(5000000)).build();
         //        PicassoTools.clearCache(picasso);
@@ -247,9 +249,12 @@ public class ZobonApp extends Application implements SharedPreferences.OnSharedP
         Intent intent=new Intent(this, SplashActivity.class);
 //        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         notificationView.setOnClickPendingIntent(R.id.notificationIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT));
+        intent=new Intent(Settings.ACTION_SETTINGS);
+        notificationView.setOnClickPendingIntent(R.id.QRCodeIcon, PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT));
         intent=new Intent(this, FlashLightActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_SINGLE_TOP);
         notificationView.setOnClickPendingIntent(R.id.FlashIcon, PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_CANCEL_CURRENT));
+
 //        notificationView.setOnClickPendingIntent(R.id.calculatorIcon, PendingIntent.getActivity(this,0,new Intent(this, SplashActivity.class),PendingIntent.FLAG_UPDATE_CURRENT));
 //        Intent intent = new Intent();
 //        intent.setAction(Intent.ACTION_MAIN);

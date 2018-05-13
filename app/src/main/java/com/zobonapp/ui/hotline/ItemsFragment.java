@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zobonapp.R;
+import com.zobonapp.domain.BusinessEntity;
 import com.zobonapp.manager.ItemChangeEvent;
 import com.zobonapp.ui.AdapterFactory;
 import com.zobonapp.ui.GenericPagerAdapter;
@@ -83,21 +84,18 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
         {
             throw new IllegalArgumentException(e);
         }
-        EventBus.getDefault().register(this);
+        adapter.onStart();
+//        EventBus.getDefault().register(this);
 
     }
 
-    @Subscribe(threadMode = ThreadMode.BACKGROUND)
-    public void onInitialized(ItemChangeEvent event)
-    {
-        adapter.refresh(event.getItem());
 
-    }
 
     @Override
     public void onDestroy()
     {
-        EventBus.getDefault().unregister(this);
+//        EventBus.getDefault().unregister(this);
+        adapter.onStop();
         super.onDestroy();
     }
 
@@ -248,6 +246,22 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
         {
             super.onItemRangeInserted(positionStart, itemCount);
             checkEmpty();
+//            super.onChanged();
+//            checkEmpty();
+            if(adapter.getItemCount()==0)
+                pullToLoadView.postDelayed(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        if(adapter.getItemCount()==0)
+                            pullToLoadView.initLoad();
+                    }
+                },500);
+
+            else
+               super.onItemRangeInserted(positionStart, itemCount);
+
         }
 
         @Override
@@ -272,6 +286,8 @@ public class ItemsFragment extends BasicFragment implements SharedPreferences.On
                     {
                         emptyView.setVisibility(View.GONE);
                         pullToLoadView.setVisibility(View.VISIBLE);
+
+
                     }
 
                 }

@@ -1,21 +1,22 @@
 package com.zobonapp.manager;
 
+import com.zobonapp.domain.AbstractItem;
 import com.zobonapp.domain.BusinessEntity;
 
 /**
  * Created by hasalem on 12/11/2017.
  */
 
-public class ItemChangeEvent
+public class ItemChangeEvent<T extends AbstractItem>
 {
-    private BusinessEntity item;
+    private T item;
 
-    public ItemChangeEvent(BusinessEntity item)
+    public ItemChangeEvent(T item)
     {
         this.item = item;
     }
 
-    public BusinessEntity getItem()
+    public T getItem()
     {
         return item;
     }
